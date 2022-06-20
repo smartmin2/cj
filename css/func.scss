@@ -1,20 +1,27 @@
 $colors_line: #cdcdd5;
-
+$colors_bg: #fbfbfb;
+$colors_bg_line: #d5d6dc;
+$colors_main: #505c84;
+$colors_main_10: rgba(80, 92, 132, 0.1);
 
 $white: #fff;
 $black: #202022;
 $red: #dd5151;
+$navy: #505c84;
 
 $black100: #282a3f;
 $black200: #434c66;
 
+
 $gray100: #bdbac8;
 $gray200: #d3d7e3;
-$gray30: #666666;
+$gray300: #666666;
 $gray400: #515668;
 
 
-
+$font_color_80:rgba(32, 32, 34, 0.8);
+$font_color_50:rgba(32, 32, 34, 0.5);
+$font_color_20:rgba(32, 32, 34, 0.2);
 $font_black: #202022;
 $font_blue: #505c84;
 
@@ -68,10 +75,10 @@ $table_bg_green:#2ea64e;
   width: $width;
   height: $height;
   border-radius: 3px;
+  padding: 0 6px;
   font-size: 13px;  
   color: #fff;
-  padding: 0 10px;
-  @include flex_center();
+  @include flex_center;
   gap: 10px;  
 
   &:hover {
