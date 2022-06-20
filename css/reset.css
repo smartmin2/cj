@@ -1,65 +1,13 @@
 @charset "UTF-8";
 
-/* @font-face { font-family: "Noto Sans KR"; src: url(../font/NotoSansKR-Thin.otf) format("opentype"); font-style: normal; font-weight: 100; } 
-@font-face { font-family: "Noto Sans KR"; src: url(../font/NotoSansKR-Light.otf) format("opentype"); font-style: normal; font-weight: 300; } 
-@font-face { font-family: "Noto Sans KR"; src: url(../font/NotoSansKR-Regular.otf) format("opentype"); font-style: normal; font-weight: 400; } 
-@font-face { font-family: "Noto Sans KR"; src: url(../font/NotoSansKR-Medium.otf) format("opentype"); font-style: normal; font-weight: 500; } 
-@font-face { font-family: "Noto Sans KR"; src: url(../font/NotoSansKR-Bold.otf) format("opentype"); font-style: normal; font-weight: 700; } 
-@font-face { font-family: "Noto Sans KR"; src: url(../font/NotoSansKR-Black.otf) format("opentype"); font-style: normal; font-weight: 900; }  */
-
-/* noto-sans-kr-300 - korean */
 @font-face {
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 300;
-  src: url('../font/noto-sans-kr-v26-korean-300.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('../font/noto-sans-kr-v26-korean-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../font/noto-sans-kr-v26-korean-300.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../font/noto-sans-kr-v26-korean-300.woff') format('woff'), /* Modern Browsers */
-       url('../font/noto-sans-kr-v26-korean-300.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../font/noto-sans-kr-v26-korean-300.svg#NotoSansKR') format('svg'); /* Legacy iOS */
-}
-/* noto-sans-kr-regular - korean */
-@font-face {
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../font/noto-sans-kr-v26-korean-regular.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('../font/noto-sans-kr-v26-korean-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../font/noto-sans-kr-v26-korean-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../font/noto-sans-kr-v26-korean-regular.woff') format('woff'), /* Modern Browsers */
-       url('../font/noto-sans-kr-v26-korean-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../font/noto-sans-kr-v26-korean-regular.svg#NotoSansKR') format('svg'); /* Legacy iOS */
-}
-/* noto-sans-kr-700 - korean */
-@font-face {
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 700;
-  src: url('../font/noto-sans-kr-v26-korean-700.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('../font/noto-sans-kr-v26-korean-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../font/noto-sans-kr-v26-korean-700.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../font/noto-sans-kr-v26-korean-700.woff') format('woff'), /* Modern Browsers */
-       url('../font/noto-sans-kr-v26-korean-700.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../font/noto-sans-kr-v26-korean-700.svg#NotoSansKR') format('svg'); /* Legacy iOS */
-}
-/* noto-sans-kr-500 - korean */
-@font-face {
-  font-family: 'Noto Sans KR';
+  font-family: 'CJ Medium';
   font-style: normal;
   font-weight: 500;
-  src: url('../font/noto-sans-kr-v26-korean-500.eot'); /* IE9 Compat Modes */
   src: local(''),
-       url('../font/noto-sans-kr-v26-korean-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../font/noto-sans-kr-v26-korean-500.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../font/noto-sans-kr-v26-korean-500.woff') format('woff'), /* Modern Browsers */
-       url('../font/noto-sans-kr-v26-korean-500.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../font/noto-sans-kr-v26-korean-500.svg#NotoSansKR') format('svg'); /* Legacy iOS */
+       url('../font/CJONLYONENEWtitleMedium.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../font/CJONLYONENEWtitleMedium.woff') format('woff'), /* Modern Browsers */
 }
-
 
 *,
 ::before,
@@ -91,7 +39,7 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-html { line-height: 1.5; -webkit-text-size-adjust: 100%; -moz-tab-size: 4; tab-size: 4; font-family: "Noto Sans KR", sans-serif; height: 100%; } 
+html { line-height: 1.5; -webkit-text-size-adjust: 100%; -moz-tab-size: 4; tab-size: 4; font-family: "CJ Medium", sans-serif; height: 100%; } 
 body { margin: 0; line-height: inherit; font-size: 14px; height: 100%; } 
 ol, ul, details, summary {
 	list-style: none;
@@ -160,7 +108,7 @@ input[type="text"]::placeholder, input[type="password"]::placeholder { font-size
 input[type="radio"]{display: none;}
 
 /* Normalize */
-body { font-family: 'Noto Sans KR', sans-serif; }
+body { font-family: 'CJ Medium', sans-serif; }
 select { appearance:none;}
 select::-ms-expand { display:none;}
 input[type="search"]::-webkit-search-decoration,
