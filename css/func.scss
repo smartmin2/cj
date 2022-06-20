@@ -1,0 +1,188 @@
+$colors_line: #cdcdd5;
+
+
+$white: #fff;
+$black: #202022;
+$red: #dd5151;
+
+$black100: #282a3f;
+$black200: #434c66;
+
+$gray100: #bdbac8;
+$gray200: #d3d7e3;
+$gray30: #666666;
+$gray400: #515668;
+
+
+
+$font_black: #202022;
+$font_blue: #505c84;
+
+$blue100:#505c84;
+
+
+$table_bg_red:#f5aa88;
+$table_bg_blue:#7cc2e0;
+$table_bg_purple:#b8b6ff;
+$table_bg_green:#2ea64e;
+
+// text input box : width, height
+@mixin input_box($width, $height) {
+  width: $width;
+  height: $height;
+  border-radius: 4px;
+  border: solid 1px $colors_line;
+  background-color: $white;
+}
+
+@mixin flex_center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin space_between() {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin excel_button() {
+  border-radius: 5px;
+  border: solid 1px #207245;
+  background-color: #fff;
+  font-size: 14px;
+  font-weight: 300;
+  color: #207245;
+  @include flex_center();
+  gap: 10px;
+
+  img {
+    content: url("../assets/excel.png");
+    width: 17px;
+    height: 17px;
+  }
+}
+
+@mixin button($width, $height) {
+  width: $width;
+  height: $height;
+  border-radius: 3px;
+  font-size: 13px;  
+  color: #fff;
+  padding: 0 10px;
+  @include flex_center();
+  gap: 10px;  
+
+  &:hover {
+  }
+}
+
+@mixin white_button($width, $height) {
+  min-width: $width;
+  height: $height;
+  padding: 0 10px;
+  border-radius: 4px;
+  background-color: $white;
+  font-size: 14px;  
+  color: $black100;
+  border: 1px solid $colors_line;
+  @include flex_center();
+  gap: 10px; 
+  cursor: pointer; 
+}
+
+@mixin animation($delay, $duration, $name) {
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-name: $name;
+}
+
+@mixin keyframe($animation_name) {
+  @keyframes #{$animation_name} {
+    @content;
+  }
+}
+
+@mixin border($color) {
+  border: 1px solid $color;
+}
+
+@mixin scrollbar($direction) {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  &::-webkit-scrollbar {
+    @if $direction == 'H' { height: 6px; } @else { width: 6px; }
+    display: inline;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @if $direction == 'H' { height: 6px; } @else { width: 6px; }
+    border-radius: 6px;
+    background: #b6bdc1;
+  }
+}
+
+
+@mixin text_overflow {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@mixin line_clamp($num){
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: $num;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin large {
+  @media (min-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media (max-width: 1919px) {
+    @content;
+  }
+}
+
+@mixin default_modal($width, $height) {
+  width: $width;
+  height: $height;
+  max-height: 900px;
+  padding: 20px 32px 24px;
+  display: flex;
+  flex-direction: column;
+
+  .modal-top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .modal-body {
+    flex: 1;
+    margin: 32px 0 24px;
+    overflow: overlay;
+    @include scrollbar("V")   ;
+  }
+  .modal-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+@mixin setting_table_height($height){
+  height: $height;
+  .setting-table-title {height: ($height)-1px;}
+}
