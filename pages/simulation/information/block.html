@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>이벤트 관리</title>
+    <title>블록 관리</title>
     <link rel="stylesheet" href="../../../css/style.css" />
   </head>
   <body>
@@ -19,10 +19,16 @@
                   <option value="">기준년도</option>
                 </select>
                 <select name="" id="">
-                  <option value="">장르</option>
+                  <option value="">월</option>
                 </select>
                 <select name="" id="">
-                  <option value="">구분</option>
+                  <option value="">요일</option>
+                </select>
+                <select name="" id="">
+                  <option value="">시간대</option>
+                </select>
+                <select name="" id="">
+                  <option value="">블록여부</option>
                 </select>
               </div>
               <div class="table-top-buttons">
@@ -35,43 +41,35 @@
             <div class="jb-table-wrap">
               <table class="jb-table table">
                 <colgroup>
-                  <col style="width: 4%" />
-                  <col style="width: 6.5%" />
-                  <col style="width: 6.5%" />
-                  <col style="width: 6.5%" />
-                  <col style="width: 6.5%" />
-                  <col style="width: 8.5%" />
-                  <col style="width: 6.5%" />
-                  <col style="width: 6.5%" />
-                  <col style="width: 6.5%" />
-                  <col style="width: 6.5%" />
-                  <col style="width: 6.5%" />
-                  <col style="width: 6.5%" />
-                  <col style="width: 6.5%" />
-                  <col />
-                  <col style="width: 4%" />
+                  <col style="width: 5%" />
+                  <col style="width: 9%" />
+                  <col style="width: 11.5%" />
+                  <col style="width: 11.5%" />
+                  <col style="width: 9%" />
+                  <col style="width: 9%" />
+                  <col style="width: 9%" />
+                  <col style="width: 9%" />
+                  <col style="width: 9%" />
+                  <col style="width: 9%" />
+                  <col style="width: 9%" />
                 </colgroup>
                 <thead class="double">
                   <tr>
-                    <th rowspan="2">선택</th>
+                    <th rowspan="2"></th>
                     <th rowspan="2">기준년도</th>
-                    <th rowspan="2">적용대상</th>
-                    <th rowspan="2">적용대상</th>
-                    <th rowspan="2">구분</th>
-                    <th rowspan="2">상세 구분</th>
-                    <th rowspan="2">FROM</th>
-                    <th rowspan="2">TO</th>
-                    <th rowspan="2">일수</th>
-                    <th colspan="2" class="brt10">수도권</th>
-                    <th colspan="2">전국</th>
+                    <th rowspan="2">요일</th>
+                    <th rowspan="2">주중/주말</th>
+                    <th colspan="2" class="brt10">날짜</th>
+                    <th colspan="2">시간</th>
+                    <th rowspan="2">블록명</th>
                     <th rowspan="2">내용</th>
-                    <th rowspan="2">활용</th>
+                    <th rowspan="2">활용여부</th>
                   </tr>
                   <tr>
-                    <th>데이</th>
-                    <th>프라임</th>
-                    <th>데이</th>
-                    <th>프라임</th>
+                    <th>FROM</th>
+                    <th>TO</th>
+                    <th>FROM</th>
+                    <th>TO</th>
                   </tr>
                 </thead>
                 <tbody class="table_body"></tbody>
@@ -86,27 +84,23 @@
     <script src="../../../js/script.js"></script>
     <script>
       //Table
-      const arrTable = Array(10).fill(["2022", "IP", "ALL", "이벤트", "올림픽주경기1", "2022.10.01", "2022.11.01", "30", "attach", "attach", "attach", "attach", "기본 관리 대상", "Y"]);
+      const arrTable = Array(10).fill(["2022", "월","주중","2022.10.01", "2022.11.01", "19:15", "20:30", "월 19 예능","","Y"]);
       const table = document.querySelector(".table .table_body");
       arrTable.map((data) => addRow(table, data, true));
 
       $(".btn-add").on("click", function () {
         let comment = "<tr>";
         comment += "<td> <input type='checkbox'> </td>";
-        comment += "<td><select><option>2022</option></select></td>";
         comment += "<td><select><option>선택</option></select></td>";
         comment += "<td><select><option>선택</option></select></td>";
         comment += "<td><select><option>선택</option></select></td>";
-        comment += "<td> <input type='text'> </td>";
         comment += "<td> <input type='date'> </td>";
         comment += "<td> <input type='date'> </td>";
-        comment += "<td> 0 </td>";
-        comment += "<td> <input type='number'> </td>";
-        comment += "<td> <input type='number'> </td>";
-        comment += "<td> <input type='number'> </td>";
-        comment += "<td> <input type='number'> </td>";
+        comment += "<td> <input type='time'> </td>";
+        comment += "<td> <input type='time'> </td>";
         comment += "<td> <input type='text'> </td>";
-        comment += "<td>Y</td>";
+        comment += "<td> <input type='text'> </td>";
+        comment += "<td> <input type='date'> </td>";
         comment += "</tr>";
         $(".table_body tr:last-child").after(comment);
       });

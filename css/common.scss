@@ -470,7 +470,9 @@ input[type="time"] {
   text-align: left;
   color: #262829;
 }
-
+input[type="time"]{
+  padding-right: 10px;
+}
 input[type="number"],
 input[type="text"],
 input[type="password"] {
@@ -636,6 +638,7 @@ input[type="month"]:after {
 /*********** components ***********/
 
 .bg-box {
+  width: 100%;
   padding: 20px;
   background-color: $colors_bg;
   border-radius: 4px;

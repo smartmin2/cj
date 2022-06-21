@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>광고 손실율 관리</title>
+    <link rel="stylesheet" href="../../../css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header"></header>
+      <main class="main">
+        <div class="bg-box">
+          <div class="table-wrapper">
+            <div class="table-top">
+              <div class="table-top-select"></div>
+              <div class="table-top-buttons">
+                <button class="btn-add">추가</button>
+                <button class="btn-common">저장</button>
+                <button class="btn-red">삭제</button>
+                <button class="btn-gray">닫기</button>
+              </div>
+            </div>
+            <div class="jb-table-wrap">
+              <table class="jb-table table">
+                <colgroup>
+                  <col style="width: 5%" />
+                  <col style="width: 17%" />
+                  <col style="width: 26%" />
+                  <col style="width: 26%" />
+                  <col style="width: 13%" />
+                  <col style="width: 13%" />
+                </colgroup>
+                <thead class="double">
+                  <tr>
+                    <th rowspan="2">선택</th>
+                    <th rowspan="2">기준년</th>
+                    <th rowspan="2">FROM</th>
+                    <th rowspan="2">TO</th>
+                    <th colspan="2">손실율</th>
+                  </tr>
+                  <tr>
+                    <th>수도권</th>
+                    <th>전국</th>
+                  </tr>
+                </thead>
+                <tbody class="table_body"></tbody>
+              </table>
+            </div>
+
+            <div class="jb-table-wrap data-table">
+              <table class="jb-table table1">
+                <colgroup>
+                  <col style="width: 25%" />
+                  <col style="width: 25%" />
+                  <col style="width: 25%" />
+                  <col style="width: 25%" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>기준년</th>
+                    <th>광고포함</th>
+                    <th>광고제외</th>
+                    <th>비율(%)</th>
+                  </tr>
+                </thead>
+                <tbody class="table_body">
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script src="../../../js/script.js"></script>
+    <script>
+      //Table
+      const arrTable = Array(4).fill(["2019", "2019.01.01", "2019.12.31", "8%", "8%"]);
+      const table = document.querySelector(".table .table_body");
+      arrTable.map((data) => addRow(table, data, true));
+
+      const arrTable1 = Array(4).fill(["2019", "1.343", "1.486","90.4"]);
+      const table1 = document.querySelector(".table1 .table_body");
+      arrTable1.map((data) => addRow(table1, data, false));
+
+      $(".btn-add").on("click", function () {
+        let comment = "<tr>";
+        comment += "<td> <input type='checkbox'> </td>";
+        comment += "<td><select><option>선택</option></select></td>";
+        comment += "<td> <input type='date'> </td>";
+        comment += "<td> <input type='date'> </td>";
+        comment += "<td> <input type='text'> </td>";
+        comment += "<td> <input type='text'> </td>";
+        comment += "</tr>";
+        $(".table .table_body tr:last-child").after(comment);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>재방 비율(년도별)</title>
+    <link rel="stylesheet" href="../../../css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header"></header>
+      <main class="main">
+        <div class="bg-box">
+          <div class="table-wrapper">
+            <div class="table-top">
+              <div class="table-top-select"></div>
+              <div class="table-top-buttons">
+                <button class="btn-add">추가</button>
+                <button class="btn-common">저장</button>
+                <button class="btn-red">삭제</button>
+                <button class="btn-gray">닫기</button>
+              </div>
+            </div>
+            <div class="jb-table-wrap">
+              <table class="jb-table table">
+                <colgroup>
+                  <col style="width: 5%" />
+                  <col style="width: 15%" />
+                  <col style="width: 16%" />
+                  <col style="width: 17%" />
+                  <col style="width: 17%" />
+                  <col style="width: 15%" />
+                  <col style="width: 15%" />
+                </colgroup>
+                <thead class="double">
+                  <tr>
+                    <th rowspan="2">선택</th>
+                    <th rowspan="2">기준년</th>
+                    <th rowspan="2">버전명</th>
+                    <th rowspan="2">FROM</th>
+                    <th rowspan="2">TO</th>
+                    <th colspan="2">재방 비율</th>
+                  </tr>
+                  <tr>
+                    <th>수도권</th>
+                    <th>전국</th>
+                  </tr>
+                </thead>
+                <tbody class="table_body"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script src="../../../js/script.js"></script>
+    <script>
+      //Table
+      const arrTable = Array(4).fill(["2023","2023년 기본1", "2023.01.01", "2023.12.31", "22.1%", "22.1%"]);
+      const table = document.querySelector(".table .table_body");
+      arrTable.map((data) => addRow(table, data, true));
+
+      $(".btn-add").on("click", function () {
+        let comment = "<tr>";
+        comment += "<td> <input type='checkbox'> </td>";
+        comment += "<td><select><option>선택</option></select></td>";
+        comment += "<td>입력하세요</td>";
+        comment += "<td> <input type='date'> </td>";
+        comment += "<td> <input type='date'> </td>";
+        comment += "<td> <input type='text'> </td>";
+        comment += "<td> <input type='text'> </td>";
+        comment += "</tr>";
+        $(".table .table_body tr:last-child").after(comment);
+      });
+    </script>
+  </body>
+</html>
