@@ -121,6 +121,8 @@ input[type="number"]:focus, input[type="text"]:focus, input[type="password"]:foc
 input[type="number"]:disabled, input[type="text"]:disabled, input[type="password"]:disabled { background-color: #bdbac8; }
 input[type="number"].width-400, input[type="text"].width-400, input[type="password"].width-400 { width: 400px; }
 
+input[type="number"] { padding: 0 10px 0 16px; }
+
 input[type="date"]::-webkit-clear-button, input[type="date"]::-webkit-inner-spin-button, input[type="month"]::-webkit-clear-button, input[type="month"]::-webkit-inner-spin-button { display: none; }
 
 input[type=date]::-webkit-calendar-picker-indicator, input[type=month]::-webkit-calendar-picker-indicator { background: transparent; z-index: 1; }

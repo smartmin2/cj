@@ -20,8 +20,8 @@ function addRow(table, tbData, isCheckbox) {
     var newTD = document.createElement("td"); 
     if (cell == 'attach')
     {      
-      var attach = document.createElement("button");
-      attach.setAttribute("class","btn-download");      
+      var attach = document.createElement("input");
+      attach.setAttribute("type","number");      
       newTD.appendChild(attach);
     }
     else newTD.innerText = cell;
