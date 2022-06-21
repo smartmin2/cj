@@ -28,10 +28,8 @@ $font_blue: #505c84;
 $blue100:#505c84;
 
 
-$table_bg_red:#f5aa88;
-$table_bg_blue:#7cc2e0;
-$table_bg_purple:#b8b6ff;
-$table_bg_green:#2ea64e;
+$table_line: #a0a1a9;
+
 
 // text input box : width, height
 @mixin input_box($width, $height) {

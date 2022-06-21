@@ -8,19 +8,122 @@
     <link rel="stylesheet" href="../../../css/style.css" />
   </head>
   <body>
-    <main class="main">
-      <div class="bg-box">
-        
-      </div>
-    </main>
+    <div class="wrapper">
+        <header class="header"></header>
+        <main class="main">
+          <div class="bg-box">
+            <div class="table-wrapper">
+              <div class="table-top">
+                <div class="table-top-select">
+                  <select name="" id="">
+                    <option value="">기준년도</option>
+                  </select>
+                  <select name="" id="">
+                    <option value="">장르</option>
+                  </select>
+                  <select name="" id="">
+                    <option value="">구분</option>
+                  </select>
+                </div>
+                <div class="table-top-buttons">
+                  <button class="btn-add">추가</button>
+                  <button class="btn-common">저장</button>
+                  <button class="btn-red">삭제</button>
+                  <button class="btn-gray">닫기</button>
+                </div>
+              </div>
+              <div class="jb-table-wrap">
+                <table class="jb-table table">
+                  <colgroup>
+                    <col style="width: 5%" />
+                    <col style="width: 9%" />
+                    <col style="width: 11.5%" />
+                    <col style="width: 11.5%" />
+                    <col style="width: 9%" />
+                    <col style="width: 9%" />
+                    <col style="width: 9%" />
+                    <col style="width: 9%" />
+                    <col style="width: 9%" />
+                    <col style="width: 9%" />
+                    <col style="width: 9%" />
+                  </colgroup>
+                  <thead class="double">
+                    <tr>
+                      <th rowspan="2">선택</th>
+                      <th rowspan="2">기준년</th>
+                      <th rowspan="2">FROM</th>
+                      <th rowspan="2">TO</th>
+                      <th rowspan="2">장르</th>
+                      <th rowspan="2">구분</th>
+                      <th rowspan="2">제작비</th>
+                      <th colspan="2" class="brt10">수도권</th>
+                      <th colspan="2">전국</th>
+                    </tr>
+                    <tr>
+                      <th>평일</th>
+                      <th>주말</th>
+                      <th>평일</th>
+                      <th>주말</th>
+                    </tr>
+                  </thead>
+                  <tbody class="table_body"></tbody>
+                  <tbody class="table_body add-tr">
+                   <tr>
+                    <td>
+                        <input type="checkbox" name="" id="">
+                    </td>
+                    <td>
+                        <select name="" id="">
+                            <option value="">선택</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="date" name="" id="">
+                    </td>
+                    <td>
+                        <input type="date" name="" id="">
+                    </td>
+                    <td>
+                        <select name="" id="">
+                            <option value="">선택</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="" id="">
+                            <option value="">선택</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" name="" id="">
+                    </td>
+                    <td>
+                        <input type="text" name="" id="">
+                    </td>
+                    <td>
+                        <input type="text" name="" id="">
+                    </td>
+                    <td>
+                        <input type="text" name="" id="">
+                    </td>
+                    <td>
+                        <input type="text" name="" id="">
+                    </td>
+                   </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </main>
+    </div>
 
     <script src="../../../js/jquery-3.6.0.min.js"></script>
     <script src="../../../js/script.js"></script>
     <script>
       //Table
-    //   const arrTable = Array(5).fill(["2023","수도권","2023년 경영기반 시뮬레이션 1차","진행중","detail","부서명2 | 홍길동 | 2022.10.12"]);
-    //   const table = document.querySelector(".table1 .table_body");
-    //   arrTable.map((data) => addRow(table, data, true));
+        const arrTable = Array(10).fill(["2022","2022.01.01","2022.12.30","드라마","SD","200000","1.80","1.80","1.80","1.80"]);
+        const table = document.querySelector(".table .table_body");
+        arrTable.map((data) => addRow(table, data, true));
     </script>
   </body>
 </html>

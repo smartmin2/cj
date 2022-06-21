@@ -18,11 +18,11 @@ function addRow(table, tbData, isCheckbox) {
   
   tbData.map((cell,i) => {        
     var newTD = document.createElement("td"); 
-    if (cell == 'detail')
+    if (cell == 'attach')
     {      
       var attach = document.createElement("button");
-      attach.setAttribute("class","btn-common-line");      
-      newTD.appendChild(detail);
+      attach.setAttribute("class","btn-download");      
+      newTD.appendChild(attach);
     }
     else newTD.innerText = cell;
     

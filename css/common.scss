@@ -61,6 +61,12 @@ input[type="checkbox"] {
   }
 }
 
+.header{
+  width:100%;
+  height: 70px;
+  background-color: #505c84;
+
+}
 .input-group {
   @include input_box(300px, 30px);
 
@@ -318,58 +324,93 @@ input[type="checkbox"] {
     }
   }
 }
+
+// table
 .table-wrapper{
-  border: solid 1px $colors_line;
-  border-radius: 4px;
-  table.jb-table {
-    width: 100%;
-  
-    thead {
-      height: 40px;
-      background-color: $gray200;
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: -0.33px;
-      color: $font_black;
-  
-      tr {
-        th {
-          vertical-align: middle;
-          &:first-child {
-            border-top-left-radius: 4px;
+  .table-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    .table-top-select{
+      display: flex;
+      align-items: center;
+      gap:10px;
+    }
+    .table-top-buttons{
+      display: flex;
+      align-items: center;
+      gap:10px;
+    }
+  }
+  .jb-table-wrap{
+    border: solid 1px $colors_line;
+    border-radius: 4px;
+    table.jb-table {
+      width: 100%;
+      thead {
+        &.double{
+          height: 60px;
+          tr {
+            &:first-child {
+              .brt10 {
+                border-right: 10px solid transparent;
+              }
+            }
+            &:last-child {
+              border-top: 1px solid $table_line;
+              th {
+                border-radius: 0;
+              }
+            }
           }
-          &:last-child {
-            border-top-right-radius: 4px;
+        }
+        height: 40px;
+        background-color: $gray200;
+        font-size: 13px;
+        font-weight: bold;
+        letter-spacing: -0.33px;
+        color: $font_black;
+
+        tr {
+          th {
+            vertical-align: middle;
+            &:first-child {
+              border-top-left-radius: 4px;
+            }
+            &:last-child {
+              border-top-right-radius: 4px;
+            }
           }
         }
       }
-    }
-    tbody {
-      tr {
-        height: 40px;
-        border-bottom: 1px solid $colors_line;
-        &:last-child {
-          border-bottom: none;
-        }
-        td {
-          background-color: $white;
-          padding: 0 15px;
-          vertical-align: middle;
-          text-align: center;
-          font-size: 13px;
-          letter-spacing: -0.35px;
-          color: $font_black;
-          &:first-child {
-            border-bottom-left-radius: 4px;
-          }
-          &:last-child {
-            border-bottom-right-radius: 4px;
+      tbody {
+        tr {
+          height: 50px;
+          border-top: 1px solid $colors_line;
+          td {
+            background-color: $white;
+            padding: 0 15px;
+            vertical-align: middle;
+            text-align: center;
+            font-size: 13px;
+            letter-spacing: -0.35px;
+            color: $font_black;
+            &:first-child {
+              border-bottom-left-radius: 4px;
+            }
+            &:last-child {
+              border-bottom-right-radius: 4px;
+            }
           }
         }
       }
     }
   }
+  
 }
+
+
 
 
 ul.pagination {
@@ -419,7 +460,7 @@ input[type="date"],
 input[type="month"],
 input[type="time"] {
   position: relative;
-  height: 100%;
+  height: 43px;
   padding-left: 10px;
   border-radius: 4px;
   border: solid 1px $colors_line;
@@ -427,14 +468,14 @@ input[type="time"] {
   font-size: 14px;
   letter-spacing: -0.35px;
   text-align: left;
-  color: rgba(20, 31, 64, 0.83);
+  color: #262829;
 }
 
 input[type="number"],
 input[type="text"],
 input[type="password"] {
   width: 100%;
-  height: 30px;
+  height: 43px;
   border: 1px solid $gray200;
   border-radius: 4px;
   background-color: $white;
@@ -459,11 +500,6 @@ input[type="password"] {
   &.width-400 {
     width: 400px;
   }
-}
-input[type="date"],
-input[type="month"],
-input[type="time"] {
-  height: 30px;
 }
 
 input[type="date"]::-webkit-clear-button,
@@ -526,8 +562,8 @@ input[type="month"]:after {
 /********** button ***********/
 
 .btn-common {
-  @include button(100%, 37px);
-  background-color: $gray100;
+  @include button(68px, 37px);
+  background-color: $gray400;
 }
 
 .btn-common-line {
@@ -539,20 +575,20 @@ input[type="month"]:after {
 }
 
 .btn-red {
-  @include button(100%, 37px);
+  @include button(68px, 37px);
   background-color: $red;
 }
 
 .btn-gray {
-  @include button(100%, 37px);
+  @include button(68px, 37px);
   background-color: $gray300;
 }
 
 .btn-add {
-  @include button(100%, 37px);
-
+  @include button(68px, 37px);
+  background-color: $gray400;
   &::before {
-    content: url(../img/ic-input-plus.svg);
+    content: url(../img/ic-add.svg);
     width: 14px;
     height: 14px;
   }
@@ -775,33 +811,27 @@ select.select-box {
   border: none;
 
   cursor: pointer;
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: -0.35px;
   text-align: left;
-  color: rgba(40, 42, 63, 0.83);
-
+  color: #262829;
   text-overflow: ellipsis;
-
-  background: url(../assets/ico-dropdown.png) no-repeat center right 10px;
+  background: url(../img/ico-dropdown.svg) no-repeat center right 10px;
+  
   border-radius: 4px;
-  // border: solid 1px $colors_line;
+  border: solid 1px #d7d8e1;
   background-color: $white;
   padding: 0 15px;
-  height: 38px;
+  height: 43px;
+  width:100%;
 
   option {
-    height: 35px;
-    font-size: 14px;
+    height: 43px;
+    font-size: 13px;
     letter-spacing: -0.35px;
-    color: rgba(20, 31, 64, 0.83);
-    border: 1px solid $gray400;
+    color: #262829;
+    border: solid 1px #d7d8e1;
   }
-}
-
-select,
-select.select-box {
-  width: 100%;
-  height: 100%;
 }
 
 // tab
