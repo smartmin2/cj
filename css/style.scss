@@ -17,3 +17,10 @@
 .data-table{
   margin-top: 20px;
 }
+
+.jb-table{
+  select,input[type="text"],input[type="date"],input[type="number"],input[type="time"]{
+    height: 36px;
+  }
+ 
+} 
