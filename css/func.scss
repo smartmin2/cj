@@ -79,7 +79,8 @@ $table_line: #a0a1a9;
   @include flex_center;
   gap: 10px;  
 
-  &:hover {
+  &:hover{
+    opacity: 0.9;
   }
 }
 

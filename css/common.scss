@@ -570,6 +570,7 @@ input[type="month"]:after {
 .btn-common {
   @include button(68px, 37px);
   background-color: $gray400;
+  
 }
 
 .btn-common-line {
@@ -583,6 +584,7 @@ input[type="month"]:after {
 .btn-red {
   @include button(68px, 37px);
   background-color: $red;
+
 }
 
 .btn-gray {
@@ -602,38 +604,6 @@ input[type="month"]:after {
 
 /*********** icon ***********/
 
-
-@each $info in normal, possible, error, warning {
-  .ic-#{$info} {
-    @include flex_center;
-    font-size: 14px;
-    &::before {
-      content: url(../assets/13_ic_#{$info}.svg);
-      display: inline-block;
-      width: 24px;
-      height: 24px;
-    }
-  }
-}
-@each $color in red, green, blue, orange, purple {
-  .legend-#{$color} {
-    width: 20px;
-    height: 20px;
-    content: url("../assets/06_img_list_color_chip_#{$color}.png");
-  }
-}
-.ic-normal {
-  color: #018ddd;
-}
-.ic-possible {
-  color: #8f69d5;
-}
-.ic-error {
-  color: #f67347;
-}
-.ic-warning {
-  color: #eb5050;
-}
 
 /*********** components ***********/
 

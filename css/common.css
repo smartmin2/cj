@@ -149,47 +149,22 @@ input[type="date"]:after, input[type="month"]:after { position: absolute; top: 5
 
 /********** button ***********/
 .btn-common { width: 68px; height: 37px; border-radius: 3px; padding: 0 6px; font-size: 13px; color: #fff; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; gap: 10px; background-color: #515668; }
+.btn-common:hover { opacity: 0.9; }
 
 .btn-common-line { width: 70px; height: 28px; border-radius: 3px; padding: 0 6px; font-size: 13px; color: #fff; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; gap: 10px; background-color: #fff; border: 1px solid #505c84; color: #505c84; letter-spacing: -0.26px; }
+.btn-common-line:hover { opacity: 0.9; }
 
 .btn-red { width: 68px; height: 37px; border-radius: 3px; padding: 0 6px; font-size: 13px; color: #fff; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; gap: 10px; background-color: #dd5151; }
+.btn-red:hover { opacity: 0.9; }
 
 .btn-gray { width: 68px; height: 37px; border-radius: 3px; padding: 0 6px; font-size: 13px; color: #fff; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; gap: 10px; background-color: #666666; }
+.btn-gray:hover { opacity: 0.9; }
 
 .btn-add { width: 68px; height: 37px; border-radius: 3px; padding: 0 6px; font-size: 13px; color: #fff; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; gap: 10px; background-color: #515668; }
+.btn-add:hover { opacity: 0.9; }
 .btn-add::before { content: url(../img/ic-add.svg); width: 14px; height: 14px; }
 
 /*********** icon ***********/
-.ic-normal { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; font-size: 14px; }
-.ic-normal::before { content: url(../assets/13_ic_normal.svg); display: inline-block; width: 24px; height: 24px; }
-
-.ic-possible { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; font-size: 14px; }
-.ic-possible::before { content: url(../assets/13_ic_possible.svg); display: inline-block; width: 24px; height: 24px; }
-
-.ic-error { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; font-size: 14px; }
-.ic-error::before { content: url(../assets/13_ic_error.svg); display: inline-block; width: 24px; height: 24px; }
-
-.ic-warning { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; font-size: 14px; }
-.ic-warning::before { content: url(../assets/13_ic_warning.svg); display: inline-block; width: 24px; height: 24px; }
-
-.legend-red { width: 20px; height: 20px; content: url("../assets/06_img_list_color_chip_red.png"); }
-
-.legend-green { width: 20px; height: 20px; content: url("../assets/06_img_list_color_chip_green.png"); }
-
-.legend-blue { width: 20px; height: 20px; content: url("../assets/06_img_list_color_chip_blue.png"); }
-
-.legend-orange { width: 20px; height: 20px; content: url("../assets/06_img_list_color_chip_orange.png"); }
-
-.legend-purple { width: 20px; height: 20px; content: url("../assets/06_img_list_color_chip_purple.png"); }
-
-.ic-normal { color: #018ddd; }
-
-.ic-possible { color: #8f69d5; }
-
-.ic-error { color: #f67347; }
-
-.ic-warning { color: #eb5050; }
-
 /*********** components ***********/
 .bg-box { width: 100%; padding: 20px; background-color: #fbfbfb; border-radius: 4px; border: solid 1px #d5d6dc; }
 
