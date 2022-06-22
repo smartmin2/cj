@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>채널 그룹 관리</title>
+    <link rel="stylesheet" href="../../../css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header"></header>
+      <main class="main">
+        <div class="bg-box">
+          <div class="table-wrapper">
+            <div class="table-top">
+              <div class="table-top-select">
+                <select name="" id="">
+                  <option value="">기준년도</option>
+                </select>
+                <select name="" id="">
+                  <option value="">채널그룹명</option>
+                </select>
+              </div>
+              <div class="table-top-buttons">
+                <button class="btn-add">추가</button>
+                <button class="btn-common">저장</button>
+                <button class="btn-red">삭제</button>
+                <button class="btn-gray">닫기</button>
+              </div>
+            </div>
+            <div class="jb-table-wrap">
+              <table class="jb-table table">
+                <colgroup>
+                  <col style="width: 4%" />
+                  <col style="width: 13%" />
+                  <col style="width: 13%" />
+                  <col style="width: 13%" />
+                  <col style="width: 13%" />
+                  <col  />
+                  <col style="width: 13%" />
+                  <col style="width: 13%" />
+                </colgroup>
+                <thead >
+                  <tr>
+                    <th>선택</th>
+                    <th>기준년</th>
+                    <th>FROM</th>
+                    <th>TO</th>
+                    <th>채널그룹명</th>
+                    <th>대상채널</th>
+                    <th>활용여부</th>
+                    <th>내용</th>
+                  </tr>
+                </thead>
+                <tbody class="table_body">
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script src="../../../js/script.js"></script>
+    <script>
+ 
+       //Table
+       const arrTable = Array(10).fill(["2023", "2023.01.01", "2023.12.31", "Total TV", "전체", "Y",""]);
+      const table = document.querySelector(".table .table_body");
+      arrTable.map((data) => addRow(table, data, true));
+
+      $(".btn-add").on("click", function () {
+        let comment = "<tr>";
+        comment += "<td> <input type='checkbox'> </td>";
+        comment += "<td>2023</td>";
+        comment += "<td>2023.01.01</td>";
+        comment += "<td>2023.12.31</td>";
+        comment += "<td>그룹명</td>";
+        comment += "<td><select><option>선택</option><option>tvN</option><option>KBS</option><option>SBS</option><option>KBS1</option><option>KBS2</option><option>MBC</option><option>JTBC</option><option>채널A</option><option>TV조선</option><option>MBN</option><option>유료방송</option></select></td>";
+        comment += "<td>Y</td>";
+        comment += "<td> </td>";
+        comment += "</tr>";
+        $(".table_body tr:last-child").after(comment);
+      });
+    </script>
+  </body>
+</html>
