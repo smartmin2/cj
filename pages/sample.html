@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/AUIGridLicense.js"></script>
+    <script src="../js/AUIGrid.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../js/ajax.js"></script>
+    <script type="text/javascript">
+      var columnLayout = [
+        {
+          dataField: "name",
+          headerText: "Name",
+          width: 140,
+        },
+        {
+          dataField: "country",
+          headerText: "Country",
+          width: 120,
+        },
+        {
+          dataField: "product",
+          headerText: "Product",
+          width: 120,
+        },
+        {
+          dataField: "quantity",
+          headerText: "Quantity",
+        },
+        {
+          dataField: "price",
+          headerText: "Price",
+          dataType: "numeric",
+        },
+        {
+          dataField: "date",
+          headerText: "Date",
+        },
+      ];
+
+      var myGridID;
+
+      window.onload = function () {
+        myGridID = AUIGrid.create("#grid_wrap", columnLayout);
+        requestAjax();
+      };
+
+      function requestAjax() {
+        AUIGrid.showAjaxLoader(myGridID);
+        ajax({
+          url: "./simulation/information/normal_100.json",
+          onSuccess: function (data) {
+            if (!data) {
+              return;
+            }
+            const gridData = data;
+            AUIGrid.removeAjaxLoader(myGridID);
+            AUIGrid.setGridData(myGridID, gridData);
+          },
+
+          onError: function (status, e) {
+            alert("데이터 요청에 실패하였습니다.\r status : " + status);
+          },
+        });
+      }
+    </script>
+    <title>linkpage</title>
+  </head>
+
+  <body>
+    <h1>linkpage</h1>
+    <div id="grid_wrap" style="width: 800px; height: 480px"></div>
+  </body>
+</html>
