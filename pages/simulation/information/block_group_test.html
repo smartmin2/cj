@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../../js/AUIGridLicense.js" ></script>
+    <script src="../../../js/AUIGrid.js" ></script>
+    <script src="../../../js/ajax.js" ></script>
+    <title>블록그룹 관리</title>
+    <link rel="stylesheet" href="../../../css/style.css" />
+    <link rel="stylesheet" href="../../../css/AUIGrid_modern_style.css" />
+    <link rel="stylesheet" href="../../../css/AUIGrid_style.css" />
+  </head>
+  <script>
+   // 칼럼 레이아웃 작성
+
+var columnLayout = [ {
+
+dataField : "name",
+
+headerText : "Name",
+
+width : 140,
+
+
+}, {
+
+dataField : "country",
+
+headerText : "Country",
+
+width : 120
+
+
+
+}, {
+
+dataField : "product",
+
+headerText : "Product",
+
+width: 120
+
+}, {
+
+dataField : "quantity",
+
+headerText : "Quantity"
+
+}, {
+
+dataField : "price",
+
+headerText : "Price",
+
+dataType : "numeric"
+
+}, {
+
+dataField : "date",
+
+headerText : "Date"
+
+}
+
+];
+
+
+
+// 그리드 생성 후 해당 ID 보관 변수
+
+var myGridID;
+
+
+
+// 윈도우 onload 이벤트 핸들링
+
+// 만약 jQuery 사용한다면, $(document).ready(function() {}); 사용하세요.
+
+window.onload = function() {
+
+
+
+// 실제로 #grid_wrap 에 그리드 생성
+
+myGridID = AUIGrid.create("#grid_wrap", columnLayout);
+
+
+
+// Ajax 요청 실행
+
+requestAjax();
+
+};
+
+
+
+// Ajax 요청을 합니다.
+
+function requestAjax() {
+
+ 
+
+// ajax 요청 전 그리드에 로더 표시
+
+AUIGrid.showAjaxLoader(myGridID);
+
+
+
+// ajax (XMLHttpRequest) 로 그리드 데이터 요청
+
+ajax( {
+
+url : "./normal_100.json",
+
+onSuccess : function(data) {
+
+if(!data) {
+
+     return;
+
+}
+
+// 그리드 데이터
+
+var gridData = data;
+
+
+
+// 로더 제거
+
+AUIGrid.removeAjaxLoader(myGridID);
+
+    
+
+// 그리드에 데이터 세팅
+
+AUIGrid.setGridData(myGridID, gridData);
+
+
+
+},
+
+onError : function(status, e) {
+
+alert("데이터 요청에 실패하였습니다.\r status : " + status);
+
+}
+
+});
+
+};
+      
+      </script>
+  <body>
+  
+     <div class="wrapper">
+      <header class="header"></header>
+      <main class="main">
+        <div class="bg-box">
+          <div id="grid_wrap"></div>
+           <!-- <div class="table-wrapper">
+            <div class="table-top">
+              <div class="table-top-select">
+                <select name="" id="">
+                  <option value="">기준년도</option>
+                </select>
+                <select name="" id="">
+                  <option value="">채널그룹명</option>
+                </select>
+              </div>
+              <div class="table-top-buttons">
+                <button class="btn-add">추가</button>
+                <button class="btn-common">저장</button>
+                <button class="btn-red">삭제</button>
+                <button class="btn-gray">닫기</button>
+              </div>
+            </div>
+            <div class="jb-table-wrap">
+              <table class="jb-table table">
+                <colgroup>
+                  <col style="width: 5%" />
+                  <col style="width: 13%" />
+                  <col style="width: 13%" />
+                  <col style="width: 13%" />
+                  <col style="width: 13%" />
+                  <col />
+                  <col style="width: 13%" />
+                  <col style="width: 13%" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>선택</th>
+                    <th>기준년도</th>
+                    <th>FROM</th>
+                    <th>TO</th>
+                    <th>블록 그룹명</th>
+                    <th>대상블록</th>
+                    <th>활용여부</th>
+                    <th>내용</th>
+                  </tr>
+                </thead>
+                <tbody class="table_body"></tbody>
+              </table>
+            </div>
+          </div> -->
+        </div>
+      </main>
+    </div> 
+    
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script src="../../../js/script.js"></script>
+  
+  </body>
+</html>
