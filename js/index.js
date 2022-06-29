@@ -20,7 +20,7 @@ let app = {
         this.selectOptionItems.status.push({value: 'I', text: '진행중'});
         this.selectOptionItems.status.push({value: 'C', text: '확정'});
 
-
+        this.search();
 
     },
     data:() =>({
@@ -37,27 +37,77 @@ let app = {
         gridLayout : [
             {headerText : "선택", width : "5%",
                 renderer : {
-                    type : "TemplateRenderer"
+                    type : "CheckBoxEditRenderer",
+                    showLabel : false
                 },
-                labelFunction : function(rowIndex, columnIndex, value, headerText, item) {
-                    let isChildren = item['version'] > 0;
-                    return `<div class="${isChildren ? 'small':''}">${ isChildren ? item['id'] + '-' + item['version']: item['id'] }</div>`
+                // labelFunction : function(rowIndex, columnIndex, value, headerText, item) {
+                //     // let isChildren = item['version'] > 0;
+                //     // return `<div class="${isChildren ? 'small':''}">${ isChildren ? item['id'] + '-' + item['version']: item['id'] }</div>`
+                //     return `<div class="form-check">
+                //                 <input class="form-check-input" type="checkbox">
+                //             </div>        
+                //     `
+                // }
+            },
+            {dataField : "baseYear", 	headerText : "기준년도", width : "7%",
+			editRenderer : {
+				type : "DropDownListRenderer",
+				list : ["2020년","2021년","2022년"]
+			}
+            },
+            {dataField : "fromDate", 	headerText : "From", width : "7%",
+                editRenderer : {
+                    type : "BTCalendarRenderer",
+                    onlyCalendar : true,
+                    // bootstrap-datepicker 속성을 여기에 설정하십시오.
+                    // API : https://bootstrap-datepicker.readthedocs.io/en/latest/options.html
+                    btOpts : {
+                        language : "ko"
+                    } // end of btOpts
+                },
+            },
+            {dataField : "toDate", 	headerText : "to", width : "7%",
+                editRenderer : {
+                    type : "BTCalendarRenderer",
+                    onlyCalendar : true,
+                    // bootstrap-datepicker 속성을 여기에 설정하십시오.
+                    // API : https://bootstrap-datepicker.readthedocs.io/en/latest/options.html
+                    btOpts : {
+                        language : "ko"
+                    } // end of btOpts
+                },
+            },
+            {dataField : "blockGrpName", 	headerText : "블록 그룹명",
+                editRenderer : {
+                    type : "InputEditRenderer",								
+                    showEditorBtnOver : true, // 마우스 오버 시 에디터버턴 보이기
+                    inputMode : "text"
                 }
             },
-            {dataField : "baseYear", 	headerText : "기준년도", width : "7%"},
-            {dataField : "fromDate", 	headerText : "FROM", width : "10%"},
-            {dataField : "toDate", 	headerText : "TO", width : "10%"},
-            {dataField : "blockgroupName", 	headerText : "블록 그룹명"},
-            {dataField : "description", 	headerText : "대상블록"},
-            {dataField : "statusText", 	headerText : "활용여부", width : "7%"},
-            {headerText : "내용", width : "15%",
-                renderer : {
-                    type : "TemplateRenderer"
-                },
-                labelFunction : function(rowIndex, columnIndex, value, headerText, item){
-                    return `${item['departName']} | ${item['writer']} | ${item['createAt']}`//item.bdp_mod_id + "|" + item.bdp_mod_dtm;
+            {dataField : "targetBlock", 	headerText : "대상블록",
+                editRenderer : {
+                    type : "DropDownListRenderer",
+                    list : ["블록01 (시간대)","블록02 (시간대)","블록03 (시간대)","블록04 (시간대)"]
                 }
             },
+            {dataField : "useYN", 	headerText : "활용여부", width : "7%",
+            editRenderer : {
+				type : "DropDownListRenderer",
+				list : ["Y","N"]
+			}},
+            {headerText : "내용",editRenderer : {
+                type : "InputEditRenderer",								
+                showEditorBtnOver : true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode : "text"
+            }},
+            // {headerText : "등록정보", width : "15%",
+            //     renderer : {
+            //         type : "TemplateRenderer"
+            //     },
+            //     labelFunction : function(rowIndex, columnIndex, value, headerText, item){
+            //         return `${item['departName']} | ${item['writer']} | ${item['createAt']}`//item.bdp_mod_id + "|" + item.bdp_mod_dtm;
+            //     }
+            // },
             // {headerText : "관리", width : "20%",
             //     renderer : {
             //         type : "TemplateRenderer"
@@ -138,12 +188,12 @@ let app = {
                 departName: '부서명',
                 createAt: '2022.10.12',
                 baseYear : '2023',
-                fromDate:'2023.01.01',
+                fromDate:'2023.01.1',
                 toDate:'2023.12.31',
-                blockgroupName:'블록그룹명01',
-                description:'블록01, 블록02, 블록03',
+                blockGrpName:'블록그룹명01',
+                targetBlock:'블록01, 블록02, 블록03',
                 status:'I',
-                statusText:'진행중',
+                useYN:'Y',
                 id: 1,
                 version: 0,
             });
@@ -152,12 +202,12 @@ let app = {
                 departName: '부서명',
                 createAt: '2022.10.12',
                 baseYear : '2023',
-                fromDate:'2023.01.01',
+                fromDate:'2023.01.1',
                 toDate:'2023.12.31',
-                blockgroupName:'블록그룹명01',
-                description:'블록01, 블록02, 블록03',
+                blockGrpName:'블록그룹명02',
+                targetBlock:'블록01, 블록02, 블록03',
                 status:'I',
-                statusText:'진행중',
+                useYN:'Y',
                 id:1,
                 version: 1,
             });
@@ -166,12 +216,12 @@ let app = {
                 departName: '부서명',
                 createAt: '2022.10.12',
                 baseYear : '2023',
-                fromDate:'2023.01.01',
+                fromDate:'2023.01.1',
                 toDate:'2023.12.31',
-                blockgroupName:'블록그룹명01',
-                description:'블록01, 블록02, 블록03',
+                blockGrpName:'블록그룹명03',
+                targetBlock:'블록01, 블록02, 블록03',
                 status:'I',
-                statusText:'진행중',
+                useYN:'Y',
                 id:1,
                 version: 2,
             });
@@ -180,12 +230,12 @@ let app = {
                 departName: '부서명2',
                 createAt: '2022.10.01',
                 baseYear : '2023',
-                fromDate:'2023.01.01',
+                fromDate:'2023.01.1',
                 toDate:'2023.12.31',
-                blockgroupName:'블록그룹명01',
-                description:'블록01, 블록02, 블록03',
+                blockGrpName:'블록그룹명04',
+                targetBlock:'블록01, 블록02, 블록03',
                 status:'I',
-                statusText:'진행중',
+                useYN:'Y',
                 id:2,
                 version: 0,
             });
