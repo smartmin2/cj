@@ -1,0 +1,25 @@
+@import url("reset.css"); 
+
+/* background */
+.card { border-radius: 4px; border: solid 1px #d5d6dc; background-color: #fbfbfb; } 
+
+/* button */
+.btn { font-size: 13px; width:68px; height: 37px; padding:0; } 
+.btn-group { gap:10px; } 
+.btn-group button { font-size: 13px; width:68px; height: 37px; border-radius: 3px; text-align: center; border:none; outline: none; } 
+.btn-group button:focus, .btn-group button:active { box-shadow: none !important; } 
+button.btn-dark { background-color: #515668; } 
+button.btn-danger { background-color: #dd5151; } 
+button.btn-secondary { background-color: #666666; } 
+
+
+/* select */
+select.form-control { border-radius: 4px; border: 0; background-color: none; font-size: 13px; color: #262829; width: 140px; height: 43px; border-radius: 4px; border: solid 1px #d7d8e1; } 
+select.form-control:focus { box-shadow: none !important; outline: 0; border: solid 1px #d7d8e1; } 
+
+
+/* grid */
+.aui-grid { border-radius: 4px; border: solid 1px #cdcdd5; background-color: #fff; } 
+.aui-grid-body-panel .aui-grid-table tr td { vertical-align: middle; border-right: 0; font-size: 13px;} 
+.aui-grid-default-header { height: 60px !important; max-height: 60px !important; border: solid 1px #cdcdd5; background-color: #d3d7e3; vertical-align: middle; } 
+.aui-grid-row-background{background-color: #fff;}
