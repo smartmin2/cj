@@ -38,7 +38,8 @@ let app = {
             {headerText : "선택", width : "5%",
                 renderer : {
                     type : "CheckBoxEditRenderer",
-                    showLabel : false
+			showLabel : false, // 참, 거짓 텍스트 출력여부( 기본값 false )
+			editable : true, // 체크박스 편집 활성화 여부(기본값 : false)
                 },
                 // labelFunction : function(rowIndex, columnIndex, value, headerText, item) {
                 //     // let isChildren = item['version'] > 0;
@@ -48,6 +49,9 @@ let app = {
                 //             </div>        
                 //     `
                 // }
+                editRenderer : {
+                    type : "CheckBoxEditRenderer",                    
+                }
             },
             {dataField : "baseYear", 	headerText : "기준년도", width : "7%",
 			editRenderer : {
@@ -95,7 +99,7 @@ let app = {
 				type : "DropDownListRenderer",
 				list : ["Y","N"]
 			}},
-            {headerText : "내용",editRenderer : {
+            {dataField : "summary", headerText : "내용",editRenderer : {
                 type : "InputEditRenderer",								
                 showEditorBtnOver : true, // 마우스 오버 시 에디터버턴 보이기
                 inputMode : "text"
