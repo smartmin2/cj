@@ -9,9 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../../../css/lib/bootstrap.min.css" />
     <link rel="stylesheet" href="../../../css/lib/jquery-ui.css" />
-    <link rel="stylesheet" href="../../../AUIGrid/AUIGrid_style.css" />
     <link rel="stylesheet" href="../../../AUIGrid/AUIGrid_modern_style.css" />
     <link rel="stylesheet" href="../../../css/style_sub.css" />
+    <link rel="stylesheet" href="../../../css/style.css" />
+    <link rel="stylesheet" href="../../../css/main.css" />
     <script src="../../../js/lib/jquery.js"></script>
     <script src="../../../js/lib/vue.js"></script>
     <script src="../../../js/lib/bootstrap.js"></script>
@@ -25,30 +26,32 @@
     <div class="container-fluid">
       <div id="app" class="pt-3">
         <!-- 검색조건 영역 -->
-        <div class="card mr-0">
+        <div class="card card-box mr-0">
           <div class="card-body">
             <div class="d-flex justify-content-between">
               <div class="d-flex justify-content-start align-items-end">
                 <div class="d-block">
-                  <select id="baseYear" class="form-control cj-selectBox" style="min-width: 100px" v-model="searchCommand.baseYear">
-                    <option v-for="(item, index) in selectOptionItems.baseYear" :key="index" :value="item.value">{{ item.text }}</option>
+                  <select id="baseYear" class="form-control cj-selectBox select-box">
+                    <option></option>
                   </select>
                 </div>
 
                 <div class="d-block ml-2">
-                  <select id="channel" class="form-control cj-selectBox" style="min-width: 100px" v-model="searchCommand.status">
-                    <option v-for="(item, index) in selectOptionItems.status" :key="index" :value="item.value">{{ item.text }}</option>
+                  <select id="channel" class="form-control cj-selectBox select-box" style="min-width: 100px" v-model="searchCommand.status">
+                    <option></option>
                   </select>
+                </div>
+
+                <div class="d-block ml-2">
+                  <input type="text" class="form-control cj-inputBox"  />
                 </div>
               </div>
 
-              <div class="d-flex btn-group align-items-end">
-                <button class="btn-dark"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                </svg>추가</button>
-                <button class="btn-dark"><i class="bi bi-alarm"></i>저장</button>
-                <button class="btn-danger">삭제</button>
-                <button class="btn-secondary" @click.end="search">닫기</button>
+              <div class="d-flex cj-btn-group align-items-end">
+                <button class="btn-dark btn-black"><i class="fa-solid fa-plus"></i>추가</button>
+                <button class="btn-dark btn-black">저장</button>
+                <button class="btn-danger btn-red">삭제</button>
+                <button class="btn-secondary btn-gray">닫기</button>
               </div>
             </div>
             <!-- grid 영역 -->
@@ -57,11 +60,6 @@
             </div>
           </div>
         </div>
-
-     
-
-        <!-- 시나리오 modal-->
-        <scenario-summary-modal ref="refScenarioSummary" />
       </div>
     </div>
   </body>

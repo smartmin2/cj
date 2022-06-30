@@ -59,7 +59,7 @@ let app = {
 				list : ["2020년","2021년","2022년"]
 			}
             },
-            {dataField : "fromDate", 	headerText : "From", width : "7%",
+            {dataField : "fromDate", 	headerText : "FROM", width : "7%",
                 editRenderer : {
                     type : "BTCalendarRenderer",
                     onlyCalendar : true,
@@ -70,7 +70,7 @@ let app = {
                     } // end of btOpts
                 },
             },
-            {dataField : "toDate", 	headerText : "to", width : "7%",
+            {dataField : "toDate", 	headerText : "TO", width : "7%",
                 editRenderer : {
                     type : "BTCalendarRenderer",
                     onlyCalendar : true,

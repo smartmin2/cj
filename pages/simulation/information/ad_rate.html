@@ -5,52 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>광고 손실율 관리</title>
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../../../css/lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../css/lib/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../AUIGrid/AUIGrid_modern_style.css" />
+    <link rel="stylesheet" href="../../../css/style_sub.css" />
     <link rel="stylesheet" href="../../../css/style.css" />
+    <link rel="stylesheet" href="../../../css/main.css" />
+
+    <script src="../../../js/lib/jquery.js"></script>
+    <script src="../../../js/lib/vue.js"></script>
+    <script src="../../../js/lib/bootstrap.js"></script>
+    <script src="../../../AUIGrid/AUIGrid.js"></script>
+    <script src="../../../AUIGrid/AUIGridLicense.js"></script>
+    <script src="../../../js/all.min.js"></script>
   </head>
   <body>
-    <div class="wrapper">
-      <header class="header"></header>
-      <main class="main">
-        <div class="bg-box">
-          <div class="table-wrapper">
-            <div class="table-top">
-              <div class="table-top-select"></div>
-              <div class="table-top-buttons">
-                <button class="btn-add">추가</button>
-                <button class="btn-common">저장</button>
-                <button class="btn-red">삭제</button>
-                <button class="btn-gray">닫기</button>
+    <div class="container-fluid">
+      <div id="app" class="pt-3">
+        <!-- 검색조건 영역 -->
+        <div class="card card-box mr-0">
+          <div class="card-body">
+            <div class="d-flex justify-content-end">
+              <div class="d-flex cj-btn-group align-items-end">
+                <button class="btn-dark btn-black"><i class="fa-solid fa-plus"></i>추가</button>
+                <button class="btn-dark btn-black">저장</button>
+                <button class="btn-danger btn-red">삭제</button>
+                <button class="btn-secondary btn-gray">닫기</button>
               </div>
             </div>
-            <div class="jb-table-wrap">
-              <table class="jb-table table">
-                <colgroup>
-                  <col style="width: 5%" />
-                  <col style="width: 17%" />
-                  <col style="width: 26%" />
-                  <col style="width: 26%" />
-                  <col style="width: 13%" />
-                  <col style="width: 13%" />
-                </colgroup>
-                <thead class="double">
-                  <tr>
-                    <th rowspan="2">선택</th>
-                    <th rowspan="2">기준년</th>
-                    <th rowspan="2">FROM</th>
-                    <th rowspan="2">TO</th>
-                    <th colspan="2">손실율</th>
-                  </tr>
-                  <tr>
-                    <th>수도권</th>
-                    <th>전국</th>
-                  </tr>
-                </thead>
-                <tbody class="table_body"></tbody>
-              </table>
+            <!-- grid 영역 -->
+            <div class="mt-4">
+              <div id="adRateGrid" style="min-height: 400px"></div>
             </div>
-
-            <div class="jb-table-wrap data-table">
-              <table class="jb-table table1">
+            <div class="mt-4 table-wrap">
+              <table class="table cj-table">
                 <colgroup>
                   <col style="width: 25%" />
                   <col style="width: 25%" />
@@ -65,37 +57,240 @@
                     <th>비율(%)</th>
                   </tr>
                 </thead>
-                <tbody class="table_body">
+                <tbody>
+                  <tr>
+                    <td>2016</td>
+                    <td>1.343</td>
+                    <td>1.486</td>
+                    <td>90.4</td>
+                  </tr>
+                  <tr>
+                    <td>2016</td>
+                    <td>1.343</td>
+                    <td>1.486</td>
+                    <td>90.4</td>
+                  </tr>
+                  <tr>
+                    <td>2016</td>
+                    <td>1.343</td>
+                    <td>1.486</td>
+                    <td>90.4</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
           </div>
         </div>
-      </main>
+      </div>
     </div>
-
-    <script src="../../../js/jquery-3.6.0.min.js"></script>
-    <script src="../../../js/script.js"></script>
     <script>
-      //Table
-      const arrTable = Array(4).fill(["2019", "2019.01.01", "2019.12.31", "8%", "8%"]);
-      const table = document.querySelector(".table .table_body");
-      arrTable.map((data) => addRow(table, data, true));
+      let adRateGrid = "";
+      let app = {
+        el: "#app",
+        watch: {
+          gridData: function () {
+            AUIGrid.setGridData(adRateGrid, this.gridData);
+          },
+        },
+        mounted() {
+          adRateGrid = AUIGrid.destroy("#adRateGrid");
+          adRateGrid = AUIGrid.create("#adRateGrid", this.gridLayout, this.gridProps);
 
-      const arrTable1 = Array(4).fill(["2019", "1.343", "1.486","90.4"]);
-      const table1 = document.querySelector(".table1 .table_body");
-      arrTable1.map((data) => addRow(table1, data, false));
+          // 페이지 진입 시 기준년도 산출
+          this.searchCommand.baseYear = new Date().getFullYear();
+          // 기준년도 항목정의(과거:3년, 향후:5년)
+          for (let idx = this.searchCommand.baseYear - 2; idx < this.searchCommand.baseYear + 5; idx += 1) {
+            this.selectOptionItems.baseYear.push({ value: `${idx}`, text: `${idx}년` });
+          }
 
-      $(".btn-add").on("click", function () {
-        let comment = "<tr>";
-        comment += "<td> <input type='checkbox'> </td>";
-        comment += "<td><select><option>선택</option></select></td>";
-        comment += "<td> <input type='date'> </td>";
-        comment += "<td> <input type='date'> </td>";
-        comment += "<td> <input type='text'> </td>";
-        comment += "<td> <input type='text'> </td>";
-        comment += "</tr>";
-        $(".table .table_body tr:last-child").after(comment);
+          this.selectOptionItems.status.push({ value: "I", text: "진행중" });
+          this.selectOptionItems.status.push({ value: "C", text: "확정" });
+
+          this.search();
+        },
+        data: () => ({
+          selectOptionItems: {
+            baseYear: [{ value: "", text: "기준년도" }],
+            division: [{ value: "", text: "구분" }],
+            status: [{ value: "", text: "채널그룹명" }],
+          },
+          searchCommand: {
+            scenarioName: null,
+            baseYear: "",
+            division: "",
+            status: "",
+          },
+          gridData: [],
+          gridLayout: [
+            {
+              headerText: "선택",
+              width: "5%",
+              renderer: {
+                type: "CheckBoxEditRenderer",
+                showLabel: false, // 참, 거짓 텍스트 출력여부( 기본값 false )
+                editable: true, // 체크박스 편집 활성화 여부(기본값 : false)
+              },
+              // labelFunction : function(rowIndex, columnIndex, value, headerText, item) {
+              //     // let isChildren = item['version'] > 0;
+              //     // return `<div class="${isChildren ? 'small':''}">${ isChildren ? item['id'] + '-' + item['version']: item['id'] }</div>`
+              //     return `<div class="form-check">
+              //                 <input class="form-check-input" type="checkbox">
+              //             </div>
+              //     `
+              // }
+              editRenderer: {
+                type: "CheckBoxEditRenderer",
+              },
+            },
+            {
+              dataField: "baseYear",
+              headerText: "기준년도",
+              width: "19%",
+              editRenderer: {
+                type: "DropDownListRenderer",
+                list: ["2020년", "2021년", "2022년"],
+              },
+            },
+
+            {
+              dataField: "fromDate",
+              headerText: "FROM",
+              width: "22%",
+              editRenderer: {
+                type: "BTCalendarRenderer",
+                onlyCalendar: true,
+                // bootstrap-datepicker 속성을 여기에 설정하십시오.
+                // API : https://bootstrap-datepicker.readthedocs.io/en/latest/options.html
+                btOpts: {
+                  language: "ko",
+                }, // end of btOpts
+              },
+            },
+            {
+              dataField: "toDate",
+              headerText: "TO",
+              width: "22%",
+              editRenderer: {
+                type: "BTCalendarRenderer",
+                onlyCalendar: true,
+                // bootstrap-datepicker 속성을 여기에 설정하십시오.
+                // API : https://bootstrap-datepicker.readthedocs.io/en/latest/options.html
+                btOpts: {
+                  language: "ko",
+                }, // end of btOpts
+              },
+            },
+
+            {
+              dataField: "lossRate",
+              headerText: "손실율",
+              headerHeights: [30, 30],
+              children: [
+                {
+                  dataField: "area",
+                  headerText: "수도권",
+                  editRenderer: {
+                    type: "InputEditRenderer",
+                    showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                    inputMode: "text",
+                  },
+                },
+                {
+                  dataField: "Nationwide",
+                  headerText: "전국",
+                  editRenderer: {
+                    type: "InputEditRenderer",
+                    showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                    inputMode: "text",
+                  },
+                },
+              ], // end of children
+            },
+          ],
+          gridProps: {
+            enableFilter: false,
+            enableSorting: false,
+            headerHeight: 60,
+            headerHeights: [30, 30],
+            rowHeight: 50,
+            editingOnKeyDown: false,
+            autoGridHeight: false,
+            autoGridWidth: false,
+            ignoreColumnMinWidth: true,
+            softRemoveRowMode: false,
+            // 행 번호 컬럼 활성화 속성입니다.
+            showRowNumColumn: false,
+            /*추가 옵션*/
+            showStateColumn: false,
+            editable: true,
+            noDataMessage: "엑셀데이터를 붙여넣거나 행추가를 통해 데이터를 입력하세요.",
+          },
+        }),
+        methods: {
+          search: function () {
+            console.log("search", this.searchCommand);
+            this.setTestData();
+          },
+          createScenario: function () {
+            this.$refs["refScenarioSummary"].draw();
+          },
+          edit: function (id) {
+            console.log("준비중 edit", id);
+          },
+          version: function (id) {
+            console.log("준비중 version", id);
+          },
+          copy: function (id) {
+            console.log("준비중 copy", id);
+          },
+          remove: function (id) {
+            console.log("준비중 remove", id);
+          },
+          done: function (id) {
+            console.log("준비중 done", id);
+          },
+          setTestData: function () {
+            this.gridData = [];
+            this.gridData.push({
+              baseYear: "2023",
+              fromDate: "2023.01.1",
+              toDate: "2023.12.31",
+              area: "8%",
+              Nationwide: "8%",
+            });
+            this.gridData.push({
+              baseYear: "2023",
+              fromDate: "2023.01.1",
+              toDate: "2023.12.31",
+              area: "8%",
+              Nationwide: "8%",
+            });
+            this.gridData.push({
+              baseYear: "2023",
+              fromDate: "2023.01.1",
+              toDate: "2023.12.31",
+              area: "8%",
+              Nationwide: "8%",
+            });
+            this.gridData.push({
+              baseYear: "2023",
+              fromDate: "2023.01.1",
+              toDate: "2023.12.31",
+              area: "8%",
+              Nationwide: "8%",
+            });
+          },
+        },
+      };
+
+      $(function () {
+        new Vue(app);
+        Vue.nextTick(function () {
+          $(window).resize(function () {
+            AUIGrid.resize("#adRateGrid");
+          });
+        });
+        // Vue.component();
       });
     </script>
   </body>
