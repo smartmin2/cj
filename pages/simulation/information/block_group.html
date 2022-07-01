@@ -37,28 +37,11 @@
                 </div>
 
                 <div class="d-block ml-2">
-                  <select id="month" class="form-control cj-selectBox select-box">
-                    <option>월</option>
+                  <select id="channel" class="form-control cj-selectBox select-box">
+                    <option>채널</option>
                   </select>
                 </div>
 
-                <div class="d-block ml-2">
-                  <select id="week" class="form-control cj-selectBox select-box">
-                    <option>요일</option>
-                  </select>
-                </div>
-
-                <div class="d-block ml-2">
-                  <select id="slot" class="form-control cj-selectBox select-box">
-                    <option>시간대</option>
-                  </select>
-                </div>
-
-                <div class="d-block ml-2">
-                  <select id="block" class="form-control cj-selectBox select-box">
-                    <option>블록여부</option>
-                  </select>
-                </div>
               </div>
 
               <div class="d-flex cj-btn-group align-items-end">
@@ -70,7 +53,7 @@
             </div>
             <!-- grid 영역 -->
             <div class="mt-4">
-              <div id="blockGrid" style="min-height: 400px"></div>
+              <div id="blockGrpGrid" style="min-height: 400px"></div>
             </div>
           </div>
         </div>
@@ -78,17 +61,17 @@
     </div>
 
     <script>
-      let blockGrid = "";
+      let blockGrpGrid = "";
       let app = {
         el: "#app",
         watch: {
           gridData: function () {
-            AUIGrid.setGridData(blockGrid, this.gridData);
+            AUIGrid.setGridData(blockGrpGrid, this.gridData);
           },
         },
         mounted() {
-          blockGrid = AUIGrid.destroy("#blockGrid");
-          blockGrid = AUIGrid.create("#blockGrid", this.gridLayout, this.gridProps);
+          blockGrpGrid = AUIGrid.destroy("#blockGrpGrid");
+          blockGrpGrid = AUIGrid.create("#blockGrpGrid", this.gridLayout, this.gridProps);
 
           // 페이지 진입 시 기준년도 산출
           this.searchCommand.baseYear = new Date().getFullYear();
@@ -146,30 +129,7 @@
               },
             },
             {
-              dataField: "week",
-              headerText: "요일",
-              width: "7%",
-              editRenderer: {
-                type: "DropDownListRenderer",
-                list: ["월", "월화", "수"],
-              },
-            },
-            {
-              dataField: "weekday",
-              headerText: "주중/주말",
-              width: "7%",
-              editRenderer: {
-                type: "DropDownListRenderer",
-                list: ["주중", "주말"],
-              },
-            },
-            {
-              dataField: "date",
-              headerText: "날짜",
-              headerHeights: [30, 30],
-              children: [
-                {
-                  dataField: "fromDate",
+              dataField: "fromDate",
                   headerText: "FROM",
                   width: "7%",
                   editRenderer: {
@@ -181,9 +141,9 @@
                       language: "ko",
                     }, // end of btOpts
                   },
-                },
-                {
-                  dataField: "toDate",
+            },
+            {
+              dataField: "toDate",
                   headerText: "TO",
                   editRenderer: {
                     type: "BTCalendarRenderer",
@@ -194,51 +154,31 @@
                       language: "ko",
                     }, // end of btOpts
                   },
-                },
-              ], // end of children
             },
             {
-              dataField: "time",
-              headerText: "시간",
-              headerHeights: [30, 30],
-
-              children: [
-                {
-                  dataField: "fromTime",
-                  headerText: "FROM",
-                
-                  editRenderer: {
-                    type: "BTCalendarRenderer",
-                    onlyCalendar: true,
-                    // bootstrap-datepicker 속성을 여기에 설정하십시오.
-                    // API : https://bootstrap-datepicker.readthedocs.io/en/latest/options.html
-                    btOpts: {
-                      language: "ko",
-                    }, // end of btOpts
-                  },
-                },
-                {
-                  dataField: "toTime",
-                  headerText: "TO",
-                  editRenderer: {
-                    type: "BTCalendarRenderer",
-                    onlyCalendar: true,
-                    // bootstrap-datepicker 속성을 여기에 설정하십시오.
-                    // API : https://bootstrap-datepicker.readthedocs.io/en/latest/options.html
-                    btOpts: {
-                      language: "ko",
-                    }, // end of btOpts
-                  },
-                },
-              ], // end of children
-            },
-            {
-              dataField: "blockName",
-              headerText: "블록명",
+              dataField: "blockGrpName",
+              headerText: "블록그룹명",
               editRenderer: {
                 type: "InputEditRenderer",
                 showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
                 inputMode: "text",
+              },
+            },
+            {
+              dataField: "tgBlock",
+              headerText: "대상블록",
+              editRenderer: {
+                type: "DropDownListRenderer",
+                list: ["블록01 (시간대)", "블록02 (시간대)", "블록03 (시간대)"],
+              },
+            },
+            {
+              dataField: "uses",
+              headerText: "활용",
+              width: "7%",
+              editRenderer: {
+                type: "DropDownListRenderer",
+                list: ["Y", "N"],
               },
             },
             {
@@ -251,15 +191,7 @@
                 inputMode: "text",
               },
             },
-            {
-              dataField: "uses",
-              headerText: "활용",
-              width: "7%",
-              editRenderer: {
-                type: "DropDownListRenderer",
-                list: ["Y", "N"],
-              },
-            },
+           
           ],
           gridProps: {
             enableFilter: false,
@@ -307,51 +239,39 @@
             this.gridData = [];
             this.gridData.push({
               baseYear: "2023",
-              week: "월",
-              weekday: "주중",
               fromDate: "2023.01.1",
               toDate: "2023.12.31",
-              fromTime: "19:15",
-              toTime: "20:30",
-              blockName: "월 19 예능",
-              summary: "기본 관리 대상",
+              blockGrpName: "블록그룹명01",
+              tgBlock: "블록01, 블록02, 블록03",
               uses: "Y",
+              summary: "",
             });
             this.gridData.push({
               baseYear: "2023",
-              week: "월",
-              weekday: "주중",
               fromDate: "2023.01.1",
               toDate: "2023.12.31",
-              fromTime: "19:15",
-              toTime: "20:30",
-              blockName: "월 19 예능",
-              summary: "기본 관리 대상",
+              blockGrpName: "블록그룹명01",
+              tgBlock: "블록01, 블록02, 블록03",
               uses: "Y",
+              summary: "",
             });
             this.gridData.push({
               baseYear: "2023",
-              week: "월",
-              weekday: "주중",
               fromDate: "2023.01.1",
               toDate: "2023.12.31",
-              fromTime: "19:15",
-              toTime: "20:30",
-              blockName: "월 19 예능",
-              summary: "기본 관리 대상",
+              blockGrpName: "블록그룹명01",
+              tgBlock: "블록01, 블록02, 블록03",
               uses: "Y",
+              summary: "",
             });
             this.gridData.push({
               baseYear: "2023",
-              week: "월",
-              weekday: "주중",
               fromDate: "2023.01.1",
               toDate: "2023.12.31",
-              fromTime: "19:15",
-              toTime: "20:30",
-              blockName: "월 19 예능",
-              summary: "기본 관리 대상",
+              blockGrpName: "블록그룹명01",
+              tgBlock: "블록01, 블록02, 블록03",
               uses: "Y",
+              summary: "",
             });
           },
         },
@@ -361,7 +281,7 @@
         new Vue(app);
         Vue.nextTick(function () {
           $(window).resize(function () {
-            AUIGrid.resize("#blockGrid");
+            AUIGrid.resize("#blockGrpGrid");
           });
         });
         // Vue.component();

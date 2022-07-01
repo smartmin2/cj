@@ -2,215 +2,410 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>채널기준 시청량 관리</title>
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../../../css/lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../css/lib/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../AUIGrid/AUIGrid_modern_style.css" />
+    <link rel="stylesheet" href="../../../css/style_sub.css" />
     <link rel="stylesheet" href="../../../css/style.css" />
+    <link rel="stylesheet" href="../../../css/main.css" />
+    <link rel="stylesheet" href="../../../css/main_extra.css" />
+
+    <script src="../../../js/lib/jquery.js"></script>
+    <script src="../../../js/all.min.js"></script>
+    <script src="../../../js/lib/vue.js"></script>
+    <script src="../../../js/lib/bootstrap.js"></script>
+    <script src="../../../AUIGrid/AUIGrid.js"></script>
+    <script src="../../../AUIGrid/AUIGridLicense.js"></script>
   </head>
   <body>
-    <div class="wrapper">
-      <header class="header"></header>
-      <main class="main">
-        <div class="bg-box">
-          <div class="table-wrapper">
-            <div class="table-top">
-              <div class="table-top-select">
-                <select name="" id="">
-                  <option value="">기준년도</option>
-                </select>
-                <select name="" id="">
-                  <option value="">프라임</option>
-                </select>
-                <select name="" id="">
-                  <option value="">채널그룹명</option>
-                </select>
+    <div class="container-fluid">
+      <div id="app" class="pt-3">
+        <!-- 검색조건 영역 -->
+        <div class="card card-box mr-0">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <div class="d-flex justify-content-start align-items-end">
+                <div class="d-block">
+                  <select id="baseYear" class="form-control cj-selectBox select-box">
+                    <option>기준년도</option>
+                  </select>
+                </div>
+
+                <div class="d-block ml-2">
+                  <select id="prime" class="form-control cj-selectBox select-box">
+                    <option>프라임</option>
+                  </select>
+                </div>
+
+                <div class="d-block ml-2">
+                  <select id="channel" class="form-control cj-selectBox select-box">
+                    <option>채널</option>
+                  </select>
+                </div>
               </div>
-              <div class="table-top-buttons">
-                <button class="btn-add">추가</button>
-                <button class="btn-common">저장</button>
-                <button class="btn-red">삭제</button>
-                <button class="btn-gray">닫기</button>
+
+              <div class="d-flex cj-btn-group align-items-end">
+                <button class="btn btn-dark btn-black"><i class="fa-solid fa-plus"></i>추가</button>
+                <button class="btn btn-dark btn-black">저장</button>
+                <button class="btn btn-danger btn-red">삭제</button>
+                <button class="btn btn-secondary btn-gray">닫기</button>
               </div>
             </div>
-            <div class="jb-table-wrap">
-              <table class="jb-table table">
-                <colgroup>
-                  <col style="width: 4%" />
-                  <col style="width: 6%" />
-                  <col style="width: 6%" />
-                  <col style="width: 6%" />
-                  <col style="width: 6%" />
-                  <col style="width: 6%" />
-                  <col style="width: 6%" />
-                  <col style="width: 6%" />
-                  <col style="width: 6%" />
-                  <col style="width: 6%" />
-                  <col style="width: 6%" />
-                  <col style="width: 6%" />
-                  <col style="width: 6%" />
-                  <col style="width: 6%" />
-                  <col style="width: 6%" />
-                  <col style="width: 6%" />
-                  <col style="width: 6%" />
-                </colgroup>
-                <thead >
-                  <tr>
-                    <th>선택</th>
-                    <th>기준년</th>
-                    <th>채널</th>
-                    <th>채널</th>
-                    <th>구분</th>
-                    <th>1월</th>
-                    <th>2월</th>
-                    <th>3월</th>
-                    <th>4월</th>
-                    <th>5월</th>
-                    <th>6월</th>
-                    <th>7월</th>
-                    <th>8월</th>
-                    <th>9월</th>
-                    <th>10월</th>
-                    <th>11월</th>
-                    <th>12월</th>
-                  </tr>
-                </thead>
-                <tbody class="table_body">
-                  <tr>
-                    <td rowspan="2"><input type="checkbox" name="" id=""></td>
-                    <td rowspan="2">2023</td>
-                    <td rowspan="2">프라임</td>
-                    <td rowspan="2">SBS</td>
-                    <td>수도권</td>
-                    <td>14.608</td>
-                    <td>15.998</td>
-                    <td>13.960</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                  </tr>
-                  <tr>
-                    <td>전국</td>
-                    <td>14.608</td>
-                    <td>15.998</td>
-                    <td>13.960</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                  </tr>
-                  <tr>
-                    <td rowspan="2"><input type="checkbox" name="" id=""></td>
-                    <td rowspan="2">2023</td>
-                    <td rowspan="2">프라임</td>
-                    <td rowspan="2">SBS</td>
-                    <td>수도권</td>
-                    <td>14.608</td>
-                    <td>15.998</td>
-                    <td>13.960</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                  </tr>
-                  <tr>
-                    <td>전국</td>
-                    <td>14.608</td>
-                    <td>15.998</td>
-                    <td>13.960</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                  </tr>
-                  <tr>
-                    <td rowspan="2"><input type="checkbox" name="" id=""></td>
-                    <td rowspan="2">2023</td>
-                    <td rowspan="2">프라임</td>
-                    <td rowspan="2">SBS</td>
-                    <td>수도권</td>
-                    <td>14.608</td>
-                    <td>15.998</td>
-                    <td>13.960</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                  </tr>
-                  <tr>
-                    <td>전국</td>
-                    <td>14.608</td>
-                    <td>15.998</td>
-                    <td>13.960</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                    <td>13.424</td>
-                  </tr>
-                </tbody>
-              </table>
+            <!-- grid 영역 -->
+            <div class="mt-4">
+              <div id="chnViewGrid" style="min-height: 400px"></div>
             </div>
           </div>
         </div>
-      </main>
+      </div>
     </div>
 
-    <script src="../../../js/jquery-3.6.0.min.js"></script>
-    <script src="../../../js/script.js"></script>
     <script>
- 
+      let chnViewGrid = "";
+      let app = {
+        el: "#app",
+        watch: {
+          gridData: function () {
+            AUIGrid.setGridData(chnViewGrid, this.gridData);
+          },
+        },
+        mounted() {
+          chnViewGrid = AUIGrid.destroy("#chnViewGrid");
+          chnViewGrid = AUIGrid.create("#chnViewGrid", this.gridLayout, this.gridProps);
 
-      $(".btn-add").on("click", function () {
-        let comment = "<tr>";
-        comment += "<td> <input type='checkbox'> </td>";
-        comment += "<td><select><option>선택</option></select></td>";
-        comment += "<td><select><option>선택</option><option>프라임</option><option>데이</option></select></td>";
-        comment += "<td><select><option>선택</option><option>tvN</option><option>KBS</option><option>SBS</option><option>KBS1</option><option>KBS2</option><option>MBC</option><option>JTBC</option><option>채널A</option><option>TV조선</option><option>MBN</option><option>유료방송</option></select></td>";
-        comment += "<td>수도권</td>";
-        comment += "<td> <input type='text'> </td>";
-        comment += "<td> <input type='text'> </td>";
-        comment += "<td> <input type='text'> </td>";
-        comment += "<td> <input type='text'> </td>";
-        comment += "<td> <input type='text'> </td>";
-        comment += "<td> <input type='text'> </td>";
-        comment += "<td> <input type='text'> </td>";
-        comment += "<td> <input type='text'> </td>";
-        comment += "<td> <input type='text'> </td>";
-        comment += "<td> <input type='text'> </td>";
-        comment += "<td> <input type='text'> </td>";
-        comment += "<td> <input type='text'> </td>";
-        comment += "</tr>";
-        $(".table_body tr:last-child").after(comment);
+          // 페이지 진입 시 기준년도 산출
+          this.searchCommand.baseYear = new Date().getFullYear();
+          // 기준년도 항목정의(과거:3년, 향후:5년)
+          for (let idx = this.searchCommand.baseYear - 2; idx < this.searchCommand.baseYear + 5; idx += 1) {
+            this.selectOptionItems.baseYear.push({ value: `${idx}`, text: `${idx}년` });
+          }
+
+          this.selectOptionItems.status.push({ value: "I", text: "진행중" });
+          this.selectOptionItems.status.push({ value: "C", text: "확정" });
+
+          this.search();
+        },
+        data: () => ({
+          selectOptionItems: {
+            baseYear: [{ value: "", text: "기준년도" }],
+            division: [{ value: "", text: "구분" }],
+            status: [{ value: "", text: "채널그룹명" }],
+          },
+          searchCommand: {
+            scenarioName: null,
+            baseYear: "",
+            division: "",
+            status: "",
+          },
+          gridData: [],
+          gridLayout: [
+            {
+              headerText: "선택",
+              width: "5%",
+              cellMerge: true,
+              renderer: {
+                type: "CheckBoxEditRenderer",
+                showLabel: false, // 참, 거짓 텍스트 출력여부( 기본값 false )
+                editable: true, // 체크박스 편집 활성화 여부(기본값 : false)
+              },
+              // labelFunction : function(rowIndex, columnIndex, value, headerText, item) {
+              //     // let isChildren = item['version'] > 0;
+              //     // return `<div class="${isChildren ? 'small':''}">${ isChildren ? item['id'] + '-' + item['version']: item['id'] }</div>`
+              //     return `<div class="form-check">
+              //                 <input class="form-check-input" type="checkbox">
+              //             </div>
+              //     `
+              // }
+              editRenderer: {
+                type: "CheckBoxEditRenderer",
+              },
+            },
+            {
+              dataField: "baseYear",
+              headerText: "기준년도",
+              width: "7%",
+              cellMerge: true,
+              mergeRef: "secChannel",
+              mergePolicy: "restrict",
+              editRenderer: {
+                type: "DropDownListRenderer",
+                list: ["2020년", "2021년", "2022년"],
+              },
+            },
+            {
+              dataField: "fstChannel",
+              headerText: "채널",
+              width: "7%",
+              cellMerge: true,
+              mergeRef: "secChannel",
+              mergePolicy: "restrict",
+              editRenderer: {
+                type: "DropDownListRenderer",
+                list: ["프라임"],
+              },
+            },
+            {
+              dataField: "secChannel",
+              headerText: "채널",
+              width: "7%",
+              cellMerge: true,
+              editRenderer: {
+                type: "DropDownListRenderer",
+                list: ["tvN", "KBS", "SBS", "KBS1", "KBS2", "MBC", "JTBC", "채널A", "TV조선", "MBN", "JTBC", "유료방송"],
+              },
+            },
+            {
+              dataField: "division",
+              headerText: "구분",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "january",
+              headerText: "1월",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "february",
+              headerText: "2월",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "march",
+              headerText: "3월",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "april",
+              headerText: "4월",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "may",
+              headerText: "5월",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "june",
+              headerText: "6월",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "july",
+              headerText: "7월",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "august",
+              headerText: "8월",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "september",
+              headerText: "9월",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "october",
+              headerText: "10월",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "november",
+              headerText: "11월",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "december",
+              headerText: "12월",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+          ],
+          gridProps: {
+            enableCellMerge: true,
+            enableFilter: false,
+            enableSorting: false,
+            headerHeight: 60,
+            headerHeights: [30, 30],
+            rowHeight: 50,
+            editingOnKeyDown: false,
+            autoGridHeight: false,
+            autoGridWidth: false,
+            ignoreColumnMinWidth: true,
+            softRemoveRowMode: false,
+            // 행 번호 컬럼 활성화 속성입니다.
+            showRowNumColumn: false,
+            /*추가 옵션*/
+            showStateColumn: false,
+            editable: true,
+            noDataMessage: "엑셀데이터를 붙여넣거나 행추가를 통해 데이터를 입력하세요.",
+          },
+        }),
+        methods: {
+          search: function () {
+            console.log("search", this.searchCommand);
+            this.setTestData();
+          },
+          createScenario: function () {
+            this.$refs["refScenarioSummary"].draw();
+          },
+          edit: function (id) {
+            console.log("준비중 edit", id);
+          },
+          version: function (id) {
+            console.log("준비중 version", id);
+          },
+          copy: function (id) {
+            console.log("준비중 copy", id);
+          },
+          remove: function (id) {
+            console.log("준비중 remove", id);
+          },
+          done: function (id) {
+            console.log("준비중 done", id);
+          },
+          setTestData: function () {
+            this.gridData = [];
+            this.gridData.push({
+              baseYear: "2023",
+              fstChannel: "프라임",
+              secChannel: "SBS",
+              division: "수도권",
+              january: "14.608",
+              february: "15.990",
+              march: "13.990",
+              april: "12.990",
+              may: "13.190",
+              june: "13.290",
+              july: "13.490",
+              august: "15.690",
+              september: "13.390",
+              october: "13.290",
+              november: "13.290",
+              december: "13.290",
+            });
+            this.gridData.push({
+              baseYear: "2023",
+              fstChannel: "프라임",
+              secChannel: "SBS",
+              division: "전국",
+              january: "14.608",
+              february: "15.990",
+              march: "13.990",
+              april: "12.990",
+              may: "13.190",
+              june: "13.290",
+              july: "13.490",
+              august: "15.690",
+              september: "13.390",
+              october: "13.290",
+              november: "13.290",
+              december: "13.290",
+            });
+            this.gridData.push({
+              baseYear: "2023",
+              fstChannel: "프라임",
+              secChannel: "KBS",
+              division: "수도권",
+              january: "14.608",
+              february: "15.990",
+              march: "13.990",
+              april: "12.990",
+              may: "13.190",
+              june: "13.290",
+              july: "13.490",
+              august: "15.690",
+              september: "13.390",
+              october: "13.290",
+              november: "13.290",
+              december: "13.290",
+            });
+            this.gridData.push({
+              baseYear: "2023",
+              fstChannel: "프라임",
+              secChannel: "KBS",
+              division: "전국",
+              january: "14.608",
+              february: "15.990",
+              march: "13.990",
+              april: "12.990",
+              may: "13.190",
+              june: "13.290",
+              july: "13.490",
+              august: "15.690",
+              september: "13.390",
+              october: "13.290",
+              november: "13.290",
+              december: "13.290",
+            });
+          },
+        },
+      };
+
+      $(function () {
+        new Vue(app);
+        Vue.nextTick(function () {
+          $(window).resize(function () {
+            AUIGrid.resize("#chnViewGrid");
+          });
+        });
+        // Vue.component();
       });
     </script>
   </body>
