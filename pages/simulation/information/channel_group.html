@@ -37,14 +37,8 @@
                 </div>
 
                 <div class="d-block ml-2">
-                  <select id="prime" class="form-control cj-selectBox select-box">
-                    <option>프라임</option>
-                  </select>
-                </div>
-
-                <div class="d-block ml-2">
                   <select id="channel" class="form-control cj-selectBox select-box">
-                    <option>채널</option>
+                    <option>채널그룹명</option>
                   </select>
                 </div>
               </div>
@@ -58,7 +52,7 @@
             </div>
             <!-- grid 영역 -->
             <div class="mt-4">
-              <div id="chnViewGrid" style="min-height: 400px"></div>
+              <div id="chnGrpGrid" style="min-height: 400px"></div>
             </div>
           </div>
         </div>
@@ -66,17 +60,17 @@
     </div>
 
     <script>
-      let chnViewGrid = "";
+      let chnGrpGrid = "";
       let app = {
         el: "#app",
         watch: {
           gridData: function () {
-            AUIGrid.setGridData(chnViewGrid, this.gridData);
+            AUIGrid.setGridData(chnGrpGrid, this.gridData);
           },
         },
         mounted() {
-          chnViewGrid = AUIGrid.destroy("#chnViewGrid");
-          chnViewGrid = AUIGrid.create("#chnViewGrid", this.gridLayout, this.gridProps);
+          chnGrpGrid = AUIGrid.destroy("#chnGrpGrid");
+          chnGrpGrid = AUIGrid.create("#chnGrpGrid", this.gridLayout, this.gridProps);
 
           // 페이지 진입 시 기준년도 산출
           this.searchCommand.baseYear = new Date().getFullYear();
@@ -129,153 +123,74 @@
               dataField: "baseYear",
               headerText: "기준년도",
               width: "7%",
-              cellMerge: true,
-              mergeRef: "secChannel",
-              mergePolicy: "restrict",
               editRenderer: {
                 type: "DropDownListRenderer",
                 list: ["2020년", "2021년", "2022년"],
               },
             },
             {
-              dataField: "fstChannel",
-              headerText: "채널",
+              dataField: "fromDate",
+              headerText: "FROM",
               width: "7%",
-              cellMerge: true,
-              mergeRef: "secChannel",
-              mergePolicy: "restrict",
+              editRenderer: {
+                type: "BTCalendarRenderer",
+                onlyCalendar: true,
+                // bootstrap-datepicker 속성을 여기에 설정하십시오.
+                // API : https://bootstrap-datepicker.readthedocs.io/en/latest/options.html
+                btOpts: {
+                  language: "ko",
+                }, // end of btOpts
+              },
+            },
+            {
+              dataField: "toDate",
+              headerText: "TO",
+              width: "7%",
+              editRenderer: {
+                type: "BTCalendarRenderer",
+                onlyCalendar: true,
+                // bootstrap-datepicker 속성을 여기에 설정하십시오.
+                // API : https://bootstrap-datepicker.readthedocs.io/en/latest/options.html
+                btOpts: {
+                  language: "ko",
+                }, // end of btOpts
+              },
+            },
+            {
+              dataField: "channelGrp",
+              headerText: "채널그룹명",
               editRenderer: {
                 type: "DropDownListRenderer",
-                list: ["프라임"],
+                list: ["Total","지상파","종합편성","유료방송","지상파3개"],
               },
             },
             {
-              dataField: "secChannel",
-              headerText: "채널",
-              width: "7%",
-              cellMerge: true,
+              dataField: "tgChannel",
+              headerText: "대상채널",
               editRenderer: {
                 type: "DropDownListRenderer",
-                list: ["tvN", "KBS", "SBS", "KBS1", "KBS2", "MBC", "JTBC", "채널A", "TV조선", "MBN", "JTBC", "유료방송"],
+                list: ["전체","tvN", "KBS", "SBS", "KBS1", "KBS2", "MBC", "JTBC", "채널A", "TV조선", "MBN", "JTBC", "유료방송"],
               },
             },
             {
-              dataField: "division",
-              headerText: "구분",
+              dataField: "uses",
+              headerText: "활용여부",
+              editRenderer: {
+                type: "DropDownListRenderer",
+                list: ["Y", "N"],
+              },
+            },
+            {
+              dataField: "summary",
+              headerText: "내용",
               editRenderer: {
                 type: "InputEditRenderer",
                 showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
                 inputMode: "text",
               },
             },
-            {
-              dataField: "january",
-              headerText: "1월",
-              editRenderer: {
-                type: "InputEditRenderer",
-                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
-                inputMode: "text",
-              },
-            },
-            {
-              dataField: "february",
-              headerText: "2월",
-              editRenderer: {
-                type: "InputEditRenderer",
-                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
-                inputMode: "text",
-              },
-            },
-            {
-              dataField: "march",
-              headerText: "3월",
-              editRenderer: {
-                type: "InputEditRenderer",
-                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
-                inputMode: "text",
-              },
-            },
-            {
-              dataField: "april",
-              headerText: "4월",
-              editRenderer: {
-                type: "InputEditRenderer",
-                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
-                inputMode: "text",
-              },
-            },
-            {
-              dataField: "may",
-              headerText: "5월",
-              editRenderer: {
-                type: "InputEditRenderer",
-                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
-                inputMode: "text",
-              },
-            },
-            {
-              dataField: "june",
-              headerText: "6월",
-              editRenderer: {
-                type: "InputEditRenderer",
-                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
-                inputMode: "text",
-              },
-            },
-            {
-              dataField: "july",
-              headerText: "7월",
-              editRenderer: {
-                type: "InputEditRenderer",
-                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
-                inputMode: "text",
-              },
-            },
-            {
-              dataField: "august",
-              headerText: "8월",
-              editRenderer: {
-                type: "InputEditRenderer",
-                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
-                inputMode: "text",
-              },
-            },
-            {
-              dataField: "september",
-              headerText: "9월",
-              editRenderer: {
-                type: "InputEditRenderer",
-                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
-                inputMode: "text",
-              },
-            },
-            {
-              dataField: "october",
-              headerText: "10월",
-              editRenderer: {
-                type: "InputEditRenderer",
-                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
-                inputMode: "text",
-              },
-            },
-            {
-              dataField: "november",
-              headerText: "11월",
-              editRenderer: {
-                type: "InputEditRenderer",
-                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
-                inputMode: "text",
-              },
-            },
-            {
-              dataField: "december",
-              headerText: "12월",
-              editRenderer: {
-                type: "InputEditRenderer",
-                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
-                inputMode: "text",
-              },
-            },
+       
+           
           ],
           gridProps: {
             enableCellMerge: true,
@@ -324,75 +239,39 @@
             this.gridData = [];
             this.gridData.push({
               baseYear: "2023",
-              fstChannel: "프라임",
-              secChannel: "SBS",
-              division: "수도권",
-              january: "14.608",
-              february: "15.990",
-              march: "13.990",
-              april: "12.990",
-              may: "13.190",
-              june: "13.290",
-              july: "13.490",
-              august: "15.690",
-              september: "13.390",
-              october: "13.290",
-              november: "13.290",
-              december: "13.290",
+              fromDate: "2023.01.01",
+              toDate: "2023.12.31",
+              channelGrp: "Total TV",
+              tgChannel: "전체",
+              uses: "Y",
+              summary: "",
             });
             this.gridData.push({
               baseYear: "2023",
-              fstChannel: "프라임",
-              secChannel: "SBS",
-              division: "전국",
-              january: "14.608",
-              february: "15.990",
-              march: "13.990",
-              april: "12.990",
-              may: "13.190",
-              june: "13.290",
-              july: "13.490",
-              august: "15.690",
-              september: "13.390",
-              october: "13.290",
-              november: "13.290",
-              december: "13.290",
+              fromDate: "2023.01.01",
+              toDate: "2023.12.31",
+              channelGrp: "Total TV",
+              tgChannel: "전체",
+              uses: "Y",
+              summary: "",
             });
             this.gridData.push({
               baseYear: "2023",
-              fstChannel: "프라임",
-              secChannel: "KBS",
-              division: "수도권",
-              january: "14.608",
-              february: "15.990",
-              march: "13.990",
-              april: "12.990",
-              may: "13.190",
-              june: "13.290",
-              july: "13.490",
-              august: "15.690",
-              september: "13.390",
-              october: "13.290",
-              november: "13.290",
-              december: "13.290",
+              fromDate: "2023.01.01",
+              toDate: "2023.12.31",
+              channelGrp: "Total TV",
+              tgChannel: "전체",
+              uses: "Y",
+              summary: "",
             });
             this.gridData.push({
               baseYear: "2023",
-              fstChannel: "프라임",
-              secChannel: "KBS",
-              division: "전국",
-              january: "14.608",
-              february: "15.990",
-              march: "13.990",
-              april: "12.990",
-              may: "13.190",
-              june: "13.290",
-              july: "13.490",
-              august: "15.690",
-              september: "13.390",
-              october: "13.290",
-              november: "13.290",
-              december: "13.290",
+              fromDate: "2023.01.01",
+              toDate: "2023.12.31",
+              channelGrp: "Total TV",
+              tgChannel: "전체",
+              uses: "Y",
+              summary: "",
             });
           },
         },
@@ -402,7 +281,7 @@
         new Vue(app);
         Vue.nextTick(function () {
           $(window).resize(function () {
-            AUIGrid.resize("#chnViewGrid");
+            AUIGrid.resize("#chnGrpGrid");
           });
         });
         // Vue.component();
