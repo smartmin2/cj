@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>시나리오 신규등록</title>
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../../../css/lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../css/lib/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../AUIGrid/AUIGrid_modern_style.css" />
+    <link rel="stylesheet" href="../../../css/core/style.css" />
+    <link rel="stylesheet" href="../../../css/core/main.css" />
+    <link rel="stylesheet" href="../../../css/core/main_extra.css" />
+    <link rel="stylesheet" href="../../../css/core/style_sub.css" />
+
+    <script src="../../../js/lib/jquery.js"></script>
+    <script src="../../../js/lib/vue.js"></script>
+    <script src="../../../js/lib/bootstrap.js"></script>
+    <script src="../../../AUIGrid/AUIGrid.js"></script>
+    <script src="../../../AUIGrid/AUIGridLicense.js"></script>
+    <script src="../../../js/all.min.js"></script>
+    <script src="../../../js/summaryModal.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div id="app" class="pt-3">
+        <!-- 검색조건 영역 -->
+        <div class="card card-box mr-0">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <div class="d-flex justify-content-start align-items-end">
+                <div class="d-block">
+                  <select id="baseYear" class="form-control cj-selectBox select-box">
+                    <option>기준년도</option>
+                  </select>
+                </div>
+
+                <div class="d-block ml-2">
+                  <select id="step" class="form-control cj-selectBox select-box">
+                    <option>단계</option>
+                  </select>
+                </div>
+
+                <div class="d-block ml-2">
+                  <input type="text" class="form-control cj-inputBox" id="search" placeholder="시나리오명" />
+                </div>
+              </div>
+
+              <div class="d-flex cj-btn-group align-items-end">
+                <button type="submit" class="btn-dark btn-black">조회</button>
+                <button type="button" class="btn-dark btn-black" id="addBtnScenario" @click.end="createScenario"><i class="fa-solid fa-plus"></i>신규등록</button>
+              </div>
+            </div>
+            <!-- grid 영역 -->
+            <div class="mt-4">
+              <div id="prodCostGrid" style="min-height: 400px"></div>
+            </div>
+
+            <!-- 시나리오 modal-->
+            <scenario-summary-modal ref="refScenarioSummary" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let prodCostGrid = "";
+      let app = {
+        el: "#app",
+        watch: {
+          gridData: function () {
+            AUIGrid.setGridData(prodCostGrid, this.gridData);
+          },
+        },
+        mounted() {
+          prodCostGrid = AUIGrid.destroy("#prodCostGrid");
+          prodCostGrid = AUIGrid.create("#prodCostGrid", this.gridLayout, this.gridProps);
+
+          // 페이지 진입 시 기준년도 산출
+          this.searchCommand.baseYear = new Date().getFullYear();
+          // 기준년도 항목정의(과거:3년, 향후:5년)
+          for (let idx = this.searchCommand.baseYear - 2; idx < this.searchCommand.baseYear + 5; idx += 1) {
+            this.selectOptionItems.baseYear.push({ value: `${idx}`, text: `${idx}년` });
+          }
+
+          this.selectOptionItems.status.push({ value: "I", text: "진행중" });
+          this.selectOptionItems.status.push({ value: "C", text: "확정" });
+
+          this.search();
+        },
+        data: () => ({
+          selectOptionItems: {
+            baseYear: [{ value: "", text: "기준년도" }],
+            genre: [{ value: "", text: "장르" }],
+            status: [{ value: "", text: "채널그룹명" }],
+          },
+          searchCommand: {
+            scenarioName: null,
+            baseYear: "",
+            genre: "",
+            status: "",
+          },
+          gridData: [],
+          gridLayout: [
+            {
+              dataField: "listNum",
+              headerText: "#",
+              width: "5%",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "baseYear",
+              headerText: "기준년도",
+              width: "7%",
+              editRenderer: {
+                type: "DropDownListRenderer",
+                list: ["2020년", "2021년", "2022년"],
+              },
+            },
+            {
+              dataField: "planStd",
+              headerText: "계획기준",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "ratingStd",
+              headerText: "시청률기준",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "scenarioName",
+              headerText: "시나리오명",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "summary",
+              headerText: "요약",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "step",
+              headerText: "단계",
+              editRenderer: {
+                type: "DropDownListRenderer",
+                list: ["진행중", "확정"],
+              },
+            },
+            {
+              headerText: "등록정보",
+              width: "15%",
+              renderer: {
+                type: "TemplateRenderer",
+              },
+              labelFunction: function (rowIndex, columnIndex, value, headerText, item) {
+                return `${item["departName"]} | ${item["writer"]} | ${item["createAt"]}`; //item.bdp_mod_id + "|" + item.bdp_mod_dtm;
+              },
+            },
+            {
+              headerText: "관리",
+              width: "20%",
+              renderer: {
+                type: "TemplateRenderer",
+              },
+              labelFunction: function (rowIndex, columnIndex, value, headerText, item) {
+                let btnList = [];
+                let setBtnClass = function () {
+                  return btnList.length > 0 ? "ml-1" : "";
+                };
+                // let plClass = ${btnList.length > 0 ? 'pl-1':''};
+                // I : 진행중
+                if (item["status"] == "I") {
+                  btnList.push(`<button class="btn btn-dark btn-black" onClick="app.edit(${item["id"]})">수정</button>`);
+
+                  // 상위 ID가 있는 경우 특정 시나리오의 하위버전
+                  if ((item["version"] || 0) < 1) {
+                    btnList.push(`<button class="btn btn-dark btn-black ${setBtnClass()}" onClick="app.version(${item["id"]})">버전추가</button>`);
+                  }
+                  btnList.push(`<button class="btn btn-dark btn-black ${setBtnClass()}" onClick="app.copy(${item["id"]})">복사</button>`);
+                  btnList.push(`<button class="btn btn-danger btn-red ${setBtnClass()}" onClick="app.remove(${item["id"]})">삭제</button>`);
+                  btnList.push(`<button class="btn btn-success ${setBtnClass()}" onClick="app.done(${item["id"]})">확정</button>`);
+                } else {
+                  if ((item["version"] || 0) < 1) {
+                    btnList.push(`<button class="btn btn-dark btn-black ${setBtnClass()}" onClick="app.version(${item["id"]})">버전추가</button>`);
+                  }
+                  btnList.push(`<button class="btn btn-dark btn-black ${setBtnClass()}" onClick="app.copy(${item["id"]})">복사</button>`);
+                }
+                return `<div class="d-flex flex-fill justify-content-start">${btnList.join("")}</div>`;
+              },
+            },
+          ],
+          gridProps: {
+            enableFilter: false,
+            enableSorting: false,
+            headerHeight: 60,
+            headerHeights: [30, 30],
+            rowHeight: 50,
+            editingOnKeyDown: false,
+            autoGridHeight: false,
+            autoGridWidth: false,
+            ignoreColumnMinWidth: true,
+            softRemoveRowMode: false,
+            // 행 번호 컬럼 활성화 속성입니다.
+            showRowNumColumn: false,
+            /*추가 옵션*/
+            showStateColumn: false,
+            editable: true,
+            noDataMessage: "엑셀데이터를 붙여넣거나 행추가를 통해 데이터를 입력하세요.",
+          },
+        }),
+        methods: {
+          search: function () {
+            console.log("search", this.searchCommand);
+            this.setTestData();
+          },
+          createScenario: function () {
+            this.$refs["refScenarioSummary"].draw();
+          },
+          edit: function (id) {
+            console.log("준비중 edit", id);
+          },
+          version: function (id) {
+            console.log("준비중 version", id);
+          },
+          copy: function (id) {
+            console.log("준비중 copy", id);
+          },
+          remove: function (id) {
+            console.log("준비중 remove", id);
+          },
+          done: function (id) {
+            console.log("준비중 done", id);
+          },
+          setTestData: function () {
+            this.gridData = [];
+            this.gridData.push({
+              writer: "홍길동",
+              departName: "부서명",
+              createAt: "2022.10.12",
+              listNum: "1",
+              baseYear: "2023",
+              planStd: "경영계획",
+              ratingStd: "수도권",
+              scenarioName: "2023년 경영기반 시뮬레이션 1차",
+              summary: "4건(70회차), 75억, 2.873",
+              step: "진행중",
+              status: "I",
+              id: 2,
+              version: 0,
+            });
+            this.gridData.push({
+              writer: "홍길동",
+              departName: "부서명",
+              createAt: "2022.10.12",
+              listNum: "1-1",
+              baseYear: "2023",
+              planStd: "경영계획",
+              ratingStd: "수도권",
+              scenarioName: "2023년 경영기반 시뮬레이션 1차",
+              summary: "4건(70회차), 75억, 2.873",
+              step: "진행중",
+              status: "I",
+              id: 2,
+              version: 0,
+            });
+            this.gridData.push({
+              writer: "홍길동",
+              departName: "부서명",
+              createAt: "2022.10.12",
+              listNum: "2",
+              baseYear: "2023",
+              planStd: "경영계획",
+              ratingStd: "수도권",
+              scenarioName: "2023년 경영기반 시뮬레이션 1차",
+              summary: "4건(70회차), 75억, 2.873",
+              step: "진행중",
+              status: "I",
+              id: 2,
+              version: 0,
+            });
+            this.gridData.push({
+              writer: "홍길동",
+              departName: "부서명",
+              createAt: "2022.10.12",
+              listNum: "3",
+              baseYear: "2023",
+              planStd: "경영계획",
+              ratingStd: "수도권",
+              scenarioName: "2023년 경영기반 시뮬레이션 1차",
+              summary: "4건(70회차), 75억, 2.873",
+              step: "진행중",
+              status: "I",
+              id: 1,
+              version: 1,
+            });
+          },
+        },
+      };
+
+      $(function () {
+        new Vue(app);
+        Vue.nextTick(function () {
+          $(window).resize(function () {
+            AUIGrid.resize("#prodCostGrid");
+          });
+        });
+        // Vue.component();
+      });
+    </script>
+  </body>
+</html>

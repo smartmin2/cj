@@ -36,11 +36,11 @@ Vue.component('scenario-summary-modal', {
         gridData : [],
         gridLayout : [
             {dataField : "scenarioType", 	headerText : "장르"},
-            {dataField : "productType", 	headerText : "제작구분", width : "12%"},
-            {dataField : "count", 	headerText : "건수", width : "12%"},
-            {dataField : "series", 	headerText : "회차", width : "12%"},
-            {dataField : "amount", 	headerText : "제작비", width : "12%"},
-            {dataField : "averageRate", 	headerText : "평균시청률", width : "15%"},
+            {dataField : "productType", 	headerText : "제작구분", width : "15%"},
+            {dataField : "count", 	headerText : "건수(개수)", width : "15%"},
+            {dataField : "series", 	headerText : "회차(합산)", width : "15%"},
+            {dataField : "amount", 	headerText : "제작비(합산)", width : "15%"},
+            {dataField : "averageRate", 	headerText : "평균시청률(평균)", width : "15%"},
         ],
         gridProps : {
             enableFilter : false,
