@@ -55,7 +55,7 @@
             </div>
             <!-- grid 영역 -->
             <div class="mt-4">
-              <div id="prodCostGrid" style="min-height: 400px"></div>
+              <div id="newRgGrid" style="min-height: 400px"></div>
             </div>
 
             <!-- 시나리오 modal-->
@@ -66,17 +66,17 @@
     </div>
 
     <script>
-      let prodCostGrid = "";
+      let newRgGrid = "";
       let app = {
         el: "#app",
         watch: {
           gridData: function () {
-            AUIGrid.setGridData(prodCostGrid, this.gridData);
+            AUIGrid.setGridData(newRgGrid, this.gridData);
           },
         },
         mounted() {
-          prodCostGrid = AUIGrid.destroy("#prodCostGrid");
-          prodCostGrid = AUIGrid.create("#prodCostGrid", this.gridLayout, this.gridProps);
+          newRgGrid = AUIGrid.destroy("#newRgGrid");
+          newRgGrid = AUIGrid.create("#newRgGrid", this.gridLayout, this.gridProps);
 
           // 페이지 진입 시 기준년도 산출
           this.searchCommand.baseYear = new Date().getFullYear();
@@ -322,7 +322,7 @@
         new Vue(app);
         Vue.nextTick(function () {
           $(window).resize(function () {
-            AUIGrid.resize("#prodCostGrid");
+            AUIGrid.resize("#newRgGrid");
           });
         });
         // Vue.component();
