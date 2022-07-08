@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>경쟁사 채널 시청량</title>
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../../../css/lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../css/lib/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../AUIGrid/AUIGrid_modern_style.css" />
+    <link rel="stylesheet" href="../../../css/core/style.css" />
+    <link rel="stylesheet" href="../../../css/core/main.css" />
+    <link rel="stylesheet" href="../../../css/core/main_extra.css" />
+    <link rel="stylesheet" href="../../../css/core/style_sub.css" />
+
+    <script src="../../../js/lib/jquery.js"></script>
+    <script src="../../../js/lib/vue.js"></script>
+    <script src="../../../js/lib/bootstrap.js"></script>
+    <script src="../../../AUIGrid/AUIGrid.js"></script>
+    <script src="../../../AUIGrid/AUIGridLicense.js"></script>
+    <script src="../../../js/all.min.js"></script>
+    <script src="../../../js/summaryModal.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div id="app" class="pt-3">
+        <!-- 검색조건 영역 -->
+        <div class="card card-box mr-0">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <div class="d-flex justify-content-start align-items-end">
+                <div class="d-flex align-items-end">
+                  <select id="baseYear" class="form-control cj-selectBox select-box">
+                    <option>2023년 경영기반시뮬레이션 3차</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="d-flex cj-btn-group align-items-end">
+                <button type="submit" class="btn-dark btn-black">조회</button>
+              </div>
+            </div>
+            <!-- grid 영역 -->
+            <div class="mt-4">
+              <div id="cptRatingGrid" style="min-height: 400px"></div>
+            </div>
+
+            <!-- 시나리오 modal-->
+            <scenario-summary-modal ref="refScenarioSummary" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let cptRatingGrid = "";
+      let app = {
+        el: "#app",
+        watch: {
+          gridData: function () {
+            AUIGrid.setGridData(cptRatingGrid, this.gridData);
+          },
+        },
+        mounted() {
+          cptRatingGrid = AUIGrid.destroy("#cptRatingGrid");
+          cptRatingGrid = AUIGrid.create("#cptRatingGrid", this.gridLayout, this.gridProps);
+
+          // 페이지 진입 시 기준년도 산출
+          this.searchCommand.baseYear = new Date().getFullYear();
+          // 기준년도 항목정의(과거:3년, 향후:5년)
+          for (let idx = this.searchCommand.baseYear - 2; idx < this.searchCommand.baseYear + 5; idx += 1) {
+            this.selectOptionItems.baseYear.push({ value: `${idx}`, text: `${idx}년` });
+          }
+
+          this.selectOptionItems.status.push({ value: "I", text: "진행중" });
+          this.selectOptionItems.status.push({ value: "C", text: "확정" });
+
+          this.search();
+        },
+        data: () => ({
+          selectOptionItems: {
+            baseYear: [{ value: "", text: "기준년도" }],
+            genre: [{ value: "", text: "장르" }],
+            status: [{ value: "", text: "채널그룹명" }],
+          },
+          searchCommand: {
+            scenarioName: null,
+            baseYear: "",
+            genre: "",
+            status: "",
+          },
+          gridData: [],
+          gridLayout: [
+            {
+              dataField: "division",
+              headerText: "",
+              cellMerge: true,
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "ep",
+              headerText: "",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "january",
+              headerText: "1월",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "february",
+              headerText: "2월",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "march",
+              headerText: "3월",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "april",
+              headerText: "4월",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "may",
+              headerText: "5월",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "june",
+              headerText: "6월",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "july",
+              headerText: "7월",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "august",
+              headerText: "8월",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "september",
+              headerText: "9월",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "october",
+              headerText: "10월",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "november",
+              headerText: "11월",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "december",
+              headerText: "12월",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "year",
+              headerText: "년간",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+          ],
+          gridProps: {
+            enableCellMerge: true,
+            enableFilter: false,
+            enableSorting: false,
+            headerHeight: 60,
+            headerHeights: [30, 30],
+            rowHeight: 50,
+            editingOnKeyDown: false,
+            autoGridHeight: false,
+            autoGridWidth: false,
+            ignoreColumnMinWidth: true,
+            softRemoveRowMode: false,
+            // 행 번호 컬럼 활성화 속성입니다.
+            showRowNumColumn: false,
+            /*추가 옵션*/
+            showStateColumn: false,
+            editable: true,
+            noDataMessage: "엑셀데이터를 붙여넣거나 행추가를 통해 데이터를 입력하세요.",
+          },
+        }),
+        methods: {
+          search: function () {
+            console.log("search", this.searchCommand);
+            this.setTestData();
+          },
+          createScenario: function () {
+            this.$refs["refScenarioSummary"].draw();
+          },
+          edit: function (id) {
+            console.log("준비중 edit", id);
+          },
+          version: function (id) {
+            console.log("준비중 version", id);
+          },
+          copy: function (id) {
+            console.log("준비중 copy", id);
+          },
+          remove: function (id) {
+            console.log("준비중 remove", id);
+          },
+          done: function (id) {
+            console.log("준비중 done", id);
+          },
+          setTestData: function () {
+            this.gridData = [];
+            this.gridData.push({
+              baseYear: "2023",
+              division: "지상파 채널",
+              ep: "예상",
+              january: "14.608",
+              february: "15.990",
+              march: "13.990",
+              april: "12.990",
+              may: "13.190",
+              june: "13.290",
+              july: "13.490",
+              august: "15.690",
+              september: "13.390",
+              october: "13.290",
+              november: "13.290",
+              december: "13.290",
+              year:"6.198"
+            });
+            this.gridData.push({
+              baseYear: "2023",
+              division: "지상파 채널",
+              ep: "예상",
+              january: "14.608",
+              february: "15.990",
+              march: "13.990",
+              april: "12.990",
+              may: "13.190",
+              june: "13.290",
+              july: "13.490",
+              august: "15.690",
+              september: "13.390",
+              october: "13.290",
+              november: "13.290",
+              december: "13.290",
+              year:"6.198"
+            });
+            this.gridData.push({
+              baseYear: "2023",
+              division: "종합편성 채널",
+              ep: "예상",
+              january: "14.608",
+              february: "15.990",
+              march: "13.990",
+              april: "12.990",
+              may: "13.190",
+              june: "13.290",
+              july: "13.490",
+              august: "15.690",
+              september: "13.390",
+              october: "13.290",
+              november: "13.290",
+              december: "13.290",
+              year:"6.198"
+            });
+            this.gridData.push({
+              baseYear: "2023",
+              division: "종합편성 채널",
+              ep: "예상",
+              january: "14.608",
+              february: "15.990",
+              march: "13.990",
+              april: "12.990",
+              may: "13.190",
+              june: "13.290",
+              july: "13.490",
+              august: "15.690",
+              september: "13.390",
+              october: "13.290",
+              november: "13.290",
+              december: "13.290",
+              year:"6.198"
+            });
+          },
+        },
+      };
+
+      $(function () {
+        new Vue(app);
+        Vue.nextTick(function () {
+          $(window).resize(function () {
+            AUIGrid.resize("#cptRatingGrid");
+          });
+        });
+        // Vue.component();
+      });
+    </script>
+  </body>
+</html>

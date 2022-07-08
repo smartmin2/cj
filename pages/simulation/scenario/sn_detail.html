@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>시나리오 상세분석</title>
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../../../css/lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../css/lib/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../AUIGrid/AUIGrid_modern_style.css" />
+    <link rel="stylesheet" href="../../../css/core/style.css" />
+    <link rel="stylesheet" href="../../../css/core/main.css" />
+    <link rel="stylesheet" href="../../../css/core/main_extra.css" />
+    <link rel="stylesheet" href="../../../css/core/style_sub.css" />
+
+    <script src="../../../js/lib/jquery.js"></script>
+    <script src="../../../js/lib/vue.js"></script>
+    <script src="../../../js/lib/bootstrap.js"></script>
+    <script src="../../../AUIGrid/AUIGrid.js"></script>
+    <script src="../../../AUIGrid/AUIGridLicense.js"></script>
+    <script src="../../../js/all.min.js"></script>
+    <script src="../../../js/summaryModal.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div id="app" class="pt-3">
+        <!-- 검색조건 영역 -->
+        <div class="card card-box mr-0">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <div class="d-flex justify-content-start align-items-end">
+                <div class="d-block">
+                  <select id="baseYear" class="form-control cj-selectBox select-box">
+                    <option>기준년도</option>
+                  </select>
+                </div>
+
+                <div class="d-block ml-2">
+                  <select id="step" class="form-control cj-selectBox select-box">
+                    <option>계획기준</option>
+                  </select>
+                </div>
+
+                <div class="d-block ml-2">
+                  <input type="text" class="form-control cj-inputBox" id="search" placeholder="시청률 기준" />
+                </div>
+
+                <div class="d-block ml-2">
+                  <input type="text" class="form-control cj-inputBox" id="search" placeholder="시나리오명" />
+                </div>
+              </div>
+
+              <div class="d-flex cj-btn-group align-items-end">
+                <button type="submit" class="btn-dark btn-black">조회</button>
+                <button type="button" class="btn-dark btn-black">비교</button>
+              </div>
+            </div>
+            <!-- grid 영역 -->
+            <div class="mt-4">
+              <div id="snDetailGrid" style="min-height: 400px"></div>
+            </div>
+
+            <!-- 시나리오 modal-->
+            <scenario-summary-modal ref="refScenarioSummary" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let snDetailGrid = "";
+      let app = {
+        el: "#app",
+        watch: {
+          gridData: function () {
+            AUIGrid.setGridData(snDetailGrid, this.gridData);
+          },
+        },
+        mounted() {
+          snDetailGrid = AUIGrid.destroy("#snDetailGrid");
+          snDetailGrid = AUIGrid.create("#snDetailGrid", this.gridLayout, this.gridProps);
+
+          // 페이지 진입 시 기준년도 산출
+          this.searchCommand.baseYear = new Date().getFullYear();
+          // 기준년도 항목정의(과거:3년, 향후:5년)
+          for (let idx = this.searchCommand.baseYear - 2; idx < this.searchCommand.baseYear + 5; idx += 1) {
+            this.selectOptionItems.baseYear.push({ value: `${idx}`, text: `${idx}년` });
+          }
+
+          this.selectOptionItems.status.push({ value: "I", text: "진행중" });
+          this.selectOptionItems.status.push({ value: "C", text: "확정" });
+
+          this.search();
+        },
+        data: () => ({
+          selectOptionItems: {
+            baseYear: [{ value: "", text: "기준년도" }],
+            genre: [{ value: "", text: "장르" }],
+            status: [{ value: "", text: "채널그룹명" }],
+          },
+          searchCommand: {
+            scenarioName: null,
+            baseYear: "",
+            genre: "",
+            status: "",
+          },
+          gridData: [],
+          gridLayout: [
+            {
+              headerText: "",
+              width: "5%",
+              cellMerge: true,
+              renderer: {
+                type: "CheckBoxEditRenderer",
+                showLabel: false, // 참, 거짓 텍스트 출력여부( 기본값 false )
+                editable: true, // 체크박스 편집 활성화 여부(기본값 : false)
+              },
+              // labelFunction : function(rowIndex, columnIndex, value, headerText, item) {
+              //     // let isChildren = item['version'] > 0;
+              //     // return `<div class="${isChildren ? 'small':''}">${ isChildren ? item['id'] + '-' + item['version']: item['id'] }</div>`
+              //     return `<div class="form-check">
+              //                 <input class="form-check-input" type="checkbox">
+              //             </div>
+              //     `
+              // }
+              editRenderer: {
+                type: "CheckBoxEditRenderer",
+              },
+            },
+            {
+              dataField: "baseYear",
+              headerText: "기준년도",
+              width: "7%",
+              editRenderer: {
+                type: "DropDownListRenderer",
+                list: ["2020년", "2021년", "2022년"],
+              },
+            },
+            {
+              dataField: "planStd",
+              headerText: "계획기준",
+              width: "7%",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "ratingStd",
+              headerText: "시청률기준",
+              width: "7%",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "scenarioName",
+              headerText: "시나리오명",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "summary",
+              headerText: "요약",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "step",
+              headerText: "단계",
+              renderer: {
+                // HTML 템플릿 렌더러 사용
+                type: "TemplateRenderer",
+              },
+              // dataField 로 정의된 필드 값이 HTML 이라면 labelFunction 으로 처리할 필요 없음.
+              labelFunction: function (rowIndex, columnIndex, value, headerText, item) {
+                // HTML 템플릿 작성
+                var template = '<div class="my_div">';
+                template += '<button class="btn btn-dark btn-black">상세조회</button>';
+                template += "</div>";
+                return template;
+              },
+            },
+            {
+              dataField: "step",
+              headerText: "단계",
+              editRenderer: {
+                type: "DropDownListRenderer",
+                list: ["진행중", "확정"],
+              },
+            },
+            {
+              headerText: "등록정보",
+              width: "15%",
+              renderer: {
+                type: "TemplateRenderer",
+              },
+              labelFunction: function (rowIndex, columnIndex, value, headerText, item) {
+                return `${item["departName"]} | ${item["writer"]} | ${item["createAt"]}`; //item.bdp_mod_id + "|" + item.bdp_mod_dtm;
+              },
+            },
+          ],
+          gridProps: {
+            enableFilter: false,
+            enableSorting: false,
+            headerHeight: 60,
+            headerHeights: [30, 30],
+            rowHeight: 50,
+            editingOnKeyDown: false,
+            autoGridHeight: false,
+            autoGridWidth: false,
+            ignoreColumnMinWidth: true,
+            softRemoveRowMode: false,
+            // 행 번호 컬럼 활성화 속성입니다.
+            showRowNumColumn: false,
+            /*추가 옵션*/
+            showStateColumn: false,
+            editable: true,
+            noDataMessage: "엑셀데이터를 붙여넣거나 행추가를 통해 데이터를 입력하세요.",
+          },
+        }),
+        methods: {
+          search: function () {
+            console.log("search", this.searchCommand);
+            this.setTestData();
+          },
+          createScenario: function () {
+            this.$refs["refScenarioSummary"].draw();
+          },
+          edit: function (id) {
+            console.log("준비중 edit", id);
+          },
+          version: function (id) {
+            console.log("준비중 version", id);
+          },
+          copy: function (id) {
+            console.log("준비중 copy", id);
+          },
+          remove: function (id) {
+            console.log("준비중 remove", id);
+          },
+          done: function (id) {
+            console.log("준비중 done", id);
+          },
+          setTestData: function () {
+            this.gridData = [];
+            this.gridData.push({
+              writer: "홍길동",
+              departName: "부서명",
+              createAt: "2022.10.12",
+              listNum: "1",
+              baseYear: "2023",
+              planStd: "경영계획",
+              ratingStd: "수도권",
+              scenarioName: "2023년 경영기반 시뮬레이션 1차",
+              summary: "4건(70회차), 75억, 2.873",
+              step: "진행중",
+              status: "I",
+              id: 2,
+              version: 0,
+            });
+            this.gridData.push({
+              writer: "홍길동",
+              departName: "부서명",
+              createAt: "2022.10.12",
+              listNum: "1-1",
+              baseYear: "2023",
+              planStd: "경영계획",
+              ratingStd: "수도권",
+              scenarioName: "2023년 경영기반 시뮬레이션 1차",
+              summary: "4건(70회차), 75억, 2.873",
+              step: "진행중",
+              status: "I",
+              id: 2,
+              version: 0,
+            });
+            this.gridData.push({
+              writer: "홍길동",
+              departName: "부서명",
+              createAt: "2022.10.12",
+              listNum: "2",
+              baseYear: "2023",
+              planStd: "경영계획",
+              ratingStd: "수도권",
+              scenarioName: "2023년 경영기반 시뮬레이션 1차",
+              summary: "4건(70회차), 75억, 2.873",
+              step: "진행중",
+              status: "I",
+              id: 2,
+              version: 0,
+            });
+            this.gridData.push({
+              writer: "홍길동",
+              departName: "부서명",
+              createAt: "2022.10.12",
+              listNum: "3",
+              baseYear: "2023",
+              planStd: "경영계획",
+              ratingStd: "수도권",
+              scenarioName: "2023년 경영기반 시뮬레이션 1차",
+              summary: "4건(70회차), 75억, 2.873",
+              step: "진행중",
+              status: "I",
+              id: 1,
+              version: 1,
+            });
+          },
+        },
+      };
+
+      $(function () {
+        new Vue(app);
+        Vue.nextTick(function () {
+          $(window).resize(function () {
+            AUIGrid.resize("#snDetailGrid");
+          });
+        });
+        // Vue.component();
+      });
+    </script>
+  </body>
+</html>
