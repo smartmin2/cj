@@ -79,6 +79,6 @@ button.btn.btn-red.rec { border-radius: 9.5px; min-width:60px; min-height: 19px;
 .step-nav.info-nav li a { min-width: 203px; padding: 25px 0 30px 34px; max-height: 90px;clip-path: polygon(85% 0%, 100% 50%, 85% 100%, 0% 100%, 15% 50%, 0% 0%); } 
 .step-nav.info-nav li a:before { border: 48px solid transparent; border-left: 31px solid #ddd; left: 171px; top: -4px; } 
 .step-nav.info-nav li a:after { border: 47px solid transparent; border-left: 31px solid #fbfbfb; left: 170px; top: -3px; } 
-.step-nav li:first-child a { clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%); } 
+.step-nav.info-nav li:first-child a { clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%); } 
 
 .grid-top { gap:10px; } 
