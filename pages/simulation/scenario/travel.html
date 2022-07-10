@@ -65,7 +65,7 @@
           </div>
         </div>
         <div class="tab-content">
-          <div role="tabpanel" class="tab-pane active" id="mps">
+          <div role="tabpanel" class="tab-pane active fade" id="mps">
             <div class="card card-box mr-0 mt-4" id="app1">
               <div class="card-body">
                 <!-- grid 영역 -->
@@ -118,7 +118,7 @@
               </div>
             </div>
           </div>
-          <div role="tabpanel" class="tab-pane active" id="channel">
+          <div role="tabpanel" class="tab-pane active fade" id="channel">
             <div class="card card-box mr-0 mt-4" id="app3">
               <div class="card-body">
                 <!-- grid 영역 -->
@@ -158,7 +158,7 @@
               </div>
             </div>
           </div>
-          <div role="tabpanel" class="tab-pane active" id="ccSimulation">
+          <div role="tabpanel" class="tab-pane active fade" id="ccSimulation">
             <div class="card card-box mr-0 mt-4" id="app5">
               <div class="card-body">
                 <!-- grid 영역 -->
@@ -205,7 +205,7 @@
               </div>
             </div>
           </div>
-          <div role="tabpanel" class="tab-pane active" id="ccView">
+          <div role="tabpanel" class="tab-pane active fade" id="ccView">
             <div class="card card-box mr-0 mt-4" id="app7">
               <div class="card-body">
                 <!-- grid 영역 -->
@@ -251,7 +251,7 @@
               </div>
             </div>
           </div>
-          <div role="tabpanel" class="tab-pane active" id="rank">
+          <div role="tabpanel" class="tab-pane active fade" id="rank">
             <div class="card card-box mr-0 mt-4" id="app9">
               <div class="card-body">
                 <!-- grid 영역 -->
@@ -304,8 +304,20 @@
 
     <script>
       $(function () {
-        $("#myTab a:first").tab("show");
+        $("#myTab a:first").tab("show");    
+        
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+          var target = $(e.target).attr("href");
+          $(".tab-pane").not(target).removeClass("active");
+        });
+
+        $(".tab-content").css({"opacity":"0"});
       });
+
+      window.onload = function(){
+        $('a[href="#mps"]').trigger("shown.bs.tab");
+        $(".tab-content").css({"opacity":"1"});
+      };
 
       // tab1 start
       let bsnPlanGrid = "";
