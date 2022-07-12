@@ -71,7 +71,7 @@ button.btn.btn-red.rec { border-radius: 9.5px; min-width:60px; min-height: 19px;
 .step-nav li a:link { margin:0; } 
 .step-nav li a.active { color:#fff !important; background-color: #505c84; } 
 .step-nav li a.active span { background-color:#fff; color:#505c84; } 
-.step-nav li span.number { width:34px; height: 34px; display:inline-block; background-color: #bdbac8; border-radius: 50%; text-align: center; padding:8px 0; font-size: 15px; color:#fff; } 
+.step-nav li span.number { width:34px; height: 34px; display:inline-block; background-color: #bdbac8; border-radius: 50%; text-align: center; padding:6px 0; font-size: 15px; color:#fff; } 
 
 .step-nav + .cj-btn-group { margin-right: 20px; } 
 
