@@ -27,7 +27,7 @@ button.btn.btn-red.rec { border-radius: 9.5px; min-width:60px; min-height: 19px;
 
 .cj-input-radio input { display: flex; } 
 .cj-input-radio .form-check-input { margin-top: 0; } 
-.cj-input-radio label { min-width:55px; } 
+.cj-input-radio label.mw-55 { min-width:55px;  } 
 
 
 

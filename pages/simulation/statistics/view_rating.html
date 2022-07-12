@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>사용자 정의 시청률 조회 화면</title>
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../../../css/lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../css/lib/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../AUIGrid/AUIGrid_modern_style.css" />
+    <link rel="stylesheet" href="../../../css/core/style.css" />
+    <link rel="stylesheet" href="../../../css/core/main.css" />
+    <link rel="stylesheet" href="../../../css/core/main_extra.css" />
+    <link rel="stylesheet" href="../../../css/core/style_sub.css" />
+
+    <script src="../../../js/lib/jquery.js"></script>
+    <script src="../../../js/lib/vue.js"></script>
+    <script src="../../../js/lib/bootstrap.js"></script>
+    <script src="../../../AUIGrid/AUIGrid.js"></script>
+    <script src="../../../AUIGrid/AUIGridLicense.js"></script>
+    <script src="../../../js/all.min.js"></script>
+    <script src="../../../js/summaryModal.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div id="app" class="pt-3">
+        <!-- 검색조건 영역 -->
+        <div class="card card-box mr-0">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <div class="d-flex justify-content-start align-items-center">
+
+                <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
+                  <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1" />
+                  <label class="form-check-label" for="radioDefault1"> 월 </label>
+                </div>
+
+                <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
+                  <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault2" />
+                  <label class="form-check-label" for="radioDefault2"> 주 </label>
+                </div>
+
+                <div class="form-check cj-input-radio d-flex align-items-center">
+                  <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault3" />
+                  <label class="form-check-label" for="radioDefault3"> 년 </label>
+                </div>
+
+                <div class="d-flex mr-3 align-items-center ml-3">
+                  <input type="date" name="" id="" class="form-control cj-inputBox mr-2" />~
+                  <input type="date" name="" id="" class="form-control cj-inputBox ml-2" />
+                </div>
+
+                <div class="d-block">
+                  <select id="baseYear" class="form-control cj-selectBox select-box">
+                    <option>타겟구분</option>
+                  </select>
+                </div>
+
+                <div class="d-block ml-2">
+                  <select id="step" class="form-control cj-selectBox select-box">
+                    <option>수도권/전국</option>
+                  </select>
+                </div>
+
+                <div class="d-block ml-2">
+                  <select id="step" class="form-control cj-selectBox select-box">
+                    <option>채널</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="d-flex cj-btn-group align-items-end">
+                <button type="submit" class="btn-dark btn-black">조회</button>
+                <button type="button" class="btn-dark btn-black">다운로드</button>
+              </div>
+            </div>
+            <!-- grid 영역 -->
+            <div class="mt-4">
+              <div id="veiwRatingGrid" style="min-height: 400px"></div>
+            </div>
+
+            <!-- 시나리오 modal-->
+            <scenario-summary-modal ref="refScenarioSummary" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let veiwRatingGrid = "";
+      let app = {
+        el: "#app",
+        watch: {
+          gridData: function () {
+            AUIGrid.setGridData(veiwRatingGrid, this.gridData);
+          },
+        },
+        mounted() {
+          veiwRatingGrid = AUIGrid.destroy("#veiwRatingGrid");
+          veiwRatingGrid = AUIGrid.create("#veiwRatingGrid", this.gridLayout, this.gridProps);
+
+          // 페이지 진입 시 기준년도 산출
+          this.searchCommand.baseYear = new Date().getFullYear();
+          // 기준년도 항목정의(과거:3년, 향후:5년)
+          for (let idx = this.searchCommand.baseYear - 2; idx < this.searchCommand.baseYear + 5; idx += 1) {
+            this.selectOptionItems.baseYear.push({ value: `${idx}`, text: `${idx}년` });
+          }
+
+          this.selectOptionItems.status.push({ value: "I", text: "진행중" });
+          this.selectOptionItems.status.push({ value: "C", text: "확정" });
+
+          this.search();
+        },
+        data: () => ({
+          selectOptionItems: {
+            baseYear: [{ value: "", text: "기준년도" }],
+            genre: [{ value: "", text: "장르" }],
+            status: [{ value: "", text: "채널그룹명" }],
+          },
+          searchCommand: {
+            scenarioName: null,
+            baseYear: "",
+            genre: "",
+            status: "",
+          },
+          gridData: [],
+          gridLayout: [
+            {
+              dataField: "average",
+              headerText: "기간 평균",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "tvn",
+              headerText: "TVN",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "jtbc",
+              headerText: "JTBC",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "sbs",
+              headerText: "SBS",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "kbs2",
+              headerText: "KBS2",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "mbc",
+              headerText: "MBC",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+          ],
+          gridProps: {
+            enableFilter: false,
+            enableSorting: false,
+            headerHeight: 60,
+            headerHeights: [30, 30],
+            rowHeight: 50,
+            editingOnKeyDown: false,
+            autoGridHeight: false,
+            autoGridWidth: false,
+            ignoreColumnMinWidth: true,
+            softRemoveRowMode: false,
+            // 행 번호 컬럼 활성화 속성입니다.
+            showRowNumColumn: false,
+            /*추가 옵션*/
+            showStateColumn: false,
+            editable: true,
+            noDataMessage: "엑셀데이터를 붙여넣거나 행추가를 통해 데이터를 입력하세요.",
+          },
+        }),
+        methods: {
+          search: function () {
+            console.log("search", this.searchCommand);
+            this.setTestData();
+          },
+          createScenario: function () {
+            this.$refs["refScenarioSummary"].draw();
+          },
+          edit: function (id) {
+            console.log("준비중 edit", id);
+          },
+          version: function (id) {
+            console.log("준비중 version", id);
+          },
+          copy: function (id) {
+            console.log("준비중 copy", id);
+          },
+          remove: function (id) {
+            console.log("준비중 remove", id);
+          },
+          done: function (id) {
+            console.log("준비중 done", id);
+          },
+          setTestData: function () {
+            this.gridData = [];
+            this.gridData.push({
+              average: "2049남여",
+              tvn: "0.53",
+              jtbc: "0.36",
+              sbs: "0.36",
+              kbs2: "0.36",
+              mbc: "0.36",
+            });
+            this.gridData.push({
+              average: "2049남여",
+              tvn: "0.53",
+              jtbc: "0.36",
+              sbs: "0.36",
+              kbs2: "0.36",
+              mbc: "0.36",
+            });
+          },
+        },
+      };
+
+      $(function () {
+        new Vue(app);
+        Vue.nextTick(function () {
+          $(window).resize(function () {
+            AUIGrid.resize("#veiwRatingGrid");
+          });
+        });
+        // Vue.component();
+      });
+    </script>
+  </body>
+</html>
