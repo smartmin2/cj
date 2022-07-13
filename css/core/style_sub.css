@@ -1,5 +1,5 @@
-@charset "utf-8"; /* background */
-.card-box { border-radius: 4px; border: solid 1px #d5d6dc; background-color: #fbfbfb;} 
+@charset "utf-8"; 
+.card-box { border-radius: 4px; border: solid 1px #d5d6dc; background-color: #fbfbfb; } 
 
 /* button */
 .cj-btn-group { gap:10px; } 
@@ -14,7 +14,7 @@ button.btn-next { min-width: 100px; background-color: #515668; }
 button.btn.btn-red.rec { border-radius: 9.5px; min-width:60px; min-height: 19px; font-size: 11px; padding:0; } 
 
 /* select */
-.form-control.select-box {  min-height: 43px; border: 0; background-color: none; font-size: 13px; color: #262829; border-radius: 4px; border: solid 1px #d7d8e1; } 
+.form-control.select-box { min-height: 43px; border: 0; background-color: none; font-size: 13px; color: #262829; border-radius: 4px; border: solid 1px #d7d8e1; } 
 .form-control.select-box:focus { box-shadow: none !important; outline: 0; border: solid 1px #d7d8e1; } 
 
 /* input */
@@ -27,12 +27,12 @@ button.btn.btn-red.rec { border-radius: 9.5px; min-width:60px; min-height: 19px;
 
 .cj-input-radio input { display: flex; } 
 .cj-input-radio .form-check-input { margin-top: 0; } 
-.cj-input-radio label.mw-55 { min-width:55px;  } 
+.cj-input-radio label.mw-55 { min-width:55px; } 
 
 
 
 /* grid */
-.aui-grid { border-radius: 4px; border: solid 1px #cdcdd5; background-color: #fff; font-family: 'CJ Medium';} 
+.aui-grid { border-radius: 4px; border: solid 1px #cdcdd5; background-color: #fff; font-family: 'CJ Medium'; } 
 .aui-grid .aui-grid-table td { font-size: 13px; } 
 .aui-grid-header-panel .aui-grid-table tr td { border-right: solid 1px #d3d7e3; } 
 .aui-grid-header-panel .aui-grid-group-branch-header { border-bottom: solid 1px #a0a1a9 !important; } 
@@ -55,8 +55,8 @@ button.btn.btn-red.rec { border-radius: 9.5px; min-width:60px; min-height: 19px;
 
 
 /* nav */
-.nav-wrap { width:100%; max-height: 90px; overflow-x: auto; overflow-y: hidden; gap:20px;} 
-.step-nav { border:0; flex-wrap: nowrap;} 
+.nav-wrap { width:100%; max-height: 90px; overflow-x: auto; overflow-y: hidden; gap:20px; } 
+.step-nav { border:0; flex-wrap: nowrap; } 
 .step-nav li { margin-left: -35px; } 
 .step-nav.info-nav li:first-child,.step-nav li:first-child { margin-left: 0; } 
 
@@ -76,9 +76,15 @@ button.btn.btn-red.rec { border-radius: 9.5px; min-width:60px; min-height: 19px;
 .step-nav + .cj-btn-group { margin-right: 20px; } 
 
 .step-nav.info-nav li { margin-left: -31px; } 
-.step-nav.info-nav li a { min-width: 203px; padding: 25px 0 30px 34px; max-height: 90px;clip-path: polygon(85% 0%, 100% 50%, 85% 100%, 0% 100%, 15% 50%, 0% 0%); } 
+.step-nav.info-nav li a { min-width: 203px; padding: 25px 0 30px 34px; max-height: 90px; clip-path: polygon(85% 0%, 100% 50%, 85% 100%, 0% 100%, 15% 50%, 0% 0%); } 
 .step-nav.info-nav li a:before { border: 48px solid transparent; border-left: 31px solid #ddd; left: 171px; top: -4px; } 
 .step-nav.info-nav li a:after { border: 47px solid transparent; border-left: 31px solid #fbfbfb; left: 170px; top: -3px; } 
 .step-nav.info-nav li:first-child a { clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%); } 
 
 .grid-top { gap:10px; } 
+
+/* 768px 기준 "테이블 상단 버튼 그룹"이 깨질때 부모 div에 "md-block" 적용  */
+@media (max-width: 960px){
+ .md-block { display: block !important; margin: 0 auto; } 
+ .md-block .cj-btn-group { justify-content: center; margin-top: 10px; } 
+ }
