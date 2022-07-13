@@ -1,9 +1,9 @@
 @charset "utf-8"; /* background */
-.card-box { border-radius: 4px; border: solid 1px #d5d6dc; background-color: #fbfbfb; } 
+.card-box { border-radius: 4px; border: solid 1px #d5d6dc; background-color: #fbfbfb;} 
 
 /* button */
 .cj-btn-group { gap:10px; } 
-.cj-btn-group button { font-size: 13px; min-width:68px; min-height: 37px; border-radius: 3px; text-align: center; border:none; outline: none; display: flex; align-items: center; justify-content: center; gap:5px; } 
+.cj-btn-group button { font-size: 13px; min-height: 37px; border-radius: 3px; text-align: center; border:none; outline: none; display: flex; align-items: center; justify-content: center; gap:5px; } 
 .cj-btn-group button:focus, .cj-btn-group button:active { box-shadow: none !important; } 
 button.btn-black { background-color: #515668; } 
 button.btn-red { background-color: #dd5151; border: 0; } 
@@ -14,7 +14,7 @@ button.btn-next { min-width: 100px; background-color: #515668; }
 button.btn.btn-red.rec { border-radius: 9.5px; min-width:60px; min-height: 19px; font-size: 11px; padding:0; } 
 
 /* select */
-.form-control.select-box { min-width: 140px; min-height: 43px; border: 0; background-color: none; font-size: 13px; color: #262829; border-radius: 4px; border: solid 1px #d7d8e1; } 
+.form-control.select-box {  min-height: 43px; border: 0; background-color: none; font-size: 13px; color: #262829; border-radius: 4px; border: solid 1px #d7d8e1; } 
 .form-control.select-box:focus { box-shadow: none !important; outline: 0; border: solid 1px #d7d8e1; } 
 
 /* input */
@@ -32,7 +32,7 @@ button.btn.btn-red.rec { border-radius: 9.5px; min-width:60px; min-height: 19px;
 
 
 /* grid */
-.aui-grid { border-radius: 4px; border: solid 1px #cdcdd5; background-color: #fff; font-family: 'CJ Medium'; } 
+.aui-grid { border-radius: 4px; border: solid 1px #cdcdd5; background-color: #fff; font-family: 'CJ Medium';} 
 .aui-grid .aui-grid-table td { font-size: 13px; } 
 .aui-grid-header-panel .aui-grid-table tr td { border-right: solid 1px #d3d7e3; } 
 .aui-grid-header-panel .aui-grid-group-branch-header { border-bottom: solid 1px #a0a1a9 !important; } 
@@ -55,8 +55,8 @@ button.btn.btn-red.rec { border-radius: 9.5px; min-width:60px; min-height: 19px;
 
 
 /* nav */
-.nav-wrap { width:100%; max-height: 90px; } 
-.step-nav { border:0; } 
+.nav-wrap { width:100%; max-height: 90px; overflow-x: auto; overflow-y: hidden; gap:20px;} 
+.step-nav { border:0; flex-wrap: nowrap;} 
 .step-nav li { margin-left: -35px; } 
 .step-nav.info-nav li:first-child,.step-nav li:first-child { margin-left: 0; } 
 
