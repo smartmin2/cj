@@ -48,8 +48,8 @@
               </div>
 
               <div class="d-flex cj-btn-group align-items-end">
-                <button type="submit" class="btn-dark btn-black">조회</button>
-                <button type="button" class="btn-dark btn-black" id="addBtnScenario" @click.end="createScenario"><i class="fa-solid fa-plus"></i>신규등록</button>
+                <button type="submit" class="btn btn-cj">조회</button>
+                <button type="button" class="btn btn-cj" id="addBtnScenario" @click.end="createScenario"><i class="fa-solid fa-plus"></i>신규등록</button>
               </div>
             </div>
             <!-- grid 영역 -->
@@ -189,20 +189,20 @@
                 // let plClass = ${btnList.length > 0 ? 'pl-1':''};
                 // I : 진행중
                 if (item["status"] == "I") {
-                  btnList.push(`<button class="btn btn-dark btn-black" onClick="app.edit(${item["id"]})">수정</button>`);
+                  btnList.push(`<button class="btn btn btn-cj" onClick="app.edit(${item["id"]})">수정</button>`);
 
                   // 상위 ID가 있는 경우 특정 시나리오의 하위버전
                   if ((item["version"] || 0) < 1) {
-                    btnList.push(`<button class="btn btn-dark btn-black ${setBtnClass()}" onClick="app.version(${item["id"]})">버전추가</button>`);
+                    btnList.push(`<button class="btn btn btn-cj ${setBtnClass()}" onClick="app.version(${item["id"]})">버전추가</button>`);
                   }
-                  btnList.push(`<button class="btn btn-dark btn-black ${setBtnClass()}" onClick="app.copy(${item["id"]})">복사</button>`);
-                  btnList.push(`<button class="btn btn-danger btn-red ${setBtnClass()}" onClick="app.remove(${item["id"]})">삭제</button>`);
+                  btnList.push(`<button class="btn btn btn-cj ${setBtnClass()}" onClick="app.copy(${item["id"]})">복사</button>`);
+                  btnList.push(`<button class="btn btn btn-cj ${setBtnClass()}" onClick="app.remove(${item["id"]})">삭제</button>`);
                   btnList.push(`<button class="btn btn-success ${setBtnClass()}" onClick="app.done(${item["id"]})">확정</button>`);
                 } else {
                   if ((item["version"] || 0) < 1) {
-                    btnList.push(`<button class="btn btn-dark btn-black ${setBtnClass()}" onClick="app.version(${item["id"]})">버전추가</button>`);
+                    btnList.push(`<button class="btn btn btn-cj ${setBtnClass()}" onClick="app.version(${item["id"]})">버전추가</button>`);
                   }
-                  btnList.push(`<button class="btn btn-dark btn-black ${setBtnClass()}" onClick="app.copy(${item["id"]})">복사</button>`);
+                  btnList.push(`<button class="btn btn btn-cj ${setBtnClass()}" onClick="app.copy(${item["id"]})">복사</button>`);
                 }
                 return `<div class="d-flex flex-fill justify-content-start">${btnList.join("")}</div>`;
               },
@@ -211,8 +211,8 @@
           gridProps: {
             enableFilter: false,
             enableSorting: false,
-            headerHeight: 60,
-            headerHeights: [30, 30],
+            headerHeight: 50,
+            headerHeights: [25, 25],
             rowHeight: 50,
             editingOnKeyDown: false,
             autoGridHeight: false,
