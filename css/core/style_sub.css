@@ -37,7 +37,7 @@ button.btn.btn-cj.rec { border-radius: 9.5px; min-width:60px; min-height: 19px; 
 .aui-grid { border-radius: 4px; border: solid 1px #cdcdd5; background-color: #fff; font-family: 'CJ Medium'; } 
 .aui-grid .aui-grid-table td { font-size: 13px; } 
 .aui-grid-header-panel .aui-grid-table tr td { border-right: solid 1px #d3d7e3; } 
-.aui-grid-header-panel .aui-grid-group-branch-header { border-bottom: solid 1px #a0a1a9 !important; } 
+.aui-grid-header-panel .aui-grid-group-branch-header { border-bottom: solid 1px #cdcdd5 !important; } 
 .aui-grid-body-panel .aui-grid-table tr td { vertical-align: middle; border-right: 0; font-size: 13px; border-bottom: 1px solid #cdcdd5; } 
 .aui-grid-default-header { border: solid 1px #cdcdd5; background-color: #f7f8fa; vertical-align: middle; color: #202022; font-weight: bold; } 
 .aui-grid-row-background { background-color: #fff; } 
