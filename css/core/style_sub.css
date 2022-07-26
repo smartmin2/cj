@@ -68,7 +68,7 @@ button.btn.btn-cj.rec { border-radius: 9.5px; min-width:60px; min-height: 19px; 
 .step-nav.info-nav li a.active::after { border:0; } 
 .step-nav li a:before { position:absolute; content:""; width:0; height:0; border: 44px solid transparent; border-left:44px solid #ddd; left: 314px; z-index: -1; top: -1px; } 
 .step-nav li a:after { position:absolute; content:""; width:0; height:0; border: 44px solid transparent; border-left: 36px solid #fbfbfb; left: 313px; top: -1px; z-index: -1; } 
-.step-nav li a { position:relative; padding-left:15px; color:#bdbac8 !important; font-weight: bold; font-size: 15px; min-width:350px; padding:26px 0 26px 55px; gap:10px; align-items: center; display: flex; clip-path: polygon(90% 0%, 100% 50%, 90% 100%, 0% 100%, 10% 50%, 0% 0%); } 
+.step-nav li a { position:relative; padding-left:15px; color:#bdbac8 !important; font-weight: bold; font-size: 14px; min-width:350px; padding:26px 0 26px 55px; gap:10px; align-items: center; display: flex; clip-path: polygon(90% 0%, 100% 50%, 90% 100%, 0% 100%, 10% 50%, 0% 0%); } 
 .step-nav li:first-child a { clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%); } 
 .step-nav li a:link { margin:0; } 
 .step-nav li a.active { color:#fff !important; background-color: #505c84; } 
