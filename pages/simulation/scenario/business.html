@@ -366,10 +366,10 @@
               labelFunction: function (rowIndex, columnIndex, value, headerText, item) {
                 let btnList = [];
                 let setBtnClass = function () {
-                  return btnList.push(`<button class="btn btn btn-cj" onClick="app.edit(${item["id"]})">상세 등록</button>`);
+                  return btnList.push(`<button class="btn btn-cj" onClick="app.edit(${item["id"]})">상세 등록</button>`);
                 };
                 if (item["status"] == "I") {
-                  btnList.push(`<button class="btn btn btn-cj" onClick="app.edit(${item["id"]})">상세 등록</button>`);
+                  btnList.push(`<button class="btn btn-cj" onClick="app.edit(${item["id"]})">상세 등록</button>`);
                 }
                 return `<div class="d-flex flex-fill justify-content-center">${btnList.join("")}</div>`;
               },
@@ -392,10 +392,10 @@
               labelFunction: function (rowIndex, columnIndex, value, headerText, item) {
                 let btnList = [];
                 let setBtnClass = function () {
-                  return btnList.push(`<button class="btn btn btn-cj" onClick="app.edit(${item["id"]})">수정</button>`);
+                  return btnList.push(`<button class="btn btn-cj" onClick="app.edit(${item["id"]})">수정</button>`);
                 };
                 if (item["status"] == "I") {
-                  btnList.push(`<button class="btn btn btn-cj" onClick="app.edit(${item["id"]})">수정</button>`);
+                  btnList.push(`<button class="btn btn-cj" onClick="app.edit(${item["id"]})">수정</button>`);
                 }
                 return `<div class="d-flex flex-fill justify-content-center">${btnList.join("")}</div>`;
               },
@@ -404,9 +404,9 @@
           gridProps: {
             enableFilter: false,
             enableSorting: false,
-            headerHeight: 50,
-            headerHeights: [25, 25],
-            rowHeight: 50,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
             editingOnKeyDown: false,
             autoGridHeight: false,
             autoGridWidth: false,
@@ -650,20 +650,20 @@
                 // let plClass = ${btnList.length > 0 ? 'pl-1':''};
                 // I : 진행중
                 if (item["status"] == "I") {
-                  btnList.push(`<button class="btn btn btn-cj" onClick="app.edit(${item["id"]})">수정</button>`);
+                  btnList.push(`<button class="btn btn-cj" onClick="app.edit(${item["id"]})">수정</button>`);
 
                   // 상위 ID가 있는 경우 특정 시나리오의 하위버전
                   if ((item["version"] || 0) < 1) {
-                    btnList.push(`<button class="btn btn btn-cj ${setBtnClass()}" onClick="app.version(${item["id"]})">버전추가</button>`);
+                    btnList.push(`<button class="btn btn-cj ${setBtnClass()}" onClick="app.version(${item["id"]})">버전추가</button>`);
                   }
-                  btnList.push(`<button class="btn btn btn-cj ${setBtnClass()}" onClick="app.copy(${item["id"]})">복사</button>`);
-                  btnList.push(`<button class="btn btn btn-cj ${setBtnClass()}" onClick="app.remove(${item["id"]})">삭제</button>`);
+                  btnList.push(`<button class="btn btn-cj ${setBtnClass()}" onClick="app.copy(${item["id"]})">복사</button>`);
+                  btnList.push(`<button class="btn btn-cj ${setBtnClass()}" onClick="app.remove(${item["id"]})">삭제</button>`);
                   btnList.push(`<button class="btn btn-success ${setBtnClass()}" onClick="app.done(${item["id"]})">확정</button>`);
                 } else {
                   if ((item["version"] || 0) < 1) {
-                    btnList.push(`<button class="btn btn btn-cj ${setBtnClass()}" onClick="app.version(${item["id"]})">버전추가</button>`);
+                    btnList.push(`<button class="btn btn-cj ${setBtnClass()}" onClick="app.version(${item["id"]})">버전추가</button>`);
                   }
-                  btnList.push(`<button class="btn btn btn-cj ${setBtnClass()}" onClick="app.copy(${item["id"]})">복사</button>`);
+                  btnList.push(`<button class="btn btn-cj ${setBtnClass()}" onClick="app.copy(${item["id"]})">복사</button>`);
                 }
                 return `<div class="d-flex flex-fill justify-content-start">${btnList.join("")}</div>`;
               },
@@ -672,9 +672,9 @@
           gridProps: {
             enableFilter: false,
             enableSorting: false,
-            headerHeight: 50,
-            headerHeights: [25, 25],
-            rowHeight: 50,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
             editingOnKeyDown: false,
             autoGridHeight: false,
             autoGridWidth: false,
@@ -906,7 +906,7 @@
             {
               dataField: "area",
               headerText: "수도권",
-              headerHeights: [25, 25],
+              headerHeights: [38, 38],
 
               children: [
                 {
@@ -969,9 +969,9 @@
           gridProps: {
             enableFilter: false,
             enableSorting: false,
-            headerHeight: 50,
-            headerHeights: [25, 25],
-            rowHeight: 50,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
             editingOnKeyDown: false,
             autoGridHeight: false,
             autoGridWidth: true,
@@ -1195,7 +1195,7 @@
               labelFunction: function (rowIndex, columnIndex, value, headerText, item) {
                 // HTML 템플릿 작성
                 var template = '<div class="my_div">';
-                template += '<button class="btn btn btn-cj">삭제</button>';
+                template += '<button class="btn btn-cj">삭제</button>';
                 template += "</div>";
                 return template;
               },
@@ -1205,9 +1205,9 @@
           gridProps: {
             enableFilter: false,
             enableSorting: false,
-            headerHeight: 50,
-            headerHeights: [25, 25],
-            rowHeight: 50,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
             editingOnKeyDown: false,
             autoGridHeight: false,
             autoGridWidth: true,
@@ -1402,7 +1402,7 @@
             {
               dataField: "exView",
               headerText: "시청률",
-              headerHeights: [25, 25],
+              headerHeights: [38, 38],
 
               children: [
                 {
@@ -1445,7 +1445,7 @@
               labelFunction: function (rowIndex, columnIndex, value, headerText, item) {
                 // HTML 템플릿 작성
                 var template = '<div class="my_div">';
-                template += '<button class="btn btn btn-cj">삭제</button>';
+                template += '<button class="btn btn-cj">삭제</button>';
                 template += "</div>";
                 return template;
               },
@@ -1455,9 +1455,9 @@
           gridProps: {
             enableFilter: false,
             enableSorting: false,
-            headerHeight: 50,
-            headerHeights: [25, 25],
-            rowHeight: 50,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
             editingOnKeyDown: false,
             autoGridHeight: false,
             autoGridWidth: true,
@@ -1640,7 +1640,7 @@
             {
               dataField: "reRate",
               headerText: "재방비율",
-              headerHeights: [25, 25],
+              headerHeights: [38, 38],
               children: [
                 {
                   dataField: "area",
@@ -1666,9 +1666,9 @@
           gridProps: {
             enableFilter: false,
             enableSorting: false,
-            headerHeight: 50,
-            headerHeights: [25, 25],
-            rowHeight: 50,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
             editingOnKeyDown: false,
             autoGridHeight: false,
             autoGridWidth: true,
@@ -1834,7 +1834,7 @@
             {
               dataField: "monday",
               headerText: "월",
-              headerHeights: [25, 25],
+              headerHeights: [38, 38],
               children: [
                 {
                   dataField: "area",
@@ -1859,7 +1859,7 @@
             {
               dataField: "tuesday",
               headerText: "화",
-              headerHeights: [25, 25],
+              headerHeights: [38, 38],
               children: [
                 {
                   dataField: "area",
@@ -1884,7 +1884,7 @@
             {
               dataField: "wednesday",
               headerText: "수",
-              headerHeights: [25, 25],
+              headerHeights: [38, 38],
               children: [
                 {
                   dataField: "area",
@@ -1909,7 +1909,7 @@
             {
               dataField: "thursday",
               headerText: "목",
-              headerHeights: [25, 25],
+              headerHeights: [38, 38],
               children: [
                 {
                   dataField: "area",
@@ -1934,7 +1934,7 @@
             {
               dataField: "friday",
               headerText: "금",
-              headerHeights: [25, 25],
+              headerHeights: [38, 38],
               children: [
                 {
                   dataField: "area",
@@ -1959,7 +1959,7 @@
             {
               dataField: "saturday",
               headerText: "토",
-              headerHeights: [25, 25],
+              headerHeights: [38, 38],
               children: [
                 {
                   dataField: "area",
@@ -1984,7 +1984,7 @@
             {
               dataField: "sunday",
               headerText: "일",
-              headerHeights: [25, 25],
+              headerHeights: [38, 38],
               children: [
                 {
                   dataField: "area",
@@ -2010,9 +2010,9 @@
           gridProps: {
             enableFilter: false,
             enableSorting: false,
-            headerHeight: 50,
-            headerHeights: [25, 25],
-            rowHeight: 50,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
             editingOnKeyDown: false,
             autoGridHeight: false,
             autoGridWidth: true,
@@ -2174,7 +2174,7 @@
             {
               dataField: "area",
               headerText: "수도권",
-              headerHeights: [25, 25],
+              headerHeights: [38, 38],
 
               children: [
                 {
@@ -2229,9 +2229,9 @@
           gridProps: {
             enableFilter: false,
             enableSorting: false,
-            headerHeight: 50,
-            headerHeights: [25, 25],
-            rowHeight: 50,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
             editingOnKeyDown: false,
             autoGridHeight: false,
             autoGridWidth: true,
@@ -2404,7 +2404,7 @@
             {
               dataField: "",
               headerText: "표제비기준",
-              headerHeights: [25, 25],
+              headerHeights: [38, 38],
 
               children: [
                 {
@@ -2421,7 +2421,7 @@
             {
               dataField: "",
               headerText: "표제비기준",
-              headerHeights: [25, 25],
+              headerHeights: [38, 38],
 
               children: [
                 {
@@ -2449,9 +2449,9 @@
           gridProps: {
             enableFilter: false,
             enableSorting: false,
-            headerHeight: 50,
-            headerHeights: [25, 25],
-            rowHeight: 50,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
             editingOnKeyDown: false,
             autoGridHeight: false,
             autoGridWidth: true,
@@ -2635,7 +2635,7 @@
             {
               dataField: "area",
               headerText: "수도권",
-              headerHeights: [25, 25],
+              headerHeights: [38, 38],
        
               children: [
                 {
@@ -2674,9 +2674,9 @@
           gridProps: {
             enableFilter: false,
             enableSorting: false,
-            headerHeight: 50,
-            headerHeights: [25, 25],
-            rowHeight: 50,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
             editingOnKeyDown: false,
             autoGridHeight: false,
             autoGridWidth: true,
@@ -2833,9 +2833,9 @@
           gridProps: {
             enableFilter: false,
             enableSorting: false,
-            headerHeight: 50,
-            headerHeights: [25, 25],
-            rowHeight: 50,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
             editingOnKeyDown: false,
             autoGridHeight: false,
             autoGridWidth: false,
@@ -3081,9 +3081,9 @@
             enableCellMerge: true,
             enableFilter: false,
             enableSorting: false,
-            headerHeight: 50,
-            headerHeights: [25, 25],
-            rowHeight: 50,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
             editingOnKeyDown: false,
             autoGridHeight: false,
             autoGridWidth: false,
@@ -3300,9 +3300,9 @@
           gridProps: {
             enableFilter: false,
             enableSorting: false,
-            headerHeight: 50,
-            headerHeights: [25, 25],
-            rowHeight: 50,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
             editingOnKeyDown: false,
             autoGridHeight: false,
             autoGridWidth: false,
@@ -3501,7 +3501,7 @@
               children: [
                 {
                   dataField: "2022",
-                  headerText: '<button type="button" class="btn btn btn-cj rec">EVENT</button>',
+                  headerText: '<button type="button" class="btn btn-cj rec">EVENT</button>',
                   editRenderer: {
                     type: "InputEditRenderer",
                     showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
@@ -3516,7 +3516,7 @@
               children: [
                 {
                   dataField: "2023",
-                  headerText: '<button type="button" class="btn btn btn-cj rec">EVENT</button>',
+                  headerText: '<button type="button" class="btn btn-cj rec">EVENT</button>',
                   editRenderer: {
                     type: "InputEditRenderer",
                     showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
@@ -3531,7 +3531,7 @@
               children: [
                 {
                   dataField: "2024",
-                  headerText: '<button type="button" class="btn btn btn-cj rec">EVENT</button>',
+                  headerText: '<button type="button" class="btn btn-cj rec">EVENT</button>',
                   editRenderer: {
                     type: "InputEditRenderer",
                     showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
@@ -3545,9 +3545,9 @@
             enableCellMerge: true,
             enableFilter: false,
             enableSorting: false,
-            headerHeight: 50,
-            headerHeights: [25, 25],
-            rowHeight: 50,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
             editingOnKeyDown: false,
             autoGridHeight: false,
             autoGridWidth: false,
@@ -3736,9 +3736,9 @@
           gridProps: {
             enableFilter: false,
             enableSorting: false,
-            headerHeight: 50,
-            headerHeights: [25, 25],
-            rowHeight: 50,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
             editingOnKeyDown: false,
             autoGridHeight: false,
             autoGridWidth: false,
@@ -3984,9 +3984,9 @@
             enableCellMerge: true,
             enableFilter: false,
             enableSorting: false,
-            headerHeight: 50,
-            headerHeights: [25, 25],
-            rowHeight: 50,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
             editingOnKeyDown: false,
             autoGridHeight: false,
             autoGridWidth: false,
@@ -4207,9 +4207,9 @@
           gridProps: {
             enableFilter: false,
             enableSorting: false,
-            headerHeight: 50,
-            headerHeights: [25, 25],
-            rowHeight: 50,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
             editingOnKeyDown: false,
             autoGridHeight: false,
             autoGridWidth: false,
@@ -4381,9 +4381,9 @@
             enableCellMerge: true,
             enableFilter: false,
             enableSorting: false,
-            headerHeight: 50,
-            headerHeights: [25, 25],
-            rowHeight: 50,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
             editingOnKeyDown: false,
             autoGridHeight: false,
             autoGridWidth: false,

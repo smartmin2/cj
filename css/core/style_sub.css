@@ -3,9 +3,9 @@
 
 /* button */
 .cj-btn-group { gap:10px; } 
-.cj-btn-group button { color:#fff; font-size: 13px; min-height: 35px; border-radius: 3px; text-align: center; border:none; outline: none; display: flex; align-items: center; justify-content: center; gap:5px; } 
+.cj-btn-group button { color:#fff; font-size: 13px; min-height: 37px; border-radius: 3px; text-align: center; border:none; outline: none; display: flex; align-items: center; justify-content: center; gap:5px; } 
 .cj-btn-group button:focus, .cj-btn-group button:active { box-shadow: none !important; } 
-button.btn-cj { background-color: #2c6cac; } 
+button.btn-cj { background-color: #515668; color:#fff;} 
 button.btn-black { background-color: #515668; } 
 button.btn-red { background-color: #dd5151; border: 0; } 
 button.btn-gray { background-color: #666666; } 
@@ -14,15 +14,15 @@ button.btn-next { min-width: 100px; background-color: #515668; }
 button.btn.btn-cj.rec { border-radius: 9.5px; min-width:60px; min-height: 19px; font-size: 11px; padding:0; } 
 
 /* select */
-.form-control.select-box { min-height: 40px; border: 0; background-color: none; font-size: 13px; color: #262829; border-radius: 4px; border: solid 1px #d7d8e1; } 
+.form-control.select-box { min-height: 43px; border: 0; background-color: none; font-size: 13px; color: #262829; border-radius: 4px; border: solid 1px #d7d8e1; } 
 .form-control.select-box:focus { box-shadow: none !important; outline: 0; border: solid 1px #d7d8e1; } 
 
 /* input */
-.form-control.cj-inputBox { min-height: 40px; border-radius: 4px; border: 1px solid #d7d8e1; background-color: #fff; } 
+.form-control.cj-inputBox { min-height: 43px; border-radius: 4px; border: 1px solid #d7d8e1; background-color: #fff; } 
 .form-control.cj-inputBox:focus { box-shadow: none !important; outline: 0; border: solid 1px #d7d8e1; } 
 
 .cj-label { margin-bottom: 0; } 
-.input-number { min-height: 40px; } 
+.input-number { min-height: 43px; } 
 .form-control.input-number:focus { box-shadow: none !important; outline: 0; border: solid 1px #d7d8e1; } 
 
 .cj-input-radio input { display: flex; } 
@@ -39,7 +39,7 @@ button.btn.btn-cj.rec { border-radius: 9.5px; min-width:60px; min-height: 19px; 
 .aui-grid-header-panel .aui-grid-table tr td { border-right: solid 1px #d3d7e3; } 
 .aui-grid-header-panel .aui-grid-group-branch-header { border-bottom: solid 1px #a0a1a9 !important; } 
 .aui-grid-body-panel .aui-grid-table tr td { vertical-align: middle; border-right: 0; font-size: 13px; border-bottom: 1px solid #cdcdd5; } 
-.aui-grid-default-header { border: solid 1px #cdcdd5; background-color: #d3d7e3; vertical-align: middle; color: #202022; font-weight: bold; } 
+.aui-grid-default-header { border: solid 1px #cdcdd5; background-color: #eef0f4; vertical-align: middle; color: #202022; font-weight: bold; } 
 .aui-grid-row-background { background-color: #fff; } 
 
 /* table */
