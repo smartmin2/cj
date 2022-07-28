@@ -1,11 +1,12 @@
-@charset "utf-8"; 
+@charset "utf-8";
 .card-box { border-radius: 4px; border: solid 1px #d5d6dc; background-color: #fbfbfb; } 
+.card-dark { border-radius: 4px; border: solid 1px #d5d6dc; background-color: #d4d7e2; } 
 
 /* button */
 .cj-btn-group { gap:10px; } 
 .cj-btn-group button { color:#fff; font-size: 13px; min-height: 37px; border-radius: 3px; text-align: center; border:none; outline: none; display: flex; align-items: center; justify-content: center; gap:5px; } 
 .cj-btn-group button:focus, .cj-btn-group button:active { box-shadow: none !important; } 
-button.btn-cj { background-color: #515668; color:#fff;} 
+button.btn-cj { background-color: #515668; color:#fff; } 
 button.btn-black { background-color: #515668; } 
 button.btn-red { background-color: #dd5151; border: 0; } 
 button.btn-gray { background-color: #666666; } 
@@ -28,8 +29,8 @@ button.btn.btn-cj.rec { border-radius: 9.5px; min-width:60px; min-height: 19px; 
 .cj-input-radio input { display: flex; } 
 .cj-input-radio .form-check-input { margin-top: 0; } 
 .cj-input-radio label.mw-55 { min-width:55px; } 
-.cj-input-radio input:checked+label{border: none; border-top:nonoe;  border-bottom: none;}
-.cj-input-radio input[type="radio"]:checked{accent-color: #209ba9;}
+.cj-input-radio input:checked+label { border: none; border-top:nonoe; border-bottom: none; } 
+.cj-input-radio input[type="radio"]:checked { accent-color: #209ba9; } 
 
 
 
@@ -85,8 +86,36 @@ button.btn.btn-cj.rec { border-radius: 9.5px; min-width:60px; min-height: 19px; 
 
 .grid-top { gap:10px; } 
 
-/* 768px 기준 "테이블 상단 버튼 그룹"이 깨질때 부모 div에 "md-block" 적용  */
+/* 768px 기준 "테이블 상단 버튼 그룹"이 깨질때 부모 div에 "md-block" 적용 */
 @media (max-width: 960px){
  .md-block { display: block !important; margin: 0 auto; } 
  .md-block .cj-btn-group { justify-content: center; margin-top: 10px; } 
  }
+
+
+
+
+ /* reaction */
+
+ .cj-title { font-size: 15px; font-weight: bold; } 
+
+ .lookup-table { border-radius: 4px; } 
+ .lookup-table .table { border-radius: 4px; border-spacing: 0px 10px; border-collapse: separate; } 
+ .lookup-table tr { height: 43px; } 
+ .lookup-table th { vertical-align: middle; font-weight: normal; border: 1px solid #d7d8e1; border-top-left-radius: 4px; border-bottom-left-radius: 4px; color: #373944; text-align: center; background: #f4f4f4; width: 17% !important; padding: 0.75rem 2px !important; } 
+ .lookup-table td { vertical-align: middle; font-weight: normal; border-top: 1px solid #d7d8e1; border-right: 1px solid #d7d8e1; border-bottom: 1px solid #d7d8e1; color: #373944; background: #ffffff; } 
+ .lookup-table td:last-child { border-top-right-radius: 4px; border-bottom-right-radius: 4px; } 
+ .lookup-table td.open-btn { text-align: center; font-size: 14px; cursor: pointer; width:5%; } 
+ .lookup-table .tableEmpty { width: 30px !important; padding: 0 !important; margin: 0 !important; border: none !important; background: none !important; } 
+ .lookup-table .table-input { width:100%; padding:0; border-right: none; } 
+ .lookup-table .table-input input { padding: 1rem; height: 100%; border:none; } 
+ .lookup-table .date-group { display: flex; align-items: center; gap:10px; width:fit-content; padding:0; } 
+ .lookup-table .date-group input { border:none; padding: 0.75rem; height: 100%; } 
+ .lookup-table .button-group { padding:0; width:fit-content; } 
+ .lookup-table .button-group .btn-group { width:100%; } 
+ .lookup-table .button-group button:first-child { border-left:0; } 
+ .lookup-table .button-group .btn-light { padding:0.75rem 1.75rem; border-left:1px solid #d7d8e1; color: #bcb9c9; } 
+
+
+ .card-inner {position: relative; width:100%; height: 100%; border-radius: 4px; border: solid 1px #505c84; background-color: #fff; } 
+ .card-inner .card-inner-tit {position:absolute;left:20px;top:-10px; border-radius: 14px; background-color: #505c84; padding:0.25rem 0.75rem; color:#fff;} 
