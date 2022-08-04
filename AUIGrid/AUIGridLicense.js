@@ -1,9 +1,9 @@
 /*!
  * AUIGrid 3.0.11 License
  * License Type : Evaluation(Trial) Version
- * Authorized Domain(or IP) : localhost,127.0.0.1,smartmin2.github.io
- * Expiration Date : 2022-07-29
+ * Authorized Domain(or IP) : localhost,127.0.0.1
+ * Expiration Date : 2022-09-01
  * www.auisoft.net
  */
  /* eslint-disable */
-AUIGridLicense = "eyJjdCI6InF1SjFMSEFtbEtRQldpZXRQZHZUMGl2N0VOQU1EdzRqVWE5YlpEQ2hKeFYrM3pEeWFaSHE3Y2o0bFBMUjZqbFVPcXBkbkQ5ZUFhMDVVRE5memtBaWQ2MjdNY0ZzMG0rWG5KQWp4MEhuRVRncHo4bm1LRFF0dkJnS0Y3eDRHNW1KIiwiaXYiOiIwZGE1MTdhYzRhNTY0ZDJiNDVkMzY4MzZiOTc1YjQ3MyIsInMiOiIwNzAzY2NmOTRmOTk1YzkyIn0=";
+AUIGridLicense = "eyJjdCI6Ikk1U3hhWUdrV1FTNit1Q1lsR3IxaDZTK2Zjclc2U2VsN3lMc2hVcmdXaHNjZFpDM3R4VG16ZkRCVjVJNkd1dzdWdEQrVmdSeHFNaVA1c0d4a0RzNlJVaG1HOWFncFc2UzY1RW1TZEZoNTBnPSIsIml2IjoiMDY4NzFjNmQ1YmU1ZGQyNjVhNjI0YTgxOThiOGE0NTIiLCJzIjoiOWRmZGE5ZGEyYmQ1NGY3OSJ9";
