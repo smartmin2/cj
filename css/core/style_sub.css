@@ -192,3 +192,5 @@ button:focus,button:active { box-shadow: none !important; }
  .cj-button-grid .btn-group{ height: 43px; } 
  .cj-button-grid button { letter-spacing: -0.26px; padding: 0 0.75rem; line-height: 15px;} 
  .button-group .btn-tit { border: solid 1px #d7d8e1; background-color: #f4f4f4; border-top-left-radius: 4px; border-bottom-left-radius: 4px; font-size: 13px; font-weight: 500; } 
+
+ :is(#repImage, #interest, #favorite, #attitude) .btn-group{min-height: 43px;}
