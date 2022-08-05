@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>RAWDATA</title>
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../../../css/lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../css/lib/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../AUIGrid/AUIGrid_modern_style.css" />
+    <link rel="stylesheet" href="../../../css/core/style.css" />
+    <link rel="stylesheet" href="../../../css/core/main.css" />
+    <link rel="stylesheet" href="../../../css/core/main_extra.css" />
+    <link rel="stylesheet" href="../../../css/core/style_sub.css" />
+
+    <script src="../../../js/lib/jquery.js"></script>
+    <script src="../../../js/lib/vue.js"></script>
+    <script src="../../../js/lib/bootstrap.js"></script>
+    <script src="../../../AUIGrid/AUIGrid.js"></script>
+    <script src="../../../AUIGrid/AUIGridLicense.js"></script>
+    <script src="../../../js/all.min.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div id="app">
+        <div class="row p-4">
+          <div class="col-md-12">
+            <div class="card card-box mr-0 p-4">
+                <div class="col-sm-12">
+                  <div class="lookup-table">
+                    <table class="table">
+                      <colgroup>
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th>프로그램 선정기준</th>
+                          <td class="date-group">
+                            <input type="date" name="" id="" class="form-control" />~
+                            <input type="date" name="" id="" class="form-control" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th>컨텐츠유형</th>
+                          <td class="button-group">
+                            <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-default">전체</button>
+                              <button type="button" class="btn btn-default">방송</button>
+                              <button type="button" class="btn btn-default">OTT</button>
+                            </div>
+                          </td>
+                          <td class="tableEmpty">
+                          </td>
+                          <th>시청률</th>
+                          <td class="button-group">
+                            <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-default">전체</button>
+                              <button type="button" class="btn btn-default">1.5이하</button>
+                              <button type="button" class="btn btn-default">1.5~2</button>
+                              <button type="button" class="btn btn-default">2~3</button>
+                              <button type="button" class="btn btn-default">3이상</button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th>채널</th>
+                          <td colspan="9">전체
+                            <div class="card m-0 lookup-box">
+                              <div class="col-sm-1 p-2">
+                                <button class="btn btn-default">전체</button>
+                              </div>
+                              <div class="col-sm-11 p-0">
+                                <div class="btn-wrap p-2">
+                                  <button class="btn btn-default">드라마전체</button>
+                                  <button class="btn btn-default">드라마종류</button>
+                                  <button class="btn btn-default">드라마종류</button>
+                                  <button class="btn btn-default">드라마종류</button>
+                                  <button class="btn btn-default">드라마종류</button>
+                                  <button class="btn btn-default">드라마종류</button>
+                                  <button class="btn btn-default">드라마종류</button>
+                                  <button class="btn btn-default">드라마종류</button>
+                                </div>
+                                <div class="btn-wrap p-2">
+                                  <button class="btn btn-default">예능전체</button>
+                                  <button class="btn btn-default">예능종류</button>
+                                  <button class="btn btn-default">예능종류</button>
+                                  <button class="btn btn-default">예능종류</button>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="open-btn"> <i class="fa-solid fa-plus plus"></i>
+                            <i class="fa-solid fa-minus minus"></i></td>
+                        </tr>
+                        <tr>
+                          <th>편성블록</th>
+                          <td colspan="9">전체</td>
+                          <td class="open-btn"> 
+                            <i class="fa-solid fa-plus plus"></i>
+                            <i class="fa-solid fa-minus minus"></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th>대표장르</th>
+                          <td colspan="9">전체</td>
+                          <td class="open-btn"> 
+                            <i class="fa-solid fa-plus plus"></i>
+                            <i class="fa-solid fa-minus minus"></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th>주장르</th>
+                          <td colspan="9">전체</td>
+                          <td class="open-btn"> 
+                            <i class="fa-solid fa-plus plus"></i>
+                            <i class="fa-solid fa-minus minus"></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th>부장르</th>
+                          <td colspan="9">전체</td>
+                          <td class="open-btn"> 
+                            <i class="fa-solid fa-plus plus"></i>
+                            <i class="fa-solid fa-minus minus"></i>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th>소재</th>
+                          <td colspan="9">전체</td>
+                          <td class="open-btn"> 
+                            <i class="fa-solid fa-plus plus"></i>
+                            <i class="fa-solid fa-minus minus"></i>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="cj-btn-group mx-auto">
+                  <button class="btn btn-cj">컨텐츠 검색</button>
+                </div>
+            </div>
+            <div class="card card-box mr-0 mt-4 p-4">
+              <!-- grid 영역 -->
+              <div>
+                <div id="rawDataGrid"></div>
+              </div>
+            </div>
+              <ul class="nav nav-tabs cj-tabs mt-4">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#behavior">시청자 행동반응</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#recog">시청자 인지반응</a>
+                </li>
+                </li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane show active" id="behavior">
+                  <div class="card card-box mr-0 mt-4 p-4">
+                    <div class="col-sm-12">
+                      <div class="lookup-table">
+                        <table class="table">
+                          <colgroup>
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>데이터 추출 기준</th>
+                              <td class="date-group">
+                                <input type="date" name="" id="" class="form-control" />~
+                                <input type="date" name="" id="" class="form-control" />
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>컨텐츠 속성</th>
+                              <td colspan="9">전체
+                                <div class="card m-0 lookup-box">
+                                  <div class="col-sm-1 p-2">
+                                    <button class="btn btn-default">전체</button>
+                                  </div>
+                                  <div class="col-sm-11 p-0">
+                                    <div class="btn-wrap p-2">
+                                      <button class="btn btn-default">드라마전체</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                    </div>
+                                    <div class="btn-wrap p-2">
+                                      <button class="btn btn-default">예능전체</button>
+                                      <button class="btn btn-default">예능종류</button>
+                                      <button class="btn btn-default">예능종류</button>
+                                      <button class="btn btn-default">예능종류</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="open-btn"> <i class="fa-solid fa-plus plus"></i>
+                                <i class="fa-solid fa-minus minus"></i></td>
+                            </tr>
+                            <tr>
+                              <th>TV 시청지표</th>
+                              <td colspan="9">전체
+                                <div class="card m-0 lookup-box">
+                                  <div class="col-sm-1 p-2">
+                                    <button class="btn btn-default">전체</button>
+                                  </div>
+                                  <div class="col-sm-11 p-0">
+                                    <div class="btn-wrap p-2">
+                                      <button class="btn btn-default">드라마전체</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                    </div>
+                                    <div class="btn-wrap p-2">
+                                      <button class="btn btn-default">예능전체</button>
+                                      <button class="btn btn-default">예능종류</button>
+                                      <button class="btn btn-default">예능종류</button>
+                                      <button class="btn btn-default">예능종류</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="open-btn"> <i class="fa-solid fa-plus plus"></i>
+                                <i class="fa-solid fa-minus minus"></i></td>
+                            </tr>
+                            <tr>
+                              <th>TV 시청지표 분류기준</th>
+                              <td colspan="9">전체
+                                <div class="card m-0 lookup-box">
+                                  <div class="col-sm-1 p-2">
+                                    <button class="btn btn-default">전체</button>
+                                  </div>
+                                  <div class="col-sm-11 p-0">
+                                    <div class="btn-wrap p-2">
+                                      <button class="btn btn-default">드라마전체</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                    </div>
+                                    <div class="btn-wrap p-2">
+                                      <button class="btn btn-default">예능전체</button>
+                                      <button class="btn btn-default">예능종류</button>
+                                      <button class="btn btn-default">예능종류</button>
+                                      <button class="btn btn-default">예능종류</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="open-btn"> <i class="fa-solid fa-plus plus"></i>
+                                <i class="fa-solid fa-minus minus"></i></td>
+                            </tr>
+                            <tr>
+                              <th>TV 시청지표 연령기준</th>
+                              <td colspan="9">전체</td>
+                              <td class="open-btn"> 
+                                <i class="fa-solid fa-plus plus"></i>
+                                <i class="fa-solid fa-minus minus"></i>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>디지털 조회 채널</th>
+                              <td colspan="9">전체</td>
+                              <td class="open-btn"> 
+                                <i class="fa-solid fa-plus plus"></i>
+                                <i class="fa-solid fa-minus minus"></i>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>디지털 조회 지표</th>
+                              <td colspan="9">전체</td>
+                              <td class="open-btn"> 
+                                <i class="fa-solid fa-plus plus"></i>
+                                <i class="fa-solid fa-minus minus"></i>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>티빙조회채널</th>
+                              <td colspan="9">전체</td>
+                              <td class="open-btn"> 
+                                <i class="fa-solid fa-plus plus"></i>
+                                <i class="fa-solid fa-minus minus"></i>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>티빙시청지표</th>
+                              <td colspan="9">전체</td>
+                              <td class="open-btn"> 
+                                <i class="fa-solid fa-plus plus"></i>
+                                <i class="fa-solid fa-minus minus"></i>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>지표추출단위</th>
+                              <td class="button-group" colspan="12">
+                                <div class="btn-group" role="group">
+                                  <button type="button" class="btn btn-default">월별</button>
+                                  <button type="button" class="btn btn-default">주차별</button>
+                                  <button type="button" class="btn btn-default">일별</button>
+                                  <button type="button" class="btn btn-default">회차별</button>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="cj-btn-group mx-auto">
+                      <button class="btn btn-cj">다운로드</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane" id="recog">
+                  <div class="card card-box mr-0 mt-4 p-4">
+                    <div class="col-sm-12">
+                      <div class="lookup-table">
+                        <table class="table">
+                          <colgroup>
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>데이터 추출 기준</th>
+                              <td class="date-group">
+                                <input type="date" name="" id="" class="form-control" />~
+                                <input type="date" name="" id="" class="form-control" />
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>컨텐츠 속성</th>
+                              <td colspan="9">전체
+                                <div class="card m-0 lookup-box">
+                                  <div class="col-sm-1 p-2">
+                                    <button class="btn btn-default">전체</button>
+                                  </div>
+                                  <div class="col-sm-11 p-0">
+                                    <div class="btn-wrap p-2">
+                                      <button class="btn btn-default">드라마전체</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                    </div>
+                                    <div class="btn-wrap p-2">
+                                      <button class="btn btn-default">예능전체</button>
+                                      <button class="btn btn-default">예능종류</button>
+                                      <button class="btn btn-default">예능종류</button>
+                                      <button class="btn btn-default">예능종류</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="open-btn"> <i class="fa-solid fa-plus plus"></i>
+                                <i class="fa-solid fa-minus minus"></i></td>
+                            </tr>
+                            <tr>
+                              <th>시청지속비율기반 충성도 비율</th>
+                              <td colspan="9">전체
+                                <div class="card m-0 lookup-box">
+                                  <div class="col-sm-1 p-2">
+                                    <button class="btn btn-default">전체</button>
+                                  </div>
+                                  <div class="col-sm-11 p-0">
+                                    <div class="btn-wrap p-2">
+                                      <button class="btn btn-default">드라마전체</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                    </div>
+                                    <div class="btn-wrap p-2">
+                                      <button class="btn btn-default">예능전체</button>
+                                      <button class="btn btn-default">예능종류</button>
+                                      <button class="btn btn-default">예능종류</button>
+                                      <button class="btn btn-default">예능종류</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="open-btn"> <i class="fa-solid fa-plus plus"></i>
+                                <i class="fa-solid fa-minus minus"></i></td>
+                            </tr>
+                            <tr>
+                              <th>시청지속비율기반 충성도 연령기 기준</th>
+                              <td colspan="9">전체
+                                <div class="card m-0 lookup-box">
+                                  <div class="col-sm-1 p-2">
+                                    <button class="btn btn-default">전체</button>
+                                  </div>
+                                  <div class="col-sm-11 p-0">
+                                    <div class="btn-wrap p-2">
+                                      <button class="btn btn-default">드라마전체</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-default">드라마종류</button>
+                                    </div>
+                                    <div class="btn-wrap p-2">
+                                      <button class="btn btn-default">예능전체</button>
+                                      <button class="btn btn-default">예능종류</button>
+                                      <button class="btn btn-default">예능종류</button>
+                                      <button class="btn btn-default">예능종류</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="open-btn"> <i class="fa-solid fa-plus plus"></i>
+                                <i class="fa-solid fa-minus minus"></i></td>
+                            </tr>
+                            <tr>
+                              <th>지표추출단위</th>
+                              <td class="button-group" colspan="12">
+                                <div class="btn-group" role="group">
+                                  <button type="button" class="btn btn-default">월별</button>
+                                  <button type="button" class="btn btn-default">주차별</button>
+                                  <button type="button" class="btn btn-default">일별</button>
+                                  <button type="button" class="btn btn-default">회차별</button>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="cj-btn-group mx-auto">
+                      <button class="btn btn-cj">다운로드</button>
+                    </div>
+                  </div>
+                </div>
+              
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <script>
+      $(".open-btn").on("click",function(){
+        $(this).toggleClass("active");
+
+        if($(this).hasClass("active")){
+          $(this).children(".minus").show();
+          $(this).siblings("td").children(".lookup-box").css("display","flex");
+        }else{
+          $(this).children(".minus").hide();
+          $(this).siblings("td").children(".lookup-box").css("display","none");
+        }
+      })
+
+      $(".btn-default").on("click",function(){
+        $(this).toggleClass("active");
+      })
+
+      let rawDataGrid = "";
+      let app = {
+        el: "#app",
+        watch: {
+          gridData: function () {
+            AUIGrid.setGridData(rawDataGrid, this.gridData);
+          },
+        },
+        mounted() {
+          rawDataGrid = AUIGrid.destroy("#rawDataGrid");
+          rawDataGrid = AUIGrid.create("#rawDataGrid", this.gridLayout, this.gridProps);
+
+          // 페이지 진입 시 기준년도 산출
+          this.searchCommand.baseYear = new Date().getFullYear();
+          // 기준년도 항목정의(과거:3년, 향후:5년)
+          for (let idx = this.searchCommand.baseYear - 2; idx < this.searchCommand.baseYear + 5; idx += 1) {
+            this.selectOptionItems.baseYear.push({ value: `${idx}`, text: `${idx}년` });
+          }
+
+          this.selectOptionItems.status.push({ value: "I", text: "진행중" });
+          this.selectOptionItems.status.push({ value: "C", text: "확정" });
+
+          this.search();
+        },
+        data: () => ({
+          selectOptionItems: {
+            baseYear: [{ value: "", text: "기준년도" }],
+            division: [{ value: "", text: "구분" }],
+            status: [{ value: "", text: "채널그룹명" }],
+          },
+          searchCommand: {
+            scenarioName: null,
+            baseYear: "",
+            division: "",
+            status: "",
+          },
+          gridData: [],
+          gridLayout: [
+          {
+              dataField: "proName",
+              headerText: "프로그램명",
+              editRenderer: {
+                    type: "InputEditRenderer",
+                    showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                    inputMode: "text",
+                  },
+            },
+            {
+              dataField: "channel",
+              headerText: "채널",
+              editRenderer: {
+                    type: "InputEditRenderer",
+                    showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                    inputMode: "text",
+                  },
+            },
+            {
+              dataField: "formBlock",
+              headerText: "편성블록",
+              editRenderer: {
+                    type: "InputEditRenderer",
+                    showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                    inputMode: "text",
+                  },
+            },
+            {
+              dataField: "repGenre",
+              headerText: "편성블록",
+              editRenderer: {
+                    type: "InputEditRenderer",
+                    showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                    inputMode: "text",
+                  },
+            },
+            {
+              headerText: "선택",
+              width: "5%",
+              renderer: {
+                type: "CheckBoxEditRenderer",
+                showLabel: false, // 참, 거짓 텍스트 출력여부( 기본값 false )
+                editable: true, // 체크박스 편집 활성화 여부(기본값 : false)
+              },
+              // labelFunction : function(rowIndex, columnIndex, value, headerText, item) {
+              //     // let isChildren = item['version'] > 0;
+              //     // return `<div class="${isChildren ? 'small':''}">${ isChildren ? item['id'] + '-' + item['version']: item['id'] }</div>`
+              //     return `<div class="form-check">
+              //                 <input class="form-check-input" type="checkbox">
+              //             </div>
+              //     `
+              // }
+              editRenderer: {
+                type: "CheckBoxEditRenderer",
+              },
+            },
+           
+          ],
+          gridProps: {
+            enableFilter: false,
+            enableSorting: false,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
+            editingOnKeyDown: false,
+            autoGridHeight: false,
+            autoGridHeight: false,
+            autoGridWidth: false,
+            ignoreColumnMinWidth: true,
+            softRemoveRowMode: false,
+            // 행 번호 컬럼 활성화 속성입니다.
+            showRowNumColumn: false,
+            /*추가 옵션*/
+            showStateColumn: false,
+            editable: true,
+            noDataMessage: "엑셀데이터를 붙여넣거나 행추가를 통해 데이터를 입력하세요.",
+          },
+        }),
+        methods: {
+          search: function () {
+            console.log("search", this.searchCommand);
+            this.setTestData();
+          },
+          createScenario: function () {
+            this.$refs["refScenarioSummary"].draw();
+          },
+          edit: function (id) {
+            console.log("준비중 edit", id);
+          },
+          version: function (id) {
+            console.log("준비중 version", id);
+          },
+          copy: function (id) {
+            console.log("준비중 copy", id);
+          },
+          remove: function (id) {
+            console.log("준비중 remove", id);
+          },
+          done: function (id) {
+            console.log("준비중 done", id);
+          },
+          setTestData: function () {
+            this.gridData = [];
+            this.gridData.push({
+              channel: "Jtbc",
+              genre: "드라마",
+              y20: "19",
+              y21: "15",
+            });
+            this.gridData.push({
+              channel: "Jtbc",
+              genre: "드라마",
+              y20: "19",
+              y21: "15",
+            });
+          },
+        },
+      };
+
+      $(function () {
+      new Vue(app);
+      Vue.nextTick(function () {
+        $(window).resize(function () {
+          AUIGrid.resize("#rawDataGrid");
+        });
+      });
+      // Vue.component();
+    });
+   
+      </script>
+  </body>
+</html>

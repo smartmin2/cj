@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>시청자 반응 퀵리뷰 리포트</title>
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../../../css/lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../css/lib/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../AUIGrid/AUIGrid_modern_style.css" />
+    <link rel="stylesheet" href="../../../css/core/style.css" />
+    <link rel="stylesheet" href="../../../css/core/main.css" />
+    <link rel="stylesheet" href="../../../css/core/main_extra.css" />
+    <link rel="stylesheet" href="../../../css/core/style_sub.css" />
+
+    <script src="../../../js/lib/jquery.js"></script>
+    <script src="../../../js/lib/vue.js"></script>
+    <script src="../../../js/lib/bootstrap.js"></script>
+    <script src="../../../AUIGrid/AUIGrid.js"></script>
+    <script src="../../../AUIGrid/AUIGridLicense.js"></script>
+    <script src="../../../js/all.min.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div id="app">
+        <div class="row p-4">
+          <div class="col-md-12 qick-report">
+            <ul class="nav nav-tabs cj-tabs">
+              <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#behavior">시청자 행동반응</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#recog">시청자 인지반응</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#reacRating">시청자 반응 평가</a>
+              </li>
+            </ul>
+            <div class="card card-box mr-0 mt-4 p-4">
+              <div class="tab-content">
+                <div class="tab-pane show active" id="behavior">
+                  <div class="card card-box mr-0 p-4">
+                    <div class="card-inner p-4">
+                      <div class="row">
+                        <div class="col-sm-10">
+                          <div class="lookup-table">
+                            <table class="table mb-0">
+                              <colgroup></colgroup>
+                              <tbody>
+                                <tr>
+                                  <th>지역구분</th>
+                                  <td class="p-0 round-r">
+                                    <select class="form-control cj-selectBox select-box">
+                                      <option>전체</option>
+                                    </select>
+                                  </td>
+                                  <td class="tableEmpty"></td>
+                                  <th>대상구분</th>
+                                  <td class="p-0 round-r">
+                                    <select class="form-control cj-selectBox select-box">
+                                      <option>전체</option>
+                                    </select>
+                                  </td>
+                                  <td class="tableEmpty"></td>
+                                  <th>성연령별 기준</th>
+                                  <td class="p-0 round-r">
+                                    <select class="form-control cj-selectBox select-box">
+                                      <option>전체</option>
+                                    </select>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div class="cj-btn-group my-auto col-sm-2">
+                          <div class="row justify-content-end mr-2">
+                            <button class="btn btn-cj mr-2">조회</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-inner p-4 mt-4">
+                      <div class="card mr-0">
+                        <div class="card-header">회차별 UV및 성연령별 비중(VOD)</div>
+                        <div class="card-body" style="height: 200px"></div>
+                      </div>
+                      <div class="card mr-0 mt-4">
+                        <div class="card-header">티빙 시청 지표 & 가입자 기여도</div>
+                        <div class="row">
+                          <div class="col-sm-6 pr-0">
+                            <div class="card mr-0">
+                              <div class="card-body" style="height: 200px"></div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 pl-0">
+                            <div class="card mr-0">
+                              <div class="card-body" style="height: 200px"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="app1" class="mt-4">
+                        <div id="tvingRateGrid"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane" id="recog">
+                  <div class="card card-box mr-0 mt-4 p-4">
+                    <div class="card-inner p-4">
+                      <!-- naver -->
+                      <div class="card mr-0">
+                        <div class="card-header">플렛폼별 검색량 증감 추이 및 성장률(퀵리뷰 대상 프로그램 vs 同 편성블록 평균)</div>
+                        <div class="card-body" style="height: 200px"></div>
+                      </div>
+                      <!-- grid 영역 -->
+                      <div id="app2" class="mt-4">
+                        <div id="itrNaverGrid"></div>
+                      </div>
+
+                      <!-- google -->
+                      <div class="card mr-0 mt-4">
+                        <div class="card-body" style="height: 200px"></div>
+                      </div>
+                      <!-- grid 영역 -->
+                      <div id="app3" class="mt-4">
+                        <div id="itrGoogleGrid"></div>
+                      </div>
+
+                      <!-- youtube -->
+                      <div class="card mr-0 mt-4">
+                        <div class="card-body" style="height: 200px"></div>
+                      </div>
+                      <!-- grid 영역 -->
+                      <div id="app4" class="mt-4">
+                        <div id="itrYoutubeGrid"></div>
+                      </div>
+
+                      <div class="row mt-4">
+                        <div class="col-sm-6">
+                          <div class="card mr-0">
+                            <div class="card-header">조회프로그램 총언급량(同 편성블록 평균 비교)</div>
+                            <div class="card-body" style="height: 200px"></div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="card mr-0">
+                            <div class="card-header">언급 Topic 키워드 분포(同 장르 평균 비교)</div>
+                            <div class="card-body" style="height: 200px"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-inner p-4 mt-4">
+                      <div class="card-header">시청자 태도/평가</div>
+                      <!-- 긍정 -->
+                      <div class="row">
+                        <div class="col-sm-3 pr-0">
+                          <div class="card mr-0">
+                            <div class="card-body" style="height: 200px"></div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 pr-0 pl-0">
+                          <div class="card mr-0">
+                            <div class="card-body" style="height: 200px"></div>
+                          </div>
+                        </div>
+                        <div class="col-sm-5 pl-0">
+                          <div class="card mr-0">
+                            <div class="card-body" style="height: 200px"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- grid 영역 -->
+                      <div id="app5" class="mt-4">
+                        <div id="positiveGrid"></div>
+                      </div>
+
+                      <!-- 부정 -->
+                      <div class="row mt-4">
+                        <div class="col-sm-3 pr-0">
+                          <div class="card mr-0">
+                            <div class="card-body" style="height: 200px"></div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 pr-0 pl-0">
+                          <div class="card mr-0">
+                            <div class="card-body" style="height: 200px"></div>
+                          </div>
+                        </div>
+                        <div class="col-sm-5 pl-0">
+                          <div class="card mr-0">
+                            <div class="card-body" style="height: 200px"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- grid 영역 -->
+                      <div id="app6" class="mt-4">
+                        <div id="denialGrid"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane reac-rating" id="reacRating">
+                  <div class="card card-box mr-0 mt-4 p-4">
+                    <div class="status-table">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <th>긍정 요소</th>
+                            <td>
+                              <select class="form-control cj-selectBox select-box">
+                                <option></option>
+                              </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>부정 요소</th>
+                            <td>
+                              <select class="form-control cj-selectBox select-box">
+                                <option></option>
+                              </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>총평</th>
+                            <td>
+                              <select class="form-control cj-selectBox select-box">
+                                <option></option>
+                              </select>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(".open-btn").on("click", function () {
+        $(this).toggleClass("active");
+
+        if ($(this).hasClass("active")) {
+          $(this).children(".minus").show();
+          $(this).siblings("td").children(".lookup-box").css("display", "flex");
+        } else {
+          $(this).children(".minus").hide();
+          $(this).siblings("td").children(".lookup-box").css("display", "none");
+        }
+      });
+
+      $(".btn-default").on("click", function () {
+        $(this).toggleClass("active");
+      });
+
+      let tvingRateGrid = "";
+      let app1 = {
+        el: "#app1",
+        watch: {
+          gridData: function () {
+            AUIGrid.setGridData(tvingRateGrid, this.gridData);
+          },
+        },
+        mounted() {
+          tvingRateGrid = AUIGrid.destroy("#dgtFormGtvingRateGridrid");
+          tvingRateGrid = AUIGrid.create("#tvingRateGrid", this.gridLayout, this.gridProps);
+
+          // 페이지 진입 시 기준년도 산출
+          this.searchCommand.baseYear = new Date().getFullYear();
+          // 기준년도 항목정의(과거:3년, 향후:5년)
+          for (let idx = this.searchCommand.baseYear - 2; idx < this.searchCommand.baseYear + 5; idx += 1) {
+            this.selectOptionItems.baseYear.push({ value: `${idx}`, text: `${idx}년` });
+          }
+
+          this.selectOptionItems.status.push({ value: "I", text: "진행중" });
+          this.selectOptionItems.status.push({ value: "C", text: "확정" });
+
+          this.search();
+        },
+        data: () => ({
+          selectOptionItems: {
+            baseYear: [{ value: "", text: "기준년도" }],
+            division: [{ value: "", text: "구분" }],
+            status: [{ value: "", text: "채널그룹명" }],
+          },
+          searchCommand: {
+            scenarioName: null,
+            baseYear: "",
+            division: "",
+            status: "",
+          },
+          gridData: [],
+          gridLayout: [
+            {
+              dataField: "",
+              headerText: "",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },       {
+              dataField: "",
+              headerText: "",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "vod",
+              headerText: "VOD",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+          ],
+          gridProps: {
+            enableFilter: false,
+            enableSorting: false,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
+            editingOnKeyDown: false,
+            autoGridHeight: false,
+            autoGridHeight: false,
+            autoGridWidth: false,
+            ignoreColumnMinWidth: true,
+            softRemoveRowMode: false,
+            // 행 번호 컬럼 활성화 속성입니다.
+            showRowNumColumn: false,
+            /*추가 옵션*/
+            showStateColumn: false,
+            editable: true,
+            noDataMessage: "엑셀데이터를 붙여넣거나 행추가를 통해 데이터를 입력하세요.",
+          },
+        }),
+        methods: {
+          search: function () {
+            console.log("search", this.searchCommand);
+            this.setTestData();
+          },
+          createScenario: function () {
+            this.$refs["refScenarioSummary"].draw();
+          },
+          edit: function (id) {
+            console.log("준비중 edit", id);
+          },
+          version: function (id) {
+            console.log("준비중 version", id);
+          },
+          copy: function (id) {
+            console.log("준비중 copy", id);
+          },
+          remove: function (id) {
+            console.log("준비중 remove", id);
+          },
+          done: function (id) {
+            console.log("준비중 done", id);
+          },
+          setTestData: function () {
+            this.gridData = [];
+            this.gridData.push({
+              channel: "Jtbc",
+              genre: "드라마",
+              y20: "19",
+              y21: "15",
+            });
+            this.gridData.push({
+              channel: "Jtbc",
+              genre: "드라마",
+              y20: "19",
+              y21: "15",
+            });
+          },
+        },
+      };
+      $(function () {
+        new Vue(app1);
+        Vue.nextTick(function () {
+          $(window).resize(function () {
+            AUIGrid.resize("#tvingRateGrid");
+          });
+        });
+        // Vue.component();
+      });
+
+      let itrNaverGrid = "";
+      let app2 = {
+        el: "#app2",
+        watch: {
+          gridData: function () {
+            AUIGrid.setGridData(itrNaverGrid, this.gridData);
+          },
+        },
+        mounted() {
+          itrNaverGrid = AUIGrid.destroy("#itrNaverGrid");
+          itrNaverGrid = AUIGrid.create("#itrNaverGrid", this.gridLayout, this.gridProps);
+
+          // 페이지 진입 시 기준년도 산출
+          this.searchCommand.baseYear = new Date().getFullYear();
+          // 기준년도 항목정의(과거:3년, 향후:5년)
+          for (let idx = this.searchCommand.baseYear - 2; idx < this.searchCommand.baseYear + 5; idx += 1) {
+            this.selectOptionItems.baseYear.push({ value: `${idx}`, text: `${idx}년` });
+          }
+
+          this.selectOptionItems.status.push({ value: "I", text: "진행중" });
+          this.selectOptionItems.status.push({ value: "C", text: "확정" });
+
+          this.search();
+        },
+        data: () => ({
+          selectOptionItems: {
+            baseYear: [{ value: "", text: "기준년도" }],
+            division: [{ value: "", text: "구분" }],
+            status: [{ value: "", text: "채널그룹명" }],
+          },
+          searchCommand: {
+            scenarioName: null,
+            baseYear: "",
+            division: "",
+            status: "",
+          },
+          gridData: [],
+          gridLayout: [
+            {
+              dataField: "",
+              headerText: "",
+              width: "20%",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "before30",
+              headerText: "런칭전 30일 - 런칭일 일평균 GROUWHT",
+              width: "40%",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "before7",
+              headerText: "런칭전 7일 - 런칭일 일평균 GROUWHT",
+              width: "40%",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+          ],
+          gridProps: {
+            enableFilter: false,
+            enableSorting: false,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
+            editingOnKeyDown: false,
+            autoGridHeight: false,
+            autoGridHeight: false,
+            autoGridWidth: false,
+            ignoreColumnMinWidth: true,
+            softRemoveRowMode: false,
+            // 행 번호 컬럼 활성화 속성입니다.
+            showRowNumColumn: false,
+            /*추가 옵션*/
+            showStateColumn: false,
+            editable: true,
+            noDataMessage: "엑셀데이터를 붙여넣거나 행추가를 통해 데이터를 입력하세요.",
+          },
+        }),
+        methods: {
+          search: function () {
+            console.log("search", this.searchCommand);
+            this.setTestData();
+          },
+          createScenario: function () {
+            this.$refs["refScenarioSummary"].draw();
+          },
+          edit: function (id) {
+            console.log("준비중 edit", id);
+          },
+          version: function (id) {
+            console.log("준비중 version", id);
+          },
+          copy: function (id) {
+            console.log("준비중 copy", id);
+          },
+          remove: function (id) {
+            console.log("준비중 remove", id);
+          },
+          done: function (id) {
+            console.log("준비중 done", id);
+          },
+          setTestData: function () {
+            this.gridData = [];
+            this.gridData.push({
+              channel: "Jtbc",
+              genre: "드라마",
+              y20: "19",
+              y21: "15",
+            });
+            this.gridData.push({
+              channel: "Jtbc",
+              genre: "드라마",
+              y20: "19",
+              y21: "15",
+            });
+          },
+        },
+      };
+      $(function () {
+        new Vue(app2);
+        Vue.nextTick(function () {
+          $(window).resize(function () {
+            AUIGrid.resize("#itrNaverGrid");
+          });
+        });
+        // Vue.component();
+      });
+
+      let itrGoogleGrid = "";
+      let app3 = {
+        el: "#app3",
+        watch: {
+          gridData: function () {
+            AUIGrid.setGridData(itrGoogleGrid, this.gridData);
+          },
+        },
+        mounted() {
+          itrGoogleGrid = AUIGrid.destroy("#itrGoogleGrid");
+          itrGoogleGrid = AUIGrid.create("#itrGoogleGrid", this.gridLayout, this.gridProps);
+
+          // 페이지 진입 시 기준년도 산출
+          this.searchCommand.baseYear = new Date().getFullYear();
+          // 기준년도 항목정의(과거:3년, 향후:5년)
+          for (let idx = this.searchCommand.baseYear - 2; idx < this.searchCommand.baseYear + 5; idx += 1) {
+            this.selectOptionItems.baseYear.push({ value: `${idx}`, text: `${idx}년` });
+          }
+
+          this.selectOptionItems.status.push({ value: "I", text: "진행중" });
+          this.selectOptionItems.status.push({ value: "C", text: "확정" });
+
+          this.search();
+        },
+        data: () => ({
+          selectOptionItems: {
+            baseYear: [{ value: "", text: "기준년도" }],
+            division: [{ value: "", text: "구분" }],
+            status: [{ value: "", text: "채널그룹명" }],
+          },
+          searchCommand: {
+            scenarioName: null,
+            baseYear: "",
+            division: "",
+            status: "",
+          },
+          gridData: [],
+          gridLayout: [
+            {
+              dataField: "",
+              headerText: "",
+              width: "20%",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "before30",
+              headerText: "런칭전 30일 - 런칭일 일평균 GROUWHT",
+              width: "40%",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "before7",
+              headerText: "런칭전 7일 - 런칭일 일평균 GROUWHT",
+              width: "40%",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+          ],
+          gridProps: {
+            enableFilter: false,
+            enableSorting: false,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
+            editingOnKeyDown: false,
+            autoGridHeight: false,
+            autoGridHeight: false,
+            autoGridWidth: false,
+            ignoreColumnMinWidth: true,
+            softRemoveRowMode: false,
+            // 행 번호 컬럼 활성화 속성입니다.
+            showRowNumColumn: false,
+            /*추가 옵션*/
+            showStateColumn: false,
+            editable: true,
+            noDataMessage: "엑셀데이터를 붙여넣거나 행추가를 통해 데이터를 입력하세요.",
+          },
+        }),
+        methods: {
+          search: function () {
+            console.log("search", this.searchCommand);
+            this.setTestData();
+          },
+          createScenario: function () {
+            this.$refs["refScenarioSummary"].draw();
+          },
+          edit: function (id) {
+            console.log("준비중 edit", id);
+          },
+          version: function (id) {
+            console.log("준비중 version", id);
+          },
+          copy: function (id) {
+            console.log("준비중 copy", id);
+          },
+          remove: function (id) {
+            console.log("준비중 remove", id);
+          },
+          done: function (id) {
+            console.log("준비중 done", id);
+          },
+          setTestData: function () {
+            this.gridData = [];
+            this.gridData.push({
+              channel: "Jtbc",
+              genre: "드라마",
+              y20: "19",
+              y21: "15",
+            });
+            this.gridData.push({
+              channel: "Jtbc",
+              genre: "드라마",
+              y20: "19",
+              y21: "15",
+            });
+          },
+        },
+      };
+      $(function () {
+        new Vue(app3);
+        Vue.nextTick(function () {
+          $(window).resize(function () {
+            AUIGrid.resize("#itrGoogleGrid");
+          });
+        });
+        // Vue.component();
+      });
+
+      let itrYoutubeGrid = "";
+      let app4 = {
+        el: "#app4",
+        watch: {
+          gridData: function () {
+            AUIGrid.setGridData(itrYoutubeGrid, this.gridData);
+          },
+        },
+        mounted() {
+          itrYoutubeGrid = AUIGrid.destroy("#itrYoutubeGrid");
+          itrYoutubeGrid = AUIGrid.create("#itrYoutubeGrid", this.gridLayout, this.gridProps);
+
+          // 페이지 진입 시 기준년도 산출
+          this.searchCommand.baseYear = new Date().getFullYear();
+          // 기준년도 항목정의(과거:3년, 향후:5년)
+          for (let idx = this.searchCommand.baseYear - 2; idx < this.searchCommand.baseYear + 5; idx += 1) {
+            this.selectOptionItems.baseYear.push({ value: `${idx}`, text: `${idx}년` });
+          }
+
+          this.selectOptionItems.status.push({ value: "I", text: "진행중" });
+          this.selectOptionItems.status.push({ value: "C", text: "확정" });
+
+          this.search();
+        },
+        data: () => ({
+          selectOptionItems: {
+            baseYear: [{ value: "", text: "기준년도" }],
+            division: [{ value: "", text: "구분" }],
+            status: [{ value: "", text: "채널그룹명" }],
+          },
+          searchCommand: {
+            scenarioName: null,
+            baseYear: "",
+            division: "",
+            status: "",
+          },
+          gridData: [],
+          gridLayout: [
+            {
+              dataField: "",
+              headerText: "",
+              width: "20%",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "before30",
+              headerText: "런칭전 30일 - 런칭일 일평균 GROUWHT",
+              width: "40%",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "before7",
+              headerText: "런칭전 7일 - 런칭일 일평균 GROUWHT",
+              width: "40%",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+          ],
+          gridProps: {
+            enableFilter: false,
+            enableSorting: false,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
+            editingOnKeyDown: false,
+            autoGridHeight: false,
+            autoGridHeight: false,
+            autoGridWidth: false,
+            ignoreColumnMinWidth: true,
+            softRemoveRowMode: false,
+            // 행 번호 컬럼 활성화 속성입니다.
+            showRowNumColumn: false,
+            /*추가 옵션*/
+            showStateColumn: false,
+            editable: true,
+            noDataMessage: "엑셀데이터를 붙여넣거나 행추가를 통해 데이터를 입력하세요.",
+          },
+        }),
+        methods: {
+          search: function () {
+            console.log("search", this.searchCommand);
+            this.setTestData();
+          },
+          createScenario: function () {
+            this.$refs["refScenarioSummary"].draw();
+          },
+          edit: function (id) {
+            console.log("준비중 edit", id);
+          },
+          version: function (id) {
+            console.log("준비중 version", id);
+          },
+          copy: function (id) {
+            console.log("준비중 copy", id);
+          },
+          remove: function (id) {
+            console.log("준비중 remove", id);
+          },
+          done: function (id) {
+            console.log("준비중 done", id);
+          },
+          setTestData: function () {
+            this.gridData = [];
+            this.gridData.push({
+              channel: "Jtbc",
+              genre: "드라마",
+              y20: "19",
+              y21: "15",
+            });
+            this.gridData.push({
+              channel: "Jtbc",
+              genre: "드라마",
+              y20: "19",
+              y21: "15",
+            });
+          },
+        },
+      };
+      $(function () {
+        new Vue(app4);
+        Vue.nextTick(function () {
+          $(window).resize(function () {
+            AUIGrid.resize("#itrYoutubeGrid");
+          });
+        });
+        // Vue.component();
+      });
+
+      let positiveGrid = "";
+      let app5 = {
+        el: "#app5",
+        watch: {
+          gridData: function () {
+            AUIGrid.setGridData(positiveGrid, this.gridData);
+          },
+        },
+        mounted() {
+          positiveGrid = AUIGrid.destroy("#positiveGrid");
+          positiveGrid = AUIGrid.create("#positiveGrid", this.gridLayout, this.gridProps);
+
+          // 페이지 진입 시 기준년도 산출
+          this.searchCommand.baseYear = new Date().getFullYear();
+          // 기준년도 항목정의(과거:3년, 향후:5년)
+          for (let idx = this.searchCommand.baseYear - 2; idx < this.searchCommand.baseYear + 5; idx += 1) {
+            this.selectOptionItems.baseYear.push({ value: `${idx}`, text: `${idx}년` });
+          }
+
+          this.selectOptionItems.status.push({ value: "I", text: "진행중" });
+          this.selectOptionItems.status.push({ value: "C", text: "확정" });
+
+          this.search();
+        },
+        data: () => ({
+          selectOptionItems: {
+            baseYear: [{ value: "", text: "기준년도" }],
+            division: [{ value: "", text: "구분" }],
+            status: [{ value: "", text: "채널그룹명" }],
+          },
+          searchCommand: {
+            scenarioName: null,
+            baseYear: "",
+            division: "",
+            status: "",
+          },
+          gridData: [],
+          gridLayout: [
+            {
+              dataField: "",
+              headerText: "",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "keyword",
+              headerText: "키워드",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "total",
+              headerText: "전체 언급량",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "blockAvr",
+              headerText: "편성블록 평균 언급량",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "topic",
+              headerText: "언급 TOPIC 키워드 분포",
+              children: [
+                {
+                  dataField: "all",
+                  headerText: "장르 연관 언급량(비중)",
+                  editRenderer: {
+                    type: "InputEditRenderer",
+                    showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                    inputMode: "text",
+                  },
+                },
+                {
+                  dataField: "subjectIpt",
+                  headerText: "소재 연관 언급량(비중)",
+                  editRenderer: {
+                    type: "InputEditRenderer",
+                    showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                    inputMode: "text",
+                  },
+                },
+                {
+                  dataField: "proIpt",
+                  headerText: "연출/구성 연관 언급량(비중)",
+                  editRenderer: {
+                    type: "InputEditRenderer",
+                    showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                    inputMode: "text",
+                  },
+                },
+                {
+                  dataField: "castIpt",
+                  headerText: "출연진 연관 언급량(비중)",
+                  editRenderer: {
+                    type: "InputEditRenderer",
+                    showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                    inputMode: "text",
+                  },
+                },
+                {
+                  dataField: "crewIpt",
+                  headerText: "제작진 연관 언급량(비중)",
+                  editRenderer: {
+                    type: "InputEditRenderer",
+                    showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                    inputMode: "text",
+                  },
+                },
+              ], // end of children
+            },
+          ],
+          gridProps: {
+            enableFilter: false,
+            enableSorting: false,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
+            editingOnKeyDown: false,
+            autoGridHeight: false,
+            autoGridHeight: false,
+            autoGridWidth: false,
+            ignoreColumnMinWidth: true,
+            softRemoveRowMode: false,
+            // 행 번호 컬럼 활성화 속성입니다.
+            showRowNumColumn: false,
+            /*추가 옵션*/
+            showStateColumn: false,
+            editable: true,
+            noDataMessage: "엑셀데이터를 붙여넣거나 행추가를 통해 데이터를 입력하세요.",
+          },
+        }),
+        methods: {
+          search: function () {
+            console.log("search", this.searchCommand);
+            this.setTestData();
+          },
+          createScenario: function () {
+            this.$refs["refScenarioSummary"].draw();
+          },
+          edit: function (id) {
+            console.log("준비중 edit", id);
+          },
+          version: function (id) {
+            console.log("준비중 version", id);
+          },
+          copy: function (id) {
+            console.log("준비중 copy", id);
+          },
+          remove: function (id) {
+            console.log("준비중 remove", id);
+          },
+          done: function (id) {
+            console.log("준비중 done", id);
+          },
+          setTestData: function () {
+            this.gridData = [];
+            this.gridData.push({
+              channel: "Jtbc",
+              genre: "드라마",
+              y20: "19",
+              y21: "15",
+            });
+            this.gridData.push({
+              channel: "Jtbc",
+              genre: "드라마",
+              y20: "19",
+              y21: "15",
+            });
+          },
+        },
+      };
+      $(function () {
+        new Vue(app5);
+        Vue.nextTick(function () {
+          $(window).resize(function () {
+            AUIGrid.resize("#positiveGrid");
+          });
+        });
+        // Vue.component();
+      });
+
+      let denialGrid = "";
+      let app6 = {
+        el: "#app6",
+        watch: {
+          gridData: function () {
+            AUIGrid.setGridData(denialGrid, this.gridData);
+          },
+        },
+        mounted() {
+          denialGrid = AUIGrid.destroy("#denialGrid");
+          denialGrid = AUIGrid.create("#denialGrid", this.gridLayout, this.gridProps);
+
+          // 페이지 진입 시 기준년도 산출
+          this.searchCommand.baseYear = new Date().getFullYear();
+          // 기준년도 항목정의(과거:3년, 향후:5년)
+          for (let idx = this.searchCommand.baseYear - 2; idx < this.searchCommand.baseYear + 5; idx += 1) {
+            this.selectOptionItems.baseYear.push({ value: `${idx}`, text: `${idx}년` });
+          }
+
+          this.selectOptionItems.status.push({ value: "I", text: "진행중" });
+          this.selectOptionItems.status.push({ value: "C", text: "확정" });
+
+          this.search();
+        },
+        data: () => ({
+          selectOptionItems: {
+            baseYear: [{ value: "", text: "기준년도" }],
+            division: [{ value: "", text: "구분" }],
+            status: [{ value: "", text: "채널그룹명" }],
+          },
+          searchCommand: {
+            scenarioName: null,
+            baseYear: "",
+            division: "",
+            status: "",
+          },
+          gridData: [],
+          gridLayout: [
+            {
+              dataField: "",
+              headerText: "",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "keyword",
+              headerText: "키워드",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "total",
+              headerText: "전체 언급량",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "blockAvr",
+              headerText: "편성블록 평균 언급량",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "topic",
+              headerText: "언급 TOPIC 키워드 분포",
+              children: [
+                {
+                  dataField: "all",
+                  headerText: "장르 연관 언급량(비중)",
+                  editRenderer: {
+                    type: "InputEditRenderer",
+                    showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                    inputMode: "text",
+                  },
+                },
+                {
+                  dataField: "subjectIpt",
+                  headerText: "소재 연관 언급량(비중)",
+                  editRenderer: {
+                    type: "InputEditRenderer",
+                    showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                    inputMode: "text",
+                  },
+                },
+                {
+                  dataField: "proIpt",
+                  headerText: "연출/구성 연관 언급량(비중)",
+                  editRenderer: {
+                    type: "InputEditRenderer",
+                    showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                    inputMode: "text",
+                  },
+                },
+                {
+                  dataField: "castIpt",
+                  headerText: "출연진 연관 언급량(비중)",
+                  editRenderer: {
+                    type: "InputEditRenderer",
+                    showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                    inputMode: "text",
+                  },
+                },
+                {
+                  dataField: "crewIpt",
+                  headerText: "제작진 연관 언급량(비중)",
+                  editRenderer: {
+                    type: "InputEditRenderer",
+                    showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                    inputMode: "text",
+                  },
+                },
+              ], // end of children
+            },
+          ],
+          gridProps: {
+            enableFilter: false,
+            enableSorting: false,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
+            editingOnKeyDown: false,
+            autoGridHeight: false,
+            autoGridHeight: false,
+            autoGridWidth: false,
+            ignoreColumnMinWidth: true,
+            softRemoveRowMode: false,
+            // 행 번호 컬럼 활성화 속성입니다.
+            showRowNumColumn: false,
+            /*추가 옵션*/
+            showStateColumn: false,
+            editable: true,
+            noDataMessage: "엑셀데이터를 붙여넣거나 행추가를 통해 데이터를 입력하세요.",
+          },
+        }),
+        methods: {
+          search: function () {
+            console.log("search", this.searchCommand);
+            this.setTestData();
+          },
+          createScenario: function () {
+            this.$refs["refScenarioSummary"].draw();
+          },
+          edit: function (id) {
+            console.log("준비중 edit", id);
+          },
+          version: function (id) {
+            console.log("준비중 version", id);
+          },
+          copy: function (id) {
+            console.log("준비중 copy", id);
+          },
+          remove: function (id) {
+            console.log("준비중 remove", id);
+          },
+          done: function (id) {
+            console.log("준비중 done", id);
+          },
+          setTestData: function () {
+            this.gridData = [];
+            this.gridData.push({
+              channel: "Jtbc",
+              genre: "드라마",
+              y20: "19",
+              y21: "15",
+            });
+            this.gridData.push({
+              channel: "Jtbc",
+              genre: "드라마",
+              y20: "19",
+              y21: "15",
+            });
+          },
+        },
+      };
+      $(function () {
+        new Vue(app6);
+        Vue.nextTick(function () {
+          $(window).resize(function () {
+            AUIGrid.resize("#denialGrid");
+          });
+        });
+        // Vue.component();
+      });
+    </script>
+  </body>
+</html>
