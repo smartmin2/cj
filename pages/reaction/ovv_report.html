@@ -21,6 +21,9 @@
     <script src="../../../AUIGrid/AUIGrid.js"></script>
     <script src="../../../AUIGrid/AUIGridLicense.js"></script>
     <script src="../../../js/all.min.js"></script>
+    <style>
+      .tab-content {opacity: 0;}
+    </style>
   </head>
   <body>
     <div class="container-fluid">
@@ -62,9 +65,9 @@
                               <th>컨텐츠유형</th>
                               <td class="button-group">
                                 <div class="btn-group" role="group">
-                                  <button type="button" class="btn btn-default">전체</button>
-                                  <button type="button" class="btn btn-default">방송</button>
-                                  <button type="button" class="btn btn-default">OTT</button>
+                                  <button type="button" class="btn btn-cj-default">전체</button>
+                                  <button type="button" class="btn btn-cj-default">방송</button>
+                                  <button type="button" class="btn btn-cj-default">OTT</button>
                                 </div>
                               </td>
                               <td class="tableEmpty">
@@ -72,11 +75,11 @@
                               <th>시청률</th>
                               <td class="button-group">
                                 <div class="btn-group" role="group">
-                                  <button type="button" class="btn btn-default">전체</button>
-                                  <button type="button" class="btn btn-default">1.5이하</button>
-                                  <button type="button" class="btn btn-default">1.5~2</button>
-                                  <button type="button" class="btn btn-default">2~3</button>
-                                  <button type="button" class="btn btn-default">3이상</button>
+                                  <button type="button" class="btn btn-cj-default">전체</button>
+                                  <button type="button" class="btn btn-cj-default">1.5이하</button>
+                                  <button type="button" class="btn btn-cj-default">1.5~2</button>
+                                  <button type="button" class="btn btn-cj-default">2~3</button>
+                                  <button type="button" class="btn btn-cj-default">3이상</button>
                                 </div>
                               </td>
                             </tr>
@@ -85,69 +88,69 @@
                               <td colspan="9">전체
                                 <div class="card m-0 lookup-box">
                                   <div class="col-sm-1 p-2">
-                                    <button class="btn btn-default">전체</button>
+                                    <button class="btn btn-cj-default">전체</button>
                                   </div>
                                   <div class="col-sm-11 p-0">
                                     <div class="btn-wrap p-2">
-                                      <button class="btn btn-default">드라마전체</button>
-                                      <button class="btn btn-default">드라마종류</button>
-                                      <button class="btn btn-default">드라마종류</button>
-                                      <button class="btn btn-default">드라마종류</button>
-                                      <button class="btn btn-default">드라마종류</button>
-                                      <button class="btn btn-default">드라마종류</button>
-                                      <button class="btn btn-default">드라마종류</button>
-                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마전체</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
                                     </div>
                                     <div class="btn-wrap p-2">
-                                      <button class="btn btn-default">예능전체</button>
-                                      <button class="btn btn-default">예능종류</button>
-                                      <button class="btn btn-default">예능종류</button>
-                                      <button class="btn btn-default">예능종류</button>
+                                      <button class="btn btn-cj-default">예능전체</button>
+                                      <button class="btn btn-cj-default">예능종류</button>
+                                      <button class="btn btn-cj-default">예능종류</button>
+                                      <button class="btn btn-cj-default">예능종류</button>
                                     </div>
                                   </div>
                                 </div>
                               </td>
-                              <td class="open-btn"> <i class="fa-solid fa-plus plus"></i>
-                                <i class="fa-solid fa-minus minus"></i></td>
+                              <td class="open-btn"> <i class="fa-solid fa-plus ic-plus"></i>
+                                <i class="fa-solid fa-minus ic-minus"></i></td>
                             </tr>
                             <tr>
                               <th>편성블록</th>
                               <td colspan="9">전체</td>
                               <td class="open-btn"> 
-                                <i class="fa-solid fa-plus plus"></i>
-                                <i class="fa-solid fa-minus minus"></i>
+                                <i class="fa-solid fa-plus ic-plus"></i>
+                                <i class="fa-solid fa-minus ic-minus"></i>
                               </td>
                             </tr>
                             <tr>
                               <th>대표장르</th>
                               <td colspan="9">전체</td>
                               <td class="open-btn"> 
-                                <i class="fa-solid fa-plus plus"></i>
-                                <i class="fa-solid fa-minus minus"></i>
+                                <i class="fa-solid fa-plus ic-plus"></i>
+                                <i class="fa-solid fa-minus ic-minus"></i>
                               </td>
                             </tr>
                             <tr>
                               <th>주장르</th>
                               <td colspan="9">전체</td>
                               <td class="open-btn"> 
-                                <i class="fa-solid fa-plus plus"></i>
-                                <i class="fa-solid fa-minus minus"></i>
+                                <i class="fa-solid fa-plus ic-plus"></i>
+                                <i class="fa-solid fa-minus ic-minus"></i>
                               </td>
                             </tr>
                             <tr>
                               <th>부장르</th>
                               <td colspan="9">전체</td>
                               <td class="open-btn"> 
-                                <i class="fa-solid fa-plus plus"></i>
-                                <i class="fa-solid fa-minus minus"></i>
+                                <i class="fa-solid fa-plus ic-plus"></i>
+                                <i class="fa-solid fa-minus ic-minus"></i>
                               </td>
                             </tr>
                             <tr>
                               <th>소재</th>
                               <td colspan="9">전체</td>
                               <td class="open-btn"> 
-                                <i class="fa-solid fa-plus plus"></i>
-                                <i class="fa-solid fa-minus minus"></i>
+                                <i class="fa-solid fa-plus ic-plus"></i>
+                                <i class="fa-solid fa-minus ic-minus"></i>
                               </td>
                             </tr>
                           </tbody>
@@ -167,13 +170,13 @@
                               <th>1차 View기준</th>
                               <td class="button-group">
                                 <div class="btn-group" role="group">
-                                  <button type="button" class="btn btn-default">채널</button>
-                                  <button type="button" class="btn btn-default">편성블록</button>
-                                  <button type="button" class="btn btn-default">대표장르</button>
-                                  <button type="button" class="btn btn-default">주장르</button>
-                                  <button type="button" class="btn btn-default">부장르</button>
-                                  <button type="button" class="btn btn-default">소재</button>
-                                  <button type="button" class="btn btn-default">시청률</button>
+                                  <button type="button" class="btn btn-cj-default">채널</button>
+                                  <button type="button" class="btn btn-cj-default">편성블록</button>
+                                  <button type="button" class="btn btn-cj-default">대표장르</button>
+                                  <button type="button" class="btn btn-cj-default">주장르</button>
+                                  <button type="button" class="btn btn-cj-default">부장르</button>
+                                  <button type="button" class="btn btn-cj-default">소재</button>
+                                  <button type="button" class="btn btn-cj-default">시청률</button>
                                 </div>
                               </td>
                             </tr>
@@ -181,13 +184,13 @@
                               <th>2차 View기준</th>
                               <td class="button-group">
                                 <div class="btn-group" role="group">
-                                  <button type="button" class="btn btn-default">채널</button>
-                                  <button type="button" class="btn btn-default">편성블록</button>
-                                  <button type="button" class="btn btn-default">대표장르</button>
-                                  <button type="button" class="btn btn-default">주장르</button>
-                                  <button type="button" class="btn btn-default">부장르</button>
-                                  <button type="button" class="btn btn-default">소재</button>
-                                  <button type="button" class="btn btn-default">시청률</button>
+                                  <button type="button" class="btn btn-cj-default">채널</button>
+                                  <button type="button" class="btn btn-cj-default">편성블록</button>
+                                  <button type="button" class="btn btn-cj-default">대표장르</button>
+                                  <button type="button" class="btn btn-cj-default">주장르</button>
+                                  <button type="button" class="btn btn-cj-default">부장르</button>
+                                  <button type="button" class="btn btn-cj-default">소재</button>
+                                  <button type="button" class="btn btn-cj-default">시청률</button>
                                 </div>
                               </td>
                             </tr>
@@ -362,20 +365,20 @@
                               <th>컨텐츠유형</th>
                               <td class="button-group">
                                 <div class="btn-group" role="group">
-                                  <button type="button" class="btn btn-default">전체</button>
-                                  <button type="button" class="btn btn-default">방송</button>
-                                  <button type="button" class="btn btn-default">OTT</button>
+                                  <button type="button" class="btn btn-cj-default">전체</button>
+                                  <button type="button" class="btn btn-cj-default">방송</button>
+                                  <button type="button" class="btn btn-cj-default">OTT</button>
                                 </div>
                               </td>
                               <td class="tableEmpty"></td>
                               <th>시청률</th>
                               <td class="button-group">
                                 <div class="btn-group" role="group">
-                                  <button type="button" class="btn btn-default">전체</button>
-                                  <button type="button" class="btn btn-default">1.5이하</button>
-                                  <button type="button" class="btn btn-default">1.5~2</button>
-                                  <button type="button" class="btn btn-default">2~3</button>
-                                  <button type="button" class="btn btn-default">3이상</button>
+                                  <button type="button" class="btn btn-cj-default">전체</button>
+                                  <button type="button" class="btn btn-cj-default">1.5이하</button>
+                                  <button type="button" class="btn btn-cj-default">1.5~2</button>
+                                  <button type="button" class="btn btn-cj-default">2~3</button>
+                                  <button type="button" class="btn btn-cj-default">3이상</button>
                                 </div>
                               </td>
                             </tr>
@@ -384,69 +387,69 @@
                               <td colspan="9">전체
                                 <div class="card m-0 lookup-box">
                                   <div class="col-sm-1 p-2">
-                                    <button class="btn btn-default">전체</button>
+                                    <button class="btn btn-cj-default">전체</button>
                                   </div>
                                   <div class="col-sm-11 p-0">
                                     <div class="btn-wrap p-2">
-                                      <button class="btn btn-default">드라마전체</button>
-                                      <button class="btn btn-default">드라마종류</button>
-                                      <button class="btn btn-default">드라마종류</button>
-                                      <button class="btn btn-default">드라마종류</button>
-                                      <button class="btn btn-default">드라마종류</button>
-                                      <button class="btn btn-default">드라마종류</button>
-                                      <button class="btn btn-default">드라마종류</button>
-                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마전체</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
                                     </div>
                                     <div class="btn-wrap p-2">
-                                      <button class="btn btn-default">예능전체</button>
-                                      <button class="btn btn-default">예능종류</button>
-                                      <button class="btn btn-default">예능종류</button>
-                                      <button class="btn btn-default">예능종류</button>
+                                      <button class="btn btn-cj-default">예능전체</button>
+                                      <button class="btn btn-cj-default">예능종류</button>
+                                      <button class="btn btn-cj-default">예능종류</button>
+                                      <button class="btn btn-cj-default">예능종류</button>
                                     </div>
                                   </div>
                                 </div>
                               </td>
-                              <td class="open-btn"> <i class="fa-solid fa-plus plus"></i>
-                                <i class="fa-solid fa-minus minus"></i></td>
+                              <td class="open-btn"> <i class="fa-solid fa-plus ic-plus"></i>
+                                <i class="fa-solid fa-minus ic-minus"></i></td>
                             </tr>
                             <tr>
                               <th>편성블록</th>
                               <td colspan="9">전체</td>
                               <td class="open-btn"> 
-                                <i class="fa-solid fa-plus plus"></i>
-                                <i class="fa-solid fa-minus minus"></i>
+                                <i class="fa-solid fa-plus ic-plus"></i>
+                                <i class="fa-solid fa-minus ic-minus"></i>
                               </td>
                             </tr>
                             <tr>
                               <th>대표장르</th>
                               <td colspan="9">전체</td>
                               <td class="open-btn"> 
-                                <i class="fa-solid fa-plus plus"></i>
-                                <i class="fa-solid fa-minus minus"></i>
+                                <i class="fa-solid fa-plus ic-plus"></i>
+                                <i class="fa-solid fa-minus ic-minus"></i>
                               </td>
                             </tr>
                             <tr>
                               <th>주장르</th>
                               <td colspan="9">전체</td>
                               <td class="open-btn"> 
-                                <i class="fa-solid fa-plus plus"></i>
-                                <i class="fa-solid fa-minus minus"></i>
+                                <i class="fa-solid fa-plus ic-plus"></i>
+                                <i class="fa-solid fa-minus ic-minus"></i>
                               </td>
                             </tr>
                             <tr>
                               <th>부장르</th>
                               <td colspan="9">전체</td>
                               <td class="open-btn"> 
-                                <i class="fa-solid fa-plus plus"></i>
-                                <i class="fa-solid fa-minus minus"></i>
+                                <i class="fa-solid fa-plus ic-plus"></i>
+                                <i class="fa-solid fa-minus ic-minus"></i>
                               </td>
                             </tr>
                             <tr>
                               <th>소재</th>
                               <td colspan="9">전체</td>
                               <td class="open-btn"> 
-                                <i class="fa-solid fa-plus plus"></i>
-                                <i class="fa-solid fa-minus minus"></i>
+                                <i class="fa-solid fa-plus ic-plus"></i>
+                                <i class="fa-solid fa-minus ic-minus"></i>
                               </td>
                             </tr>
                           </tbody>
@@ -526,20 +529,20 @@
                               <th>컨텐츠유형</th>
                               <td class="button-group">
                                 <div class="btn-group" role="group">
-                                  <button type="button" class="btn btn-default">전체</button>
-                                  <button type="button" class="btn btn-default">방송</button>
-                                  <button type="button" class="btn btn-default">OTT</button>
+                                  <button type="button" class="btn btn-cj-default">전체</button>
+                                  <button type="button" class="btn btn-cj-default">방송</button>
+                                  <button type="button" class="btn btn-cj-default">OTT</button>
                                 </div>
                               </td>
                               <td class="tableEmpty"></td>
                               <th>시청률</th>
                               <td class="button-group">
                                 <div class="btn-group" role="group">
-                                  <button type="button" class="btn btn-default">전체</button>
-                                  <button type="button" class="btn btn-default">1.5이하</button>
-                                  <button type="button" class="btn btn-default">1.5~2</button>
-                                  <button type="button" class="btn btn-default">2~3</button>
-                                  <button type="button" class="btn btn-default">3이상</button>
+                                  <button type="button" class="btn btn-cj-default">전체</button>
+                                  <button type="button" class="btn btn-cj-default">1.5이하</button>
+                                  <button type="button" class="btn btn-cj-default">1.5~2</button>
+                                  <button type="button" class="btn btn-cj-default">2~3</button>
+                                  <button type="button" class="btn btn-cj-default">3이상</button>
                                 </div>
                               </td>
                             </tr>
@@ -548,69 +551,69 @@
                               <td colspan="9">전체
                                 <div class="card m-0 lookup-box">
                                   <div class="col-sm-1 p-2">
-                                    <button class="btn btn-default">전체</button>
+                                    <button class="btn btn-cj-default">전체</button>
                                   </div>
                                   <div class="col-sm-11 p-0">
                                     <div class="btn-wrap p-2">
-                                      <button class="btn btn-default">드라마전체</button>
-                                      <button class="btn btn-default">드라마종류</button>
-                                      <button class="btn btn-default">드라마종류</button>
-                                      <button class="btn btn-default">드라마종류</button>
-                                      <button class="btn btn-default">드라마종류</button>
-                                      <button class="btn btn-default">드라마종류</button>
-                                      <button class="btn btn-default">드라마종류</button>
-                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마전체</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
                                     </div>
                                     <div class="btn-wrap p-2">
-                                      <button class="btn btn-default">예능전체</button>
-                                      <button class="btn btn-default">예능종류</button>
-                                      <button class="btn btn-default">예능종류</button>
-                                      <button class="btn btn-default">예능종류</button>
+                                      <button class="btn btn-cj-default">예능전체</button>
+                                      <button class="btn btn-cj-default">예능종류</button>
+                                      <button class="btn btn-cj-default">예능종류</button>
+                                      <button class="btn btn-cj-default">예능종류</button>
                                     </div>
                                   </div>
                                 </div>
                               </td>
-                              <td class="open-btn"> <i class="fa-solid fa-plus plus"></i>
-                                <i class="fa-solid fa-minus minus"></i></td>
+                              <td class="open-btn"> <i class="fa-solid fa-plus ic-plus"></i>
+                                <i class="fa-solid fa-minus ic-minus"></i></td>
                             </tr>
                             <tr>
                               <th>편성블록</th>
                               <td colspan="9">전체</td>
                               <td class="open-btn"> 
-                                <i class="fa-solid fa-plus plus"></i>
-                                <i class="fa-solid fa-minus minus"></i>
+                                <i class="fa-solid fa-plus ic-plus"></i>
+                                <i class="fa-solid fa-minus ic-minus"></i>
                               </td>
                             </tr>
                             <tr>
                               <th>대표장르</th>
                               <td colspan="9">전체</td>
                               <td class="open-btn"> 
-                                <i class="fa-solid fa-plus plus"></i>
-                                <i class="fa-solid fa-minus minus"></i>
+                                <i class="fa-solid fa-plus ic-plus"></i>
+                                <i class="fa-solid fa-minus ic-minus"></i>
                               </td>
                             </tr>
                             <tr>
                               <th>주장르</th>
                               <td colspan="9">전체</td>
                               <td class="open-btn"> 
-                                <i class="fa-solid fa-plus plus"></i>
-                                <i class="fa-solid fa-minus minus"></i>
+                                <i class="fa-solid fa-plus ic-plus"></i>
+                                <i class="fa-solid fa-minus ic-minus"></i>
                               </td>
                             </tr>
                             <tr>
                               <th>부장르</th>
                               <td colspan="9">전체</td>
                               <td class="open-btn"> 
-                                <i class="fa-solid fa-plus plus"></i>
-                                <i class="fa-solid fa-minus minus"></i>
+                                <i class="fa-solid fa-plus ic-plus"></i>
+                                <i class="fa-solid fa-minus ic-minus"></i>
                               </td>
                             </tr>
                             <tr>
                               <th>소재</th>
                               <td colspan="9">전체</td>
                               <td class="open-btn"> 
-                                <i class="fa-solid fa-plus plus"></i>
-                                <i class="fa-solid fa-minus minus"></i>
+                                <i class="fa-solid fa-plus ic-plus"></i>
+                                <i class="fa-solid fa-minus ic-minus"></i>
                               </td>
                             </tr>
                             <tr>
@@ -623,13 +626,13 @@
                               <th>View기준</th>
                               <td class="button-group">
                                 <div class="btn-group" role="group">
-                                  <button type="button" class="btn btn-default">채널</button>
-                                  <button type="button" class="btn btn-default">편성블록</button>
-                                  <button type="button" class="btn btn-default">대표장르</button>
-                                  <button type="button" class="btn btn-default">주장르</button>
-                                  <button type="button" class="btn btn-default">부장르</button>
-                                  <button type="button" class="btn btn-default">소재</button>
-                                  <button type="button" class="btn btn-default">시청률</button>
+                                  <button type="button" class="btn btn-cj-default">채널</button>
+                                  <button type="button" class="btn btn-cj-default">편성블록</button>
+                                  <button type="button" class="btn btn-cj-default">대표장르</button>
+                                  <button type="button" class="btn btn-cj-default">주장르</button>
+                                  <button type="button" class="btn btn-cj-default">부장르</button>
+                                  <button type="button" class="btn btn-cj-default">소재</button>
+                                  <button type="button" class="btn btn-cj-default">시청률</button>
                                 </div>
                               </td>
                             </tr>
@@ -1089,24 +1092,24 @@
                               <td>전체
                                 <div class="card m-0 lookup-box">
                                   <div class="col-sm-1 p-2">
-                                    <button class="btn btn-default">전체</button>
+                                    <button class="btn btn-cj-default">전체</button>
                                   </div>
                                   <div class="col-sm-11 p-0">
                                     <div class="btn-wrap p-2">
-                                      <button class="btn btn-default">드라마전체</button>
-                                      <button class="btn btn-default">드라마종류</button>
-                                      <button class="btn btn-default">드라마종류</button>
-                                      <button class="btn btn-default">드라마종류</button>
-                                      <button class="btn btn-default">드라마종류</button>
-                                      <button class="btn btn-default">드라마종류</button>
-                                      <button class="btn btn-default">드라마종류</button>
-                                      <button class="btn btn-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마전체</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
+                                      <button class="btn btn-cj-default">드라마종류</button>
                                     </div>
                                     <div class="btn-wrap p-2">
-                                      <button class="btn btn-default">예능전체</button>
-                                      <button class="btn btn-default">예능종류</button>
-                                      <button class="btn btn-default">예능종류</button>
-                                      <button class="btn btn-default">예능종류</button>
+                                      <button class="btn btn-cj-default">예능전체</button>
+                                      <button class="btn btn-cj-default">예능종류</button>
+                                      <button class="btn btn-cj-default">예능종류</button>
+                                      <button class="btn btn-cj-default">예능종류</button>
                                     </div>
                                   </div>
                                 </div>
@@ -1132,13 +1135,13 @@
                               <th>View기준</th>
                               <td class="button-group">
                                 <div class="btn-group" role="group">
-                                  <button type="button" class="btn btn-default">채널</button>
-                                  <button type="button" class="btn btn-default">편성블록</button>
-                                  <button type="button" class="btn btn-default">대표장르</button>
-                                  <button type="button" class="btn btn-default">주장르</button>
-                                  <button type="button" class="btn btn-default">부장르</button>
-                                  <button type="button" class="btn btn-default">소재</button>
-                                  <button type="button" class="btn btn-default">시청률</button>
+                                  <button type="button" class="btn btn-cj-default">채널</button>
+                                  <button type="button" class="btn btn-cj-default">편성블록</button>
+                                  <button type="button" class="btn btn-cj-default">대표장르</button>
+                                  <button type="button" class="btn btn-cj-default">주장르</button>
+                                  <button type="button" class="btn btn-cj-default">부장르</button>
+                                  <button type="button" class="btn btn-cj-default">소재</button>
+                                  <button type="button" class="btn btn-cj-default">시청률</button>
                                 </div>
                               </td>
                             </tr>
@@ -1586,24 +1589,24 @@
                                     <td>전체
                                       <div class="card m-0 lookup-box">
                                         <div class="col-sm-1 p-2">
-                                          <button class="btn btn-default">전체</button>
+                                          <button class="btn btn-cj-default">전체</button>
                                         </div>
                                         <div class="col-sm-11 p-0">
                                           <div class="btn-wrap p-2">
-                                            <button class="btn btn-default">드라마전체</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마전체</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
                                           </div>
                                           <div class="btn-wrap p-2">
-                                            <button class="btn btn-default">예능전체</button>
-                                            <button class="btn btn-default">예능종류</button>
-                                            <button class="btn btn-default">예능종류</button>
-                                            <button class="btn btn-default">예능종류</button>
+                                            <button class="btn btn-cj-default">예능전체</button>
+                                            <button class="btn btn-cj-default">예능종류</button>
+                                            <button class="btn btn-cj-default">예능종류</button>
+                                            <button class="btn btn-cj-default">예능종류</button>
                                           </div>
                                         </div>
                                       </div>
@@ -1637,24 +1640,24 @@
                                     <td>전체
                                       <div class="card m-0 lookup-box">
                                         <div class="col-sm-1 p-2">
-                                          <button class="btn btn-default">전체</button>
+                                          <button class="btn btn-cj-default">전체</button>
                                         </div>
                                         <div class="col-sm-11 p-0">
                                           <div class="btn-wrap p-2">
-                                            <button class="btn btn-default">드라마전체</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마전체</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
                                           </div>
                                           <div class="btn-wrap p-2">
-                                            <button class="btn btn-default">예능전체</button>
-                                            <button class="btn btn-default">예능종류</button>
-                                            <button class="btn btn-default">예능종류</button>
-                                            <button class="btn btn-default">예능종류</button>
+                                            <button class="btn btn-cj-default">예능전체</button>
+                                            <button class="btn btn-cj-default">예능종류</button>
+                                            <button class="btn btn-cj-default">예능종류</button>
+                                            <button class="btn btn-cj-default">예능종류</button>
                                           </div>
                                         </div>
                                       </div>
@@ -1688,24 +1691,24 @@
                                     <td>전체
                                       <div class="card m-0 lookup-box">
                                         <div class="col-sm-1 p-2">
-                                          <button class="btn btn-default">전체</button>
+                                          <button class="btn btn-cj-default">전체</button>
                                         </div>
                                         <div class="col-sm-11 p-0">
                                           <div class="btn-wrap p-2">
-                                            <button class="btn btn-default">드라마전체</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마전체</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
                                           </div>
                                           <div class="btn-wrap p-2">
-                                            <button class="btn btn-default">예능전체</button>
-                                            <button class="btn btn-default">예능종류</button>
-                                            <button class="btn btn-default">예능종류</button>
-                                            <button class="btn btn-default">예능종류</button>
+                                            <button class="btn btn-cj-default">예능전체</button>
+                                            <button class="btn btn-cj-default">예능종류</button>
+                                            <button class="btn btn-cj-default">예능종류</button>
+                                            <button class="btn btn-cj-default">예능종류</button>
                                           </div>
                                         </div>
                                       </div>
@@ -1717,24 +1720,24 @@
                                     <td>전체
                                       <div class="card m-0 lookup-box">
                                         <div class="col-sm-1 p-2">
-                                          <button class="btn btn-default">전체</button>
+                                          <button class="btn btn-cj-default">전체</button>
                                         </div>
                                         <div class="col-sm-11 p-0">
                                           <div class="btn-wrap p-2">
-                                            <button class="btn btn-default">드라마전체</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마전체</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
                                           </div>
                                           <div class="btn-wrap p-2">
-                                            <button class="btn btn-default">예능전체</button>
-                                            <button class="btn btn-default">예능종류</button>
-                                            <button class="btn btn-default">예능종류</button>
-                                            <button class="btn btn-default">예능종류</button>
+                                            <button class="btn btn-cj-default">예능전체</button>
+                                            <button class="btn btn-cj-default">예능종류</button>
+                                            <button class="btn btn-cj-default">예능종류</button>
+                                            <button class="btn btn-cj-default">예능종류</button>
                                           </div>
                                         </div>
                                       </div>
@@ -1746,24 +1749,24 @@
                                     <td>전체
                                       <div class="card m-0 lookup-box">
                                         <div class="col-sm-1 p-2">
-                                          <button class="btn btn-default">전체</button>
+                                          <button class="btn btn-cj-default">전체</button>
                                         </div>
                                         <div class="col-sm-11 p-0">
                                           <div class="btn-wrap p-2">
-                                            <button class="btn btn-default">드라마전체</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마전체</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
                                           </div>
                                           <div class="btn-wrap p-2">
-                                            <button class="btn btn-default">예능전체</button>
-                                            <button class="btn btn-default">예능종류</button>
-                                            <button class="btn btn-default">예능종류</button>
-                                            <button class="btn btn-default">예능종류</button>
+                                            <button class="btn btn-cj-default">예능전체</button>
+                                            <button class="btn btn-cj-default">예능종류</button>
+                                            <button class="btn btn-cj-default">예능종류</button>
+                                            <button class="btn btn-cj-default">예능종류</button>
                                           </div>
                                         </div>
                                       </div>
@@ -1775,24 +1778,24 @@
                                     <td>전체
                                       <div class="card m-0 lookup-box">
                                         <div class="col-sm-1 p-2">
-                                          <button class="btn btn-default">전체</button>
+                                          <button class="btn btn-cj-default">전체</button>
                                         </div>
                                         <div class="col-sm-11 p-0">
                                           <div class="btn-wrap p-2">
-                                            <button class="btn btn-default">드라마전체</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
-                                            <button class="btn btn-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마전체</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
                                           </div>
                                           <div class="btn-wrap p-2">
-                                            <button class="btn btn-default">예능전체</button>
-                                            <button class="btn btn-default">예능종류</button>
-                                            <button class="btn btn-default">예능종류</button>
-                                            <button class="btn btn-default">예능종류</button>
+                                            <button class="btn btn-cj-default">예능전체</button>
+                                            <button class="btn btn-cj-default">예능종류</button>
+                                            <button class="btn btn-cj-default">예능종류</button>
+                                            <button class="btn btn-cj-default">예능종류</button>
                                           </div>
                                         </div>
                                       </div>
@@ -1861,19 +1864,25 @@
     </div>
   
     <script>
+       window.onload = function(){
+        $('a[href="#mps"]').trigger("shown.bs.tab");
+        $(".tab-content").css({"opacity":"1"});
+        $("body").css({"overflow":"auto"});
+      };
+ 
       $(".open-btn").on("click",function(){
         $(this).toggleClass("active");
 
         if($(this).hasClass("active")){
-          $(this).children(".minus").show();
+          $(this).children(".ic-minus").show();
           $(this).siblings("td").children(".lookup-box").css("display","flex");
         }else{
-          $(this).children(".minus").hide();
+          $(this).children(".ic-minus").hide();
           $(this).siblings("td").children(".lookup-box").css("display","none");
         }
       })
 
-      $(".btn-default").on("click",function(){
+      $(".btn-cj-default").on("click",function(){
         $(this).toggleClass("active");
       })
 
@@ -2519,7 +2528,7 @@
         new Vue(app3);
         Vue.nextTick(function () {
           $(window).resize(function () {
-            AUIGrid.resize("#sChnRepGrid");
+            AUIGrid.resize("#tChnRepGrid");
           });
         });
         // Vue.component();
@@ -5432,6 +5441,7 @@
               });
               // Vue.component();
             });
+  
   </script>
   </body>
 </html>
