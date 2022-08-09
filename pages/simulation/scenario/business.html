@@ -173,7 +173,7 @@
                     <button type="button" class="btn btn-cj"><i class="fa-solid fa-plus"></i>추가</button>
                     <button type="button" class="btn btn-cj">엑셀저장</button>
                     <button type="button" class="btn btn-cj">저장</button>
-                    <button type="button" class="btn btn-cj">삭제</button>
+                    <button type="button" class="btn btn-red">삭제</button>
                     <button type="button" class="btn btn-cj">닫기</button>
                   </div>
                 </div>
@@ -682,7 +682,7 @@
                     btnList.push(`<button class="btn btn-cj ${setBtnClass()}" onClick="app.version(${item["id"]})">버전추가</button>`);
                   }
                   btnList.push(`<button class="btn btn-cj ${setBtnClass()}" onClick="app.copy(${item["id"]})">복사</button>`);
-                  btnList.push(`<button class="btn btn-cj ${setBtnClass()}" onClick="app.remove(${item["id"]})">삭제</button>`);
+                  btnList.push(`<button class="btn btn-red ${setBtnClass()}" onClick="app.remove(${item["id"]})">삭제</button>`);
                   btnList.push(`<button class="btn btn-success ${setBtnClass()}" onClick="app.done(${item["id"]})">확정</button>`);
                 } else {
                   if ((item["version"] || 0) < 1) {
@@ -1220,7 +1220,7 @@
               labelFunction: function (rowIndex, columnIndex, value, headerText, item) {
                 // HTML 템플릿 작성
                 var template = '<div class="my_div">';
-                template += '<button class="btn btn-cj">삭제</button>';
+                template += '<button class="btn btn-red">삭제</button>';
                 template += "</div>";
                 return template;
               },
@@ -1470,7 +1470,7 @@
               labelFunction: function (rowIndex, columnIndex, value, headerText, item) {
                 // HTML 템플릿 작성
                 var template = '<div class="my_div">';
-                template += '<button class="btn btn-cj">삭제</button>';
+                template += '<button class="btn btn-red">삭제</button>';
                 template += "</div>";
                 return template;
               },
@@ -2351,7 +2351,7 @@
                                 <div class="d-flex cj-btn-group align-items-end">
                                   <button type="submit" class="btn btn-cj">다시 계산</button>
                                   <button class="btn btn-cj"><i class="fa-solid fa-plus"></i>추가</button>
-                              <button class="btn btn-cj">삭제</button>
+                              <button class="btn btn-red">삭제</button>
                                 </div>
                             </div>
                             <div id="scenarioSummaryGrid"></div>

@@ -4,7 +4,7 @@
 
 /* button */
 .cj-btn-group { gap:10px; } 
-.cj-btn-group button { color:#fff; font-size: 13px; min-height: 37px; border-radius: 3px; text-align: center; border:none; outline: none; display: flex; align-items: center; justify-content: center; gap:5px; } 
+.cj-btn-group button { color:#fff; font-size: 13px; height: 37px; border-radius: 3px; text-align: center; border:none; outline: none; display: flex; align-items: center; justify-content: center; gap:5px; } 
 .cj-btn-group button:focus, .cj-btn-group button:active { box-shadow: none !important; } 
 button:focus,button:active { box-shadow: none !important; } 
 .btn-cj { background-color: #515668; color:#fff; } 
@@ -96,8 +96,8 @@ button:focus,button:active { box-shadow: none !important; }
  }
 
 /* foot-menu */
-.foot-menu{position:absolute;bottom:15px;right:15px;display: flex;align-items: center;justify-content: flex-end;gap:1rem;}
-.foot-menu li{border:solid 1px #d5d6dc; border-radius: 50%; min-width:60px; min-height: 60px;display: flex;align-items: center;justify-content: center;cursor: pointer;}
+.foot-menu{position:absolute;bottom:15px;right:15px;display: flex;align-items: center;justify-content: flex-end;gap:1.5rem;}
+.foot-menu li{border:solid 1px #d5d6dc; border-radius: 50%; min-width:60px; min-height: 60px;display: flex;align-items: center;justify-content: center;cursor: pointer;background-color: #fff;}
 
 
  /* reaction */
