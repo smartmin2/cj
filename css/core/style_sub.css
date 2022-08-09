@@ -95,7 +95,9 @@ button:focus,button:active { box-shadow: none !important; }
  .md-block .cj-btn-group { justify-content: center; margin-top: 10px; } 
  }
 
-
+/* foot-menu */
+.foot-menu{position:absolute;bottom:15px;right:15px;display: flex;align-items: center;justify-content: flex-end;gap:1rem;}
+.foot-menu li{border:solid 1px #d5d6dc; border-radius: 50%; min-width:60px; min-height: 60px;display: flex;align-items: center;justify-content: center;cursor: pointer;}
 
 
  /* reaction */
