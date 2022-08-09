@@ -70,10 +70,10 @@ button:focus,button:active { box-shadow: none !important; }
 .step-nav.info-nav li a.active::before,
 .step-nav li a.active::after,
 .step-nav.info-nav li a.active::after { border:0; } 
-.step-nav li a:before { position:absolute; content:""; width:0; height:0; border: 44px solid transparent; border-left:44px solid #ddd; left: 314px; z-index: -1; top: -1px; } 
-.step-nav li a:after { position:absolute; content:""; width:0; height:0; border: 44px solid transparent; border-left: 36px solid #fbfbfb; left: 313px; top: -1px; z-index: -1; } 
-.step-nav li a { position:relative; padding-left:15px; color:#bdbac8 !important; font-weight: bold; font-size: 14px; min-width:350px; padding:26px 0 26px 55px; gap:10px; align-items: center; display: flex; clip-path: polygon(90% 0%, 100% 50%, 90% 100%, 0% 100%, 10% 50%, 0% 0%); } 
-.step-nav li:first-child a { clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%); } 
+.step-nav li a:before { position:absolute; content:""; width:0; height:0; border: 44px solid transparent; border-left:44px solid #ddd; left: 207px; z-index: -1; top: 1px; } 
+.step-nav li a:after { position:absolute; content:""; width:0; height:0; border: 44px solid transparent; border-left: 35px solid #fbfbfb; left: 204px; top: 1px; z-index: -1; } 
+.step-nav li a { position:relative; height: 90px; padding-left:15px; color:#bdbac8 !important; font-weight: bold; font-size: 14px; min-width:240px; padding:26px 0 26px 48px; gap:10px; align-items: center; display: flex; clip-path: polygon(85% 0%, 100% 50%, 85% 100%, 0% 100%, 10% 50%, 0% 0%); } 
+.step-nav li:first-child a { clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%); } 
 .step-nav li a:link { margin:0; } 
 .step-nav li a.active { color:#fff !important; background-color: #505c84; } 
 .step-nav li a.active span { background-color:#fff; color:#505c84; } 
@@ -96,7 +96,7 @@ button:focus,button:active { box-shadow: none !important; }
  }
 
 /* foot-menu */
-.foot-menu{position:absolute;bottom:15px;right:15px;display: flex;align-items: center;justify-content: flex-end;gap:1.5rem;}
+.foot-menu{position:fixed;bottom:15px;right:15px;display: flex;align-items: center;justify-content: flex-end;gap:1.5rem;}
 .foot-menu li{border:solid 1px #d5d6dc; border-radius: 50%; min-width:60px; min-height: 60px;display: flex;align-items: center;justify-content: center;cursor: pointer;background-color: #fff;}
 
 

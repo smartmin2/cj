@@ -23,8 +23,12 @@
     <script src="../../../js/all.min.js"></script>
 
     <style>
-      body {overflow: hidden;}
-      .tab-content {opacity: 0;}
+      body {
+        overflow: hidden;
+      }
+      .tab-content {
+        opacity: 0;
+      }
     </style>
   </head>
   <body>
@@ -36,25 +40,34 @@
             <li role="presentation" class="active">
               <a href="#mps" aria-controls="mps" role="tab" data-toggle="tab"
                 ><span class="number">1</span>
-                <div>경영계획기준 시뮬레이션</div>
+                <div>경영계획기준 <br />시뮬레이션</div>
               </a>
             </li>
             <li role="presentation">
               <a href="#channel" aria-controls="channel" role="tab" data-toggle="tab">
                 <span class="number">2</span>
-                <div>채널기준 월별 시청량조회</div></a
+                <div>
+                  채널기준 월별<br />
+                  시청량조회
+                </div></a
               >
             </li>
             <li role="presentation">
               <a href="#ccSimulation" aria-controls="ccSimulation" role="tab" data-toggle="tab"
                 ><span class="number">3</span>
-                <div>경쟁사 비교 시뮬레이션</div></a
+                <div>
+                  경쟁사 비교<br />
+                  시뮬레이션
+                </div></a
               >
             </li>
             <li role="presentation">
               <a href="#ccView" aria-controls="ccView" role="tab" data-toggle="tab">
                 <span class="number">4</span>
-                <div>경쟁사 비교 월별 시청량 조회</div></a
+                <div>
+                  경쟁사 비교 월별<br />
+                  시청량 조회
+                </div></a
               >
             </li>
             <li role="presentation">
@@ -72,31 +85,31 @@
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane active" id="mps">
             <div class="card card-box mr-0 mt-4 p-4" id="app1">
-                <!-- grid 영역 -->
-                <div>
-                  <div id="bsnPlanGrid" style="height: 90px"></div>
-                </div>
+              <!-- grid 영역 -->
+              <div>
+                <div id="bsnPlanGrid" style="height: 90px"></div>
+              </div>
             </div>
             <!-- 검색조건 영역 -->
             <div class="card card-box mr-0 mt-4 p-4" id="app2">
-                <div class="d-flex justify-content-between">
-                  <div class="d-flex align-items-end"></div>
+              <div class="d-flex justify-content-between">
+                <div class="d-flex align-items-end"></div>
 
-                  <div class="d-flex cj-btn-group align-items-end">
-                    <button type="button" class="btn btn-cj"><i class="fa-solid fa-plus"></i>추가</button>
-                    <button type="button" class="btn btn-cj">엑셀저장</button>
-                    <button type="button" class="btn btn-cj" @click.end="createScenario">제작비 시청률</button>
-                    <button type="button" class="btn btn-cj">제작비 상세</button>
-                    <button type="button" class="btn btn-cj">닫기</button>
-                  </div>
+                <div class="d-flex cj-btn-group align-items-end">
+                  <button type="button" class="btn btn-cj"><i class="fa-solid fa-plus"></i>추가</button>
+                  <button type="button" class="btn btn-cj">엑셀저장</button>
+                  <button type="button" class="btn btn-cj" @click.end="createScenario">제작비 시청률</button>
+                  <button type="button" class="btn btn-cj">제작비 상세</button>
+                  <button type="button" class="btn btn-cj">닫기</button>
                 </div>
-                <!-- grid 영역 -->
-                <div class="mt-4">
-                  <div id="bsnDetailGrid" style="min-height: 400px"></div>
-                </div>
+              </div>
+              <!-- grid 영역 -->
+              <div class="mt-4">
+                <div id="bsnDetailGrid" style="min-height: 400px"></div>
+              </div>
 
-                <!-- 시나리오 modal-->
-                <scenario-summary-modal ref="refScenarioSummary" />
+              <!-- 시나리오 modal-->
+              <scenario-summary-modal ref="refScenarioSummary" />
             </div>
             <ul class="foot-menu mt-4">
               <li>메뉴1</li>
@@ -106,36 +119,36 @@
           </div>
           <div role="tabpanel" class="tab-pane active" id="channel">
             <div class="card card-box mr-0 mt-4 p-4" id="app3">
-                <!-- grid 영역 -->
-                <div>
-                  <div id="channelBaseGrid" style="height: 90px"></div>
-                </div>
+              <!-- grid 영역 -->
+              <div>
+                <div id="channelBaseGrid" style="height: 90px"></div>
+              </div>
             </div>
             <!-- 검색조건 영역 -->
             <div class="card card-box mr-0 mt-4 p-4" id="app4">
-                <div class="d-flex justify-content-between">
-                  <div class="d-flex">
-                    <div class="d-flex align-items-center">
-                      <label for="" class="cj-label pr-3">광고손실율</label>
-                      <input type="number" class="form-control input-number w-25" name="" id="" />
-                    </div>
-                    <div class="d-flex align-items-center">
-                      <label for="" class="cj-label pr-3">재방시청비율<br />(본방대비)</label>
-                      <input type="number" class="form-control input-number w-25" name="" id="" />
-                    </div>
+              <div class="d-flex justify-content-between">
+                <div class="d-flex">
+                  <div class="d-flex align-items-center">
+                    <label for="" class="cj-label pr-3">광고손실율</label>
+                    <input type="number" class="form-control input-number w-25" name="" id="" />
                   </div>
-
-                  <div class="d-flex cj-btn-group align-items-end">
-                    <button type="button" class="btn btn-cj">엑셀저장</button>
+                  <div class="d-flex align-items-center">
+                    <label for="" class="cj-label pr-3">재방시청비율<br />(본방대비)</label>
+                    <input type="number" class="form-control input-number w-25" name="" id="" />
                   </div>
                 </div>
-                <!-- grid 영역 -->
-                <div class="mt-4">
-                  <div id="cbDetailGrid" style="min-height: 400px"></div>
-                </div>
 
-                <!-- 시나리오 modal-->
-                <scenario-summary-modal ref="refScenarioSummary" />
+                <div class="d-flex cj-btn-group align-items-end">
+                  <button type="button" class="btn btn-cj">엑셀저장</button>
+                </div>
+              </div>
+              <!-- grid 영역 -->
+              <div class="mt-4">
+                <div id="cbDetailGrid" style="min-height: 400px"></div>
+              </div>
+
+              <!-- 시나리오 modal-->
+              <scenario-summary-modal ref="refScenarioSummary" />
             </div>
             <ul class="foot-menu mt-4">
               <li>메뉴1</li>
@@ -145,45 +158,45 @@
           </div>
           <div role="tabpanel" class="tab-pane active" id="ccSimulation">
             <div class="card card-box mr-0 mt-4 p-4" id="app5">
-                <!-- grid 영역 -->
-                <div>
-                  <div id="ccSimulationGrid" style="height: 90px"></div>
-                </div>
+              <!-- grid 영역 -->
+              <div>
+                <div id="ccSimulationGrid" style="height: 90px"></div>
+              </div>
             </div>
             <!-- 검색조건 영역 -->
             <div class="card card-box mr-0 mt-4 p-4" id="app6">
-                <div class="d-flex justify-content-between">
-                  <div class="d-flex justify-content-start align-items-center">
-                    <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
-                      <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1" />
-                      <label class="form-check-label" for="radioDefault1"> 일평균 </label>
-                    </div>
-                    <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
-                      <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault2" />
-                      <label class="form-check-label" for="radioDefault2"> 프라임 </label>
-                    </div>
-                    <div class="form-check cj-input-radio d-flex align-items-center">
-                      <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault3" />
-                      <label class="form-check-label" for="radioDefault3"> 논프라임 </label>
-                    </div>
+              <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-start align-items-center">
+                  <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1" />
+                    <label class="form-check-label" for="radioDefault1"> 일평균 </label>
                   </div>
-
-                  <div class="d-flex cj-btn-group align-items-end">
-                    <button type="button" class="btn btn-cj">기본값가져오기</button>
-                    <button type="button" class="btn btn-cj"><i class="fa-solid fa-plus"></i>추가</button>
-                    <button type="button" class="btn btn-cj">엑셀저장</button>
-                    <button type="button" class="btn btn-cj">저장</button>
-                    <button type="button" class="btn btn-red">삭제</button>
-                    <button type="button" class="btn btn-cj">닫기</button>
+                  <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault2" />
+                    <label class="form-check-label" for="radioDefault2"> 프라임 </label>
+                  </div>
+                  <div class="form-check cj-input-radio d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault3" />
+                    <label class="form-check-label" for="radioDefault3"> 논프라임 </label>
                   </div>
                 </div>
-                <!-- grid 영역 -->
-                <div class="mt-4">
-                  <div id="ccDetailGrid" style="min-height: 400px"></div>
-                </div>
 
-                <!-- 시나리오 modal-->
-                <scenario-summary-modal ref="refScenarioSummary" />
+                <div class="d-flex cj-btn-group align-items-end">
+                  <button type="button" class="btn btn-cj">기본값가져오기</button>
+                  <button type="button" class="btn btn-cj"><i class="fa-solid fa-plus"></i>추가</button>
+                  <button type="button" class="btn btn-cj">엑셀저장</button>
+                  <button type="button" class="btn btn-cj">저장</button>
+                  <button type="button" class="btn btn-red">삭제</button>
+                  <button type="button" class="btn btn-cj">닫기</button>
+                </div>
+              </div>
+              <!-- grid 영역 -->
+              <div class="mt-4">
+                <div id="ccDetailGrid" style="min-height: 400px"></div>
+              </div>
+
+              <!-- 시나리오 modal-->
+              <scenario-summary-modal ref="refScenarioSummary" />
             </div>
             <ul class="foot-menu mt-4">
               <li>메뉴1</li>
@@ -193,44 +206,44 @@
           </div>
           <div role="tabpanel" class="tab-pane active" id="ccView">
             <div class="card card-box mr-0 mt-4 p-4" id="app7">
-                <!-- grid 영역 -->
-                <div>
-                  <div id="ccViewGrid" style="height: 90px"></div>
-                </div>
+              <!-- grid 영역 -->
+              <div>
+                <div id="ccViewGrid" style="height: 90px"></div>
+              </div>
             </div>
             <!-- 검색조건 영역 -->
             <div class="card card-box mr-0 mt-4 p-4" id="app8">
-                <div class="d-flex justify-content-between">
-                  <div class="d-flex justify-content-start align-items-center grid-top">
-                    <div class="form-check cj-input-radio d-flex align-items-center">
-                      <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault4" />
-                      <label class="form-check-label mw-55" for="radioDefault4"> 일평균 </label>
-                    </div>
-                    <div class="form-check cj-input-radio d-flex align-items-center">
-                      <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault5" />
-                      <label class="form-check-label mw-55" for="radioDefault5"> 프라임 </label>
-                    </div>
-                    <div class="form-check cj-input-radio d-flex align-items-center">
-                      <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault6" />
-                      <label class="form-check-label mw-55" for="radioDefault6"> 논프라임 </label>
-                    </div>
-                    <select id="channel" class="form-control cj-selectBox select-box">
-                      <option>2023</option>
-                    </select>
+              <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-start align-items-center grid-top">
+                  <div class="form-check cj-input-radio d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault4" />
+                    <label class="form-check-label mw-55" for="radioDefault4"> 일평균 </label>
                   </div>
-
-                  <div class="d-flex cj-btn-group align-items-end">
-                    <button type="button" class="btn btn-cj">엑셀저장</button>
-                    <button type="button" class="btn btn-cj">닫기</button>
+                  <div class="form-check cj-input-radio d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault5" />
+                    <label class="form-check-label mw-55" for="radioDefault5"> 프라임 </label>
                   </div>
-                </div>
-                <!-- grid 영역 -->
-                <div class="mt-4">
-                  <div id="ccViewDetailGrid" style="min-height: 400px"></div>
+                  <div class="form-check cj-input-radio d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault6" />
+                    <label class="form-check-label mw-55" for="radioDefault6"> 논프라임 </label>
+                  </div>
+                  <select id="channel" class="form-control cj-selectBox select-box">
+                    <option>2023</option>
+                  </select>
                 </div>
 
-                <!-- 시나리오 modal-->
-                <scenario-summary-modal ref="refScenarioSummary" />
+                <div class="d-flex cj-btn-group align-items-end">
+                  <button type="button" class="btn btn-cj">엑셀저장</button>
+                  <button type="button" class="btn btn-cj">닫기</button>
+                </div>
+              </div>
+              <!-- grid 영역 -->
+              <div class="mt-4">
+                <div id="ccViewDetailGrid" style="min-height: 400px"></div>
+              </div>
+
+              <!-- 시나리오 modal-->
+              <scenario-summary-modal ref="refScenarioSummary" />
             </div>
             <ul class="foot-menu mt-4">
               <li>메뉴1</li>
@@ -240,45 +253,45 @@
           </div>
           <div role="tabpanel" class="tab-pane active" id="rank">
             <div class="card card-box mr-0 mt-4 p-4" id="app9">
-                <!-- grid 영역 -->
-                <div>
-                  <div id="cnRankGrid" style="height: 90px"></div>
-                </div>
+              <!-- grid 영역 -->
+              <div>
+                <div id="cnRankGrid" style="height: 90px"></div>
+              </div>
             </div>
             <!-- 검색조건 영역 -->
             <div class="card card-box mr-0 mt-4 p-4" id="app10">
-                <div class="d-flex justify-content-between">
-                  <div class="d-flex justify-content-start align-items-center grid-top">
-                    <div class="form-check cj-input-radio d-flex align-items-center">
-                      <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault7" />
-                      <label class="form-check-label mw-55" for="radioDefault7"> 일평균 </label>
-                    </div>
-                    <div class="form-check cj-input-radio d-flex align-items-center">
-                      <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault8" />
-                      <label class="form-check-label mw-55" for="radioDefault8"> 프라임 </label>
-                    </div>
-                    <div class="form-check cj-input-radio d-flex align-items-center">
-                      <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault9" />
-                      <label class="form-check-label mw-55" for="radioDefault9"> 논프라임 </label>
-                    </div>
-                    <select id="channel" class="form-control cj-selectBox select-box">
-                      <option>2023</option>
-                    </select>
+              <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-start align-items-center grid-top">
+                  <div class="form-check cj-input-radio d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault7" />
+                    <label class="form-check-label mw-55" for="radioDefault7"> 일평균 </label>
                   </div>
-
-                  <div class="d-flex cj-btn-group align-items-end">
-                    <button type="button" class="btn btn-cj">엑셀저장</button>
-                    <button type="button" class="btn btn-cj">닫기</button>
+                  <div class="form-check cj-input-radio d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault8" />
+                    <label class="form-check-label mw-55" for="radioDefault8"> 프라임 </label>
                   </div>
-                </div>
-                <!-- grid 영역 -->
-                <div class="mt-4 d-flex">
-                  <div class="chart col-6"></div>
-                  <div id="cnRankDetailGrid" class="col-6" style="min-height: 400px"></div>
+                  <div class="form-check cj-input-radio d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault9" />
+                    <label class="form-check-label mw-55" for="radioDefault9"> 논프라임 </label>
+                  </div>
+                  <select id="channel" class="form-control cj-selectBox select-box">
+                    <option>2023</option>
+                  </select>
                 </div>
 
-                <!-- 시나리오 modal-->
-                <scenario-summary-modal ref="refScenarioSummary" />
+                <div class="d-flex cj-btn-group align-items-end">
+                  <button type="button" class="btn btn-cj">엑셀저장</button>
+                  <button type="button" class="btn btn-cj">닫기</button>
+                </div>
+              </div>
+              <!-- grid 영역 -->
+              <div class="mt-4 d-flex">
+                <div class="chart col-6"></div>
+                <div id="cnRankDetailGrid" class="col-6" style="min-height: 400px"></div>
+              </div>
+
+              <!-- 시나리오 modal-->
+              <scenario-summary-modal ref="refScenarioSummary" />
             </div>
             <ul class="foot-menu mt-4">
               <li>메뉴1</li>
@@ -292,9 +305,9 @@
 
     <script>
       $(function () {
-        $("#myTab a:first").tab("show");    
-        
-        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        $("#myTab a:first").tab("show");
+
+        $('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
           var target = $(e.target).attr("href");
           $(".tab-pane").not(target).removeClass("active");
         });
@@ -302,10 +315,10 @@
         // $(".tab-content").css({"opacity":"0"});
       });
 
-      window.onload = function(){
+      window.onload = function () {
         $('a[href="#mps"]').trigger("shown.bs.tab");
-        $(".tab-content").css({"opacity":"1"});
-        $("body").css({"overflow":"auto"});
+        $(".tab-content").css({ opacity: "1" });
+        $("body").css({ overflow: "auto" });
       };
 
       // tab1 start
@@ -821,7 +834,7 @@
       });
 
       // modal start
-        // 제작비기준 시청률
+      // 제작비기준 시청률
       Vue.component("scenario-summary-modal0", {
         template: `
         <div>
@@ -1067,8 +1080,8 @@
           },
         },
       });
-        
-        // IP 등록/수정(경영계획)
+
+      // IP 등록/수정(경영계획)
       Vue.component("scenario-summary-modal1", {
         template: `
         <div>
@@ -1188,7 +1201,7 @@
               width: "8%",
               editRenderer: {
                 type: "DropDownListRenderer",
-                list: ["주중","주말"],
+                list: ["주중", "주말"],
               },
             },
             {
@@ -1225,7 +1238,6 @@
                 return template;
               },
             },
-           
           ],
           gridProps: {
             enableFilter: false,
@@ -1282,7 +1294,6 @@
               prdCost: "제작비",
               exView: "10",
             });
-
           },
           createGrid: function () {
             AUIGrid.destroy("#scenarioSummaryGrid");
@@ -1291,8 +1302,8 @@
           },
         },
       });
-       
-        // IP 등록/수정(이동계획)
+
+      // IP 등록/수정(이동계획)
       Vue.component("scenario-summary-modal2", {
         template: `
         <div>
@@ -1412,7 +1423,7 @@
               width: "8%",
               editRenderer: {
                 type: "DropDownListRenderer",
-                list: ["주중","주말"],
+                list: ["주중", "주말"],
               },
             },
             {
@@ -1475,7 +1486,6 @@
                 return template;
               },
             },
-            
           ],
           gridProps: {
             enableFilter: false,
@@ -1559,9 +1569,9 @@
           },
         },
       });
-      
-       // 재방 비율 설정(년기준)
-       Vue.component("scenario-summary-modal3", {
+
+      // 재방 비율 설정(년기준)
+      Vue.component("scenario-summary-modal3", {
         template: `
         <div>
             <div class="modal in" tabindex="-1" id="scenarioSummaryModal" role="dialog" data-backdrop="static" data-keyboard="false" aria-hidden="true" >
@@ -1604,7 +1614,7 @@
         data: () => ({
           gridData: [],
           gridLayout: [
-          {
+            {
               headerText: "선택",
               width: "5%",
               renderer: {
@@ -1735,7 +1745,6 @@
               area: "22.1%",
               nationwide: "22.1%",
             });
-          
           },
           createGrid: function () {
             AUIGrid.destroy("#scenarioSummaryGrid");
@@ -1744,8 +1753,8 @@
           },
         },
       });
-        
-        // 재방 비율 설정(요일)
+
+      // 재방 비율 설정(요일)
       Vue.component("scenario-summary-modal4", {
         template: `
         <div>
@@ -2079,7 +2088,6 @@
               area: "8%",
               nationwide: "8%",
             });
-          
           },
           createGrid: function () {
             AUIGrid.destroy("#scenarioSummaryGrid");
@@ -2088,8 +2096,8 @@
           },
         },
       });
-         
-        // 제작비 기준 상세
+
+      // 제작비 기준 상세
       Vue.component("scenario-summary-modal5", {
         template: `
         <div>
@@ -2304,7 +2312,6 @@
               weekday: "1.80",
               weekend: "1.80",
             });
-          
           },
           createGrid: function () {
             AUIGrid.destroy("#scenarioSummaryGrid");
@@ -2313,8 +2320,8 @@
           },
         },
       });
-        
-        // 시청률 회차 패턴 관리
+
+      // 시청률 회차 패턴 관리
       Vue.component("scenario-summary-modal6", {
         template: `
         <div>
@@ -2382,7 +2389,7 @@
         data: () => ({
           gridData: [],
           gridLayout: [
-          {
+            {
               headerText: "선택",
               width: "5%",
               renderer: {
@@ -2390,7 +2397,7 @@
                 showLabel: false, // 참, 거짓 텍스트 출력여부( 기본값 false )
                 editable: true, // 체크박스 편집 활성화 여부(기본값 : false)
               },
-              
+
               editRenderer: {
                 type: "CheckBoxEditRenderer",
               },
@@ -2518,7 +2525,6 @@
               standard: "1.99",
               performance: "1.99",
             });
-          
           },
           createGrid: function () {
             AUIGrid.destroy("#scenarioSummaryGrid");
@@ -2527,8 +2533,8 @@
           },
         },
       });
-     
-       // 이벤트 적용(수도권 기준 팝업)
+
+      // 이벤트 적용(수도권 기준 팝업)
       Vue.component("scenario-summary-modal", {
         template: `
         <div>
@@ -2596,7 +2602,7 @@
               width: "9%",
               editRenderer: {
                 type: "DropDownListRenderer",
-                list: [ "MBC", "지상파3사", "지상파3사 외"],
+                list: ["MBC", "지상파3사", "지상파3사 외"],
               },
             },
             {
@@ -2661,7 +2667,7 @@
               dataField: "area",
               headerText: "수도권",
               headerHeights: [38, 38],
-       
+
               children: [
                 {
                   dataField: "areaDay",
@@ -2685,7 +2691,7 @@
                 },
               ], // end of children
             },
-            
+
             {
               dataField: "uses",
               headerText: "활용여부",
@@ -2749,7 +2755,6 @@
               standard: "1.99",
               performance: "1.99",
             });
-          
           },
           createGrid: function () {
             AUIGrid.destroy("#scenarioSummaryGrid");
@@ -2758,7 +2763,7 @@
           },
         },
       });
-        
+
       // modal end
 
       // tab1 end
