@@ -92,11 +92,13 @@
                         <div class="row">
                           <div class="col-sm-6 pr-0">
                             <div class="card mr-0">
+                              <div class="card-sub-title">UV & 인당시청시간</div>
                               <div class="card-body" style="height: 200px"></div>
                             </div>
                           </div>
                           <div class="col-sm-6 pl-0">
                             <div class="card mr-0">
+                              <div class="card-sub-title">가입자 기여도</div>
                               <div class="card-body" style="height: 200px"></div>
                             </div>
                           </div>
@@ -109,7 +111,7 @@
                   </div>
                 </div>
                 <div class="tab-pane" id="recog">
-                  <div class="card card-box mr-0 mt-4 p-4">
+                  <div class="card card-box mr-0 p-4">
                     <div class="card-inner p-4">
                       <!-- naver -->
                       <div class="card mr-0">
@@ -147,9 +149,13 @@
                           </div>
                         </div>
                         <div class="col-sm-6">
+                          <div class="card-header">언급 Topic 키워드 분포(同 장르 평균 비교)</div>
                           <div class="card mr-0">
-                            <div class="card-header">언급 Topic 키워드 분포(同 장르 평균 비교)</div>
-                            <div class="card-body" style="height: 200px"></div>
+                            <div class="row">
+                              <div class="col-sm-4"><div class="card-body" style="height: 200px"></div></div>
+                              <div class="col-sm-4"><div class="card-body" style="height: 200px"></div></div>
+                              <div class="col-sm-4"><div class="card-body" style="height: 200px"></div></div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -160,16 +166,19 @@
                       <div class="row">
                         <div class="col-sm-3 pr-0">
                           <div class="card mr-0">
+                            <div class="card-sub-title">긍정키워드</div>
                             <div class="card-body" style="height: 200px"></div>
                           </div>
                         </div>
                         <div class="col-sm-4 pr-0 pl-0">
                           <div class="card mr-0">
+                            <div class="card-sub-title">긍정반응 Top3</div>
                             <div class="card-body" style="height: 200px"></div>
                           </div>
                         </div>
                         <div class="col-sm-5 pl-0">
                           <div class="card mr-0">
+                            <div class="card-sub-title">긍정반응 Topic 분포</div>
                             <div class="card-body" style="height: 200px"></div>
                           </div>
                         </div>
@@ -183,16 +192,19 @@
                       <div class="row mt-4">
                         <div class="col-sm-3 pr-0">
                           <div class="card mr-0">
+                            <div class="card-sub-title">부정키워드</div>
                             <div class="card-body" style="height: 200px"></div>
                           </div>
                         </div>
                         <div class="col-sm-4 pr-0 pl-0">
                           <div class="card mr-0">
+                            <div class="card-sub-title">부정반응 Top3</div>
                             <div class="card-body" style="height: 200px"></div>
                           </div>
                         </div>
                         <div class="col-sm-5 pl-0">
                           <div class="card mr-0">
+                            <div class="card-sub-title">부정반응 Topic 분포</div>
                             <div class="card-body" style="height: 200px"></div>
                           </div>
                         </div>
@@ -235,6 +247,9 @@
                           </tr>
                         </tbody>
                       </table>
+                    </div>
+                    <div class="row justify-content-end mr-1">
+                      <button class="btn btn-cj">저장</button>
                     </div>
                   </div>
                 </div>
@@ -308,7 +323,8 @@
                 showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
                 inputMode: "text",
               },
-            },       {
+            },
+            {
               dataField: "",
               headerText: "",
               editRenderer: {
