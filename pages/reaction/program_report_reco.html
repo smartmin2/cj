@@ -50,57 +50,81 @@
                 <a class="nav-link" data-toggle="tab" href="#detailAl">상세 분석</a>
               </li>
             </ul>
-              <div class="tab-content">
-                <div class="tab-pane show active" id="repImage">
-                  <div class="card card-box mr-0 mt-4 p-4">
-                    <div class="button-group mr-3 mb-4 d-flex justify-content-end">
-                      <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-cj-default">반응 수집 채널</button>
-                        <button type="button" class="btn btn-cj-default">전체</button>
-                        <button type="button" class="btn btn-cj-default">네이버/다음 TV</button>
-                        <button type="button" class="btn btn-cj-default">트위터</button>
-                        <button type="button" class="btn btn-cj-default">블로그/카페</button>
-                        <button type="button" class="btn btn-cj-default">커뮤니티</button>
+            <div class="tab-content">
+              <div class="tab-pane show active" id="repImage">
+                <div class="card card-box mr-0 mt-4 p-4">
+                  <div class="button-group mr-3 mb-4 d-flex justify-content-end">
+                    <div class="btn-group" role="group">
+                      <button type="button" class="btn btn-cj-default">반응 수집 채널</button>
+                      <button type="button" class="btn btn-cj-default">전체</button>
+                      <button type="button" class="btn btn-cj-default">네이버/다음 TV</button>
+                      <button type="button" class="btn btn-cj-default">트위터</button>
+                      <button type="button" class="btn btn-cj-default">블로그/카페</button>
+                      <button type="button" class="btn btn-cj-default">커뮤니티</button>
+                    </div>
+                  </div>
+                  <div class="row mt-4">
+                    <div class="col-sm-4 pr-0">
+                      <div class="card mr-0">
+                        <div class="card-header">런칭전</div>
+                        <div class="card-body" style="height: 200px"></div>
                       </div>
                     </div>
-                    <div class="row mt-4">
-                      <div class="col-sm-4 pr-0">
-                        <div class="card mr-0">
-                          <div class="card-header">런칭전</div>
-                          <div class="card-body" style="height: 200px"></div>
-                        </div>
-                      </div>
-                      <div class="col-sm-4 pr-0 pl-0">
-                        <div class="card mr-0">
-                          <div class="card-header">런칭주차</div>
-                          <div class="card-body" style="height: 200px"></div>
-                        </div>
-                      </div>
-                      <div class="col-sm-4 pl-0">
-                        <div class="card mr-0">
-                          <div class="card-header">전회차 총합</div>
-                          <div class="card-body" style="height: 200px"></div>
-                        </div>
+                    <div class="col-sm-4 pr-0 pl-0">
+                      <div class="card mr-0">
+                        <div class="card-header">런칭주차</div>
+                        <div class="card-body" style="height: 200px"></div>
                       </div>
                     </div>
-                    <!-- grid 영역 -->
-                    <div id="app1" class="mt-4">
-                      <div id="repImageGrid"></div>
+                    <div class="col-sm-4 pl-0">
+                      <div class="card mr-0">
+                        <div class="card-header">전회차 총합</div>
+                        <div class="card-body" style="height: 200px"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- grid 영역 -->
+                  <div id="app1" class="mt-4">
+                    <div id="repImageGrid"></div>
+                  </div>
+                  <div class="row mt-4">
+                    <div class="col-sm-6 pr-0">
+                      <div class="card mr-0">
+                        <div class="card-header">해당 프로그램 "총언급량" 런칭전 vs 런칭후 비교</div>
+                        <div class="card-body" style="height: 200px"></div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 pl-0">
+                      <div class="card mr-0">
+                        <div class="card-header">해당 프로그램 "총언급량" vs 비교군 프로그램 평균 비교</div>
+                        <div class="card-body" style="height: 200px"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="tab-pane" id="interest">
-                  <div class="card card-box mr-0 mt-4 p-4">
+              </div>
+              <div class="tab-pane" id="interest">
+                <div class="card card-box mr-0 mt-4 p-4">
                   <div class="card-inner p-4">
+                    <div class="button-group mr-3 mb-4 d-flex justify-content-end">
+                      <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-cj-default">반응 수집 채널</button>
+                        <button type="button" class="btn btn-cj-default">네이버</button>
+                        <button type="button" class="btn btn-cj-default">구글</button>
+                        <button type="button" class="btn btn-cj-default">유튜브</button>
+                      </div>
+                    </div>
                     <div class="card-header">조회 프로그램 평균 검색량 추이</div>
                     <div class="row">
                       <div class="col-sm-6 pr-0">
                         <div class="card mr-0">
+                          <div class="card-sub-title">런칭전</div>
                           <div class="card-body" style="height: 200px"></div>
                         </div>
                       </div>
                       <div class="col-sm-6 pl-0">
                         <div class="card mr-0">
+                          <div class="card-sub-title">런칭후</div>
                           <div class="card-body" style="height: 200px"></div>
                         </div>
                       </div>
@@ -119,25 +143,17 @@
                     </div>
                   </div>
                   <div class="card-inner p-4 mt-4">
-                    <div class="button-group mr-3 mb-4 d-flex justify-content-end">
-                      <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-cj-default">반응 수집 채널</button>
-                        <button type="button" class="btn btn-cj-default">전체</button>
-                        <button type="button" class="btn btn-cj-default">네이버/다음 TV</button>
-                        <button type="button" class="btn btn-cj-default">트위터</button>
-                        <button type="button" class="btn btn-cj-default">블로그/카페</button>
-                        <button type="button" class="btn btn-cj-default">커뮤니티</button>
-                      </div>
-                    </div>
                     <div class="card-header">조회 프로그램 평균 총 언급량</div>
                     <div class="row">
                       <div class="col-sm-6 pr-0">
                         <div class="card mr-0">
+                          <div class="card-sub-title">런칭전</div>
                           <div class="card-body" style="height: 200px"></div>
                         </div>
                       </div>
                       <div class="col-sm-6 pl-0">
                         <div class="card mr-0">
+                          <div class="card-sub-title">런칭후</div>
                           <div class="card-body" style="height: 200px"></div>
                         </div>
                       </div>
@@ -157,10 +173,85 @@
                       <div id="mpiGrid"></div>
                     </div>
                   </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="favorite">
+                <div class="card card-box mr-0 p-4 mt-4">
+                  <div class="button-group mr-3 mb-4 d-flex justify-content-end">
+                    <div class="btn-group" role="group">
+                      <button type="button" class="btn btn-cj-default">반응 수집 채널</button>
+                      <button type="button" class="btn btn-cj-default">전체</button>
+                      <button type="button" class="btn btn-cj-default">네이버/다음 TV</button>
+                      <button type="button" class="btn btn-cj-default">트위터</button>
+                      <button type="button" class="btn btn-cj-default">블로그/카페</button>
+                      <button type="button" class="btn btn-cj-default">커뮤니티</button>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-6 pr-0">
+                      <div class="card mr-0">
+                        <div class="card-header">런칭 전</div>
+                        <div class="card-body" style="height: 200px"></div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 pl-0">
+                      <div class="card mr-0">
+                        <div class="card-header">런칭 후</div>
+                        <div class="card-body" style="height: 200px"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- grid 영역 -->
+                  <div id="app5" class="mt-4">
+                    <div id="favoriteGrid"></div>
                   </div>
                 </div>
-                <div class="tab-pane" id="favorite">
-                  <div class="card card-box mr-0 p-4 mt-4">
+              </div>
+              <div class="tab-pane" id="attitude">
+                <div class="card card-box mr-0 p-4 mt-4">
+                  <div class="card-inner p-4">
+                    <div class="row">
+                      <div class="col-sm-10">
+                        <div class="lookup-table">
+                          <table class="table mb-0">
+                            <colgroup></colgroup>
+                            <tbody>
+                              <tr>
+                                <th>충성도 비중</th>
+                                <td class="p-0 round-r">
+                                  <select class="form-control cj-selectBox select-box">
+                                    <option>전체</option>
+                                  </select>
+                                </td>
+                                <td class="tableEmpty"></td>
+                                <th>성연령별 기준</th>
+                                <td class="p-0 round-r">
+                                  <select class="form-control cj-selectBox select-box">
+                                    <option>전체</option>
+                                  </select>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="cj-btn-group my-auto col-sm-2">
+                        <div class="row justify-content-end mr-2">
+                          <button class="btn btn-cj mr-2">조회</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card mr-0">
+                      <div class="card-header">시청자 충성도</div>
+                      <div class="card-body" style="height: 200px"></div>
+                    </div>
+                    <!-- grid 영역 -->
+                    <div id="app6" class="mt-4">
+                      <div id="viewerLyGrid"></div>
+                    </div>
+                  </div>
+                  <div class="card-inner p-4 mt-4">
                     <div class="button-group mr-3 mb-4 d-flex justify-content-end">
                       <div class="btn-group" role="group">
                         <button type="button" class="btn btn-cj-default">반응 수집 채널</button>
@@ -171,148 +262,156 @@
                         <button type="button" class="btn btn-cj-default">커뮤니티</button>
                       </div>
                     </div>
-
+                    <div class="card mr-0">
+                      <div class="card-header">충성도 언급</div>
+                      <div class="row">
+                        <div class="col-sm-6 pr-0">
+                          <div class="card mr-0">
+                            <div class="card-sub-title">런칭전</div>
+                            <div class="card-body" style="height: 200px"></div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6 pl-0">
+                          <div class="card mr-0">
+                            <div class="card-sub-title">런칭후</div>
+                            <div class="card-body" style="height: 200px"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- grid 영역 -->
+                    <div id="app7" class="mt-4">
+                      <div id="LyMentionGrid"></div>
+                    </div>
+                  </div>
+                  <div class="card-inner p-4 mt-4">
+                    <div class="card-header">시청자 기대감</div>
                     <div class="row">
                       <div class="col-sm-6 pr-0">
                         <div class="card mr-0">
-                          <div class="card-header">런칭 전</div>
+                          <div class="card-sub-title">런칭전</div>
                           <div class="card-body" style="height: 200px"></div>
                         </div>
                       </div>
                       <div class="col-sm-6 pl-0">
                         <div class="card mr-0">
-                          <div class="card-header">런칭 후</div>
+                          <div class="card-sub-title">런칭후</div>
                           <div class="card-body" style="height: 200px"></div>
                         </div>
                       </div>
                     </div>
                     <!-- grid 영역 -->
-                    <div id="app5" class="mt-4">
-                      <div id="favoriteGrid"></div>
+                    <div id="app8" class="mt-4">
+                      <div id="antiGrid"></div>
                     </div>
                   </div>
                 </div>
-                <div class="tab-pane" id="attitude">
-                  <div class="card card-box mr-0 p-4 mt-4">
-                    <div class="card-inner p-4 ">
-                      <div class="card mr-0">
-                        <div class="card-header">시청자 충성도</div>
-                        <div class="card-body" style="height: 200px"></div>
-                      </div>
-                      <!-- grid 영역 -->
-                      <div id="app6" class="mt-4">
-                        <div id="viewerLyGrid"></div>
-                      </div>
-                    </div>
-                    <div class="card-inner p-4 mt-4">
-                      <div class="button-group mr-3 mb-4 d-flex justify-content-end">
-                        <div class="btn-group" role="group">
-                          <button type="button" class="btn btn-cj-default">반응 수집 채널</button>
-                          <button type="button" class="btn btn-cj-default">전체</button>
-                          <button type="button" class="btn btn-cj-default">네이버/다음 TV</button>
-                          <button type="button" class="btn btn-cj-default">트위터</button>
-                          <button type="button" class="btn btn-cj-default">블로그/카페</button>
-                          <button type="button" class="btn btn-cj-default">커뮤니티</button>
-                        </div>
-                      </div>
-                      <div class="card mr-0">
-                        <div class="card-header">충성도 언급</div>
-                        <div class="card-body" style="height: 200px"></div>
-                      </div>
-                      <!-- grid 영역 -->
-                      <div id="app7" class="mt-4">
-                        <div id="LyMentionGrid"></div>
-                      </div>
-                    </div>
-                    <div class="card-inner p-4 mt-4">
-                      <div class="card-header">시청자 기대감</div>
-                      <div class="row">
-                        <div class="col-sm-6 pr-0">
-                          <div class="card mr-0">
-                            <div class="card-body" style="height: 200px"></div>
-                          </div>
-                        </div>
-                        <div class="col-sm-6 pl-0">
-                          <div class="card mr-0">
-                            <div class="card-body" style="height: 200px"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- grid 영역 -->
-                      <div id="app8" class="mt-4">
-                        <div id="antiGrid"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-pane" id="evaluation">
-                  <div class="card card-box mr-0 p-4 mt-4">
-                    <div class="card-inner p-4">
-                      <div class="card-header">시청자 작품 경쟁력 평가</div>
-                      <div class="row">
-                        <div class="col-sm-6 pr-0">
-                          <div class="card mr-0">
-                            <div class="card-body" style="height: 200px"></div>
-                          </div>
-                        </div>
-                        <div class="col-sm-6 pl-0">
-                          <div class="card mr-0">
-                            <div class="card-body" style="height: 200px"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- grid 영역 -->
-                      <div id="app9" class="mt-4">
-                        <div id="workEvltGrid"></div>
-                      </div>
-                    </div>
-                    <div class="card-inner p-4 mt-4">
-                      <div class="card-header">시청자 출연진 역량 평가</div>
-                      <div class="row">
-                        <div class="col-sm-6 pr-0">
-                          <div class="card mr-0">
-                            <div class="card-body" style="height: 200px"></div>
-                          </div>
-                        </div>
-                        <div class="col-sm-6 pl-0">
-                          <div class="card mr-0">
-                            <div class="card-body" style="height: 200px"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- grid 영역 -->
-                      <div id="app9" class="mt-4">
-                        <div id="castEvltGrid"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-pane" id="danger">
-                  <div class="card card-box mr-0 p-4 mt-4">
+              </div>
+              <div class="tab-pane" id="evaluation">
+                <div class="card card-box mr-0 p-4 mt-4">
+                  <div class="card-inner p-4">
+                    <div class="card-header">시청자 작품 경쟁력 평가</div>
                     <div class="row">
                       <div class="col-sm-6 pr-0">
                         <div class="card mr-0">
-                          <div class="card-header">런칭 전</div>
+                          <div class="card-sub-title">런칭전</div>
                           <div class="card-body" style="height: 200px"></div>
                         </div>
                       </div>
                       <div class="col-sm-6 pl-0">
                         <div class="card mr-0">
-                          <div class="card-header">런칭 후</div>
+                          <div class="card-sub-title">런칭후</div>
                           <div class="card-body" style="height: 200px"></div>
                         </div>
                       </div>
                     </div>
                     <!-- grid 영역 -->
-                    <div id="app11" class="mt-4">
-                      <div id="dangerGrid"></div>
+                    <div id="app9" class="mt-4">
+                      <div id="workEvltGrid"></div>
+                    </div>
+                  </div>
+                  <div class="card-inner p-4 mt-4">
+                    <div class="card-header">시청자 출연진 역량 평가</div>
+                    <div class="row">
+                      <div class="col-sm-6 pr-0">
+                        <div class="card mr-0">
+                          <div class="card-sub-title">런칭전</div>
+                          <div class="card-body" style="height: 200px"></div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 pl-0">
+                        <div class="card mr-0">
+                          <div class="card-sub-title">런칭후</div>
+                          <div class="card-body" style="height: 200px"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- grid 영역 -->
+                    <div id="app9" class="mt-4">
+                      <div id="castEvltGrid"></div>
                     </div>
                   </div>
                 </div>
-                <div class="tab-pane" id="detailAl">
-                  <div class="card card-box mr-0 p-4 mt-4">
-                    <div class="card-inner p-4">
-                      <div class="lookup-table">
+              </div>
+              <div class="tab-pane" id="danger">
+                <div class="card card-box mr-0 p-4 mt-4">
+                  <div class="row">
+                    <div class="col-sm-6 pr-0">
+                      <div class="card mr-0">
+                        <div class="card-header">런칭 전</div>
+                        <div class="card-body" style="height: 200px"></div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 pl-0">
+                      <div class="card mr-0">
+                        <div class="card-header">런칭 후</div>
+                        <div class="card-body" style="height: 200px"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- grid 영역 -->
+                  <div id="app11" class="mt-4">
+                    <div id="dangerGrid"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="detailAl">
+                <div class="card card-box mr-0 p-4 mt-4">
+                  <div class="card-inner p-4">
+                    <div class="lookup-table">
+                      <table class="table mb-0">
+                        <colgroup></colgroup>
+                        <tbody>
+                          <tr>
+                            <th>분석주기</th>
+                            <td>
+                              <div class="row ml-0">
+                                <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
+                                  <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault3" />
+                                  <label class="form-check-label" for="radioDefault3"> 주차별 </label>
+                                </div>
+                                <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
+                                  <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault7" />
+                                  <label class="form-check-label" for="radioDefault7"> 회차별 </label>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="card mr-0 mt-4">
+                      <div class="card-header">선택 프로그램 회차별 방영 D-1 검색량 대비 방영일 검색량 증감 vs 비교군 증감 추이</div>
+                      <div class="card-body" style="height: 200px"></div>
+                    </div>
+                    <div class="card mr-0 mt-4">
+                      <div class="card-header">선택 프로그램 회차별 방송일 검색량 증감 vs 비교군 증감 추이</div>
+                      <div class="card-body" style="height: 200px"></div>
+                    </div>
+                  </div>
+                  <div class="card-inner p-4 mt-4">
+                    <div class="row">
+                      <div class="lookup-table col-sm-10">
                         <table class="table mb-0">
                           <colgroup></colgroup>
                           <tbody>
@@ -322,19 +421,7 @@
                                 <div class="row ml-0">
                                   <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
                                     <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault3" />
-                                    <label class="form-check-label" for="radioDefault3"> 분기별 </label>
-                                  </div>
-                                  <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
-                                    <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault4" />
-                                    <label class="form-check-label" for="radioDefault4"> 월별 </label>
-                                  </div>
-                                  <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
-                                    <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault5" />
-                                    <label class="form-check-label" for="radioDefault5"> 주별 </label>
-                                  </div>
-                                  <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
-                                    <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault6" />
-                                    <label class="form-check-label" for="radioDefault6"> 일별 </label>
+                                    <label class="form-check-label" for="radioDefault3"> 주차별 </label>
                                   </div>
                                   <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
                                     <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault7" />
@@ -346,54 +433,32 @@
                           </tbody>
                         </table>
                       </div>
-                      <div class="card mr-0 mt-4">
-                        <div class="card-header">선택 프로그램 회차별 방영 D-1 검색량 대비 방영일 검색량 증감 vs 비교군 증감 추이</div>
-                        <div class="card-body" style="height: 200px"></div>
-                      </div>
-                      <div class="card mr-0 mt-4">
-                        <div class="card-header">선택 프로그램 회차별 방송일 검색량 증감 vs 비교군 증감 추이</div>
-                        <div class="card-body" style="height: 200px"></div>
+                      <div class="cj-btn-group my-auto col-sm-2">
+                        <div class="row justify-content-end mr-2">
+                          <button class="btn btn-cj mr-2">조회</button>
+                        </div>
                       </div>
                     </div>
-                    <div class="card-inner p-4 mt-4">
-                      <div class="lookup-table">
-                        <table class="table mb-0">
-                          <colgroup></colgroup>
-                          <tbody>
-                            <tr>
-                              <th>분석주기</th>
-                              <td>
-                                <div class="row ml-0">
-                                  <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
-                                    <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1" />
-                                    <label class="form-check-label" for="radioDefault1"> 대표이미지 </label>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div class="card mr-0 mt-4">
-                        <div class="card-header">"대표 이미지" 키워드 - 선택 프로그램 회차별 평균 언급량</div>
-                        <div class="card-body" style="height: 200px"></div>
-                      </div>
+                    <div class="card mr-0 mt-4">
+                      <div class="card-header">"대표 이미지" 키워드 - 선택 프로그램 회차별 평균 언급량</div>
+                      <div class="card-body" style="height: 200px"></div>
                     </div>
-                    <div class="card-inner p-4 mt-4">
-                      <div class="card mr-0">
-                        <div class="card-header">"대표 이미지" 키워드 - 선택 프로그램 회차별 언급량 vs 비교군 평균 언급량 추이</div>
-                        <div class="card-body" style="height: 200px"></div>
-                      </div>
-                      <div class="card mr-0 mt-4">
-                        <div class="card-body" style="height: 200px"></div>
-                      </div>
-                      <div class="card mr-0 mt-4">
-                        <div class="card-body" style="height: 200px"></div>
-                      </div>
+                  </div>
+                  <div class="card-inner p-4 mt-4">
+                    <div class="card mr-0">
+                      <div class="card-header">"대표 이미지" 키워드 - 선택 프로그램 회차별 언급량 vs 비교군 평균 언급량 추이</div>
+                      <div class="card-body" style="height: 200px"></div>
+                    </div>
+                    <div class="card mr-0 mt-4">
+                      <div class="card-body" style="height: 200px"></div>
+                    </div>
+                    <div class="card mr-0 mt-4">
+                      <div class="card-body" style="height: 200px"></div>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
           </div>
         </div>
       </div>
