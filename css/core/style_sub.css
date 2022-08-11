@@ -135,11 +135,11 @@ button:focus,button:active { box-shadow: none !important; }
  .lookup-table .lookup-box .btn-wrap:first-child { border-bottom: 1px solid #cdcdd5; } 
 
  :is(.qick-report, .program-report) .lookup-table th { width:10% !important; } 
- :is(.qick-report, .program-report)  .lookup-table .cj-selectBox { border:none; } 
- :is(.qick-report, .program-report)  .lookup-table .cj-selectBox:focus { border:none; border-right: 1px solid #d7d8e1; } 
- :is(.qick-report, .program-report)  .lookup-table .cj-selectBox:last-child { border-right: none; } 
- :is(.qick-report, .program-report)  .button-group .cj-selectBox { border-right: 1px solid #d7d8e1; border-radius: 0; } 
- :is(.qick-report, .program-report)  .button-group .cj-selectBox:last-child { border-right: 0; border-top-right-radius: 4px; border-bottom-right-radius: 4px; } 
+ .lookup-table .cj-selectBox { border:none; } 
+ .lookup-table .cj-selectBox:focus { border:none; border-right: 1px solid #d7d8e1; } 
+ .lookup-table .cj-selectBox:last-child { border-right: none; } 
+ .button-group .cj-selectBox { border-right: 1px solid #d7d8e1; border-radius: 0; } 
+ .button-group .cj-selectBox:last-child { border-right: 0; border-top-right-radius: 4px; border-bottom-right-radius: 4px; } 
 
  .qick-report .reac-rating .status-table table th { background-color: #eef0f4; } 
  .qick-report .reac-rating .status-table table { border-collapse:collapse; } 
