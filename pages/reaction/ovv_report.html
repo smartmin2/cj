@@ -46,79 +46,21 @@
             <div class="row p-4">
               <div class="col-md-12">
                 <div class="card card-box mr-0 p-4">
+                  <div class="row">
                     <div class="col-sm-12">
                       <div class="lookup-table">
-                        <!-- <div class="row m-0 row-wrap" style="gap:50px;">
-                          <ul class="row " style="display: flex; align-items: center;">
-                            <li class="lookup-table-tit" style="vertical-align: middle;
-                            font-weight: normal;
-                            border: 1px solid #d7d8e1;
-                            border-top-left-radius: 4px;
-                            border-bottom-left-radius: 4px;
-                            color: #373944;
-                            text-align: left;
-                            width:150px;
-                            background: #f4f4f4;
-               
-                            padding: 0.75rem 1.25rem !important;">d</li>
-                            <li class="lookup-table-cont" style=" border: 1px solid #d7d8e1;background-color: #fff;   padding: 0.75rem 1.25rem !important;">
-                            <div class="date-group">
-                              <input type="date" name="" id="" class="form-control" />~
-                              <input type="date" name="" id="" class="form-control" />
-                            </div>
-                            </li>
-                          </ul>
-                          <ul class="row" style="display: flex; align-items: center;">
-                            <li class="lookup-table-tit" style="vertical-align: middle;
-                            font-weight: normal;
-                            border: 1px solid #d7d8e1;
-                            border-top-left-radius: 4px;
-                            border-bottom-left-radius: 4px;
-                            color: #373944;
-                            text-align: left;
-                            width:150px;
-                            background: #f4f4f4;
-                            padding: 0.75rem 1.25rem !important;">d</li>
-                            <li class="lookup-table-cont" style=" border: 1px solid #d7d8e1;background-color: #fff;   padding: 0.75rem 1.25rem !important;">
-                            <div class="date-group">
-                              <input type="date" name="" id="" class="form-control" />~
-                              <input type="date" name="" id="" class="form-control" />
-                            </div>
-                            </li>
-                          </ul>
-                          <ul class="row" style="display: flex; align-items: center;">
-                            <li class="lookup-table-tit" style="vertical-align: middle;
-                            font-weight: normal;
-                            border: 1px solid #d7d8e1;
-                            border-top-left-radius: 4px;
-                            border-bottom-left-radius: 4px;
-                            color: #373944;
-                            text-align: left;          
-                             width:150px;
-                            background: #f4f4f4;
-                  
-                            padding: 0.75rem 1.25rem !important;">d</li>
-                            <li class="lookup-table-cont" style=" border: 1px solid #d7d8e1;background-color: #fff;   padding: 0.75rem 1.25rem !important;">
-                            <div class="date-group">
-                              <input type="date" name="" id="" class="form-control" />~
-                              <input type="date" name="" id="" class="form-control" />
-                            </div>
-                            </li>
-                          </ul>
-                        </div> -->
                         <table class="table">
-                          <colgroup>
-                          </colgroup>
-                          <div>
-                            <div class="row">
-                              <div>프로그램 선정기준</div>
+                             <div class="row row-wrap m-0">
+                            <div class="table-tit">프로그램 선정기준</div>
+                            <div class="table-cont">
                               <div class="date-group">
                                 <input type="date" name="" id="" class="form-control" />~
                                 <input type="date" name="" id="" class="form-control" />
                               </div>
-                              <div class="tableEmpty">
-                              </div>
-                              <div>컨텐츠유형</div>
+                            </div>
+                            <div class="tableEmpty"></div>
+                              <div class="table-tit">컨텐츠유형</div>
+                              <div class="table-cont">
                               <div class="button-group round-r">
                                 <div class="btn-group" role="group">
                                   <button type="button" class="btn btn-cj-default">전체</button>
@@ -126,24 +68,29 @@
                                   <button type="button" class="btn btn-cj-default">OTT</button>
                                 </div>
                               </div>
-                            </div>
+                           </div>
                           </div>
-                            <tbody>
+                          <tbody>
                             <tr>
                               <th>시청률</th>
-                              <td class="button-group">
-                                <div class="btn-group" role="group">
+                              <td class="button-group btn-group" role="group">
                                   <button type="button" class="btn btn-cj-default">전체</button>
                                   <button type="button" class="btn btn-cj-default">1.5이하</button>
                                   <button type="button" class="btn btn-cj-default">1.5~2</button>
                                   <button type="button" class="btn btn-cj-default">2~3</button>
                                   <button type="button" class="btn btn-cj-default">3이상</button>
-                                </div>
                               </td>
                             </tr>
                             <tr>
                               <th>채널</th>
-                              <td >전체
+                              <td>
+                                <div class="d-flex align-items-center">
+                                <div class="open-btn"> 
+                                  <i class="fa-solid fa-plus ic-plus"></i>
+                                  <i class="fa-solid fa-minus ic-minus"></i>
+                                </div>
+                                전체
+                             </div>
                                 <div class="card m-0 lookup-box">
                                   <div class="col-sm-1 p-2">
                                     <button class="btn btn-cj-default">전체</button>
@@ -168,126 +115,119 @@
                                   </div>
                                 </div>
                               </td>
-                              <td class="open-btn"> <i class="fa-solid fa-plus ic-plus"></i>
-                                <i class="fa-solid fa-minus ic-minus"></i></td>
                             </tr>
                             <tr>
                               <th>편성블록</th>
-                              <td >전체</td>
-                              <td class="open-btn"> 
-                                <i class="fa-solid fa-plus ic-plus"></i>
-                                <i class="fa-solid fa-minus ic-minus"></i>
-                              </td>
+                              <td>
+                                <div class="d-flex align-items-center">
+                                   <div class="open-btn"> 
+                                     <i class="fa-solid fa-plus ic-plus"></i>
+                                     <i class="fa-solid fa-minus ic-minus"></i>
+                                   </div>
+                                   전체
+                                </div>
+                               </td>
                             </tr>
                             <tr>
                               <th>대표장르</th>
-                              <td >전체</td>
-                              <td class="open-btn"> 
-                                <i class="fa-solid fa-plus ic-plus"></i>
-                                <i class="fa-solid fa-minus ic-minus"></i>
-                              </td>
+                              <td>
+                                <div class="d-flex align-items-center">
+                                   <div class="open-btn"> 
+                                     <i class="fa-solid fa-plus ic-plus"></i>
+                                     <i class="fa-solid fa-minus ic-minus"></i>
+                                   </div>
+                                   전체
+                                </div>
+                               </td>
                             </tr>
                             <tr>
                               <th>주장르</th>
-                              <td>전체</td>
-                              <td class="open-btn"> 
-                                <i class="fa-solid fa-plus ic-plus"></i>
-                                <i class="fa-solid fa-minus ic-minus"></i>
+                              <td>
+                               <div class="d-flex align-items-center">
+                                  <div class="open-btn"> 
+                                    <i class="fa-solid fa-plus ic-plus"></i>
+                                    <i class="fa-solid fa-minus ic-minus"></i>
+                                  </div>
+                                  전체
+                               </div>
                               </td>
                             </tr>
                             <tr>
                               <th>부장르</th>
-                              <td >전체</td>
-                              <td class="open-btn"> 
-                                <i class="fa-solid fa-plus ic-plus"></i>
-                                <i class="fa-solid fa-minus ic-minus"></i>
-                              </td>
+                              <td>
+                                <div class="d-flex align-items-center">
+                                   <div class="open-btn"> 
+                                     <i class="fa-solid fa-plus ic-plus"></i>
+                                     <i class="fa-solid fa-minus ic-minus"></i>
+                                   </div>
+                                   전체
+                                </div>
+                               </td>
                             </tr>
                             <tr>
                               <th>소재</th>
-                              <td >전체</td>
-                              <td class="open-btn"> 
-                                <i class="fa-solid fa-plus ic-plus"></i>
-                                <i class="fa-solid fa-minus ic-minus"></i>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table> 
-                      </div>
-                    </div>
-                    <div class="col-sm-12">
-                      <div class="lookup-table">
-                        <colgroup>
-                          <col style="width:17%">
-                          <col style="width:78%">
-                          <col style="width:5%">
-                          </colgroup>
-                        <table class="table">
-                          <tbody>
-                            <tr>
-                              <th>1차 View기준</th>
-                              <td class="button-group">
-                                <div class="btn-group" role="group">
-                                  <button type="button" class="btn btn-cj-default">채널</button>
-                                  <button type="button" class="btn btn-cj-default">편성블록</button>
-                                  <button type="button" class="btn btn-cj-default">대표장르</button>
-                                  <button type="button" class="btn btn-cj-default">주장르</button>
-                                  <button type="button" class="btn btn-cj-default">부장르</button>
-                                  <button type="button" class="btn btn-cj-default">소재</button>
-                                  <button type="button" class="btn btn-cj-default">시청률</button>
+                              <td>
+                                <div class="d-flex align-items-center">
+                                   <div class="open-btn"> 
+                                     <i class="fa-solid fa-plus ic-plus"></i>
+                                     <i class="fa-solid fa-minus ic-minus"></i>
+                                   </div>
+                                   전체
                                 </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th>2차 View기준</th>
-                              <td class="button-group">
-                                <div class="btn-group" role="group">
-                                  <button type="button" class="btn btn-cj-default">채널</button>
-                                  <button type="button" class="btn btn-cj-default">편성블록</button>
-                                  <button type="button" class="btn btn-cj-default">대표장르</button>
-                                  <button type="button" class="btn btn-cj-default">주장르</button>
-                                  <button type="button" class="btn btn-cj-default">부장르</button>
-                                  <button type="button" class="btn btn-cj-default">소재</button>
-                                  <button type="button" class="btn btn-cj-default">시청률</button>
-                                </div>
-                              </td>
+                               </td>
                             </tr>
                           </tbody>
                         </table>
                       </div>
+                      <div class="lookup-table">
+                        <table class="table">
+                          <tbody>
+                            <tr>
+                              <th>1차 View기준</th>
+                              <td class="button-group btn-group" role="group">
+                                  <button type="button" class="btn btn-cj-default">채널</button>
+                                  <button type="button" class="btn btn-cj-default">편성블록</button>
+                                  <button type="button" class="btn btn-cj-default">대표장르</button>
+                                  <button type="button" class="btn btn-cj-default">주장르</button>
+                                  <button type="button" class="btn btn-cj-default">부장르</button>
+                                  <button type="button" class="btn btn-cj-default">소재</button>
+                                  <button type="button" class="btn btn-cj-default">시청률</button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>2차 View기준</th>
+                              <td class="button-group btn-group" role="group">
+                                  <button type="button" class="btn btn-cj-default">채널</button>
+                                  <button type="button" class="btn btn-cj-default">편성블록</button>
+                                  <button type="button" class="btn btn-cj-default">대표장르</button>
+                                  <button type="button" class="btn btn-cj-default">주장르</button>
+                                  <button type="button" class="btn btn-cj-default">부장르</button>
+                                  <button type="button" class="btn btn-cj-default">소재</button>
+                                  <button type="button" class="btn btn-cj-default">시청률</button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                   </div>
                     </div>
                     <div class="cj-btn-group mx-auto">
                       <button class="btn btn-cj">컨텐츠 검색</button>
                     </div>
+                  </div>
                 </div>
                 <div class="card card-dark mr-0 mt-4 p-4 d-flex flex-row">
-                  <div class="card-inner mr-4 p-4 pt-5">
+                  <div class="card-inner mr-4 p-4 pt-5 col-sm-8">
                     <span class="card-inner-tit">적용 기준</span>
                     <p>채널 : TVN, JTBC</p>
                     <p>편성블록 : 월 21:00, 화 21:00, 수 21:00, 목 21:00, 금 21:00, 토 21:00, 일 21:00</p>
                   </div>
-                  <div class="card-inner mr-4 p-4 pt-5">
+                  <div class="card-inner p-4 pt-5 col-sm-4">
                     <span class="card-inner-tit">대상 편수</span>
                     <p>13</p>
                   </div>
                 </div>
                 <!-- 1차 VIEW 기준 채널 -->
                 <div class="card card-box mr-0 mt-4 p-4">
-                  <!-- <div class="card-inner p-4">
-                    <div class="status-table">
-                      <table class="table">
-                        <tbody>
-                          <th>분석주기</th>
-                          <td>연간 편성</td>
-                          <th>분석 지표</th>
-                          <td>편수</td>
-                        </tbody>
-                      </table>
-                    </div>
-                    <div class="cj-btn-group">
-                      <button class="btn btn-cj mx-auto">조회</button>
-                    </div>
-                  </div> -->
                   <div class="card-inner p-4 ">
                     <div class="row">
                       <div class="col-sm-6">
@@ -403,46 +343,55 @@
                     <div class="col-sm-12">
                       <div class="lookup-table">
                         <table class="table">
-                          <colgroup>
-                          </colgroup>
-                          <tbody>
-                            <tr>
-                              <th>프로그램 선정기준</th>
-                              <td class="date-group">
+                             <div class="row row-wrap m-0">
+                            <div class="table-tit">프로그램 선정기준</div>
+                            <div class="table-cont">
+                              <div class="date-group">
                                 <input type="date" name="" id="" class="form-control" />~
                                 <input type="date" name="" id="" class="form-control" />
-                              </td>
-                              <td class="tableEmpty"></td>
-                              <th>데이터 추출기준</th>
-                              <td class="date-group">
+                              </div>
+                            </div>
+                            <div class="tableEmpty"></div>
+                              <div class="table-tit">데이터 추출기준</div>
+                              <div class="table-cont">
+                              <div class="date-group">
                                 <input type="date" name="" id="" class="form-control" />~
                                 <input type="date" name="" id="" class="form-control" />
-                              </td>
-                            </tr>
-                            <tr>
-                              <th>컨텐츠유형</th>
-                              <td class="button-group round-r">
+                              </div>
+                            </div>
+                            <div class="tableEmpty"></div>
+                              <div class="table-tit">컨텐츠유형</div>
+                              <div class="table-cont">
+                              <div class="button-group round-r">
                                 <div class="btn-group" role="group">
                                   <button type="button" class="btn btn-cj-default">전체</button>
                                   <button type="button" class="btn btn-cj-default">방송</button>
                                   <button type="button" class="btn btn-cj-default">OTT</button>
                                 </div>
-                              </td>
-                              <td class="tableEmpty"></td>
+                              </div>
+                           </div>
+                          </div>
+                          <tbody>
+                            <tr>
                               <th>시청률</th>
-                              <td class="button-group" colspan="7">
-                                <div class="btn-group" role="group">
+                              <td class="button-group btn-group" role="group">
                                   <button type="button" class="btn btn-cj-default">전체</button>
                                   <button type="button" class="btn btn-cj-default">1.5이하</button>
                                   <button type="button" class="btn btn-cj-default">1.5~2</button>
                                   <button type="button" class="btn btn-cj-default">2~3</button>
                                   <button type="button" class="btn btn-cj-default">3이상</button>
-                                </div>
                               </td>
                             </tr>
                             <tr>
                               <th>채널</th>
-                              <td colspan="9">전체
+                              <td>
+                                <div class="d-flex align-items-center">
+                                <div class="open-btn"> 
+                                  <i class="fa-solid fa-plus ic-plus"></i>
+                                  <i class="fa-solid fa-minus ic-minus"></i>
+                                </div>
+                                전체
+                             </div>
                                 <div class="card m-0 lookup-box">
                                   <div class="col-sm-1 p-2">
                                     <button class="btn btn-cj-default">전체</button>
@@ -467,49 +416,68 @@
                                   </div>
                                 </div>
                               </td>
-                              <td class="open-btn"> <i class="fa-solid fa-plus ic-plus"></i>
-                                <i class="fa-solid fa-minus ic-minus"></i></td>
                             </tr>
                             <tr>
                               <th>편성블록</th>
-                              <td colspan="9">전체</td>
-                              <td class="open-btn"> 
-                                <i class="fa-solid fa-plus ic-plus"></i>
-                                <i class="fa-solid fa-minus ic-minus"></i>
-                              </td>
+                              <td>
+                                <div class="d-flex align-items-center">
+                                   <div class="open-btn"> 
+                                     <i class="fa-solid fa-plus ic-plus"></i>
+                                     <i class="fa-solid fa-minus ic-minus"></i>
+                                   </div>
+                                   전체
+                                </div>
+                               </td>
                             </tr>
                             <tr>
                               <th>대표장르</th>
-                              <td colspan="9">전체</td>
-                              <td class="open-btn"> 
-                                <i class="fa-solid fa-plus ic-plus"></i>
-                                <i class="fa-solid fa-minus ic-minus"></i>
-                              </td>
+                              <td>
+                                <div class="d-flex align-items-center">
+                                   <div class="open-btn"> 
+                                     <i class="fa-solid fa-plus ic-plus"></i>
+                                     <i class="fa-solid fa-minus ic-minus"></i>
+                                   </div>
+                                   전체
+                                </div>
+                               </td>
                             </tr>
                             <tr>
                               <th>주장르</th>
-                              <td colspan="9">전체</td>
-                              <td class="open-btn"> 
-                                <i class="fa-solid fa-plus ic-plus"></i>
-                                <i class="fa-solid fa-minus ic-minus"></i>
+                              <td>
+                               <div class="d-flex align-items-center">
+                                  <div class="open-btn"> 
+                                    <i class="fa-solid fa-plus ic-plus"></i>
+                                    <i class="fa-solid fa-minus ic-minus"></i>
+                                  </div>
+                                  전체
+                               </div>
                               </td>
                             </tr>
                             <tr>
                               <th>부장르</th>
-                              <td colspan="9">전체</td>
-                              <td class="open-btn"> 
-                                <i class="fa-solid fa-plus ic-plus"></i>
-                                <i class="fa-solid fa-minus ic-minus"></i>
-                              </td>
+                              <td>
+                                <div class="d-flex align-items-center">
+                                   <div class="open-btn"> 
+                                     <i class="fa-solid fa-plus ic-plus"></i>
+                                     <i class="fa-solid fa-minus ic-minus"></i>
+                                   </div>
+                                   전체
+                                </div>
+                               </td>
                             </tr>
                             <tr>
                               <th>소재</th>
-                              <td colspan="9">전체</td>
-                              <td class="open-btn"> 
-                                <i class="fa-solid fa-plus ic-plus"></i>
-                                <i class="fa-solid fa-minus ic-minus"></i>
-                              </td>
+                              <td>
+                                <div class="d-flex align-items-center">
+                                   <div class="open-btn"> 
+                                     <i class="fa-solid fa-plus ic-plus"></i>
+                                     <i class="fa-solid fa-minus ic-minus"></i>
+                                   </div>
+                                   전체
+                                </div>
+                               </td>
                             </tr>
+                           
                           </tbody>
                         </table>
                       </div>
@@ -585,46 +553,55 @@
                     <div class="col-sm-12">
                       <div class="lookup-table">
                         <table class="table">
-                          <colgroup>
-                          </colgroup>
-                          <tbody>
-                            <tr>
-                              <th>프로그램 선정기준</th>
-                              <td class="date-group">
+                             <div class="row row-wrap m-0">
+                            <div class="table-tit">프로그램 선정기준</div>
+                            <div class="table-cont">
+                              <div class="date-group">
                                 <input type="date" name="" id="" class="form-control" />~
                                 <input type="date" name="" id="" class="form-control" />
-                              </td>
-                              <td class="tableEmpty"></td>
-                              <th>데이터 추출기준</th>
-                              <td class="date-group">
+                              </div>
+                            </div>
+                            <div class="tableEmpty"></div>
+                              <div class="table-tit">데이터 추출기준</div>
+                              <div class="table-cont">
+                              <div class="date-group">
                                 <input type="date" name="" id="" class="form-control" />~
                                 <input type="date" name="" id="" class="form-control" />
-                              </td>
-                            </tr>
-                            <tr>
-                              <th>컨텐츠유형</th>
-                              <td class="button-group round-r">
+                              </div>
+                            </div>
+                            <div class="tableEmpty"></div>
+                              <div class="table-tit">컨텐츠유형</div>
+                              <div class="table-cont">
+                              <div class="button-group round-r">
                                 <div class="btn-group" role="group">
                                   <button type="button" class="btn btn-cj-default">전체</button>
                                   <button type="button" class="btn btn-cj-default">방송</button>
                                   <button type="button" class="btn btn-cj-default">OTT</button>
                                 </div>
-                              </td>
-                              <td class="tableEmpty"></td>
+                              </div>
+                           </div>
+                          </div>
+                          <tbody>
+                            <tr>
                               <th>시청률</th>
-                              <td class="button-group" colspan="7">
-                                <div class="btn-group" role="group">
+                              <td class="button-group btn-group" role="group">
                                   <button type="button" class="btn btn-cj-default">전체</button>
                                   <button type="button" class="btn btn-cj-default">1.5이하</button>
                                   <button type="button" class="btn btn-cj-default">1.5~2</button>
                                   <button type="button" class="btn btn-cj-default">2~3</button>
                                   <button type="button" class="btn btn-cj-default">3이상</button>
-                                </div>
                               </td>
                             </tr>
                             <tr>
                               <th>채널</th>
-                              <td colspan="9">전체
+                              <td>
+                                <div class="d-flex align-items-center">
+                                <div class="open-btn"> 
+                                  <i class="fa-solid fa-plus ic-plus"></i>
+                                  <i class="fa-solid fa-minus ic-minus"></i>
+                                </div>
+                                전체
+                             </div>
                                 <div class="card m-0 lookup-box">
                                   <div class="col-sm-1 p-2">
                                     <button class="btn btn-cj-default">전체</button>
@@ -649,59 +626,82 @@
                                   </div>
                                 </div>
                               </td>
-                              <td class="open-btn"> <i class="fa-solid fa-plus ic-plus"></i>
-                                <i class="fa-solid fa-minus ic-minus"></i></td>
                             </tr>
                             <tr>
                               <th>편성블록</th>
-                              <td colspan="9">전체</td>
-                              <td class="open-btn"> 
-                                <i class="fa-solid fa-plus ic-plus"></i>
-                                <i class="fa-solid fa-minus ic-minus"></i>
-                              </td>
+                              <td>
+                                <div class="d-flex align-items-center">
+                                   <div class="open-btn"> 
+                                     <i class="fa-solid fa-plus ic-plus"></i>
+                                     <i class="fa-solid fa-minus ic-minus"></i>
+                                   </div>
+                                   전체
+                                </div>
+                               </td>
                             </tr>
                             <tr>
                               <th>대표장르</th>
-                              <td colspan="9">전체</td>
-                              <td class="open-btn"> 
-                                <i class="fa-solid fa-plus ic-plus"></i>
-                                <i class="fa-solid fa-minus ic-minus"></i>
-                              </td>
+                              <td>
+                                <div class="d-flex align-items-center">
+                                   <div class="open-btn"> 
+                                     <i class="fa-solid fa-plus ic-plus"></i>
+                                     <i class="fa-solid fa-minus ic-minus"></i>
+                                   </div>
+                                   전체
+                                </div>
+                               </td>
                             </tr>
                             <tr>
                               <th>주장르</th>
-                              <td colspan="9">전체</td>
-                              <td class="open-btn"> 
-                                <i class="fa-solid fa-plus ic-plus"></i>
-                                <i class="fa-solid fa-minus ic-minus"></i>
+                              <td>
+                               <div class="d-flex align-items-center">
+                                  <div class="open-btn"> 
+                                    <i class="fa-solid fa-plus ic-plus"></i>
+                                    <i class="fa-solid fa-minus ic-minus"></i>
+                                  </div>
+                                  전체
+                               </div>
                               </td>
                             </tr>
                             <tr>
                               <th>부장르</th>
-                              <td colspan="9">전체</td>
-                              <td class="open-btn"> 
-                                <i class="fa-solid fa-plus ic-plus"></i>
-                                <i class="fa-solid fa-minus ic-minus"></i>
-                              </td>
+                              <td>
+                                <div class="d-flex align-items-center">
+                                   <div class="open-btn"> 
+                                     <i class="fa-solid fa-plus ic-plus"></i>
+                                     <i class="fa-solid fa-minus ic-minus"></i>
+                                   </div>
+                                   전체
+                                </div>
+                               </td>
                             </tr>
                             <tr>
                               <th>소재</th>
-                              <td colspan="9">전체</td>
-                              <td class="open-btn"> 
-                                <i class="fa-solid fa-plus ic-plus"></i>
-                                <i class="fa-solid fa-minus ic-minus"></i>
-                              </td>
+                              <td>
+                                <div class="d-flex align-items-center">
+                                   <div class="open-btn"> 
+                                     <i class="fa-solid fa-plus ic-plus"></i>
+                                     <i class="fa-solid fa-minus ic-minus"></i>
+                                   </div>
+                                   전체
+                                </div>
+                               </td>
                             </tr>
                             <tr>
-                              <th>프로그램명<i class="fa-solid fa-circle-info pl-2"></i></th>
+                              <th><span>프로그램명</span><i class="fa-solid fa-circle-info pl-2"></i></th>
                               <td class="input-group table-input">
                                 <input type="text" class="form-control" />
                               </td>
                             </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="lookup-table">
+                        <table class="table">
+                          <tbody>
                             <tr>
                               <th>View기준</th>
-                              <td class="button-group" colspan="10">
-                                <div class="btn-group" role="group">
+                              <td class="button-group btn-group" role="group">
                                   <button type="button" class="btn btn-cj-default">채널</button>
                                   <button type="button" class="btn btn-cj-default">편성블록</button>
                                   <button type="button" class="btn btn-cj-default">대표장르</button>
@@ -709,12 +709,11 @@
                                   <button type="button" class="btn btn-cj-default">부장르</button>
                                   <button type="button" class="btn btn-cj-default">소재</button>
                                   <button type="button" class="btn btn-cj-default">시청률</button>
-                                </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
-                      </div>
+                   </div>
                     </div>
                     <div class="cj-btn-group mx-auto">
                       <button class="btn btn-cj">컨텐츠 검색</button>
@@ -1409,42 +1408,53 @@
                         <table class="table">
                           <div class="row row-wrap m-0">
                             <div class="table-tit">프로그램 선정기준</div>
-                            <div class="date-group">
-                              <input type="date" name="" id="" class="form-control" />~
-                              <input type="date" name="" id="" class="form-control" />
-                            </div>
-                            <div class="tableEmpty"></div>
-                            <div>데이터 추출기준</div>
-                            <div class="date-group">
-                              <input type="date" name="" id="" class="form-control" />~
-                              <input type="date" name="" id="" class="form-control" />
-                            </div>
-                            <div class="tableEmpty"></div>
-                            <div>컨텐츠유형</div>
-                            <div class="button-group round-r">
-                              <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-cj-default">전체</button>
-                                <button type="button" class="btn btn-cj-default">방송</button>
-                                <button type="button" class="btn btn-cj-default">OTT</button>
+                            <div class="table-cont">
+                              <div class="date-group">
+                                <input type="date" name="" id="" class="form-control" />~
+                                <input type="date" name="" id="" class="form-control" />
                               </div>
                             </div>
+                            <div class="tableEmpty"></div>
+                              <div class="table-tit">데이터 추출기준</div>
+                              <div class="table-cont">
+                              <div class="date-group">
+                                <input type="date" name="" id="" class="form-control" />~
+                                <input type="date" name="" id="" class="form-control" />
+                              </div>
+                            </div>
+                            <div class="tableEmpty"></div>
+                              <div class="table-tit">컨텐츠유형</div>
+                              <div class="table-cont">
+                              <div class="button-group round-r">
+                                <div class="btn-group" role="group">
+                                  <button type="button" class="btn btn-cj-default">전체</button>
+                                  <button type="button" class="btn btn-cj-default">방송</button>
+                                  <button type="button" class="btn btn-cj-default">OTT</button>
+                                </div>
+                              </div>
+                           </div>
                           </div>
                           <tbody>
                             <tr>
                               <th>시청률</th>
-                              <td class="button-group" colspan="7">
-                                <div class="btn-group" role="group">
+                              <td class="button-group btn-group" colspan="3"role="group">
                                   <button type="button" class="btn btn-cj-default">전체</button>
                                   <button type="button" class="btn btn-cj-default">1.5이하</button>
                                   <button type="button" class="btn btn-cj-default">1.5~2</button>
                                   <button type="button" class="btn btn-cj-default">2~3</button>
                                   <button type="button" class="btn btn-cj-default">3이상</button>
-                                </div>
                               </td>
                             </tr>
                             <tr>
                               <th>채널</th>
-                              <td colspan="9">전체
+                              <td>
+                                <div class="d-flex align-items-center">
+                                <div class="open-btn"> 
+                                  <i class="fa-solid fa-plus ic-plus"></i>
+                                  <i class="fa-solid fa-minus ic-minus"></i>
+                                </div>
+                                전체
+                             </div>
                                 <div class="card m-0 lookup-box">
                                   <div class="col-sm-1 p-2">
                                     <button class="btn btn-cj-default">전체</button>
@@ -1469,71 +1479,93 @@
                                   </div>
                                 </div>
                               </td>
-                              <td class="open-btn"> <i class="fa-solid fa-plus ic-plus"></i>
-                                <i class="fa-solid fa-minus ic-minus"></i></td>
                             </tr>
                             <tr>
                               <th>편성블록</th>
-                              <td colspan="9">전체</td>
-                              <td class="open-btn"> 
-                                <i class="fa-solid fa-plus ic-plus"></i>
-                                <i class="fa-solid fa-minus ic-minus"></i>
-                              </td>
+                              <td>
+                                <div class="d-flex align-items-center">
+                                   <div class="open-btn"> 
+                                     <i class="fa-solid fa-plus ic-plus"></i>
+                                     <i class="fa-solid fa-minus ic-minus"></i>
+                                   </div>
+                                   전체
+                                </div>
+                               </td>
                             </tr>
                             <tr>
                               <th>대표장르</th>
-                              <td colspan="9">전체</td>
-                              <td class="open-btn"> 
-                                <i class="fa-solid fa-plus ic-plus"></i>
-                                <i class="fa-solid fa-minus ic-minus"></i>
-                              </td>
+                              <td>
+                                <div class="d-flex align-items-center">
+                                   <div class="open-btn"> 
+                                     <i class="fa-solid fa-plus ic-plus"></i>
+                                     <i class="fa-solid fa-minus ic-minus"></i>
+                                   </div>
+                                   전체
+                                </div>
+                               </td>
                             </tr>
                             <tr>
                               <th>주장르</th>
-                              <td colspan="9">전체</td>
-                              <td class="open-btn"> 
-                                <i class="fa-solid fa-plus ic-plus"></i>
-                                <i class="fa-solid fa-minus ic-minus"></i>
+                              <td>
+                               <div class="d-flex align-items-center">
+                                  <div class="open-btn"> 
+                                    <i class="fa-solid fa-plus ic-plus"></i>
+                                    <i class="fa-solid fa-minus ic-minus"></i>
+                                  </div>
+                                  전체
+                               </div>
                               </td>
                             </tr>
                             <tr>
                               <th>부장르</th>
-                              <td colspan="9">전체</td>
-                              <td class="open-btn"> 
-                                <i class="fa-solid fa-plus ic-plus"></i>
-                                <i class="fa-solid fa-minus ic-minus"></i>
-                              </td>
+                              <td>
+                                <div class="d-flex align-items-center">
+                                   <div class="open-btn"> 
+                                     <i class="fa-solid fa-plus ic-plus"></i>
+                                     <i class="fa-solid fa-minus ic-minus"></i>
+                                   </div>
+                                   전체
+                                </div>
+                               </td>
                             </tr>
                             <tr>
                               <th>소재</th>
-                              <td colspan="9">전체</td>
-                              <td class="open-btn"> 
-                                <i class="fa-solid fa-plus ic-plus"></i>
-                                <i class="fa-solid fa-minus ic-minus"></i>
-                              </td>
+                              <td>
+                                <div class="d-flex align-items-center">
+                                   <div class="open-btn"> 
+                                     <i class="fa-solid fa-plus ic-plus"></i>
+                                     <i class="fa-solid fa-minus ic-minus"></i>
+                                   </div>
+                                   전체
+                                </div>
+                               </td>
                             </tr>
                             <tr>
-                              <th>프로그램명<i class="fa-solid fa-circle-info pl-2"></i></th>
+                              <th><span>프로그램명</span><i class="fa-solid fa-circle-info pl-2"></i></th>
                               <td class="input-group table-input">
                                 <input type="text" class="form-control" />
                               </td>
                             </tr>
-                            <tr>
-                              <th>View기준</th>
-                              <td class="button-group" colspan="10">
-                                <div class="btn-group" role="group">
-                                  <button type="button" class="btn btn-cj-default">채널</button>
-                                  <button type="button" class="btn btn-cj-default">편성블록</button>
-                                  <button type="button" class="btn btn-cj-default">대표장르</button>
-                                  <button type="button" class="btn btn-cj-default">주장르</button>
-                                  <button type="button" class="btn btn-cj-default">부장르</button>
-                                  <button type="button" class="btn btn-cj-default">소재</button>
-                                  <button type="button" class="btn btn-cj-default">시청률</button>
-                                </div>
-                              </td>
-                            </tr>
                           </tbody>
                         </table>
+                     <div class="lookup-table">
+                          <table class="table">
+                            <tbody>
+                              <tr>
+                                <th>View기준</th>
+                                <td class="button-group btn-group" role="group">
+                                    <button type="button" class="btn btn-cj-default">채널</button>
+                                    <button type="button" class="btn btn-cj-default">편성블록</button>
+                                    <button type="button" class="btn btn-cj-default">대표장르</button>
+                                    <button type="button" class="btn btn-cj-default">주장르</button>
+                                    <button type="button" class="btn btn-cj-default">부장르</button>
+                                    <button type="button" class="btn btn-cj-default">소재</button>
+                                    <button type="button" class="btn btn-cj-default">시청률</button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                     </div>
                       </div>
                     </div>
                     <div class="cj-btn-group mx-auto">
