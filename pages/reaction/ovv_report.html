@@ -85,12 +85,12 @@
                               <th>채널</th>
                               <td>
                                 <div class="d-flex align-items-center">
-                                <div class="open-btn"> 
-                                  <i class="fa-solid fa-plus ic-plus"></i>
-                                  <i class="fa-solid fa-minus ic-minus"></i>
-                                </div>
+                                  <div class="open-btn"> 
+                                    <i class="fa-solid fa-plus ic-plus"></i>
+                                    <i class="fa-solid fa-minus ic-minus"></i>
+                                  </div>
                                 전체
-                             </div>
+                                </div>
                                 <div class="card m-0 lookup-box">
                                   <div class="col-sm-1 p-2">
                                     <button class="btn btn-cj-default">전체</button>
@@ -1711,7 +1711,7 @@
                             </div>
                           </div>
                         </div>
-                            <div class="cj-btn-group">
+                        <div class="cj-btn-group">
                           <div class="row justify-content-end mr-1 mt-4">
                             <button class="btn btn-cj open-grid">GRID 확장</button>
                           </div>
@@ -1725,22 +1725,24 @@
                             <div class="program-table mt-4">
                               <table class="table">
                                 <colgroup>
-                                  <col style="width: 10%" />
-                                  <col style="width: 8%" />
-                                  <col style="width: 8%" />
-                                  <col />
+                                  <col style="width: 20%" />
+                                  <col style="width: 20%" />
+                                  <col style="width: 20%" />
+                                  <col style="width: 20%" />
+                                  <col style="width: 20%" />
                                 </colgroup>
-                                <table>
+                                <thead>
                                   <tr>
-                                    <th colspan="2">런칭 30일전 -런칭일</th>
+                                    <th></th>
+                                    <th>런칭 30일전 -런칭일</th>
                                     <th>런칭 7일전 -런칭일</th>
                                     <th>런칭일 -런칭 1일 후</th>
                                     <th>주 평균 성장률</th>
                                   </tr>
-                                </table>
+                                </thead>
                                 <tbody>
                                   <tr>
-                                    <th>"선택 채널 A</th>
+                                    <th>"선택 채널 A"</th>
                                     <td>17%</td>
                                     <td>17%</td>
                                     <td>17%</td>
@@ -1782,7 +1784,47 @@
                                 </div>
                               </div>
                             </div>
+                            <div class="program-table mt-4">
+                              <table class="table">
+                                <colgroup>
+                                  <col style="width: 20%" />
+                                  <col style="width: 20%" />
+                                  <col style="width: 20%" />
+                                  <col style="width: 20%" />
+                                  <col style="width: 20%" />
+                                </colgroup>
+                                <thead>
+                                  <tr>
+                                    <th rowspan="2"></th>
+                                    <th rowspan="2">런칭전 총언급</th>
+                                    <th colspan="3">런칭 후</th>
+                                  </tr>
+                                  <tr>
+                                    <th>총언급</th>
+                                    <th>주 평균 언급</th>
+                                    <th>주 평균 성장률</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th>"선택 채널 A"</th>
+                                    <td>121000</td>
+                                    <td>265800</td>
+                                    <td>26464</td>
+                                    <td>17%</td>
+                                  </tr>
+                                  <tr>
+                                    <th>"선택 채널 B"</th>
+                                    <td>11000</td>
+                                    <td>275600</td>
+                                    <td>25055</td>
+                                    <td>10%</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
                           </div>
+                       
                         </div>
                       </div>
                     </div>
@@ -2460,10 +2502,10 @@
 
         if($(this).hasClass("active")){
           $(this).children(".ic-minus").show();
-          $(this).siblings("td").children(".lookup-box").css("display","flex");
+          $(this).parents("td").children(".lookup-box").css("display","flex");
         }else{
           $(this).children(".ic-minus").hide();
-          $(this).siblings("td").children(".lookup-box").css("display","none");
+          $(this).parents("td").children(".lookup-box").css("display","none");
         }
       })
 
@@ -2471,7 +2513,21 @@
         $(this).toggleClass("active");
       })
 
-      // 구성현황
+
+      $(".open-grid").on("click", function () {
+        $(this).toggleClass("active");
+
+        if ($(this).hasClass("active")) {
+          $(this).text("GRID 축소");
+          $(".program-table").show();
+          $(".cj-button-grid").show();
+        } else {
+          $(this).text("GRID 확장");
+          $(".program-table").hide();
+          $(".cj-button-grid").hide();
+        }
+      });
+       // 구성현황
         // 1차 VIEW 기준 채널
         let viewGrid = "";
         let app = {
@@ -6026,7 +6082,9 @@
               });
               // Vue.component();
             });
-  
+
+       
+
   </script>
   </body>
 </html>
