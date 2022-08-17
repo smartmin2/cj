@@ -10,7 +10,9 @@
 button:focus,button:active { box-shadow: none !important; } 
 .btn-cj { background-color: #515668; color:#fff; } 
 .btn-cj-default { background-color: #fff; border: solid 1px #d7d8e1; color: #bcb9c9; } 
-.btn-cj-default.active { background-color: #505c84; color:#fff } 
+.btn-cj-default.active { background-color: #505c84; color:#fff }
+.btn-cj-blue { background-color: #4e84c6; color: #fff; } 
+
 .btn-black { background-color: #515668; } 
 .btn-red { background-color: #dd5151; border: 0; } 
 .btn-gray { background-color: #666666; } 
