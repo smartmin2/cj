@@ -44,20 +44,25 @@
                             </select>
                           </td>
                           <td class="tableEmpty"></td>
-                          <th>회차</th>
-                          <td class="button-group">
-                            <div class="btn-group" role="group">
-                              <select class="form-control cj-selectBox select-box">
-                                <option>전체</option>
-                              </select>
-                              <select class="form-control cj-selectBox select-box">
-                                <option>1회차</option>
-                              </select>
-                              <select class="form-control cj-selectBox select-box">
-                                <option>2회차</option>
-                              </select>
-                            </div>
-                          </td>
+                            <th>회차</th>
+                            <td class="round">
+                              <div class="d-flex align-items-center">
+                                <div class="open-btn"> 
+                                  <i class="fa-solid fa-plus ic-plus"></i>
+                                  <i class="fa-solid fa-minus ic-minus"></i>
+                                </div>
+                                전체
+                             </div>
+                              <div class="card m-0 lookup-box">
+                                <div class="col-sm-12 p-0">
+                                  <div class="btn-wrap p-2">
+                                    <button class="btn btn-cj-default">전체</button>
+                                    <button class="btn btn-cj-default">1회차</button>
+                                    <button class="btn btn-cj-default">2회차</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
                         </tr>
                       </tbody>
                     </table>
@@ -379,17 +384,19 @@
     </div>
 
     <script>
-      $(".open-btn").on("click", function () {
+       $(".open-btn").on("click",function(){
         $(this).toggleClass("active");
+        $(this).parent("td").css("position","relative");
 
-        if ($(this).hasClass("active")) {
-          $(this).children(".minus").show();
-          $(this).siblings("td").children(".lookup-box").css("display", "flex");
-        } else {
-          $(this).children(".minus").hide();
-          $(this).siblings("td").children(".lookup-box").css("display", "none");
+        if($(this).hasClass("active")){
+          $(this).children(".ic-minus").show();
+          $(this).parents("td").children(".lookup-box").css("display","flex");
+        }else{
+          $(this).children(".ic-minus").hide();
+          $(this).parents("td").children(".lookup-box").css("display","none");
         }
-      });
+      })
+
 
       $(".btn-cj-default").on("click", function () {
         $(this).toggleClass("active");
