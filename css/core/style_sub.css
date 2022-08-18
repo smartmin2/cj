@@ -16,7 +16,7 @@ button:focus,button:active { box-shadow: none !important; }
 .btn-black { background-color: #515668; } 
 .btn-red { background-color: #dd5151; border: 0; } 
 .btn-gray { background-color: #666666; } 
-.btn-prev { min-width: 100px; background-color: #d5d6dc; } 
+.btn-prev { min-width: 100px; background-color: #d5d6dc;} 
 .btn-next { min-width: 100px; background-color: #515668; } 
 .btn.btn-cj.rec { border-radius: 9.5px; min-width:60px; min-height: 19px; font-size: 11px; padding:0; } 
 
@@ -223,3 +223,15 @@ button:focus,button:active { box-shadow: none !important; }
 
  .search-btn{margin: 0 auto;}
  .search-btn button{width:100%;height: 50px;}
+
+ .summary-table .summary-tit{background-color: #ddd;border-radius: 20px;padding:0.5rem 2rem;}
+ .summary-table tr{border-bottom: 0;}
+ .summary-table td{border-right: 1px solid #ddd;}
+ .summary-table td div{display: flex; align-items: center; gap:1rem; justify-content: center;}
+ .summary-table td span{border-radius: 20px; background-color: #515668;padding: 0.5rem 2rem;color:#fff;}
+ .summary-table td p{margin-bottom: 0;}
+
+ .pro-modal .pro-tit{border-bottom: 1px solid #ddd;}
+ .pro-modal .pro-txt{display: flex; align-items: center; gap:1rem;}
+ .pro-modal .pro-txt span{background-color: #515668;min-width:100px;padding: 0.5rem 2rem;color:#fff;border-radius: 20px;text-align: center;}
+ .pro-modal .pro-txt p{margin-bottom: 0;}
