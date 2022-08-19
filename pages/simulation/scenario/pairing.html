@@ -136,11 +136,102 @@
           </div>
 
         <!-- grid 영역 -->
-        <h5 class="mt-4">프로그램 단위 상세</h5>
+        <!-- <h5 class="mt-4">프로그램 단위 상세</h5>
         <div >
           <div id="proUniDtlGrid" style="min-height: 400px"></div>
+        </div> -->
+        <h5 class="mt-4">프로그램 단위 상세</h5>
+        <div class="mt-4 table-wrap">
+          <table class="table cj-table proDtl-table">
+            <colgroup>
+              <col style="width: 9%" />
+              <col style="width: 7%" />
+              <col style="width: 7%" />
+              <col style="width: 7%" />
+              <col style="width: 7%" />
+              <col style="width: 7%" />
+              <col style="width: 7%" />
+              <col style="width: 7%" />
+              <col style="width: 7%" />
+              <col style="width: 7%" />
+              <col style="width: 7%" />
+              <col style="width: 7%" />
+              <col style="width: 7%" />
+              <col style="width: 7%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th rowspan="2">채널</th>
+                <th rowspan="2">장르</th>
+                <th rowspan="2">편성그룹</th>
+                <th rowspan="2">편성블록</th>
+                <th rowspan="2">-</th>
+                <th rowspan="2">프로그램명</th>
+                <th colspan="3">누적시청률</th>
+                <th colspan="4">기간 내(22년 8월 2주차 22.08.08)시청률</th>
+                <th rowspan="2"></th>
+              </tr>
+              <tr>
+                <th>전 회차 예측 평균</th>
+                <th>실적</th>
+                <th>달성율</th>
+                <th>회차</th>
+                <th>예측</th>
+                <th>실적</th>
+                <th>달성율</th>
+              </tr>
+            </thead>
+          
+            <tbody>
+              <tr>
+                <td rowspan="2">tvN</td>
+                <td rowspan="2">드라마</td>
+                <td rowspan="2">그룹1</td>
+                <td rowspan="2">월화 프라임</td>
+                <td rowspan="2"></td>
+                <td rowspan="2">프로그램 01</td>
+                <td rowspan="2">0.653%</td>
+                <td rowspan="2">0.678%</td>
+                <td rowspan="2">105%</td>
+                <td>13회</td>
+                <td>0.633%</td>
+                <td>0.745</td>
+                <td>115%</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>14회</td>
+                <td>0.678%</td>
+                <td>-</td>
+                <td>-</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td rowspan="2">tvN</td>
+                <td rowspan="2">드라마</td>
+                <td rowspan="2">그룹1</td>
+                <td rowspan="2">월화 프라임</td>
+                <td rowspan="2"></td>
+                <td rowspan="2">프로그램 01</td>
+                <td rowspan="2">0.653%</td>
+                <td rowspan="2">0.678%</td>
+                <td rowspan="2">105%</td>
+                <td>13회</td>
+                <td>0.633%</td>
+                <td>0.745</td>
+                <td>115%</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>14회</td>
+                <td>0.678%</td>
+                <td>-</td>
+                <td>-</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-
         <!-- 시나리오 modal-->
         <scenario-summary-modal ref="refScenarioSummary" />
       </div>
@@ -153,293 +244,293 @@
   </div>
 
   <script>
-    let proUniDtlGrid = "";
-    let app = {
-      el: "#app",
-      watch: {
-        gridData: function () {
-          AUIGrid.setGridData(proUniDtlGrid, this.gridData);
-        },
-      },
-      mounted() {
-        proUniDtlGrid = AUIGrid.destroy("#proUniDtlGrid");
-        proUniDtlGrid = AUIGrid.create("#proUniDtlGrid", this.gridLayout, this.gridProps);
+    // let proUniDtlGrid = "";
+    // let app = {
+    //   el: "#app",
+    //   watch: {
+    //     gridData: function () {
+    //       AUIGrid.setGridData(proUniDtlGrid, this.gridData);
+    //     },
+    //   },
+    //   mounted() {
+    //     proUniDtlGrid = AUIGrid.destroy("#proUniDtlGrid");
+    //     proUniDtlGrid = AUIGrid.create("#proUniDtlGrid", this.gridLayout, this.gridProps);
 
-        // 페이지 진입 시 기준년도 산출
-        this.searchCommand.baseYear = new Date().getFullYear();
-        // 기준년도 항목정의(과거:3년, 향후:5년)
-        for (let idx = this.searchCommand.baseYear - 2; idx < this.searchCommand.baseYear + 5; idx += 1) {
-          this.selectOptionItems.baseYear.push({ value: `${idx}`, text: `${idx}년` });
-        }
+    //     // 페이지 진입 시 기준년도 산출
+    //     this.searchCommand.baseYear = new Date().getFullYear();
+    //     // 기준년도 항목정의(과거:3년, 향후:5년)
+    //     for (let idx = this.searchCommand.baseYear - 2; idx < this.searchCommand.baseYear + 5; idx += 1) {
+    //       this.selectOptionItems.baseYear.push({ value: `${idx}`, text: `${idx}년` });
+    //     }
 
-        this.selectOptionItems.status.push({ value: "I", text: "진행중" });
-        this.selectOptionItems.status.push({ value: "C", text: "확정" });
+    //     this.selectOptionItems.status.push({ value: "I", text: "진행중" });
+    //     this.selectOptionItems.status.push({ value: "C", text: "확정" });
 
-        this.search();
-      },
-      data: () => ({
-        selectOptionItems: {
-          baseYear: [{ value: "", text: "기준년도" }],
-          genre: [{ value: "", text: "장르" }],
-          status: [{ value: "", text: "채널그룹명" }],
-        },
-        searchCommand: {
-          scenarioName: null,
-          baseYear: "",
-          genre: "",
-          status: "",
-        },
-        gridData: [],
-        gridLayout: [
-        {
-            dataField: "channel",
-            headerText: "채널",
-            editRenderer: {
-              type: "InputEditRenderer",
-              showEditorBtnOver: true, 
-              inputMode: "text",
-            },
-          },
-          {
-            dataField: "genre",
-            headerText: "장르",
-            editRenderer: {
-              type: "InputEditRenderer",
-              showEditorBtnOver: true, 
-              inputMode: "text",
-            },
-          },
-          {
-            dataField: "formaGrp",
-            headerText: "편성그룹",
-            editRenderer: {
-              type: "InputEditRenderer",
-              showEditorBtnOver: true, 
-              inputMode: "text",
-            },
-          },
-          {
-            dataField: "formaBlock",
-            headerText: "편성블록",
-            editRenderer: {
-              type: "InputEditRenderer",
-              showEditorBtnOver: true, 
-              inputMode: "text",
-            },
-          },
-          {
-            dataField: "blank",
-            headerText: "-",
-            editRenderer: {
-              type: "InputEditRenderer",
-              showEditorBtnOver: true, 
-              inputMode: "text",
-            },
-          },
-          {
-            dataField: "programName",
-            headerText: "프로그램명 ",
-            editRenderer: {
-              type: "InputEditRenderer",
-              showEditorBtnOver: true, 
-              inputMode: "text",
-            },
-          },
-          {
-              dataField: "viewership",
-              headerText: "누적 시청률",
-              children: [
-                {
-                  dataField: "allAvrg",
-                  headerText: "전 회차 예측 평균",
-                  editRenderer: {
-                    type: "InputEditRenderer",
-                    showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
-                    inputMode: "text",
-                  },
-                },
-                {
-                  dataField: "performance",
-                  headerText: "실적",
-                  editRenderer: {
-                    type: "InputEditRenderer",
-                    showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
-                    inputMode: "text",
-                  },
-                },
-                {
-                  dataField: "achRate",
-                  headerText: "달성율",
-                  editRenderer: {
-                    type: "InputEditRenderer",
-                    showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
-                    inputMode: "text",
-                  },
-                },
-              ], // end of children
-            },
+    //     this.search();
+    //   },
+    //   data: () => ({
+    //     selectOptionItems: {
+    //       baseYear: [{ value: "", text: "기준년도" }],
+    //       genre: [{ value: "", text: "장르" }],
+    //       status: [{ value: "", text: "채널그룹명" }],
+    //     },
+    //     searchCommand: {
+    //       scenarioName: null,
+    //       baseYear: "",
+    //       genre: "",
+    //       status: "",
+    //     },
+    //     gridData: [],
+    //     gridLayout: [
+    //     {
+    //         dataField: "channel",
+    //         headerText: "채널",
+    //         editRenderer: {
+    //           type: "InputEditRenderer",
+    //           showEditorBtnOver: true, 
+    //           inputMode: "text",
+    //         },
+    //       },
+    //       {
+    //         dataField: "genre",
+    //         headerText: "장르",
+    //         editRenderer: {
+    //           type: "InputEditRenderer",
+    //           showEditorBtnOver: true, 
+    //           inputMode: "text",
+    //         },
+    //       },
+    //       {
+    //         dataField: "formaGrp",
+    //         headerText: "편성그룹",
+    //         editRenderer: {
+    //           type: "InputEditRenderer",
+    //           showEditorBtnOver: true, 
+    //           inputMode: "text",
+    //         },
+    //       },
+    //       {
+    //         dataField: "formaBlock",
+    //         headerText: "편성블록",
+    //         editRenderer: {
+    //           type: "InputEditRenderer",
+    //           showEditorBtnOver: true, 
+    //           inputMode: "text",
+    //         },
+    //       },
+    //       {
+    //         dataField: "blank",
+    //         headerText: "-",
+    //         editRenderer: {
+    //           type: "InputEditRenderer",
+    //           showEditorBtnOver: true, 
+    //           inputMode: "text",
+    //         },
+    //       },
+    //       {
+    //         dataField: "programName",
+    //         headerText: "프로그램명 ",
+    //         editRenderer: {
+    //           type: "InputEditRenderer",
+    //           showEditorBtnOver: true, 
+    //           inputMode: "text",
+    //         },
+    //       },
+    //       {
+    //           dataField: "viewership",
+    //           headerText: "누적 시청률",
+    //           children: [
+    //             {
+    //               dataField: "allAvrg",
+    //               headerText: "전 회차 예측 평균",
+    //               editRenderer: {
+    //                 type: "InputEditRenderer",
+    //                 showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+    //                 inputMode: "text",
+    //               },
+    //             },
+    //             {
+    //               dataField: "performance",
+    //               headerText: "실적",
+    //               editRenderer: {
+    //                 type: "InputEditRenderer",
+    //                 showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+    //                 inputMode: "text",
+    //               },
+    //             },
+    //             {
+    //               dataField: "achRate",
+    //               headerText: "달성율",
+    //               editRenderer: {
+    //                 type: "InputEditRenderer",
+    //                 showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+    //                 inputMode: "text",
+    //               },
+    //             },
+    //           ], // end of children
+    //         },
             
-            {
-              dataField: "rating",
-              headerText: "기간 내( 22년 8월 2주차 22.08.08)시청률",
-              children: [
-                {
-                  dataField: "round",
-                  headerText: "회차",
-                  editRenderer: {
-                    type: "InputEditRenderer",
-                    showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
-                    inputMode: "text",
-                  },
-                },
-                {
-                  dataField: "prediction",
-                  headerText: "예측",
-                  editRenderer: {
-                    type: "InputEditRenderer",
-                    showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
-                    inputMode: "text",
-                  },
-                },
-                {
-                  dataField: "rtPerfor",
-                  headerText: "달성율",
-                  editRenderer: {
-                    type: "InputEditRenderer",
-                    showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
-                    inputMode: "text",
-                  },
-                },
-              ], // end of children
-            },
-            {
-            dataField: "",
-            headerText: "",
-            editRenderer: {
-              type: "InputEditRenderer",
-              showEditorBtnOver: true, 
-              inputMode: "text",
-            },
-          },
-        ],
-        gridProps: {
-          enableFilter: false,
-          enableSorting: false,
-          headerHeight: 38,
-          headerHeights: [38, 38],
-          rowHeight: 38,
-          editingOnKeyDown: false,
-          autoGridHeight: false,
-          autoGridWidth: false,
-          ignoreColumnMinWidth: true,
-          softRemoveRowMode: false,
-          // 행 번호 컬럼 활성화 속성입니다.
-          showRowNumColumn: false,
-          /*추가 옵션*/
-          showStateColumn: false,
-          editable: true,
-          noDataMessage: "엑셀데이터를 붙여넣거나 행추가를 통해 데이터를 입력하세요.",
-        },
-      }),
-      methods: {
-        search: function () {
-          console.log("search", this.searchCommand);
-          this.setTestData();
-        },
-        createScenario: function () {
-          this.$refs["refScenarioSummary"].draw();
-        },
-        edit: function (id) {
-          console.log("준비중 edit", id);
-        },
-        version: function (id) {
-          console.log("준비중 version", id);
-        },
-        copy: function (id) {
-          console.log("준비중 copy", id);
-        },
-        remove: function (id) {
-          console.log("준비중 remove", id);
-        },
-        done: function (id) {
-          console.log("준비중 done", id);
-        },
-        setTestData: function () {
-          this.gridData = [];
-          this.gridData.push({
-            writer: "홍길동",
-            departName: "부서명",
-            createAt: "2022.10.12",
-            listNum: "1",
-            baseYear: "2023",
-            planStd: "경영계획",
-            ratingStd: "수도권",
-            scenarioName: "2023년 경영기반 시뮬레이션 1차",
-            summary: "4건(70회차), 75억, 2.873",
-            step: "진행중",
-            status: "I",
-            id: 2,
-            version: 0,
-          });
-          this.gridData.push({
-            writer: "홍길동",
-            departName: "부서명",
-            createAt: "2022.10.12",
-            listNum: "1-1",
-            baseYear: "2023",
-            planStd: "경영계획",
-            ratingStd: "수도권",
-            scenarioName: "2023년 경영기반 시뮬레이션 1차",
-            summary: "4건(70회차), 75억, 2.873",
-            step: "진행중",
-            status: "I",
-            id: 2,
-            version: 0,
-          });
-          this.gridData.push({
-            writer: "홍길동",
-            departName: "부서명",
-            createAt: "2022.10.12",
-            listNum: "2",
-            baseYear: "2023",
-            planStd: "경영계획",
-            ratingStd: "수도권",
-            scenarioName: "2023년 경영기반 시뮬레이션 1차",
-            summary: "4건(70회차), 75억, 2.873",
-            step: "진행중",
-            status: "I",
-            id: 2,
-            version: 0,
-          });
-          this.gridData.push({
-            writer: "홍길동",
-            departName: "부서명",
-            createAt: "2022.10.12",
-            listNum: "3",
-            baseYear: "2023",
-            planStd: "경영계획",
-            ratingStd: "수도권",
-            scenarioName: "2023년 경영기반 시뮬레이션 1차",
-            summary: "4건(70회차), 75억, 2.873",
-            step: "진행중",
-            status: "I",
-            id: 1,
-            version: 1,
-          });
-        },
-      },
+    //         {
+    //           dataField: "rating",
+    //           headerText: "기간 내( 22년 8월 2주차 22.08.08)시청률",
+    //           children: [
+    //             {
+    //               dataField: "round",
+    //               headerText: "회차",
+    //               editRenderer: {
+    //                 type: "InputEditRenderer",
+    //                 showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+    //                 inputMode: "text",
+    //               },
+    //             },
+    //             {
+    //               dataField: "prediction",
+    //               headerText: "예측",
+    //               editRenderer: {
+    //                 type: "InputEditRenderer",
+    //                 showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+    //                 inputMode: "text",
+    //               },
+    //             },
+    //             {
+    //               dataField: "rtPerfor",
+    //               headerText: "달성율",
+    //               editRenderer: {
+    //                 type: "InputEditRenderer",
+    //                 showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+    //                 inputMode: "text",
+    //               },
+    //             },
+    //           ], // end of children
+    //         },
+    //         {
+    //         dataField: "",
+    //         headerText: "",
+    //         editRenderer: {
+    //           type: "InputEditRenderer",
+    //           showEditorBtnOver: true, 
+    //           inputMode: "text",
+    //         },
+    //       },
+    //     ],
+    //     gridProps: {
+    //       enableFilter: false,
+    //       enableSorting: false,
+    //       headerHeight: 38,
+    //       headerHeights: [38, 38],
+    //       rowHeight: 38,
+    //       editingOnKeyDown: false,
+    //       autoGridHeight: false,
+    //       autoGridWidth: false,
+    //       ignoreColumnMinWidth: true,
+    //       softRemoveRowMode: false,
+    //       // 행 번호 컬럼 활성화 속성입니다.
+    //       showRowNumColumn: false,
+    //       /*추가 옵션*/
+    //       showStateColumn: false,
+    //       editable: true,
+    //       noDataMessage: "엑셀데이터를 붙여넣거나 행추가를 통해 데이터를 입력하세요.",
+    //     },
+    //   }),
+    //   methods: {
+    //     search: function () {
+    //       console.log("search", this.searchCommand);
+    //       this.setTestData();
+    //     },
+    //     createScenario: function () {
+    //       this.$refs["refScenarioSummary"].draw();
+    //     },
+    //     edit: function (id) {
+    //       console.log("준비중 edit", id);
+    //     },
+    //     version: function (id) {
+    //       console.log("준비중 version", id);
+    //     },
+    //     copy: function (id) {
+    //       console.log("준비중 copy", id);
+    //     },
+    //     remove: function (id) {
+    //       console.log("준비중 remove", id);
+    //     },
+    //     done: function (id) {
+    //       console.log("준비중 done", id);
+    //     },
+    //     setTestData: function () {
+    //       this.gridData = [];
+    //       this.gridData.push({
+    //         writer: "홍길동",
+    //         departName: "부서명",
+    //         createAt: "2022.10.12",
+    //         listNum: "1",
+    //         baseYear: "2023",
+    //         planStd: "경영계획",
+    //         ratingStd: "수도권",
+    //         scenarioName: "2023년 경영기반 시뮬레이션 1차",
+    //         summary: "4건(70회차), 75억, 2.873",
+    //         step: "진행중",
+    //         status: "I",
+    //         id: 2,
+    //         version: 0,
+    //       });
+    //       this.gridData.push({
+    //         writer: "홍길동",
+    //         departName: "부서명",
+    //         createAt: "2022.10.12",
+    //         listNum: "1-1",
+    //         baseYear: "2023",
+    //         planStd: "경영계획",
+    //         ratingStd: "수도권",
+    //         scenarioName: "2023년 경영기반 시뮬레이션 1차",
+    //         summary: "4건(70회차), 75억, 2.873",
+    //         step: "진행중",
+    //         status: "I",
+    //         id: 2,
+    //         version: 0,
+    //       });
+    //       this.gridData.push({
+    //         writer: "홍길동",
+    //         departName: "부서명",
+    //         createAt: "2022.10.12",
+    //         listNum: "2",
+    //         baseYear: "2023",
+    //         planStd: "경영계획",
+    //         ratingStd: "수도권",
+    //         scenarioName: "2023년 경영기반 시뮬레이션 1차",
+    //         summary: "4건(70회차), 75억, 2.873",
+    //         step: "진행중",
+    //         status: "I",
+    //         id: 2,
+    //         version: 0,
+    //       });
+    //       this.gridData.push({
+    //         writer: "홍길동",
+    //         departName: "부서명",
+    //         createAt: "2022.10.12",
+    //         listNum: "3",
+    //         baseYear: "2023",
+    //         planStd: "경영계획",
+    //         ratingStd: "수도권",
+    //         scenarioName: "2023년 경영기반 시뮬레이션 1차",
+    //         summary: "4건(70회차), 75억, 2.873",
+    //         step: "진행중",
+    //         status: "I",
+    //         id: 1,
+    //         version: 1,
+    //       });
+    //     },
+    //   },
       
-    };
+    // };
 
-    $(function () {
-      new Vue(app);
-      Vue.nextTick(function () {
-        $(window).resize(function () {
-          AUIGrid.resize("#proUniDtlGrid");
-        });
-      });
-      // Vue.component();
-    });
+    // $(function () {
+    //   new Vue(app);
+    //   Vue.nextTick(function () {
+    //     $(window).resize(function () {
+    //       AUIGrid.resize("#proUniDtlGrid");
+    //     });
+    //   });
+    //   // Vue.component();
+    // });
 
 
     // modal

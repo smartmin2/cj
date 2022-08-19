@@ -242,3 +242,5 @@ button:focus,button:active { box-shadow: none !important; }
  .pro-modal .pro-txt { display: flex; align-items: center; gap:1rem; } 
  .pro-modal .pro-txt span { background-color: #515668; min-width:100px; padding: 0.5rem 2rem; color:#fff; border-radius: 20px; text-align: center; } 
  .pro-modal .pro-txt p { margin-bottom: 0; } 
+
+.table.proDtl-table td{vertical-align: middle;}
