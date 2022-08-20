@@ -141,6 +141,7 @@ button:focus,button:active { box-shadow: none !important; }
  .lookup-table .date-group input { border:none; padding: 0.75rem 0.5rem; height: 100%; } 
  .lookup-table .button-group { padding:0; width:fit-content; } 
  .lookup-table .button-group .btn-group { width:100%; } 
+ .lookup-table .btn-group .select-box{ border-left: 1px solid #d7d8e1; } 
  .lookup-table .button-group button:first-child { border-left:0; } 
  .lookup-table .button-group button { height: 43px; } 
  .lookup-table .button-group button:hover { z-index:inherit; } 
@@ -244,3 +245,6 @@ button:focus,button:active { box-shadow: none !important; }
  .pro-modal .pro-txt p { margin-bottom: 0; } 
 
 .table.proDtl-table td{vertical-align: middle;}
+
+.table.ex-table td{border-right:1px solid #dee2e6;}
+.table.ex-table td:last-child{border-right:0;}
