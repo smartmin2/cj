@@ -30,7 +30,7 @@
         <!-- 검색조건 영역 -->
         <div class="card card-box mr-0 p-4">
           <div class="row">
-            <div class="col-sm-10">
+            <div class="col-sm-9">
               <div class="lookup-table">
                 <table class="table mb-0">
                   <colgroup></colgroup>
@@ -43,28 +43,28 @@
                         </select>
                       </td>
                       <td class="tableEmpty"></td>
-                      <th>대상구분</th>
+                      <th>시나리오</th>
                       <td class="p-0 round-r input-group table-input">
                         <input type="text" name="" id="" class="form-control" />
                       </td>
                       <td class="tableEmpty"></td>
                       <th>조회 유형</th>
-                      <td role="group" class="button-group btn-group">
+                      <td role="group" class="button-group btn-group round-r">
                         <button type="button" class="btn btn-cj-default">채널</button>
                         <button type="button" class="btn btn-cj-default">편성블록</button>
                         <button type="button" class="btn btn-cj-default">대표장르</button>
-                        <div>
-                          <select class="form-control cj-selectBox select-box">
-                            <option>전체</option>
-                          </select>
-                        </div>
                       </td>
                     </tr>
                   </tbody>
                 </table >
               </div>
             </div>
-            <div class="cj-btn-group my-auto col-sm-2">
+            <div class="col-sm-2 d-flex align-items-center">
+                <select class="form-control cj-selectBox select-box">
+                  <option>전체</option>
+                </select>
+            </div>
+            <div class="cj-btn-group my-auto col-sm-1">
               <div class="row justify-content-end mr-2">
                 <button class="btn btn-cj mr-2">조회</button>
               </div>
@@ -358,7 +358,7 @@
                   <td>0.262</td>
                   <td>0.656</td>
                 </tr>
-                
+
               </tbody>
             </table>
           </div>
@@ -374,6 +374,9 @@
     </div>
 
     <script>
+         $(".btn-cj-default").on("click",function(){
+        $(this).toggleClass("active");
+      })
       // let proUniDtlGrid = "";
       // let app = {
       //   el: "#app",
