@@ -28,7 +28,7 @@
     <div class="container-fluid">
       <div id="app" class="pt-3">
         <!-- 검색조건 영역 -->
-        <div class="card card-box mr-0 p-4">
+        <div class="card card-box mr-0 p-4 pairing">
           <div class="row">
             <div class="col-lg-9 col-sm-12">
               <div class="lookup-table">
@@ -56,13 +56,13 @@
                       </td>
                     </tr>
                   </tbody>
-                </table >
+                </table>
               </div>
             </div>
             <div class="col-lg-2 col-sm-4 d-flex align-items-center">
-                <select class="form-control cj-selectBox select-box">
-                  <option>전체</option>
-                </select>
+              <select class="form-control cj-selectBox select-box">
+                <option>전체</option>
+              </select>
             </div>
             <div class="cj-btn-group my-auto col-sm-1 sm-ml">
               <div class="row justify-content-end mr-2">
@@ -70,29 +70,6 @@
               </div>
             </div>
           </div>
-          <!-- <div class="d-flex justify-content-between">
-            <div class="d-flex justify-content-start align-items-center">
-              <div class="d-block">
-                <select id="baseYear" class="form-control cj-selectBox select-box">
-                  <option>기준년도</option>
-                </select>
-              </div>
-              <div class="d-block ml-2">
-                <input type="text" class="form-control cj-inputBox" id="search" placeholder="시나리오명" />
-              </div>
-              <div class="d-flex justify-content-start align-items-center ml-4">
-                <div class="form-check cj-input-radio pr-3 d-flex align-items-center"><input type="radio" name="radioDefault" id="radioDefault1" class="form-check-input" /> <label for="radioDefault1" class="form-check-label mw-55"> 주간 </label></div>
-                <div class="form-check cj-input-radio pr-3 d-flex align-items-center"><input type="radio" name="radioDefault" id="radioDefault2" class="form-check-input" /> <label for="radioDefault2" class="form-check-label mw-55"> 월간 </label></div>
-                <div class="form-check cj-input-radio d-flex align-items-center"><input type="radio" name="radioDefault" id="radioDefault3" class="form-check-input" /> <label for="radioDefault3" class="form-check-label mw-55"> 년간 </label></div>
-              </div>
-            </div>
-
-            <div></div>
-
-            <div class="d-flex cj-btn-group align-items-end">
-              <button type="submit" class="btn btn-cj" @click.end="createScenario">조회</button>
-            </div>
-          </div> -->
 
           <h5 class="mt-4">요약</h5>
           <div class="table-wrap">
@@ -112,10 +89,12 @@
                       <p>0.175</p>
                     </div>
                   </td>
-                  <td>
+                  <td rowspan="2">
                     <div>
-                      <span>드라마 평균</span>
-                      <p>0.175</p>
+                      <span>장르별 평균</span>
+                    </div>
+                    <div class="mt-4">
+                      드라마(0.175), 예능(2.197)
                     </div>
                   </td>
                   <td>
@@ -144,12 +123,7 @@
                       <p>0.175</p>
                     </div>
                   </td>
-                  <td>
-                    <div>
-                      <span>예능 평균</span>
-                      <p>2.175</p>
-                    </div>
-                  </td>
+                  
                   <td>
                     <div>
                       <span>평균 본방</span>
@@ -161,6 +135,9 @@
                       <span>본/재방 비율</span>
                       <p>15.2</p>
                     </div>
+                  </td>
+                  <td>
+                   
                   </td>
                 </tr>
               </tbody>
@@ -268,82 +245,53 @@
           <div class="mt-4 table-wrap">
             <table class="table cj-table ex-table">
               <colgroup>
-                <col style="width: 6.25%" />
-                <col style="width: 6.25%" />
-                <col style="width: 6.25%" />
-                <col style="width: 6.25%" />
-                <col style="width: 6.25%" />
-                <col style="width: 6.25%" />
-                <col style="width: 6.25%" />
-                <col style="width: 6.25%" />
-                <col style="width: 6.25%" />
-                <col style="width: 6.25%" />
-                <col style="width: 6.25%" />
-                <col style="width: 6.25%" />
-                <col style="width: 6.25%" />
-                <col style="width: 6.25%" />
-                <col style="width: 6.25%" />
-                <col style="width: 6.25%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
               </colgroup>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <th>월</th>
+                  <th></th>
+                  <th>화</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th>수</th>
+                  <th></th>
+                  <th>목</th>
+                  <th></th>
+                  <th>금</th>
+                  <th></th>
+                  <th>토</th>
+                  <th></th>
+                  <th>일</th>
+                  <th>시간대별 평균</th>
+                </tr>
+              </thead>
               <tbody>
                 <tr>
                   <td>00:00</td>
                   <td></td>
                   <td>0.600</td>
-                  <td></td>
-                  <td>0.500</td>
-                  <td></td>
-                  <td>0.600</td>
-                  <td></td>
-                  <td>0.265</td>
-                  <td></td>
-                  <td>0.222</td>
-                  <td></td>
-                  <td>0.555</td>
-                  <td></td>
-                  <td>0.262</td>
-                  <td>0.656</td>
-                </tr>
-                <tr>
-                  <td>00:00</td>
-                  <td></td>
-                  <td>0.600</td>
-                  <td></td>
-                  <td>0.500</td>
-                  <td></td>
-                  <td>0.600</td>
-                  <td></td>
-                  <td>0.265</td>
-                  <td></td>
-                  <td>0.222</td>
-                  <td></td>
-                  <td>0.555</td>
-                  <td></td>
-                  <td>0.262</td>
-                  <td>0.656</td>
-                </tr>
-                <tr>
-                  <td>00:00</td>
-                  <td></td>
-                  <td>0.600</td>
-                  <td></td>
-                  <td>0.500</td>
-                  <td></td>
-                  <td>0.600</td>
-                  <td></td>
-                  <td>0.265</td>
-                  <td></td>
-                  <td>0.222</td>
-                  <td></td>
-                  <td>0.555</td>
-                  <td></td>
-                  <td>0.262</td>
-                  <td>0.656</td>
-                </tr>
-                <tr>
-                  <td>00:00</td>
-                  <td></td>
-                  <td>0.600</td>
+                  <td rowspan="3" class="pit-color">모닝쇼2</td>
+                  <td rowspan="3" class="pit-color">모닝쇼2</td>
                   <td></td>
                   <td>0.500</td>
                   <td></td>
@@ -359,6 +307,187 @@
                   <td>0.656</td>
                 </tr>
 
+                <tr>
+                  <td>00:00</td>
+                  <td></td>
+                  <td>0.600</td>
+                  <td rowspan="3" class="pit-color">우영우</td>
+                  <td>0.500</td>
+                  <td></td>
+                  <td>0.600</td>
+                  <td></td>
+                  <td>0.265</td>
+                  <td></td>
+                  <td>0.222</td>
+                  <td></td>
+                  <td>0.555</td>
+                  <td></td>
+                  <td>0.262</td>
+                  <td>0.656</td>
+                </tr>
+                <tr>
+                  <td>00:00</td>
+                  <td></td>
+                  <td>0.600</td>
+                  <td>0.500</td>
+                  <td></td>
+                  <td>0.600</td>
+                  <td></td>
+                  <td>0.265</td>
+                  <td></td>
+                  <td>0.222</td>
+                  <td></td>
+                  <td>0.555</td>
+                  <td></td>
+                  <td>0.262</td>
+                  <td>0.656</td>
+                </tr>
+                <tr>
+                  <td>00:00</td>
+                  <td></td>
+                  <td>0.600</td>
+                  <td></td>
+                  <td></td>
+                  <td>0.500</td>
+                  <td></td>
+                  <td>0.600</td>
+                  <td></td>
+                  <td>0.265</td>
+                  <td></td>
+                  <td>0.222</td>
+                  <td></td>
+                  <td>0.555</td>
+                  <td></td>
+                  <td>0.262</td>
+                  <td>0.656</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mt-4 table-wrap">
+            <table class="table cj-table ex-table">
+              <colgroup>
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+                <col style="width: 5.5555%" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <th>월</th>
+                  <th></th>
+                  <th>화</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th>수</th>
+                  <th></th>
+                  <th>목</th>
+                  <th></th>
+                  <th>금</th>
+                  <th></th>
+                  <th>토</th>
+                  <th></th>
+                  <th>일</th>
+                  <th>시간대별 평균</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>00:00</td>
+                  <td rowspan="3">월화드라마</td>
+                  <td class="pit-color">0.600</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>0.500</td>
+                  <td></td>
+                  <td>0.600</td>
+                  <td></td>
+                  <td>0.265</td>
+                  <td></td>
+                  <td>0.222</td>
+                  <td></td>
+                  <td>0.555</td>
+                  <td></td>
+                  <td>0.262</td>
+                  <td>0.656</td>
+                </tr>
+
+                <tr>
+                  <td>00:00</td>
+                  <td class="pit-color">0.600</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>0.500</td>
+                  <td></td>
+                  <td>0.600</td>
+                  <td></td>
+                  <td>0.265</td>
+                  <td></td>
+                  <td>0.222</td>
+                  <td></td>
+                  <td>0.555</td>
+                  <td></td>
+                  <td>0.262</td>
+                  <td>0.656</td>
+                </tr>
+                <tr>
+                  <td>00:00</td>
+                  <td class="pit-color">0.600</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>0.500</td>
+                  <td></td>
+                  <td>0.600</td>
+                  <td></td>
+                  <td>0.265</td>
+                  <td></td>
+                  <td>0.222</td>
+                  <td></td>
+                  <td>0.555</td>
+                  <td></td>
+                  <td>0.262</td>
+                  <td>0.656</td>
+                </tr>
+                <tr>
+                  <td>00:00</td>
+                  <td></td>
+                  <td>0.600</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>0.500</td>
+                  <td></td>
+                  <td>0.600</td>
+                  <td></td>
+                  <td>0.265</td>
+                  <td></td>
+                  <td>0.222</td>
+                  <td></td>
+                  <td>0.555</td>
+                  <td></td>
+                  <td>0.262</td>
+                  <td>0.656</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -374,9 +503,9 @@
     </div>
 
     <script>
-         $(".btn-cj-default").on("click",function(){
+      $(".btn-cj-default").on("click", function () {
         $(this).toggleClass("active");
-      })
+      });
       // let proUniDtlGrid = "";
       // let app = {
       //   el: "#app",
