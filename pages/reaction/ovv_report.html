@@ -40,6 +40,38 @@
             <a class="nav-link" data-toggle="tab" href="#recog">시청자 인지반응</a>
           </li>
         </ul>
+        <div style="display:block;" class="modal in" tabindex="-1" id="scenarioSummaryModal" role="dialog" data-backdrop="static" data-keyboard="false" aria-hidden="true" >
+          <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title">프로그램 선택</h5>
+                      
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">×</span>
+                      </button>
+                  </div>
+  
+                  <div class="modal-body">
+                    
+                    <table class="table">
+                      <tbody>
+                        <tr>
+                          <td>
+                           <input type="checkbox" name="" id="">
+                          </td>
+                          <td>유퀴즈</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="modal-footer cj-btn-group justify-content-center">
+                      <button type="button" class="btn btn-cj">적용</button>
+                      <button type="button" class="btn btn-cj">닫기</button>
+                  </div>
+              </div>
+          </div>
+      </div>
         <div class="tab-content">
           <!-- 구성현황 -->
           <div class="tab-pane show active" id="conf">
@@ -1092,7 +1124,7 @@
                           </div>
                           <div class="col-sm-12 mt-4">
                             <div class="card mr-0">
-                              <div class="card-header">회차별 "선택 채널" 프로그램 성연령별 평균 "수도권 타겟 시청률"</div>
+                              <div class="card-header">회차별 "선택 채널" 프로그램 성연령별 평균 <span class="accent">"수도권 타겟 시청률"</span></div>
                               <div class="card-body" style="height: 200px"></div>
                             </div>
                           </div>
@@ -1548,7 +1580,7 @@
                               <th><span>프로그램명</span><i class="fa-solid fa-circle-info pl-2"></i></th>
                               <td class="d-flex p-1">
                                 <div class="input-group table-input col-md-4"><input type="text" class="form-control" /></div>
-                                <button class="btn btn-cj ml-4">검색</button>
+                                <button class="btn btn-cj ml-4" @click.end="createScenario">선택</button>
                               </td>
                             </tr>
                           </tbody>
@@ -2471,7 +2503,8 @@
             </div>
           </div>
         </div>
-       
+         <!-- 시나리오 modal-->
+         <scenario-summary-modal ref="refScenarioSummary" />
       </div>
     </div>
   
@@ -2507,6 +2540,247 @@
           $(".cj-button-grid").hide();
         }
       });
+
+       // modal
+       Vue.component("scenario-summary-modal", {
+        template: `
+        <div class="modal in" tabindex="-1" id="scenarioSummaryModal" role="dialog" data-backdrop="static" data-keyboard="false" aria-hidden="true" >
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">프로그램 선택</h5>
+                            
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+        
+                        <div class="modal-body">
+                           <div class="d-flex pro-modal">
+                            <div class="mr-3"><img style="width:150px;height: 100%;"/></div>
+                            <div>
+                              <h5 class="pro-tit">프로그램 정보</h5>  
+                              <ul>
+                                <li class="pro-txt mb-2">
+                                  <span >방영일자</span>
+                                  <p> 2022.06.29.21:40</p>
+                                </li>  
+                                <li class="pro-txt mb-2">
+                                  <span >진행</span>
+                                  <p> 윤박</p>
+                                </li>  
+                                <li class="pro-txt mb-2">
+                                  <span >출연</span>
+                                  <p> </p>
+                                </li>  
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="modal-footer cj-btn-group justify-content-center">
+                         
+                            <button type="button" class="btn btn-cj">닫기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    `,
+        mounted() {
+          $("#scenarioSummaryModal").on("show.bs.modal", function () {
+            AUIGrid.resize("#scenarioSummaryGrid");
+          });
+
+          this.createGrid();
+          this.search();
+        },
+        watch: {
+          gridData: function () {
+            AUIGrid.setGridData("#scenarioSummaryGrid", this.gridData);
+          },
+        },
+        data: () => ({
+          gridData: [],
+          gridLayout: [
+            {
+              dataField: "genre",
+              headerText: "장르",
+              width: "8%",
+              editRenderer: {
+                type: "DropDownListRenderer",
+                list: ["드라마"],
+              },
+            },
+            {
+              dataField: "blockGrp",
+              headerText: "블록그룹",
+              width: "8%",
+              editRenderer: {
+                type: "DropDownListRenderer",
+                list: ["그룹01"],
+              },
+            },
+            {
+              dataField: "period",
+              headerText: "방영기간",
+              width: "8%",
+              editRenderer: {
+                type: "BTCalendarRenderer",
+                onlyCalendar: true,
+                // bootstrap-datepicker 속성을 여기에 설정하십시오.
+                // API : https://bootstrap-datepicker.readthedocs.io/en/latest/options.html
+                btOpts: {
+                  language: "ko",
+                }, // end of btOpts
+              },
+            },
+            {
+              dataField: "program",
+              headerText: "프로그램",
+              width: "8%",
+              editRenderer: {
+                type: "DropDownListRenderer",
+                list: ["월화드라마_아이유출연"],
+              },
+            },
+            {
+              dataField: "round",
+              headerText: "회차",
+              width: "8%",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "prodCate",
+              headerText: "제작구분",
+              width: "8%",
+              editRenderer: {
+                type: "DropDownListRenderer",
+                list: ["SD"],
+              },
+            },
+
+            {
+              dataField: "pairing",
+              headerText: "편성구분",
+              width: "8%",
+              editRenderer: {
+                type: "DropDownListRenderer",
+                list: ["월화프라임시간대 외"],
+              },
+            },
+            {
+              dataField: "week",
+              headerText: "주중/주말",
+              width: "8%",
+              editRenderer: {
+                type: "DropDownListRenderer",
+                list: ["주중", "주말"],
+              },
+            },
+            {
+              dataField: "prdCost",
+              headerText: "제작비",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "exView",
+              headerText: "예상시청률",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "management",
+              headerText: "관리",
+              renderer: {
+                // HTML 템플릿 렌더러 사용
+                type: "TemplateRenderer",
+              },
+              // dataField 로 정의된 필드 값이 HTML 이라면 labelFunction 으로 처리할 필요 없음.
+              labelFunction: function (rowIndex, columnIndex, value, headerText, item) {
+                // HTML 템플릿 작성
+                var template = '<div class="my_div">';
+                template += '<button class="btn btn-red">삭제</button>';
+                template += "</div>";
+                return template;
+              },
+            },
+          ],
+          gridProps: {
+            enableFilter: false,
+            enableSorting: false,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
+            editingOnKeyDown: false,
+            autoGridHeight: false,
+            autoGridWidth: true,
+            ignoreColumnMinWidth: true,
+            softRemoveRowMode: false,
+            // 행 번호 컬럼 활성화 속성입니다.
+            showRowNumColumn: false,
+            /*추가 옵션*/
+            showStateColumn: false,
+            editable: false,
+            noDataMessage: "데이터가 존재하지 않습니다.",
+          },
+        }),
+        methods: {
+          draw: function () {
+            //$THO.show()
+            $("#scenarioSummaryModal").modal("show");
+          },
+          clear: function () {
+            // 초기화 영역
+          },
+          search: function () {
+            // 검색영역
+            //this.createGrid();
+            this.gridData.push({
+              genre: "드라마",
+              blockGrp: "그룹01",
+              period: "2023.03.01",
+              program: "월화드라마_아이유출연",
+              round: "16",
+              prodCate: "SD",
+              pairing: "월화프라임시간대 외",
+              week: "주중",
+              prdCost: "제작비",
+              exView: "10",
+            });
+
+            this.gridData.push({
+              genre: "드라마",
+              blockGrp: "그룹01",
+              period: "2023.03.01",
+              program: "월화드라마_아이유출연",
+              round: "16",
+              prodCate: "SD",
+              pairing: "월화프라임시간대 외",
+              week: "주중",
+              prdCost: "제작비",
+              exView: "10",
+            });
+          },
+          createGrid: function () {
+            AUIGrid.destroy("#scenarioSummaryGrid");
+            // grid 생성
+            AUIGrid.create("#scenarioSummaryGrid", this.gridLayout, this.gridProps);
+          },
+        },
+      });
+    
+
        // 구성현황
         // 1차 VIEW 기준 채널
         let viewGrid = "";
