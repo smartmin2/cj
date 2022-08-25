@@ -281,7 +281,7 @@
                         <div class="card-header">수도권 타겟 시청률</div>
                         <div class="card-body" style="height: 200px"></div>
                       </div>
-                      <div class="program-table mt-4">
+                      <div class="program-table table-hide mt-4">
                         <table class="table">
                           <colgroup>
                             <col style="width: 10%" />
@@ -343,7 +343,7 @@
                         <div class="card-header">수도권 타겟 도달율</div>
                         <div class="card-body" style="height: 200px"></div>
                       </div>
-                      <div class="program-table mt-4">
+                      <div class="program-table table-hide mt-4">
                         <table class="table">
                           <colgroup>
                             <col style="width: 10%" />
@@ -405,7 +405,7 @@
                         <div class="card-header">수도권 타겟 평균 시청시간</div>
                         <div class="card-body" style="height: 200px"></div>
                       </div>
-                      <div class="program-table mt-4">
+                      <div class="program-table table-hide mt-4">
                         <table class="table">
                           <colgroup>
                             <col style="width: 10%" />
@@ -841,11 +841,11 @@
 
         if ($(this).hasClass("active")) {
           $(this).text("GRID 축소");
-          $(".program-table").show();
+          $(".table-hide").show();
           $(".cj-button-grid").show();
         } else {
           $(this).text("GRID 확장");
-          $(".program-table").hide();
+          $(".table-hide").hide();
           $(".cj-button-grid").hide();
         }
       });

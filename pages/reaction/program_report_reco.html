@@ -481,20 +481,7 @@
         $(this).toggleClass("active");
       });
 
-      $(".open-grid").on("click", function () {
-        $(this).toggleClass("active");
-
-        if ($(this).hasClass("active")) {
-          $(this).text("GRID 축소");
-          $(".program-table").show();
-          $(".cj-button-grid").show();
-        } else {
-          $(this).text("GRID 확장");
-          $(".program-table").hide();
-          $(".cj-button-grid").hide();
-        }
-      });
-
+     
       // repImage
       let repImageGrid = "";
       let app1 = {

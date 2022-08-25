@@ -1,4 +1,6 @@
-@charset "utf-8"; .card-box { border-radius: 4px; border: solid 1px #d5d6dc; background-color: #fbfbfb; } 
+@charset "utf-8"; 
+
+.card-box { border-radius: 4px; border: solid 1px #d5d6dc; background-color: #fbfbfb; } 
 .card-dark { border-radius: 4px; border: solid 1px #d5d6dc; background-color: #d4d7e2; } 
 .accent { color:#dd5151; } 
 .fs-39 { font-size: 39px !important; } 
@@ -48,6 +50,8 @@ button:focus,button:active { box-shadow: none !important; }
 .cj-input-radio input:checked+label { border: none; border-top:nonoe; border-bottom: none; } 
 .cj-input-radio input[type="radio"]:checked { accent-color: #209ba9; } 
 
+.cj-input-chk input { display: flex; } 
+.cj-input-chk .form-check-input { margin-top:0; } 
 
 
 /* grid */
@@ -72,6 +76,12 @@ button:focus,button:active { box-shadow: none !important; }
 .cj-table td { font-size: 13px; min-height: 50px; background-color: #fff; } 
 .cj-table td, .cj-table th { border-top:0; } 
 
+
+/* pagination */
+.cj-pagination{display: flex;align-items: center;justify-content: center;}
+.cj-pagination .pagination{gap:10px; color:#202022}
+.cj-pagination .pagination a{color:#202022;padding:3px 8px;border-radius: 4px;}
+.cj-pagination .pagination a:hover{background-color: grey;color:#fff;}
 
 /* nav */
 .nav-wrap { width:100%; max-height: 90px; overflow-x: auto; overflow-y: hidden; gap:20px; } 
@@ -104,8 +114,8 @@ button:focus,button:active { box-shadow: none !important; }
 
 /* 768px 기준 "테이블 상단 버튼 그룹"이 깨질때 부모 div에 "md-block" 적용 */
 @media (max-width: 960px){
-    .mo-center{text-align: center;justify-content: center !important;}
-    .sm-ml { margin-left:1rem; } 
+ .mo-center { text-align: center; justify-content: center !important; } 
+ .sm-ml { margin-left:1rem; } 
 
  .md-block { display: block !important; margin: 0 auto; } 
  .md-block .cj-btn-group { justify-content: center; margin-top: 10px; } 
@@ -116,7 +126,7 @@ button:focus,button:active { box-shadow: none !important; }
 
  .lookup-table th { white-space: nowrap; } 
  .lookup-table .button-group .btn-cj-default { padding: 0.75rem 1rem !important; white-space: nowrap; } 
- .lookup-table .row-wrap{ flex-direction: column; gap:10px;}
+ .lookup-table .row-wrap { flex-direction: column; gap:10px; } 
 
  .cj-button-grid { margin-bottom: 1rem; } 
  }
@@ -150,7 +160,7 @@ button:focus,button:active { box-shadow: none !important; }
  .lookup-table .open-btn .ic-minus { display: none; } 
  .lookup-table .tableEmpty { width: 30px !important; padding: 0 !important; margin: 0 !important; border: none !important; background: none !important; } 
  .lookup-table .table-input { width:100%; padding:0; } 
- .lookup-table .table-input input { padding: 0.7rem; height: 100%;  } 
+ .lookup-table .table-input input { padding: 0.7rem; height: 100%; } 
  .lookup-table .date-group { display: flex; align-items: center; gap:10px; width:fit-content; padding:0; } 
  .lookup-table .date-group input { border:none; padding: 0.75rem 0.5rem; height: 100%; } 
  .lookup-table .button-group { padding:0; width:fit-content; } 
@@ -170,7 +180,7 @@ button:focus,button:active { box-shadow: none !important; }
  .lookup-table .round { position:relative; } 
  .lookup-table .round .lookup-box { width:100%; left:0; } 
 
- .lookup-table .row-wrap .table-tit { vertical-align: middle; font-weight: normal; border: 1px solid #d7d8e1; border-top-left-radius: 4px; border-bottom-left-radius: 4px; color: #373944; text-align: left; background: #f4f4f4; width: 31% !important; padding: 0.75rem 1.25rem !important; white-space: nowrap;} 
+ .lookup-table .row-wrap .table-tit { vertical-align: middle; font-weight: normal; border: 1px solid #d7d8e1; border-top-left-radius: 4px; border-bottom-left-radius: 4px; color: #373944; text-align: left; background: #f4f4f4; width: 31% !important; padding: 0.75rem 1.25rem !important; white-space: nowrap; } 
  .lookup-table .row-wrap .table-cont { vertical-align: middle; font-weight: normal; border-top: 1px solid #d7d8e1; border-right: 1px solid #d7d8e1; border-bottom: 1px solid #d7d8e1; color: #373944; background: #ffffff; border-top-right-radius: 4px; border-bottom-right-radius: 4px; } 
 
 
@@ -228,7 +238,8 @@ button:focus,button:active { box-shadow: none !important; }
 
  .program-report .lookup-table th { width: 12% !important; } 
 
- .program-table { border-radius: 4px; display: none; } 
+ .table-hide { display: none; } 
+ .program-table { border-radius: 4px;  } 
  .program-table .table { border-radius: 4px; border-collapse: collapse; } 
  .program-table tr { height: 43px; position:relative; } 
  .program-table .table :is(thead, tbody) th { font-weight: bold; vertical-align: middle; border: 1px solid #d7d8e1; border-top-left-radius: 4px; border-bottom-left-radius: 4px; color: #373944; text-align: center; background: #eef0f4; padding: 0.75rem 2px !important; } 
@@ -262,10 +273,12 @@ button:focus,button:active { box-shadow: none !important; }
 .table.proDtl-table { min-width:1370px; } 
 .table.proDtl-table td { vertical-align: middle; } 
 
-.table.ex-table  { min-width: 1370px;} 
-.table.ex-table td { border-right:1px solid #dee2e6; vertical-align: middle;} 
-.table.ex-table td.pit-color { background-color: #ddd;} 
+.table.ex-table { min-width: 1370px; } 
+.table.ex-table td { border-right:1px solid #dee2e6; vertical-align: middle; } 
+.table.ex-table td.pit-color { background-color: #ddd; } 
 .table.ex-table td:last-child { border-right:0; } 
 
 
-.pairing .lookup-table .table-input input{border:0;height: 43px;}
+.pairing .lookup-table .table-input input { border:0; height: 43px; } 
+
+.proSel-table tr:last-child td{    border-bottom: 1px solid #dee2e6;}
