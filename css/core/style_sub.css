@@ -137,8 +137,9 @@ button:focus,button:active { box-shadow: none !important; }
  }
 
 /* foot-menu */
-.foot-menu { position:fixed; bottom:80px; right:15px; display: flex; align-items: center; justify-content: flex-end; gap:1.5rem; z-index: 1; } 
+.foot-menu { position:fixed; bottom:80px; right:15px; display: flex; align-items: center; justify-content: flex-end; gap:1rem; z-index: 1; } 
 .foot-menu li { border: solid 1px #eee; border-radius: 50%; min-width:60px; min-height: 60px; display: flex; align-items: center; justify-content: center; cursor: pointer; background-color: #fff; box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.16); } 
+.foot-menu li:last-child {font-size: 18px; } 
 
 
  /* reaction */
