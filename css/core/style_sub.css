@@ -24,7 +24,7 @@ button:focus,button:active { box-shadow: none !important; }
 .btn-next { min-width: 100px; background-color: #515668; } 
 .btn.btn-cj.rec { border-radius: 9.5px; min-width:60px; min-height: 19px; font-size: 11px; padding:0; } 
 
-.btn.btn-rec { border-radius: 9.5px; min-width:40px; height: 19px; font-size: 11px; padding:4px 10px; color:#fff; } 
+.btn.btn-rec { border-radius: 9.5px; min-width:40px; height: 19px; font-size: 11px; padding:4px 10px; color:#fff; vertical-align: middle;} 
 .btn.btn-rec.red { background-color: #ff5050; } 
 .btn.btn-rec.yellow { background-color: #f3890b; } 
 .btn.btn-rec.blue { background-color: #576fc5; } 
@@ -32,6 +32,7 @@ button:focus,button:active { box-shadow: none !important; }
 .ic-graph { width: 22px; height: 22px; border-radius: 4px; background-color: #515668; color:#fff; display: flex; align-items: center; justify-content: center; } 
 .btn.btn-sm-grey { border-radius: 3px; background-color: #a0a7ba; height: 24px; padding:6px 10px; } 
 
+.ic-rec-red{ padding:2px 10px;background-color: #ff5050;border-radius: 10px;font-size: 11px;color:#fff;}
 /* select */
 .form-control.select-box { min-height: 43px; border: 0; background-color: none; font-size: 13px; color: #262829; border-radius: 4px; border: solid 1px #d7d8e1; } 
 .form-control.select-box:focus { box-shadow: none !important; outline: 0; border: solid 1px #d7d8e1; } 
@@ -287,3 +288,11 @@ button:focus,button:active { box-shadow: none !important; }
 .pairing .lookup-table .table-input input { border:0; height: 43px; } 
 
 .proSel-table tr:last-child td{    border-bottom: 1px solid #dee2e6;}
+
+.cell-detail p{margin-bottom: 0;}
+.cell-detail p:nth-child(2){font-size: 14px;}
+.cell-detail p:nth-child(3){font-size: 13px;}
+.cell-detail p:nth-child(4){font-size: 11px;}
+.cell-detail ul{display: flex;}
+.cell-detail ul li{font-size: 11px;border-right: 1px solid #515668;padding:0 3px;}
+.cell-detail ul li:last-child{border-right: 0;}
