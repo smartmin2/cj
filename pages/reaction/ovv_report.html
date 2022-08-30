@@ -228,14 +228,7 @@
                           <colgroup></colgroup>
                           <tbody>
                             <tr>
-                              <th>비교분석View기준</th>
-                              <td class="p-0 round-r">
-                                <select class="form-control cj-selectBox select-box">
-                                  <option>채널</option>
-                                </select>
-                              </td>
-                              <td class="tableEmpty"></td>
-                              <th>시계열분석기준</th>
+                              <th>분석주기</th>
                               <td class="p-0 round-r">
                                 <select class="form-control cj-selectBox select-box">
                                   <option>연간편성</option>
@@ -245,7 +238,7 @@
                                 </select>
                               </td>
                               <td class="tableEmpty"></td>
-                              <th>데이터레이블기준</th>
+                              <th>분석지표</th>
                               <td class="p-0 round-r">
                                 <select class="form-control cj-selectBox select-box">
                                   <option>편수</option>
@@ -253,6 +246,7 @@
                                   <option>편수(비율)</option>
                                 </select>
                               </td>
+                              
                             </tr>
                           </tbody>
                         </table>
@@ -605,14 +599,16 @@
                                 <th>지역구분</th>
                                 <td class="p-0 round-r">
                                   <select class="form-control cj-selectBox select-box">
-                                    <option>전체</option>
+                                    <option>수도권</option>
+                                    <option>전국</option>
                                   </select>
                                 </td>
                                 <td class="tableEmpty"></td>
                                 <th>대상구분</th>
                                 <td class="p-0 round-r">
                                   <select class="form-control cj-selectBox select-box">
-                                    <option>전체</option>
+                                    <option>타겟</option>
+                                    <option>가구</option>
                                   </select>
                                 </td>
                               </tr>
@@ -787,7 +783,7 @@
                                </td>
                             </tr>
                             <tr>
-                              <th><span>프로그램명</span><i class="fa-solid fa-circle-info pl-2"></i></th>
+                              <th>프로그램명<span class="ic-noti"><i class="fa-solid fa-circle-info pl-2"></i><div class="noti-box">설명 툴팁</div></span></th>
                               <td class="d-flex p-1">
                                 <div class="input-group table-input col-md-4"><input type="text" class="form-control" /></div>
                                 <button class="btn btn-cj ml-4">검색</button>
@@ -832,6 +828,7 @@
                   </div>
                 </div>
                 <div class="card card-box mr-0 mt-4 p-4">
+                  <p class="mb-0">◆ "채널"별 구성현황</p>
                   <div class="row mb-4">
                     <div class="col-lg-12">
                       <div class="lookup-table">
@@ -839,7 +836,7 @@
                           <colgroup></colgroup>
                           <tbody>
                             <tr>
-                              <th>분석주기</th>
+                              <th>시계열 분석기준</th>
                               <td class="p-0 round-r">
                                 <select class="form-control cj-selectBox select-box">
                                   <option>연간 편성</option>
@@ -849,7 +846,7 @@
                                 </select>
                               </td>
                               <td class="tableEmpty"></td>
-                              <th>분석지표</th>
+                              <th>데이터레이블 기준</th>
                               <td class="p-0 round-r">
                                 <select class="form-control cj-selectBox select-box">
                                   <option>편수</option>
@@ -889,6 +886,36 @@
                   </div>
                 </div>
                 <div class="card card-box mr-0 mt-4 p-4">
+                  <p class="mb-0">◆ 채널별 시청자 행동 반응 지표 현황</p>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="lookup-table">
+                        <table class="table mb-0">
+                          <colgroup></colgroup>
+                          <tbody>
+                            <tr>
+                              <th>"Tvn"조회기준 대상편수</th>
+                              <td class="p-0 round-r">
+                                <select class="form-control cj-selectBox select-box">
+                                  <option></option>
+                                </select>
+                              </td>
+                              <td class="tableEmpty"></td>
+                              <th>"SBS"조회기준 대상편수</th>
+                              <td class="p-0 round-r">
+                                <select class="form-control cj-selectBox select-box">
+                                  <option></option>
+                                </select>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+        
+                </div>
+                <div class="card card-box mr-0 mt-4 p-4">
                   <ul class="nav nav-tabs cj-tabs">
                     <li class="nav-item">
                       <a class="nav-link active" data-toggle="tab" href="#tvInflow">TV 시청유입지표</a>
@@ -919,28 +946,33 @@
                                     <th>지역구분</th>
                                     <td class="p-0 round-r">
                                       <select class="form-control cj-selectBox select-box">
-                                        <option>전체</option>
+                                        <option>수도권</option>
+                                        <option>전국</option>
                                       </select>
                                     </td>
                                     <td class="tableEmpty"></td>
                                     <th>대상구분</th>
                                     <td class="p-0 round-r">
                                       <select class="form-control cj-selectBox select-box">
-                                        <option>전체</option>
+                                        <option>타겟</option>
+                                        <option>가구</option>
                                       </select>
                                     </td>
                                     <td class="tableEmpty"></td>
                                     <th>성연령별 기준</th>
                                     <td class="p-0 round-r">
                                       <select class="form-control cj-selectBox select-box">
-                                        <option>전체</option>
+                                        <option>5세 단위</option>
+                                        <option>10세 단위</option>
                                       </select>
                                     </td>
                                     <td class="tableEmpty"></td>
-                                    <th>회차별 시청지표</th>
+                                    <th>시청지표</th>
                                     <td class="p-0 round-r">
                                       <select class="form-control cj-selectBox select-box">
-                                        <option>전체</option>
+                                        <option>시청률</option>
+                                        <option>도달율</option>
+                                        <option>평균 시청시간</option>
                                       </select>
                                     </td>
                                   </tr>
@@ -956,6 +988,11 @@
                         </div>
                       </div>
                       <div class="card card-box mr-0 mt-4 p-4">
+                        <div class="cj-btn-group">
+                          <div class="row justify-content-end mr-1 mb-4">
+                            <button class="btn btn-cj open-grid">GRID 확장</button>
+                          </div>
+                        </div>
                         <div class="row">
                           <div class="col-sm-6">
                             <div class="card mr-0">
@@ -970,16 +1007,20 @@
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="card card-box mr-0 mt-4 p-4">
                         <!-- grid 영역 -->
-                        <div id="app5">
+                        <div id="app5" class="mt-4 table-hide">
                           <div id="tvInflowGrid"></div>
                         </div>
                       </div>
+               
                     </div>
                     <div class="tab-pane" id="dgtInflow">
                       <div class="card card-box mr-0 mt-4 p-4">
+                        <div class="cj-btn-group">
+                          <div class="row justify-content-end mr-1 mb-4">
+                            <button class="btn btn-cj open-grid">GRID 확장</button>
+                          </div>
+                        </div>
                         <div class="card-header">디지털 시청 유입 지표</div>
                         <div class="row">
                           <div class="col-sm-4">
@@ -1001,14 +1042,18 @@
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="card card-box mr-0 mt-4 p-4">
-                        <!-- grid 영역 -->
-                        <div class="mt-4" id="app6">
+                         <!-- grid 영역 -->
+                         <div class="mt-4 table-hide" id="app6">
                           <div id="dgtInflowGrid" style="min-height: 180px"></div>
                         </div>
                       </div>
+                    
                       <div class="card card-box mr-0 mt-4 p-4">
+                        <div class="cj-btn-group">
+                          <div class="row justify-content-end mr-1 mb-4">
+                            <button class="btn btn-cj open-grid">GRID 확장</button>
+                          </div>
+                        </div>
                         <p class="card-header">티빙 시청 지표</p>
                         <div class="row">
                           <div class="col-sm-6 pr-0">
@@ -1032,12 +1077,10 @@
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="card card-box mr-0 mt-4 p-4">
-                        <!-- grid 영역 -->
-                        <div id="app7">
-                          <div id="tvingInflowGrid" style="min-height: 180px"></div>
-                        </div>
+                            <!-- grid 영역 -->
+                            <div id="app7" class="mt-4 table-hide">
+                              <div id="tvingInflowGrid" style="min-height: 180px"></div>
+                            </div>
                       </div>
                     </div>
                     <div class="tab-pane" id="appProList">
@@ -1074,31 +1117,36 @@
                                 <colgroup></colgroup>
                                 <tbody>
                                   <tr>
-                                    <th>회차</th>
+                                    <th>지역구분</th>
                                     <td class="p-0 round-r">
                                       <select class="form-control cj-selectBox select-box">
-                                        <option>전체</option>
+                                        <option>수도권</option>
+                                        <option>전국</option>
                                       </select>
                                     </td>
                                     <td class="tableEmpty"></td>
-                                    <th>회차별 시청지표</th>
+                                    <th>대상구분</th>
                                     <td class="p-0 round-r">
                                       <select class="form-control cj-selectBox select-box">
-                                        <option>전체</option>
+                                        <option>타겟</option>
+                                        <option>가구</option>
                                       </select>
                                     </td>
                                     <td class="tableEmpty"></td>
-                                    <th>시청지표조회조건1</th>
+                                    <th>성연령별 기준</th>
                                     <td class="p-0 round-r">
                                       <select class="form-control cj-selectBox select-box">
-                                        <option>전체</option>
+                                        <option>5세 단위</option>
+                                        <option>10세 단위</option>
                                       </select>
                                     </td>
                                     <td class="tableEmpty"></td>
-                                    <th>시청지표조회조건2</th>
+                                    <th>시청지표</th>
                                     <td class="p-0 round-r">
                                       <select class="form-control cj-selectBox select-box">
-                                        <option>전체</option>
+                                        <option>시청률</option>
+                                        <option>도달율</option>
+                                        <option>평균 시청시간</option>
                                       </select>
                                     </td>
                                   </tr>
@@ -1152,23 +1200,53 @@
                                 <tbody>
                                   <tr>
                                     <th>회차</th>
-                                    <td class="p-0 round-r">
-                                      <select class="form-control cj-selectBox select-box">
-                                        <option>전체</option>
-                                      </select>
+                                    <td class="round-r">
+                                      <div class="d-flex align-items-center">
+                                        <div class="open-btn"> 
+                                          <i class="fa-solid fa-plus ic-plus"></i>
+                                          <i class="fa-solid fa-minus ic-minus"></i>
+                                        </div>
+                                        전체
+                                     </div>
+                                      <div class="card m-0 lookup-box">
+                                        <div class="col-sm-1 p-2">
+                                          <button class="btn btn-cj-default">전체</button>
+                                        </div>
+                                        <div class="col-sm-11 p-0">
+                                          <div class="btn-wrap p-2">
+                                            <button class="btn btn-cj-default">드라마전체</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                          </div>
+                                          <div class="btn-wrap p-2">
+                                            <button class="btn btn-cj-default">예능전체</button>
+                                            <button class="btn btn-cj-default">예능종류</button>
+                                            <button class="btn btn-cj-default">예능종류</button>
+                                            <button class="btn btn-cj-default">예능종류</button>
+                                          </div>
+                                        </div>
+                                      </div>
                                     </td>
                                     <td class="tableEmpty"></td>
-                                    <th>회차별 시청지표</th>
+                                    <th>시청지표</th>
                                     <td class="p-0 round-r">
                                       <select class="form-control cj-selectBox select-box">
-                                        <option>전체</option>
+                                        <option>시청률</option>
+                                        <option>도달율</option>
+                                        <option>평균 시청시간</option>
                                       </select>
                                     </td>
                                     <td class="tableEmpty"></td>
                                     <th>성연령 기준</th>
                                     <td class="p-0 round-r">
                                       <select class="form-control cj-selectBox select-box">
-                                        <option>전체</option>
+                                        <option>5세 단위</option>
+                                        <option>10세 단위</option>
                                       </select>
                                     </td>
                                     <td class="tableEmpty"></td>
@@ -1222,16 +1300,52 @@
                                 <tbody>
                                   <tr>
                                     <th>회차</th>
+                                    <td class="round-r">
+                                      <div class="d-flex align-items-center">
+                                        <div class="open-btn"> 
+                                          <i class="fa-solid fa-plus ic-plus"></i>
+                                          <i class="fa-solid fa-minus ic-minus"></i>
+                                        </div>
+                                        전체
+                                     </div>
+                                      <div class="card m-0 lookup-box">
+                                        <div class="col-sm-1 p-2">
+                                          <button class="btn btn-cj-default">전체</button>
+                                        </div>
+                                        <div class="col-sm-11 p-0">
+                                          <div class="btn-wrap p-2">
+                                            <button class="btn btn-cj-default">드라마전체</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                            <button class="btn btn-cj-default">드라마종류</button>
+                                          </div>
+                                          <div class="btn-wrap p-2">
+                                            <button class="btn btn-cj-default">예능전체</button>
+                                            <button class="btn btn-cj-default">예능종류</button>
+                                            <button class="btn btn-cj-default">예능종류</button>
+                                            <button class="btn btn-cj-default">예능종류</button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td class="tableEmpty"></td>
+                                    <th>티빙지표</th>
                                     <td class="p-0 round-r">
                                       <select class="form-control cj-selectBox select-box">
-                                        <option>전체</option>
+                                        <option>UV</option>
+                                        <option>시청지속시간</option>
                                       </select>
                                     </td>
                                     <td class="tableEmpty"></td>
-                                    <th>UV</th>
+                                    <th>시청유형</th>
                                     <td class="p-0 round-r">
                                       <select class="form-control cj-selectBox select-box">
-                                        <option>전체</option>
+                                        <option>Live</option>
+                                        <option>VOD</option>
                                       </select>
                                     </td>
                                   </tr>
@@ -1246,7 +1360,7 @@
                           </div>
                           <div class="col-sm-12 mt-4">
                             <div class="card mr-0">
-                              <div class="card-header">회차별 "선택 채널" 프로그램 평균 티빙 UV</div>
+                              <div class="card-header">회차별 "선택 채널" 프로그램 평균 티빙 UV <span class="justify-content-end">디지털 플랫폼 시청 지표는 회차별 분석이 불가합니다.</span></div>
                               <div class="card-body" style="height: 200px"></div>
                             </div>
                           </div>
@@ -1652,7 +1766,7 @@
                                </td>
                             </tr>
                             <tr>
-                              <th><span>프로그램명</span><i class="fa-solid fa-circle-info pl-2"></i></th>
+                              <th>프로그램명<span class="ic-noti"><i class="fa-solid fa-circle-info pl-2"></i><div class="noti-box">설명 툴팁</div></span></th>
                               <td class="d-flex p-1">
                                 <div class="input-group table-input col-md-4"><input type="text" class="form-control" /></div>
                                 <button class="btn btn-cj ml-4" @click.end="createScenario">선택</button>

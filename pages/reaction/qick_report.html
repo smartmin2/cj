@@ -34,7 +34,7 @@
                     <table class="table mb-0">
                       <tbody>
                         <tr>
-                          <th>프로그램명<i class="fa-solid fa-circle-info pl-2"></i></th>
+                          <th>프로그램명<span class="ic-noti"><i class="fa-solid fa-circle-info pl-2"></i><div class="noti-box">설명 툴팁</div></span></th>
                           <td class="round-r">유퀴즈</td>
                           <td class="tableEmpty"></td>
                           <th>채널</th>
@@ -123,7 +123,7 @@
                         <td colspan="10"></td>
                       </tr>
                       <tr>
-                        <th>개요</th>
+                        <th>개요<button class="btn btn-cj ml-1 py-0 px-2">전체</button></th>
                         <td colspan="10"></td>
                       </tr>
                     </tbody>
@@ -158,21 +158,24 @@
                                   <th>지역구분</th>
                                   <td class="p-0 round-r">
                                     <select class="form-control cj-selectBox select-box">
-                                      <option>전체</option>
+                                      <option>수도권</option>
+                                      <option>전국</option>
                                     </select>
                                   </td>
                                   <td class="tableEmpty"></td>
                                   <th>대상구분</th>
                                   <td class="p-0 round-r">
                                     <select class="form-control cj-selectBox select-box">
-                                      <option>전체</option>
+                                      <option>타겟</option>
+                                      <option>가구</option>
                                     </select>
                                   </td>
                                   <td class="tableEmpty"></td>
                                   <th>성연령별 기준</th>
                                   <td class="p-0 round-r">
                                     <select class="form-control cj-selectBox select-box">
-                                      <option>전체</option>
+                                      <option>5세 단위</option>
+                                      <option>10세 단위</option>
                                     </select>
                                   </td>
                                 </tr>
@@ -208,6 +211,11 @@
                       </div>
                     </div>
                     <div class="card-inner p-4 mt-4">
+                      <div class="cj-btn-group">
+                        <div class="row justify-content-end mr-1 mb-4">
+                          <button class="btn btn-cj open-grid">GRID 확장</button>
+                        </div>
+                      </div>
                       <div class="card-header">디지털 플랫폼 조회 지표</div>
                       <div class="row">
                         <div class="col-sm-4 pr-0">
@@ -230,7 +238,7 @@
                         </div>
                       </div>
                       <!-- grid 영역 -->
-                      <div id="app1" class="mt-4">
+                      <div id="app1" class="mt-4 table-hide">
                         <div id="dgtFormGrid"></div>
                       </div>
                     </div>
@@ -239,6 +247,7 @@
                 <div class="tab-pane" id="recog">
                   <div class="card card-box mr-0 mt-4 p-4">
                     <div class="card-inner p-4">
+                      <p class="mb-0">◆ 시청자 관심도</p>
                       <!-- naver -->
                       <div class="cj-btn-group">
                         <div class="row justify-content-end mr-1 mb-4">
@@ -246,7 +255,7 @@
                         </div>
                       </div>
                       <div class="card mr-0">
-                        <div class="card-header">시청자 관심도</div>
+                        <div class="card-header">플랫폼별 검색량 증감 추이 및 성장률(퀵리뷰 대상 프로그램 vs 同 편성블록 평균)</div>
                         <div class="card-body" style="height: 200px"></div>
                       </div>
                       <!-- grid 영역 -->
@@ -424,6 +433,22 @@
       $(".btn-cj-default").on("click", function () {
         $(this).toggleClass("active");
       });
+      
+      
+      $(".open-grid").on("click", function () {
+        $(this).toggleClass("active");
+
+        if ($(this).hasClass("active")) {
+          $(this).text("GRID 축소");
+          $(".table-hide").show();
+          $(".cj-button-grid").show();
+        } else {
+          $(this).text("GRID 확장");
+          $(".table-hide").hide();
+          $(".cj-button-grid").hide();
+        }
+      });
+     
 
       let dgtFormGrid = "";
       let app1 = {
