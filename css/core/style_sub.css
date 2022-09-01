@@ -301,3 +301,5 @@ button:focus,button:active { box-shadow: none !important; }
 .ic-noti{position: relative;}
 .ic-noti:hover .noti-box{display: block;}
 .noti-box{display: none;position: absolute;left:20px;top:4px;padding:10px;min-width:100px;border:1px solid #515668;background-color: #fff;border-radius: 10px;border-top-left-radius:0;z-index: 2;}
+
+.arrow-wrap p{width:20px; height:20px;border:1px solid #ddd;margin-bottom:0;text-align: center;background-color: #fff;cursor: pointer;border-radius: 2px;}
