@@ -291,7 +291,7 @@ button:focus,button:active { box-shadow: none !important; }
 .cell-detail p:nth-child(2){font-size: 14px;}
 .cell-detail p:nth-child(3){font-size: 13px;}
 .cell-detail p:nth-child(4){font-size: 11px;}
-.cell-detail ul{display: flex;}
+.cell-detail ul{display: flex;align-items: center;justify-content: center;}
 .cell-detail ul li{font-size: 11px;border-right: 1px solid #515668;padding:0 3px;}
 .cell-detail ul li:last-child{border-right: 0;}
 
