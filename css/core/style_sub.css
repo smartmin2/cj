@@ -136,7 +136,13 @@ button:focus,button:active { box-shadow: none !important; }
 
  @media (max-width: 1200px){
  .card-dark .card-inner .card-inner-tit { width:9rem !important; } 
+ .mo-center { text-align: center; justify-content: center !important; } 
  }
+
+ @media (max-width: 1440px){
+
+    }
+   
 
 /* foot-menu */
 .foot-menu { position:fixed; bottom:80px; right:15px; display: flex; align-items: center; justify-content: flex-end; gap:1rem; z-index: 1; } 
