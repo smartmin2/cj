@@ -27,833 +27,2458 @@
       <div id="app">
         <div class="row p-4">
           <div class="col-md-12 program-report">
-            <div class="card card-box mr-0 p-4">
-              <div class="row">
-                <div class="col-lg-8">
-                  <div class="lookup-table">
-                    <table class="table mb-0">
-                      <colgroup>
-                        <col style="width:20%;">
-                        <col style="width:20%;">
-                        <col style="width:10%;">
-                        <col style="width:20%;">
-                        <col style="width:30%;">
-                      </colgroup>
-                      <tbody>
-                        <tr>
-                          <th>프로그램명<span class="ic-noti"><i class="fa-solid fa-circle-info pl-2"></i><div class="noti-box">설명 툴팁</div></span></th>
-                          <td class="round-r">유퀴즈</td>
-                          <td class="tableEmpty"></td>
-                          <th>조회기간</th>
-                          <td class="p-0 round-r">
-                            <div class="date-group">
-                              <input type="date" name="" id="" class="form-control" />~
-                              <input type="date" name="" id="" class="form-control" />
-                            </div>
-                          </td>
-                          <!--<td class="tableEmpty"></td>
-                           <th>시청자 반응 영역</th>
-                          <td>
-                            <div class="row ml-0">
-                              <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
-                                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1" />
-                                <label class="form-check-label" for="radioDefault1"> 행동반응 </label>
-                              </div>
-                              <div class="form-check cj-input-radio d-flex align-items-center">
-                                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault2" />
-                                <label class="form-check-label" for="radioDefault2"> 인지반응 </label>
-                              </div>
-                            </div>
-                          </td> -->
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-                <div class="cj-btn-group my-auto col-lg-4">
-                  <div class="row justify-content-end mr-2">
-                    <button class="btn btn-cj mr-2">조회</button>
-                    <!-- <button class="btn btn-cj-blue"><i class="fa-solid fa-chart-simple"></i>리포트 공유</button> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card card-box mr-0 mt-4 p-4">
-              <div class="row align-items-center">
-                <div class="col-lg-2 col-sm-12 pl-5 pb-4 pr-0 mo-center">
-                  <img src="/img/layer-904.webp" alt="img" />
-                </div>
-                <div class="status-table col-lg-10">
-                  <table class="table mb-0" style="border-spacing: 0;">
-                  <tbody>
-                      <tr>
-                        <th>채널명</th>
-                        <td colspan="3" class="round-r"></td>
-                        <td class="tableEmpty"></td>
-                        <th class="round-l">런칭일</th>
-                        <td colspan="3" class="round-r"></td>
-                        <td class="tableEmpty"></td>
-                        <th class="round-l">편성블록</th>
-                        <td colspan="3" class="round-r"></td>
-                      </tr>
-                  </tbody>
-                  </table>
-                  <table class="table">
-                    <tbody>
-                      <tr>
-                        <th>장르</th>
-                        <th>대표장르</th>
-                        <td colspan="3"></td>
-                        <th>주장르</th>
-                        <td colspan="2"></td>
-                        <th>부장르</th>
-                        <td colspan="3"></td>
-                      </tr>
-                      <tr>
-                        <th>대표소재</th>
-                        <td colspan="5" class="round-r"></td>
-                        <td class="tableEmpty"></td>
-                        <th class="round-l">부소재</th>
-                        <td colspan="5" class="round-r"></td>
-                      </tr>
-                      <tr>
-                        <th>제작진명</th>
-                        <td colspan="12"></td>
-                      </tr>
-                      <tr>
-                        <th>출연진명</th>
-                        <th>(%)회차<button class="btn btn-cj ml-1 py-0 px-2">전체</button></th>
-                        <td colspan="12"></td>
-                      </tr>
-                      <tr>
-                        <th>개요</th>
-                        <td colspan="12"></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <div class="card card-box mr-0 mt-4 p-4">
-              <div class="row">
-                <div class="col-lg-6 col-sm-12">
-                  <div class="card mr-0">
-                    <div class="card-header">시청률 순위</div>
-                    <div class="card-body p-4">
-                      <ul class="rank-box d-flex">
-                        <li class="mr-4">
-                          <div>1위</div>
-                          <span class="green">金 프로그램</span>
-                        </li>
-                        <li class="mr-4">
-                          <div>1위</div>
-                          <span class="orange">대표장르 內</span>
-                        </li>
-                        <li class="mr-4">
-                          <div>1위</div>
-                          <span class="blue">주장르 內</span>
-                        </li>
-                        <li class="mr-4">
-                          <div>1위</div>
-                          <span class="red">편성블록 內 </span>
-                        </li>
-                        <li>
-                          <div>1위</div>
-                          <span class="purple">소재 內</span>
-                        </li>
-                      </ul>
+            <ul class="nav nav-tabs cj-tabs">
+              <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#behavior">시청자 행동반응</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#cognitive">시청자 인지반응</a>
+              </li>
+            </ul>
+            <div class="tab-content mt-4">
+              <div class="tab-pane show active" id="behavior">
+                <div class="card card-box mr-0 p-4">
+                  <div class="row">
+                    <div class="col-lg-8">
+                      <div class="lookup-table">
+                        <table class="table mb-0">
+                          <colgroup>
+                            <col style="width: 20%" />
+                            <col style="width: 20%" />
+                            <col style="width: 10%" />
+                            <col style="width: 20%" />
+                            <col style="width: 30%" />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th>
+                                프로그램명<span class="ic-noti"
+                                  ><i class="fa-solid fa-circle-info pl-2"></i>
+                                  <div class="noti-box">설명 툴팁</div></span
+                                >
+                              </th>
+                              <td class="round-r">유퀴즈</td>
+                              <td class="tableEmpty"></td>
+                              <th>조회기간</th>
+                              <td class="p-0 round-r">
+                                <div class="date-group">
+                                  <input type="date" name="" id="" class="form-control" />~
+                                  <input type="date" name="" id="" class="form-control" />
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="cj-btn-group my-auto col-lg-4">
+                      <div class="row justify-content-end mr-2">
+                        <button class="btn btn-cj mr-2">조회</button>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-6 col-sm-12">
-                  <div class="card mr-0">
-                    <div class="card-header">MPI 순위</div>
-                    <div class="card-body p-4">
-                      <ul class="rank-box d-flex">
-                        <li class="mr-4">
-                          <div>1위</div>
-                          <span class="green">金 프로그램</span>
-                        </li>
-                        <li class="mr-4">
-                          <div>1위</div>
-                          <span class="orange">대표장르 內</span>
-                        </li>
-                        <li class="mr-4">
-                          <div>1위</div>
-                          <span class="blue">주장르 內</span>
-                        </li>
-                        <li class="mr-4">
-                          <div>1위</div>
-                          <span class="red">편성블록 內 </span>
-                        </li>
-                        <li>
-                          <div>1위</div>
-                          <span class="purple">소재 內</span>
-                        </li>
-                      </ul>
+                <div class="card card-box mr-0 mt-4 p-4">
+                  <div class="row align-items-center">
+                    <div class="col-lg-2 col-sm-12 pl-5 pb-4 pr-0 mo-center">
+                      <img src="/img/layer-904.webp" alt="img" />
+                    </div>
+                    <div class="status-table col-lg-10">
+                      <table class="table mb-0" style="border-spacing: 0">
+                        <tbody>
+                          <tr>
+                            <th>채널명</th>
+                            <td colspan="3" class="round-r"></td>
+                            <td class="tableEmpty"></td>
+                            <th class="round-l">런칭일</th>
+                            <td colspan="3" class="round-r"></td>
+                            <td class="tableEmpty"></td>
+                            <th class="round-l">편성블록</th>
+                            <td colspan="3" class="round-r"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <th>장르</th>
+                            <th>대표장르</th>
+                            <td colspan="3"></td>
+                            <th>주장르</th>
+                            <td colspan="2"></td>
+                            <th>부장르</th>
+                            <td colspan="3"></td>
+                          </tr>
+                          <tr>
+                            <th>대표소재</th>
+                            <td colspan="5" class="round-r"></td>
+                            <td class="tableEmpty"></td>
+                            <th class="round-l">부소재</th>
+                            <td colspan="5" class="round-r"></td>
+                          </tr>
+                          <tr>
+                            <th>제작진명</th>
+                            <td colspan="12"></td>
+                          </tr>
+                          <tr>
+                            <th>출연진명</th>
+                            <th>(%)회차<button class="btn btn-cj ml-1 py-0 px-2">전체</button></th>
+                            <td colspan="12"></td>
+                          </tr>
+                          <tr>
+                            <th>개요</th>
+                            <td colspan="12"></td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="card card-box mr-0 mt-4 p-4">
-              <ul class="nav nav-tabs cj-tabs">
-                <li class="nav-item">
-                  <a class="nav-link active" data-toggle="tab" href="#tvInflow">TV시청 유입</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#dgtInflow">디지털 시청 유입</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#dtlTvInflow">상세분석 TV시청 유입</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#dtlDigital">상세분석 디지털 시청</a>
-                </li>
-              </ul>
+                <div class="card card-box mr-0 mt-4 p-4">
+                  <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                      <div class="card mr-0">
+                        <div class="card-header">시청률 순위</div>
+                        <div class="card-body p-4">
+                          <ul class="rank-box d-flex">
+                            <li class="mr-4">
+                              <div>1위</div>
+                              <span class="green">金 프로그램</span>
+                            </li>
+                            <li class="mr-4">
+                              <div>1위</div>
+                              <span class="orange">대표장르 內</span>
+                            </li>
+                            <li class="mr-4">
+                              <div>1위</div>
+                              <span class="blue">주장르 內</span>
+                            </li>
+                            <li class="mr-4">
+                              <div>1위</div>
+                              <span class="red">편성블록 內 </span>
+                            </li>
+                            <li>
+                              <div>1위</div>
+                              <span class="purple">소재 內</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                      <div class="card mr-0">
+                        <div class="card-header">MPI 순위</div>
+                        <div class="card-body p-4">
+                          <ul class="rank-box d-flex">
+                            <li class="mr-4">
+                              <div>1위</div>
+                              <span class="green">金 프로그램</span>
+                            </li>
+                            <li class="mr-4">
+                              <div>1위</div>
+                              <span class="orange">대표장르 內</span>
+                            </li>
+                            <li class="mr-4">
+                              <div>1위</div>
+                              <span class="blue">주장르 內</span>
+                            </li>
+                            <li class="mr-4">
+                              <div>1위</div>
+                              <span class="red">편성블록 內 </span>
+                            </li>
+                            <li>
+                              <div>1위</div>
+                              <span class="purple">소재 內</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-box mr-0 mt-4 p-4">
+                  <ul class="nav nav-tabs cj-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link active" data-toggle="tab" href="#tvInflow">TV시청 유입</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#dgtInflow">디지털 시청 유입</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#dtlTvInflow">상세분석 TV시청 유입</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#dtlDigital">상세분석 디지털 시청</a>
+                    </li>
+                  </ul>
 
-              <div class="tab-content">
-                <div class="tab-pane show active" id="tvInflow">
-                  <div class="card card-box mr-0 mt-4 p-4">
-                    <div class="card-inner p-4">
-                      <div class="row">
-                        <div class="col-sm-10">
-                          <div class="lookup-table">
-                            <table class="table mb-0">
-                              <colgroup></colgroup>
+                  <div class="tab-content">
+                    <div class="tab-pane show active" id="tvInflow">
+                      <div class="card card-box mr-0 mt-4 p-4">
+                        <div class="card-inner p-4">
+                          <div class="row">
+                            <div class="col-sm-10">
+                              <div class="lookup-table">
+                                <table class="table mb-0">
+                                  <colgroup></colgroup>
+                                  <tbody>
+                                    <tr>
+                                      <th>지역구분</th>
+                                      <td class="p-0 round-r">
+                                        <select class="form-control cj-selectBox select-box">
+                                          <option>전체</option>
+                                        </select>
+                                      </td>
+                                      <td class="tableEmpty"></td>
+                                      <th>대상구분</th>
+                                      <td class="p-0 round-r">
+                                        <select class="form-control cj-selectBox select-box">
+                                          <option>전체</option>
+                                        </select>
+                                      </td>
+                                      <td class="tableEmpty"></td>
+                                      <th>성연령별 기준</th>
+                                      <td class="p-0 round-r">
+                                        <select class="form-control cj-selectBox select-box">
+                                          <option>전체</option>
+                                        </select>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                            <div class="cj-btn-group my-auto col-sm-2">
+                              <div class="row justify-content-end mr-2">
+                                <button class="btn btn-cj mr-2">조회</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-inner p-4 mt-4">
+                          <div class="row justify-content-end align-items-center">
+                            <div class="button-group cj-button-grid col-lg-10">
+                              <div class="btn-group" role="group">
+                                <div class="btn-tit p-3">전회차 평균</div>
+                                <button type="button" class="btn btn-cj-default">해당 프로그램</button>
+                                <button type="button" class="btn btn-cj-default">
+                                  同 편성블록<br />
+                                  프로그램 평균
+                                </button>
+                                <button type="button" class="btn btn-cj-default">
+                                  同 대표장르<br />
+                                  프로그램 평균
+                                </button>
+                                <button type="button" class="btn btn-cj-default">
+                                  同 세부장르<br />
+                                  프로그램 평균
+                                </button>
+                                <button type="button" class="btn btn-cj-default">
+                                  同 소재<br />
+                                  프로그램 평균
+                                </button>
+                              </div>
+                            </div>
+                            <div class="cj-btn-group col-sm-12 col-lg-2">
+                              <div class="row justify-content-end mr-2">
+                                <button class="btn btn-cj open-grid">GRID 확장</button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card mr-0 mt-4">
+                            <div class="card-header">수도권 타겟 시청률</div>
+                            <div class="card-body" style="height: 200px"></div>
+                          </div>
+                          <div class="program-table table-hide mt-4">
+                            <table class="table">
+                              <colgroup>
+                                <col style="width: 10%" />
+                                <col style="width: 8%" />
+                                <col style="width: 8%" />
+                                <col />
+                              </colgroup>
                               <tbody>
                                 <tr>
-                                  <th>지역구분</th>
-                                  <td class="p-0 round-r">
-                                    <select class="form-control cj-selectBox select-box">
-                                      <option>전체</option>
-                                    </select>
-                                  </td>
-                                  <td class="tableEmpty"></td>
-                                  <th>대상구분</th>
-                                  <td class="p-0 round-r">
-                                    <select class="form-control cj-selectBox select-box">
-                                      <option>전체</option>
-                                    </select>
-                                  </td>
-                                  <td class="tableEmpty"></td>
-                                  <th>성연령별 기준</th>
-                                  <td class="p-0 round-r">
-                                    <select class="form-control cj-selectBox select-box">
-                                      <option>전체</option>
-                                    </select>
-                                  </td>
+                                  <th rowspan="11">평균시청률</th>
+                                  <td colspan="3">타겟</td>
+                                </tr>
+                                <tr>
+                                  <td rowspan="5" class="text-center">남성</td>
+                                  <td>10대</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>20대</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>30대</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>40대</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>50대이상</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td rowspan="5" class="text-center">여성</td>
+                                  <td>10대</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>20대</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>30대</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>40대</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>50대이상</td>
+                                  <td></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div class="card mr-0 mt-4">
+                            <div class="card-header">수도권 타겟 도달율</div>
+                            <div class="card-body" style="height: 200px"></div>
+                          </div>
+                          <div class="program-table table-hide mt-4">
+                            <table class="table">
+                              <colgroup>
+                                <col style="width: 10%" />
+                                <col style="width: 8%" />
+                                <col style="width: 8%" />
+                                <col />
+                              </colgroup>
+                              <tbody>
+                                <tr>
+                                  <th rowspan="11">평균시청률</th>
+                                  <td colspan="3">타겟</td>
+                                </tr>
+                                <tr>
+                                  <td rowspan="5" class="text-center">남성</td>
+                                  <td>10대</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>20대</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>30대</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>40대</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>50대이상</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td rowspan="5" class="text-center">여성</td>
+                                  <td>10대</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>20대</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>30대</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>40대</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>50대이상</td>
+                                  <td></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div class="card mr-0 mt-4">
+                            <div class="card-header">수도권 타겟 평균 시청시간</div>
+                            <div class="card-body" style="height: 200px"></div>
+                          </div>
+                          <div class="program-table table-hide mt-4">
+                            <table class="table">
+                              <colgroup>
+                                <col style="width: 10%" />
+                                <col style="width: 8%" />
+                                <col style="width: 8%" />
+                                <col />
+                              </colgroup>
+                              <tbody>
+                                <tr>
+                                  <th rowspan="11">평균시청률</th>
+                                  <td colspan="3">타겟</td>
+                                </tr>
+                                <tr>
+                                  <td rowspan="5" class="text-center">남성</td>
+                                  <td>10대</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>20대</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>30대</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>40대</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>50대이상</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td rowspan="5" class="text-center">여성</td>
+                                  <td>10대</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>20대</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>30대</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>40대</td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>50대이상</td>
+                                  <td></td>
                                 </tr>
                               </tbody>
                             </table>
                           </div>
                         </div>
-                        <div class="cj-btn-group my-auto col-sm-2">
-                          <div class="row justify-content-end mr-2">
-                            <button class="btn btn-cj mr-2">조회</button>
+                      </div>
+                    </div>
+                    <div class="tab-pane" id="dgtInflow">
+                      <div class="card card-box mr-0 mt-4 p-4">
+                        <div class="card-inner p-4 mt-4">
+                          <div class="cj-btn-group">
+                            <div class="row justify-content-end mr-1 mb-4">
+                              <button class="btn btn-cj open-grid">GRID 확장</button>
+                            </div>
+                          </div>
+                          <div class="card-header">디지털 플랫폼 시청 지표</div>
+                          <div class="row">
+                            <div class="col-sm-4 pr-0">
+                              <div class="card mr-0">
+                                <div class="card-sub-title">전체 조회수</div>
+                                <div class="card-body" style="height: 200px"></div>
+                              </div>
+                            </div>
+                            <div class="col-sm-4 pr-0 pl-0">
+                              <div class="card mr-0">
+                                <div class="card-sub-title">전체 영상수</div>
+                                <div class="card-body" style="height: 200px"></div>
+                              </div>
+                            </div>
+                            <div class="col-sm-4 pl-0">
+                              <div class="card mr-0">
+                                <div class="card-sub-title">평균 조회수</div>
+                                <div class="card-body" style="height: 200px"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- grid 영역 -->
+                          <div class="program-table table-hide mt-4">
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th rowspan="2"></th>
+                                  <th colspan="3">해당 프로그램</th>
+                                  <th colspan="3">同 시청률 구간 프로그램 평균</th>
+                                  <th colspan="3">同 편성블록 프로그램 평균</th>
+                                  <th colspan="3">同 대표장르 프로그램 평균</th>
+                                  <th colspan="3">同 주장르 프로그램 평균</th>
+                                  <th colspan="3">同 소재 프로그램 평균</th>
+                                </tr>
+                                <tr>
+                                  <th>전체 조회수</th>
+                                  <th>영상수</th>
+                                  <th>평균 조회수</th>
+                                  <th>전체 조회수</th>
+                                  <th>영상수</th>
+                                  <th>평균 조회수</th>
+                                  <th>전체 조회수</th>
+                                  <th>영상수</th>
+                                  <th>평균 조회수</th>
+                                  <th>전체 조회수</th>
+                                  <th>영상수</th>
+                                  <th>평균 조회수</th>
+                                  <th>전체 조회수</th>
+                                  <th>영상수</th>
+                                  <th>평균 조회수</th>
+                                  <th>전체 조회수</th>
+                                  <th>영상수</th>
+                                  <th>평균 조회수</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th colspan="2">디지털 종합 조회수</th>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <th rowspan="2">플랫폼별 조회수</th>
+                                  <th>유튜브</th>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <th>SMR</th>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div class="card-inner p-4 mt-4">
+                          <div class="card-header">티빙 시청 지표</div>
+                          <div class="row">
+                            <div class="col-sm-6 pr-0">
+                              <div class="card mr-0">
+                                <div class="card-sub-title">UV & 인당시청시간</div>
+                                <div class="card-body" style="height: 200px"></div>
+                              </div>
+                            </div>
+                            <div class="col-sm-6 pl-0">
+                              <div class="card mr-0">
+                                <div class="card-sub-title">가입자 기여도</div>
+                                <div class="card-body" style="height: 200px"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row mt-4">
+                            <div class="col-sm-4 pr-0">
+                              <div class="card mr-0">
+                                <div class="card-body" style="height: 200px"></div>
+                              </div>
+                            </div>
+                            <div class="col-sm-8 pl-0">
+                              <div class="card mr-0">
+                                <div class="card-body" style="height: 200px"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- grid 영역 -->
+                          <div class="program-table table-hide mt-4">
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th rowspan="2"></th>
+                                  <th colspan="2">해당 프로그램</th>
+                                  <th colspan="2">同 시청률 구간 프로그램 평균</th>
+                                  <th colspan="2">同 편성블록 프로그램 평균</th>
+                                  <th colspan="2">同 대표장르 프로그램 평균</th>
+                                  <th colspan="2">同 주장르 프로그램 평균</th>
+                                  <th colspan="2">同 소재 프로그램 평균</th>
+                                </tr>
+                                <tr>
+                                  <th>Live</th>
+                                  <th>VOD</th>
+                                  <th>Live</th>
+                                  <th>VOD</th>
+                                  <th>Live</th>
+                                  <th>VOD</th>
+                                  <th>Live</th>
+                                  <th>VOD</th>
+                                  <th>Live</th>
+                                  <th>VOD</th>
+                                  <th>Live</th>
+                                  <th>VOD</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th rowspan="2">티빙 시청 지표</th>
+                                  <th>UV</th>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <th>인당시청시간</th>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <th rowspan="6">남성(비중)</th>
+                                  <th>전체</th>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <th>10대</th>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <th>20대</th>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <th>30대</th>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <th>40대</th>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <th>50이상</th>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <th rowspan="6">여성(비중)</th>
+                                  <th>전체</th>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <th>10대</th>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <th>20대</th>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <th>30대</th>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <th>40대</th>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <th>50이상</th>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <!-- grid 영역 -->
+                          <div class="program-table table-hide mt-4">
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th rowspan="2"></th>
+                                  <th colspan="2">해당 프로그램</th>
+                                  <th colspan="2">同 시청률 구간 프로그램 평균</th>
+                                  <th colspan="2">同 편성블록 프로그램 평균</th>
+                                  <th colspan="2">同 대표장르 프로그램 평균</th>
+                                  <th colspan="2">同 주장르 프로그램 평균</th>
+                                  <th colspan="2">同 소재 프로그램 평균</th>
+                                </tr>
+                                <tr>
+                                  <th>Live</th>
+                                  <th>VOD</th>
+                                  <th>Live</th>
+                                  <th>VOD</th>
+                                  <th>Live</th>
+                                  <th>VOD</th>
+                                  <th>Live</th>
+                                  <th>VOD</th>
+                                  <th>Live</th>
+                                  <th>VOD</th>
+                                  <th>Live</th>
+                                  <th>VOD</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th>티빙 가입자 기여도</th>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                              </tbody>
+                            </table>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="card-inner p-4 mt-4">
-                      <div class="row justify-content-end align-items-center">
-                        <div class="button-group cj-button-grid col-lg-10">
-                          <div class="btn-group" role="group">
-                            <div class="btn-tit p-3">전회차 평균</div>
-                            <button type="button" class="btn btn-cj-default">해당 프로그램</button>
-                            <button type="button" class="btn btn-cj-default">
-                              同 편성블록<br />
-                              프로그램 평균
-                            </button>
-                            <button type="button" class="btn btn-cj-default">
-                              同 대표장르<br />
-                              프로그램 평균
-                            </button>
-                            <button type="button" class="btn btn-cj-default">
-                              同 세부장르<br />
-                              프로그램 평균
-                            </button>
-                            <button type="button" class="btn btn-cj-default">
-                              同 소재<br />
-                              프로그램 평균
-                            </button>
+                    <div class="tab-pane" id="dtlTvInflow">
+                      <div class="card card-box mr-0 mt-4 p-4">
+                        <div class="row">
+                          <div class="col-sm-8">
+                            <div class="lookup-table">
+                              <table class="table mb-0">
+                                <colgroup></colgroup>
+                                <tbody>
+                                  <tr>
+                                    <th>분석주기</th>
+                                    <td>
+                                      <div class="row ml-0">
+                                        <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
+                                          <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault3" />
+                                          <label class="form-check-label" for="radioDefault3"> 분기별 </label>
+                                        </div>
+                                        <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
+                                          <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault4" />
+                                          <label class="form-check-label" for="radioDefault4"> 월별 </label>
+                                        </div>
+                                        <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
+                                          <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault5" />
+                                          <label class="form-check-label" for="radioDefault5"> 주별 </label>
+                                        </div>
+                                        <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
+                                          <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault6" />
+                                          <label class="form-check-label" for="radioDefault6"> 일별 </label>
+                                        </div>
+                                        <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
+                                          <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault7" />
+                                          <label class="form-check-label" for="radioDefault7"> 회차별 </label>
+                                        </div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
                           </div>
                         </div>
-                        <div class="cj-btn-group col-sm-12 col-lg-2">
-                          <div class="row justify-content-end mr-2">
+                      </div>
+                      <div class="card card-box mr-0 mt-4 p-4">
+                        <div class="card-inner p-4 mt-4">
+                          <div class="row">
+                            <div class="col-sm-10">
+                              <div class="lookup-table">
+                                <table class="table mb-0">
+                                  <colgroup>
+                                    <col style="width: 10%" />
+                                    <col style="width: 20%" />
+                                    <col style="width: 2%" />
+                                    <col style="width: 10%" />
+                                    <col style="width: 20%" />
+                                    <col style="width: 2%" />
+                                    <col style="width: 10%" />
+                                    <col style="width: 20%" />
+                                  </colgroup>
+                                  <tbody>
+                                    <tr>
+                                      <th>지역구분</th>
+                                      <td class="p-0 round-r">
+                                        <select class="form-control cj-selectBox select-box">
+                                          <option>수도권</option>
+                                          <option>전국</option>
+                                        </select>
+                                      </td>
+                                      <td class="tableEmpty"></td>
+                                      <th>대상구분</th>
+                                      <td class="p-0 round-r">
+                                        <select class="form-control cj-selectBox select-box">
+                                          <option>타겟</option>
+                                          <option>가구</option>
+                                        </select>
+                                      </td>
+                                      <td class="tableEmpty"></td>
+                                      <th>시청지표</th>
+                                      <td class="p-0 round-r">
+                                        <select class="form-control cj-selectBox select-box">
+                                          <option>시청률</option>
+                                          <option>도달율</option>
+                                          <option>평균시청시간</option>
+                                        </select>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                            <div class="cj-btn-group my-auto col-sm-2">
+                              <div class="row justify-content-end mr-2">
+                                <button class="btn btn-cj mr-2">조회</button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card mr-0 mt-4">
+                            <div class="card-header">회차별 "수도권 타겟 시청률" 해당 프로그램 vs 비교군 프로그램 평균 증감 추이</div>
+                            <div class="card-body" style="height: 200px"></div>
+                          </div>
+                        </div>
+                        <div class="card-inner p-4 mt-4">
+                          <div class="row">
+                            <div class="col-sm-10">
+                              <div class="lookup-table">
+                                <table class="table mb-0">
+                                  <colgroup>
+                                    <col style="width: 10%" />
+                                    <col style="width: 20%" />
+                                    <col style="width: 2%" />
+                                    <col style="width: 10%" />
+                                    <col style="width: 20%" />
+                                    <col style="width: 2%" />
+                                    <col style="width: 10%" />
+                                    <col style="width: 20%" />
+                                  </colgroup>
+                                  <tbody>
+                                    <tr>
+                                      <th>성연령별</th>
+                                      <td class="p-0 round-r">
+                                        <select class="form-control cj-selectBox select-box">
+                                          <option>5세단위</option>
+                                          <option>10세단위</option>
+                                        </select>
+                                      </td>
+                                      <td class="tableEmpty"></td>
+                                      <th>회차별 시청지표</th>
+                                      <td class="p-0 round-r">
+                                        <select class="form-control cj-selectBox select-box">
+                                          <option>시청률</option>
+                                          <option>도달율</option>
+                                          <option>평균시청시간</option>
+                                        </select>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                            <div class="cj-btn-group my-auto col-sm-2">
+                              <div class="row justify-content-end mr-2">
+                                <button class="btn btn-cj mr-2">조회</button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card mr-0 mt-4">
+                            <div class="card-header">회차별 성연령별 "수도권 타겟 시청률" 증감 추이</div>
+                            <div class="card-body" style="height: 200px"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane" id="dtlDigital">
+                      <div class="card card-box mr-0 mt-4 p-4">
+                        <div class="row">
+                          <div class="col-sm-8">
+                            <div class="lookup-table">
+                              <table class="table mb-0">
+                                <colgroup></colgroup>
+                                <tbody>
+                                  <tr>
+                                    <th>분석주기</th>
+                                    <td>
+                                      <div class="row ml-0">
+                                        <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
+                                          <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault3" />
+                                          <label class="form-check-label" for="radioDefault3"> 분기별 </label>
+                                        </div>
+                                        <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
+                                          <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault4" />
+                                          <label class="form-check-label" for="radioDefault4"> 월별 </label>
+                                        </div>
+                                        <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
+                                          <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault5" />
+                                          <label class="form-check-label" for="radioDefault5"> 주별 </label>
+                                        </div>
+                                        <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
+                                          <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault6" />
+                                          <label class="form-check-label" for="radioDefault6"> 일별 </label>
+                                        </div>
+                                        <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
+                                          <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault7" />
+                                          <label class="form-check-label" for="radioDefault7"> 회차별 </label>
+                                        </div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card card-box mr-0 mt-4 p-4">
+                        <div class="card-inner p-4 mt-4">
+                          <div class="mb-0 grid-head">
+                            <p>◆ 디지털 플랫폼 시청 지표</p>
+                            <p>유튜브/SMR은 회차별 데이터 미관리로 주차기준으로 제공함.</p>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-10">
+                              <div class="lookup-table">
+                                <table class="table mb-0">
+                                  <colgroup>
+                                    <col style="width: 10%" />
+                                    <col style="width: 20%" />
+                                    <col style="width: 2%" />
+                                    <col style="width: 10%" />
+                                    <col style="width: 20%" />
+                                    <col style="width: 2%" />
+                                    <col style="width: 10%" />
+                                    <col style="width: 20%" />
+                                  </colgroup>
+                                  <tbody>
+                                    <tr>
+                                      <th>시청 유형</th>
+                                      <td class="p-0 round-r">
+                                        <select class="form-control cj-selectBox select-box">
+                                          <option>종합</option>
+                                          <option>유튜브</option>
+                                          <option>SMR</option>
+                                        </select>
+                                      </td>
+                                      <td class="tableEmpty"></td>
+                                      <th>시청지표</th>
+                                      <td class="p-0 round-r">
+                                        <select class="form-control cj-selectBox select-box">
+                                          <option>전체조회수</option>
+                                          <option>영상수</option>
+                                          <option>평균조회수임</option>
+                                        </select>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                            <div class="cj-btn-group my-auto col-sm-2">
+                              <div class="row justify-content-end mr-2">
+                                <button class="btn btn-cj mr-2">조회</button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card mr-0 mt-4">
+                            <div class="card-header">주차별 "선택 채널" 金 프로그램 평균 "디지털 종합 평균 조회수"</div>
+                            <div class="card-body" style="height: 200px"></div>
+                          </div>
+                        </div>
+                        <div class="card-inner p-4 mt-4">
+                          <div class="mb-2 grid-head">◆ 티빙 지표</div>
+                          <div class="row">
+                            <div class="col-sm-10">
+                              <div class="lookup-table">
+                                <table class="table mb-0">
+                                  <colgroup>
+                                    <col style="width: 10%" />
+                                    <col style="width: 20%" />
+                                    <col style="width: 2%" />
+                                    <col style="width: 10%" />
+                                    <col style="width: 20%" />
+                                    <col style="width: 2%" />
+                                    <col style="width: 10%" />
+                                    <col style="width: 20%" />
+                                  </colgroup>
+                                  <tbody>
+                                    <tr>
+                                      <th>시청 유형</th>
+                                      <td class="p-0 round-r">
+                                        <select class="form-control cj-selectBox select-box">
+                                          <option>Live</option>
+                                          <option>VOD</option>
+                                        </select>
+                                      </td>
+                                      <td class="tableEmpty"></td>
+                                      <th>시청지표</th>
+                                      <td class="p-0 round-r">
+                                        <select class="form-control cj-selectBox select-box">
+                                          <option>UV</option>
+                                          <option>시청시간(티빙Only)</option>
+                                          <option>가입자 기여도</option>
+                                        </select>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                            <div class="cj-btn-group my-auto col-sm-2">
+                              <div class="row justify-content-end mr-2">
+                                <button class="btn btn-cj mr-2">조회</button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card mr-0 mt-4">
+                            <div class="card-header">월별 "선택 채널" 프로그램별 "티빙 live UV"</div>
+                            <div class="card-body" style="height: 200px"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="cognitive">
+                <div class="qick-report">
+                  <div class="card card-box mr-0 p-4">
+                    <div class="row">
+                      <div class="col-lg-8">
+                        <div class="lookup-table">
+                          <table class="table mb-0">
+                            <colgroup>
+                              <col style="width: 20%" />
+                              <col style="width: 20%" />
+                              <col style="width: 10%" />
+                              <col style="width: 20%" />
+                              <col style="width: 30%" />
+                            </colgroup>
+                            <tbody>
+                              <tr>
+                                <th>
+                                  프로그램명<span class="ic-noti"
+                                    ><i class="fa-solid fa-circle-info pl-2"></i>
+                                    <div class="noti-box">설명 툴팁</div></span
+                                  >
+                                </th>
+                                <td class="round-r">유퀴즈</td>
+                                <td class="tableEmpty"></td>
+                                <th>조회기간</th>
+                                <td class="p-0 round-r">
+                                  <div class="date-group">
+                                    <input type="date" name="" id="" class="form-control" />~
+                                    <input type="date" name="" id="" class="form-control" />
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="cj-btn-group my-auto col-lg-4">
+                        <div class="row justify-content-end mr-2">
+                          <button class="btn btn-cj mr-2">조회</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card card-box mr-0 mt-4 p-4">
+                    <div class="row align-items-center">
+                      <div class="col-lg-2 col-sm-12 pl-5 pb-4 pr-0 mo-center">
+                        <img src="/img/layer-904.webp" alt="img" />
+                      </div>
+                      <div class="status-table col-lg-10">
+                        <table class="table mb-0" style="border-spacing: 0">
+                          <tbody>
+                            <tr>
+                              <th>채널명</th>
+                              <td colspan="3" class="round-r"></td>
+                              <td class="tableEmpty"></td>
+                              <th class="round-l">런칭일</th>
+                              <td colspan="3" class="round-r"></td>
+                              <td class="tableEmpty"></td>
+                              <th class="round-l">편성블록</th>
+                              <td colspan="3" class="round-r"></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table class="table">
+                          <tbody>
+                            <tr>
+                              <th>장르</th>
+                              <th>대표장르</th>
+                              <td colspan="3"></td>
+                              <th>주장르</th>
+                              <td colspan="2"></td>
+                              <th>부장르</th>
+                              <td colspan="3"></td>
+                            </tr>
+                            <tr>
+                              <th>대표소재</th>
+                              <td colspan="5" class="round-r"></td>
+                              <td class="tableEmpty"></td>
+                              <th class="round-l">부소재</th>
+                              <td colspan="5" class="round-r"></td>
+                            </tr>
+                            <tr>
+                              <th>제작진명</th>
+                              <td colspan="12"></td>
+                            </tr>
+                            <tr>
+                              <th>출연진명</th>
+                              <th>(%)회차</th>
+                              <td colspan="12"></td>
+                            </tr>
+                            <tr>
+                              <th>개요</th>
+                              <td colspan="12"><button class="btn btn-cj ml-1 py-0 px-2">전체</button></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card card-box mr-0 mt-4 p-4">
+                    <div class="row">
+                      <div class="col-lg-6 col-sm-12">
+                        <div class="card mr-0">
+                          <div class="card-header">시청률 순위</div>
+                          <div class="card-body p-4">
+                            <ul class="rank-box d-flex">
+                              <li class="mr-4">
+                                <div>1위</div>
+                                <span class="green">金 프로그램</span>
+                              </li>
+                              <li class="mr-4">
+                                <div>1위</div>
+                                <span class="orange">대표장르 內</span>
+                              </li>
+                              <li class="mr-4">
+                                <div>1위</div>
+                                <span class="blue">주장르 內</span>
+                              </li>
+                              <li class="mr-4">
+                                <div>1위</div>
+                                <span class="red">편성블록 內 </span>
+                              </li>
+                              <li>
+                                <div>1위</div>
+                                <span class="purple">소재 內</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-sm-12">
+                        <div class="card mr-0">
+                          <div class="card-header">MPI 순위</div>
+                          <div class="card-body p-4">
+                            <ul class="rank-box d-flex">
+                              <li class="mr-4">
+                                <div>1위</div>
+                                <span class="green">金 프로그램</span>
+                              </li>
+                              <li class="mr-4">
+                                <div>1위</div>
+                                <span class="orange">대표장르 內</span>
+                              </li>
+                              <li class="mr-4">
+                                <div>1위</div>
+                                <span class="blue">주장르 內</span>
+                              </li>
+                              <li class="mr-4">
+                                <div>1위</div>
+                                <span class="red">편성블록 內 </span>
+                              </li>
+                              <li>
+                                <div>1위</div>
+                                <span class="purple">소재 內</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="nav nav-tabs cj-tabs mt-4">
+                    <li class="nav-item">
+                      <a class="nav-link active" data-toggle="tab" href="#repImage">대표이미지</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#interest">관심도</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#favorite">호감도</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#attitude">태도</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#evaluation">평가</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#danger">위험인지</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#detailAl">상세 분석</a>
+                    </li>
+                  </ul>
+                  <div class="tab-content">
+                    <div class="tab-pane show active" id="repImage">
+                      <div class="card card-box mr-0 mt-4 p-4">
+                        <div class="button-group mr-3 mb-4 d-flex justify-content-end">
+                          <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-cj-default">반응 수집 채널</button>
+                            <button type="button" class="btn btn-cj-default">전체</button>
+                            <button type="button" class="btn btn-cj-default">네이버/다음 TV</button>
+                            <button type="button" class="btn btn-cj-default">트위터</button>
+                            <button type="button" class="btn btn-cj-default">블로그/카페</button>
+                            <button type="button" class="btn btn-cj-default">커뮤니티</button>
+                          </div>
+                        </div>
+                        <div class="cj-btn-group">
+                          <div class="row justify-content-end mr-1 mb-4">
                             <button class="btn btn-cj open-grid">GRID 확장</button>
                           </div>
                         </div>
-                      </div>
-                      <div class="card mr-0 mt-4">
-                        <div class="card-header">수도권 타겟 시청률</div>
-                        <div class="card-body" style="height: 200px"></div>
-                      </div>
-                      <div class="program-table table-hide mt-4">
-                        <table class="table">
-                          <colgroup>
-                            <col style="width: 10%" />
-                            <col style="width: 8%" />
-                            <col style="width: 8%" />
-                            <col />
-                          </colgroup>
-                          <tbody>
-                            <tr>
-                              <th rowspan="11">평균시청률</th>
-                              <td colspan="3">타겟</td>
-                            </tr>
-                            <tr>
-                              <td rowspan="5" class="text-center">남성</td>
-                              <td>10대</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>20대</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>30대</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>40대</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>50대이상</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td rowspan="5" class="text-center">여성</td>
-                              <td>10대</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>20대</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>30대</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>40대</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>50대이상</td>
-                              <td></td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div class="card mr-0 mt-4">
-                        <div class="card-header">수도권 타겟 도달율</div>
-                        <div class="card-body" style="height: 200px"></div>
-                      </div>
-                      <div class="program-table table-hide mt-4">
-                        <table class="table">
-                          <colgroup>
-                            <col style="width: 10%" />
-                            <col style="width: 8%" />
-                            <col style="width: 8%" />
-                            <col />
-                          </colgroup>
-                          <tbody>
-                            <tr>
-                              <th rowspan="11">평균시청률</th>
-                              <td colspan="3">타겟</td>
-                            </tr>
-                            <tr>
-                              <td rowspan="5" class="text-center">남성</td>
-                              <td>10대</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>20대</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>30대</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>40대</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>50대이상</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td rowspan="5" class="text-center">여성</td>
-                              <td>10대</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>20대</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>30대</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>40대</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>50대이상</td>
-                              <td></td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div class="card mr-0 mt-4">
-                        <div class="card-header">수도권 타겟 평균 시청시간</div>
-                        <div class="card-body" style="height: 200px"></div>
-                      </div>
-                      <div class="program-table table-hide mt-4">
-                        <table class="table">
-                          <colgroup>
-                            <col style="width: 10%" />
-                            <col style="width: 8%" />
-                            <col style="width: 8%" />
-                            <col />
-                          </colgroup>
-                          <tbody>
-                            <tr>
-                              <th rowspan="11">평균시청률</th>
-                              <td colspan="3">타겟</td>
-                            </tr>
-                            <tr>
-                              <td rowspan="5" class="text-center">남성</td>
-                              <td>10대</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>20대</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>30대</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>40대</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>50대이상</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td rowspan="5" class="text-center">여성</td>
-                              <td>10대</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>20대</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>30대</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>40대</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>50대이상</td>
-                              <td></td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-pane" id="dgtInflow">
-                  
-                  <div class="card card-box mr-0 mt-4 p-4">
-                    <div class="card-inner p-4 mt-4">
-                      <div class="cj-btn-group">
-                        <div class="row justify-content-end mr-1 mb-4">
-                          <button class="btn btn-cj open-grid">GRID 확장</button>
-                        </div>
-                      </div>
-                      <div class="card-header">디지털 플랫폼 시청 지표</div>
-                      <div class="row">
-                        <div class="col-sm-4 pr-0">
-                          <div class="card mr-0">
-                            <div class="card-sub-title">전체 조회수</div>
-                            <div class="card-body" style="height: 200px"></div>
+                        <div class="row">
+                          <div class="col-sm-4 pr-0">
+                            <div class="card mr-0">
+                              <div class="card-header">런칭전</div>
+                              <div class="card-body" style="height: 200px"></div>
+                            </div>
+                          </div>
+                          <div class="col-sm-4 pr-0 pl-0">
+                            <div class="card mr-0">
+                              <div class="card-header">런칭주차</div>
+                              <div class="card-body" style="height: 200px"></div>
+                            </div>
+                          </div>
+                          <div class="col-sm-4 pl-0">
+                            <div class="card mr-0">
+                              <div class="card-header">전회차 총합</div>
+                              <div class="card-body" style="height: 200px"></div>
+                            </div>
                           </div>
                         </div>
-                        <div class="col-sm-4 pr-0 pl-0">
-                          <div class="card mr-0">
-                            <div class="card-sub-title">전체 영상수</div>
-                            <div class="card-body" style="height: 200px"></div>
-                          </div>
-                        </div>
-                        <div class="col-sm-4 pl-0">
-                          <div class="card mr-0">
-                            <div class="card-sub-title">평균 조회수</div>
-                            <div class="card-body" style="height: 200px"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- grid 영역 -->
-                      <div id="app1" class="mt-4 table-hide">
-                        <div id="dgtInflowGrid"></div>
-                      </div>
-                    </div>
-                    <div class="card-inner p-4 mt-4">
-                      <div class="cj-btn-group">
-                        <div class="row justify-content-end mr-1 mb-4">
-                          <button class="btn btn-cj open-grid">GRID 확장</button>
-                        </div>
-                      </div>
-                      <div class="card-header">티빙 시청 지표</div>
-                      <div class="row">
-                        <div class="col-sm-6 pr-0">
-                          <div class="card mr-0">
-                            <div class="card-sub-title">UV & 인당시청시간</div>
-                            <div class="card-body" style="height: 200px"></div>
-                          </div>
-                        </div>
-                        <div class="col-sm-6 pl-0">
-                          <div class="card mr-0">
-                            <div class="card-sub-title">가입자 기여도</div>
-                            <div class="card-body" style="height: 200px"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row mt-4">
-                        <div class="col-sm-4 pr-0">
-                          <div class="card mr-0">
-                            <div class="card-body" style="height: 200px"></div>
-                          </div>
-                        </div>
-                        <div class="col-sm-8 pl-0">
-                          <div class="card mr-0">
-                            <div class="card-body" style="height: 200px"></div>
-                          </div>
-                        </div>
-                      </div>
-                       <!-- grid 영역 -->
-                       <div id="app2" class="mt-4 table-hide">
-                        <div id="dgtTotalGrid"></div>
-                      </div>
-                      <!-- grid 영역 -->
-                      <div id="app3" class="mt-4 table-hide">
-                        <div id="tvingWatchGrid"></div>
-                      </div>
-                      <!-- grid 영역 -->
-                      <div id="app4" class="mt-4 table-hide">
-                        <div id="tvingJoinGrid"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-pane" id="dtlTvInflow">
-                  <div class="card card-box mr-0 mt-4 p-4">
-                    <div class="row">
-                      <div class="col-sm-8">
-                        <div class="lookup-table">
-                          <table class="table mb-0">
-                            <colgroup></colgroup>
+                        <!-- grid 영역 -->
+                        <div class="program-table table-hide mt-4">
+                          <table class="table">
+                            <colgroup>
+                              <col style="width: 5%" />
+                            </colgroup>
+                            <thead>
+                              <tr>
+                                <th></th>
+                                <th colspan="6">런칭 전</th>
+                                <th colspan="6">런칭 주차</th>
+                                <th colspan="6">전회차 총합</th>
+                              </tr>
+                              <tr>
+                                <th>키워드</th>
+                                <th>해당 프로그램</th>
+                                <th>同 시청률 프로그램 평균</th>
+                                <th>同 편성블록 프로그램 평균</th>
+                                <th>同 대표장르 프로그램 평균</th>
+                                <th>同 세부장르 프로그램 평균</th>
+                                <th>同 소재 프로그램 평균</th>
+                                <th>해당 프로그램</th>
+                                <th>同 시청률 프로그램 평균</th>
+                                <th>同 편성블록 프로그램 평균</th>
+                                <th>同 대표장르 프로그램 평균</th>
+                                <th>同 세부장르 프로그램 평균</th>
+                                <th>同 소재 프로그램 평균</th>
+                                <th>해당 프로그램</th>
+                                <th>同 시청률 프로그램 평균</th>
+                                <th>同 편성블록 프로그램 평균</th>
+                                <th>同 대표장르 프로그램 평균</th>
+                                <th>同 세부장르 프로그램 평균</th>
+                                <th>同 소재 프로그램 평균</th>
+                              </tr>
+                            </thead>
                             <tbody>
                               <tr>
-                                <th>분석주기</th>
-                                <td>
-                                  <div class="row ml-0">
-                                    <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
-                                      <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault3" />
-                                      <label class="form-check-label" for="radioDefault3"> 분기별 </label>
-                                    </div>
-                                    <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
-                                      <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault4" />
-                                      <label class="form-check-label" for="radioDefault4"> 월별 </label>
-                                    </div>
-                                    <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
-                                      <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault5" />
-                                      <label class="form-check-label" for="radioDefault5"> 주별 </label>
-                                    </div>
-                                    <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
-                                      <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault6" />
-                                      <label class="form-check-label" for="radioDefault6"> 일별 </label>
-                                    </div>
-                                    <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
-                                      <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault7" />
-                                      <label class="form-check-label" for="radioDefault7"> 회차별 </label>
-                                    </div>
-                                  </div>
-                                </td>
+                                <th>따뜻함</th>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                              </tr>
+                              <tr>
+                                <th>감동적인</th>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                              </tr>
+                              <tr>
+                                <th>신선한</th>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
+                                <td>56000</td>
                               </tr>
                             </tbody>
                           </table>
                         </div>
+                        <div class="row mt-4">
+                          <div class="col-sm-6 pr-0">
+                            <div class="card mr-0">
+                              <div class="card-header">해당 프로그램 "총언급량" 런칭전 vs 런칭후 비교</div>
+                              <div class="card-body" style="height: 200px"></div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 pl-0">
+                            <div class="card mr-0">
+                              <div class="card-header">해당 프로그램 "총언급량" vs 비교군 프로그램 평균 비교</div>
+                              <div class="card-body" style="height: 200px"></div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="card card-box mr-0 mt-4 p-4">
-                    <div class="card-inner p-4 mt-4">
-                      <div class="row">
-                        <div class="col-sm-10">
-                          <div class="lookup-table">
-                            <table class="table mb-0">
-                              <colgroup>
-                                <col style="width: 10%" />
-                                <col style="width: 20%" />
-                                <col style="width: 2%" />
-                                <col style="width: 10%" />
-                                <col style="width: 20%" />
-                                <col style="width: 2%" />
-                                <col style="width: 10%" />
-                                <col style="width: 20%" />
-                              </colgroup>
+                    <div class="tab-pane" id="interest">
+                      <div class="card card-box mr-0 mt-4 p-4">
+                        <div class="card-inner p-4">
+                          <div class="button-group mr-3 mb-4 d-flex justify-content-end">
+                            <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-cj-default">반응 수집 채널</button>
+                              <button type="button" class="btn btn-cj-default">네이버</button>
+                              <button type="button" class="btn btn-cj-default">구글</button>
+                              <button type="button" class="btn btn-cj-default">유튜브</button>
+                            </div>
+                          </div>
+                          <div class="card-header">조회 프로그램 평균 검색량 추이</div>
+                          <div class="row">
+                            <div class="col-sm-6 pr-0">
+                              <div class="card mr-0">
+                                <div class="card-sub-title">런칭전</div>
+                                <div class="card-body" style="height: 200px"></div>
+                              </div>
+                            </div>
+                            <div class="col-sm-6 pl-0">
+                              <div class="card mr-0">
+                                <div class="card-sub-title">런칭후</div>
+                                <div class="card-body" style="height: 200px"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-inner p-4 mt-4">
+                          <div class="cj-btn-group">
+                            <div class="row justify-content-end mr-1 mb-4">
+                              <button class="btn btn-cj open-grid">GRID 확장</button>
+                            </div>
+                          </div>
+                          <div class="card-header">조회 프로그램 평균 검색량 성장률</div>
+                          <div class="pr-0">
+                            <div class="card mr-0">
+                              <div class="card-body" style="height: 200px"></div>
+                            </div>
+                          </div>
+                          <!-- grid 영역 -->
+                          <div class="program-table table-hide mt-4">
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th></th>
+                                  <th>해당 프로그램</th>
+                                  <th>同 시청률 프로그램 평균</th>
+                                  <th>同 편성블록 프로그램 평균</th>
+                                  <th>同 대표장르 프로그램 평균</th>
+                                  <th>同 세부장르 프로그램 평균</th>
+                                  <th>同 소재 프로그램 평균</th>
+                                </tr>
+                              </thead>
                               <tbody>
                                 <tr>
-                                  <th>지역구분</th>
-                                  <td class="p-0 round-r">
-                                    <select class="form-control cj-selectBox select-box">
-                                      <option>수도권</option>
-                                      <option>전국</option>
-                                    </select>
-                                  </td>
-                                  <td class="tableEmpty"></td>
-                                  <th>대상구분</th>
-                                  <td class="p-0 round-r">
-                                    <select class="form-control cj-selectBox select-box">
-                                      <option>타겟</option>
-                                      <option>가구</option>
-                                    </select>
-                                  </td>
-                                  <td class="tableEmpty"></td>
-                                  <th>시청지표</th>
-                                  <td class="p-0 round-r">
-                                    <select class="form-control cj-selectBox select-box">
-                                      <option>시청률</option>
-                                      <option>도달율</option>
-                                      <option>평균시청시간</option>
-                                    </select>
-                                  </td>
+                                  <th>런칭30일 전 ~ 런칭일</th>
+                                  <td>10%</td>
+                                  <td>11%</td>
+                                  <td>10%</td>
+                                  <td>12%</td>
+                                  <td>9%</td>
+                                  <td>10%</td>
+                                </tr>
+                                <tr>
+                                  <th>런칭7일 전 ~ 런칭일</th>
+                                  <td>14%</td>
+                                  <td>12%</td>
+                                  <td>11%</td>
+                                  <td>11%</td>
+                                  <td>1~0%</td>
+                                  <td>9%</td>
+                                </tr>
+                                <tr>
+                                  <th>런칭일 ~ 런칭1일후</th>
+                                  <td>-10%</td>
+                                  <td>-9%</td>
+                                  <td>-11%</td>
+                                  <td>-10%</td>
+                                  <td>-7%</td>
+                                  <td>-10%</td>
+                                </tr>
+                                <tr>
+                                  <th>런칭일 이후 주평균 성장률</th>
+                                  <td>21%</td>
+                                  <td>20%</td>
+                                  <td>18%</td>
+                                  <td>15%</td>
+                                  <td>22%</td>
+                                  <td>19%</td>
                                 </tr>
                               </tbody>
                             </table>
                           </div>
                         </div>
-                        <div class="cj-btn-group my-auto col-sm-2">
-                          <div class="row justify-content-end mr-2">
-                            <button class="btn btn-cj mr-2">조회</button>
+                        <div class="card-inner p-4 mt-4">
+                          <div class="card-header">조회 프로그램 평균 총 언급량</div>
+                          <div class="row">
+                            <div class="col-sm-6 pr-0">
+                              <div class="card mr-0">
+                                <div class="card-sub-title">런칭전</div>
+                                <div class="card-body" style="height: 200px"></div>
+                              </div>
+                            </div>
+                            <div class="col-sm-6 pl-0">
+                              <div class="card mr-0">
+                                <div class="card-sub-title">런칭후</div>
+                                <div class="card-body" style="height: 200px"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- grid 영역 -->
+                          <div id="app3" class="mt-4 table-hide">
+                            <div id="itrMentionGrid"></div>
+                          </div>
+                        </div>
+                        <div class="card-inner p-4 mt-4">
+                          <div class="card mr-0">
+                            <div class="card-header">MPI인지도</div>
+                            <div class="card-body" style="height: 200px"></div>
+                          </div>
+                          <!-- grid 영역 -->
+                          <div id="app4" class="mt-4 table-hide">
+                            <div id="mpiGrid"></div>
                           </div>
                         </div>
                       </div>
-                      <div class="card mr-0 mt-4">
-                        <div class="card-header">회차별 "수도권 타겟 시청률" 해당 프로그램 vs 비교군 프로그램 평균 증감 추이</div>
-                        <div class="card-body" style="height: 200px"></div>
+                    </div>
+                    <div class="tab-pane" id="favorite">
+                      <div class="card card-box mr-0 p-4 mt-4">
+                        <div class="button-group mr-3 mb-4 d-flex justify-content-end">
+                          <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-cj-default">반응 수집 채널</button>
+                            <button type="button" class="btn btn-cj-default">전체</button>
+                            <button type="button" class="btn btn-cj-default">네이버/다음 TV</button>
+                            <button type="button" class="btn btn-cj-default">트위터</button>
+                            <button type="button" class="btn btn-cj-default">블로그/카페</button>
+                            <button type="button" class="btn btn-cj-default">커뮤니티</button>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-sm-6 pr-0">
+                            <div class="card mr-0">
+                              <div class="card-header">런칭 전</div>
+                              <div class="card-body" style="height: 200px"></div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 pl-0">
+                            <div class="card mr-0">
+                              <div class="card-header">런칭 후</div>
+                              <div class="card-body" style="height: 200px"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- grid 영역 -->
+                        <div id="app5" class="mt-4">
+                          <div id="favoriteGrid"></div>
+                        </div>
                       </div>
                     </div>
-                    <div class="card-inner p-4 mt-4">
-                      <div class="row">
-                        <div class="col-sm-10">
-                          <div class="lookup-table">
-                            <table class="table mb-0">
-                              <colgroup>
-                                <col style="width: 10%" />
-                                <col style="width: 20%" />
-                                <col style="width: 2%" />
-                                <col style="width: 10%" />
-                                <col style="width: 20%" />
-                                <col style="width: 2%" />
-                                <col style="width: 10%" />
-                                <col style="width: 20%" />
-                              </colgroup>
+                    <div class="tab-pane" id="attitude">
+                      <div class="card card-box mr-0 p-4 mt-4">
+                        <div class="card-inner p-4">
+                          <div class="row">
+                            <div class="col-sm-10">
+                              <div class="lookup-table">
+                                <table class="table mb-0">
+                                  <colgroup></colgroup>
+                                  <tbody>
+                                    <tr>
+                                      <th>충성도 비중</th>
+                                      <td class="p-0 round-r">
+                                        <select class="form-control cj-selectBox select-box">
+                                          <option>30%</option>
+                                          <option>40%</option>
+                                          <option>50%</option>
+                                          <option>60%</option>
+                                          <option>70%</option>
+                                          <option>80%</option>
+                                          <option>90%</option>
+                                          <option>100%</option>
+                                        </select>
+                                      </td>
+                                      <td class="tableEmpty"></td>
+                                      <th>성연령별 기준</th>
+                                      <td class="p-0 round-r">
+                                        <select class="form-control cj-selectBox select-box">
+                                          <option>5세단위</option>
+                                          <option>10세단위</option>
+                                        </select>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                            <div class="cj-btn-group my-auto col-sm-2">
+                              <div class="row justify-content-end mr-2">
+                                <button class="btn btn-cj mr-2">조회</button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="cj-btn-group">
+                            <div class="row justify-content-end mr-1 mb-4">
+                              <button class="btn btn-cj open-grid">GRID 확장</button>
+                            </div>
+                          </div>
+                          <div class="card mr-0">
+                            <div class="card-header">시청자 충성도</div>
+                            <div class="card-body" style="height: 200px"></div>
+                          </div>
+                          <!-- grid 영역 -->
+                          <div class="program-table table-hide mt-4">
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th colspan="2">"80%" 이상 시청지속 비율</th>
+                                  <th>해당 프로그램</th>
+                                  <th>同 시청률 프로그램 평균</th>
+                                  <th>同 편성블록 프로그램 평균</th>
+                                  <th>同 대표장르 프로그램 평균</th>
+                                  <th>同 세부장르 프로그램 평균</th>
+                                  <th>同 소재 프로그램 평균</th>
+                                </tr>
+                              </thead>
                               <tbody>
                                 <tr>
-                                  <th>성연령별</th>
-                                  <td class="p-0 round-r">
-                                    <select class="form-control cj-selectBox select-box">
-                                      <option>5세단위</option>
-                                      <option>10세단위</option>
-                                    </select>
-                                  </td>
-                                  <td class="tableEmpty"></td>
-                                  <th>회차별 시청지표</th>
-                                  <td class="p-0 round-r">
-                                    <select class="form-control cj-selectBox select-box">
-                                      <option>시청률</option>
-                                      <option>도달율</option>
-                                      <option>평균시청시간</option>
-                                    </select>
-                                  </td>
+                                  <th colspan="2">타겟</th>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                </tr>
+                                <tr>
+                                  <th rowspan="6">남성</th>
+                                  <th>전체</th>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                </tr>
+                                <tr>
+                                  <th>10대</th>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                </tr>
+                                <tr>
+                                  <th>20대</th>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                </tr>
+                                <tr>
+                                  <th>30대</th>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                </tr>
+                                <tr>
+                                  <th>40대</th>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                </tr>
+                                <tr>
+                                  <th>50이상</th>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                </tr>
+                                <tr>
+                                  <th rowspan="6">여성</th>
+                                  <th>전체</th>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                </tr>
+                                <tr>
+                                  <th>10대</th>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                </tr>
+                                <tr>
+                                  <th>20대</th>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                </tr>
+                                <tr>
+                                  <th>30대</th>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                </tr>
+                                <tr>
+                                  <th>40대</th>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                </tr>
+                                <tr>
+                                  <th>50이상</th>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
+                                  <td>65.3%</td>
                                 </tr>
                               </tbody>
                             </table>
                           </div>
                         </div>
-                        <div class="cj-btn-group my-auto col-sm-2">
-                          <div class="row justify-content-end mr-2">
-                            <button class="btn btn-cj mr-2">조회</button>
+                        <div class="card-inner p-4 mt-4">
+                          <div class="button-group mr-3 mb-4 d-flex justify-content-end">
+                            <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-cj-default">반응 수집 채널</button>
+                              <button type="button" class="btn btn-cj-default">전체</button>
+                              <button type="button" class="btn btn-cj-default">네이버/다음 TV</button>
+                              <button type="button" class="btn btn-cj-default">트위터</button>
+                              <button type="button" class="btn btn-cj-default">블로그/카페</button>
+                              <button type="button" class="btn btn-cj-default">커뮤니티</button>
+                            </div>
                           </div>
-                        </div>
-                      </div>
-                      <div class="card mr-0 mt-4">
-                        <div class="card-header">회차별 성연령별 "수도권 타겟 시청률" 증감 추이</div>
-                        <div class="card-body" style="height: 200px"></div>
-                      </div>
-                    </div>
-                  </div>
-                
-                </div>
-                  <div class="tab-pane" id="dtlDigital">
-                  <div class="card card-box mr-0 mt-4 p-4">
-                    <div class="row">
-                      <div class="col-sm-8">
-                        <div class="lookup-table">
-                          <table class="table mb-0">
-                            <colgroup></colgroup>
-                            <tbody>
-                              <tr>
-                                <th>분석주기</th>
-                                <td>
-                                  <div class="row ml-0">
-                                    <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
-                                      <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault3" />
-                                      <label class="form-check-label" for="radioDefault3"> 분기별 </label>
-                                    </div>
-                                    <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
-                                      <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault4" />
-                                      <label class="form-check-label" for="radioDefault4"> 월별 </label>
-                                    </div>
-                                    <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
-                                      <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault5" />
-                                      <label class="form-check-label" for="radioDefault5"> 주별 </label>
-                                    </div>
-                                    <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
-                                      <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault6" />
-                                      <label class="form-check-label" for="radioDefault6"> 일별 </label>
-                                    </div>
-                                    <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
-                                      <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault7" />
-                                      <label class="form-check-label" for="radioDefault7"> 회차별 </label>
-                                    </div>
-                                  </div>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card card-box mr-0 mt-4 p-4">
-                    <div class="card-inner p-4 mt-4">
-                      <div class="mb-0 grid-head">
-                        <p>◆ 디지털 플랫폼 시청 지표</p>
-                        <p>유튜브/SMR은 회차별 데이터 미관리로 주차기준으로 제공함.</p>
-                      </div>
-                      <div class="row">
-                        <div class="col-sm-10">
-                          <div class="lookup-table">
-                            <table class="table mb-0">
-                              <colgroup>
-                                <col style="width: 10%" />
-                                <col style="width: 20%" />
-                                <col style="width: 2%" />
-                                <col style="width: 10%" />
-                                <col style="width: 20%" />
-                                <col style="width: 2%" />
-                                <col style="width: 10%" />
-                                <col style="width: 20%" />
-                              </colgroup>
+                          <div class="cj-btn-group">
+                            <div class="row justify-content-end mr-1 mb-4">
+                              <button class="btn btn-cj open-grid">GRID 확장</button>
+                            </div>
+                          </div>
+                          <div class="card mr-0">
+                            <div class="card-header">충성도 언급</div>
+                            <div class="row">
+                              <div class="col-sm-6 pr-0">
+                                <div class="card mr-0">
+                                  <div class="card-sub-title">런칭전</div>
+                                  <div class="card-body" style="height: 200px"></div>
+                                </div>
+                              </div>
+                              <div class="col-sm-6 pl-0">
+                                <div class="card mr-0">
+                                  <div class="card-sub-title">런칭후</div>
+                                  <div class="card-body" style="height: 200px"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- grid 영역 -->
+                          <div class="program-table table-hide mt-4">
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th colspan="2" rowspan="2"></th>
+                                  <th colspan="2">런칭전</th>
+                                  <th colspan="6">런칭후</th>
+                                </tr>
+                                <tr>
+                                  <th>긍정평가 총</th>
+                                  <th>부정평가 총</th>
+                                  <th>긍정평가 총</th>
+                                  <th>긍정평가 주</th>
+                                  <th>긍정평가 주</th>
+                                  <th>부정평가 총</th>
+                                  <th>부정평가 주</th>
+                                  <th>부정평가 주평균 언급 성장률</th>
+                                </tr>
+                              </thead>
                               <tbody>
                                 <tr>
-                                  <th>시청 유형</th>
-                                  <td class="p-0 round-r">
-                                    <select class="form-control cj-selectBox select-box">
-                                      <option>종합</option>
-                                      <option>유튜브</option>
-                                      <option>SMR</option>
-                                    </select>
-                                  </td>
-                                  <td class="tableEmpty"></td>
-                                  <th>시청지표</th>
-                                  <td class="p-0 round-r">
-                                    <select class="form-control cj-selectBox select-box">
-                                      <option>전체조회수</option>
-                                      <option>영상수</option>
-                                      <option>평균조회수임</option>
-                                    </select>
-                                  </td>
+                                  <th rowspan="2">"선택 채널 A" 조회 프로그램 평균</th>
+                                  <th>언급량</th>
+                                  <td>2300</td>
+                                  <td>2300</td>
+                                  <td>2300</td>
+                                  <td>2300</td>
+                                  <td>2300</td>
+                                  <td>2300</td>
+                                  <td>2300</td>
+                                  <td>2300</td>
+                                </tr>
+                                <tr>
+                                  <th>언급 비중</th>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                </tr>
+                                <tr>
+                                  <th rowspan="2">"선택 채널 B" 조회 프로그램 평균</th>
+                                  <th>언급량</th>
+                                  <td>2300</td>
+                                  <td>2300</td>
+                                  <td>2300</td>
+                                  <td>2300</td>
+                                  <td>2300</td>
+                                  <td>2300</td>
+                                  <td>2300</td>
+                                  <td>2300</td>
+                                </tr>
+                                <tr>
+                                  <th>언급 비중</th>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                  <td>23%</td>
                                 </tr>
                               </tbody>
                             </table>
                           </div>
                         </div>
-                        <div class="cj-btn-group my-auto col-sm-2">
-                          <div class="row justify-content-end mr-2">
-                            <button class="btn btn-cj mr-2">조회</button>
+                        <div class="card-inner p-4 mt-4">
+                          <div class="cj-btn-group">
+                            <div class="row justify-content-end mr-1 mb-4">
+                              <button class="btn btn-cj open-grid">GRID 확장</button>
+                            </div>
                           </div>
+                          <div class="card-header">시청자 기대감</div>
+                          <div class="row">
+                            <div class="col-sm-6 pr-0">
+                              <div class="card mr-0">
+                                <div class="card-sub-title">런칭전</div>
+                                <div class="card-body" style="height: 200px"></div>
+                              </div>
+                            </div>
+                            <div class="col-sm-6 pl-0">
+                              <div class="card mr-0">
+                                <div class="card-sub-title">런칭후</div>
+                                <div class="card-body" style="height: 200px"></div>
+                              </div>
+                            </div>
+                          </div>
+                            <!-- grid 영역 -->
+                            <div class="program-table table-hide mt-4">
+                              <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th colspan="2" rowspan="2"></th>
+                                    <th colspan="2">런칭전</th>
+                                    <th colspan="6">런칭후</th>
+                                  </tr>
+                                  <tr>
+                                    <th>긍정평가 총</th>
+                                    <th>부정평가 총</th>
+                                    <th>긍정평가 총</th>
+                                    <th>긍정평가 주</th>
+                                    <th>긍정평가 주</th>
+                                    <th>부정평가 총</th>
+                                    <th>부정평가 주</th>
+                                    <th>부정평가 주평균 언급 성장률</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th rowspan="2">"선택 채널 A" 조회 프로그램 평균</th>
+                                    <th>언급량</th>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                  </tr>
+                                  <tr>
+                                    <th>언급 비중</th>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                  </tr>
+                                  <tr>
+                                    <th rowspan="2">"선택 채널 B" 조회 프로그램 평균</th>
+                                    <th>언급량</th>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                  </tr>
+                                  <tr>
+                                    <th>언급 비중</th>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
                         </div>
                       </div>
-                      <div class="card mr-0 mt-4">
-                        <div class="card-header">주차별 "선택 채널" 金 프로그램 평균 "디지털 종합 평균 조회수"</div>
-                        <div class="card-body" style="height: 200px"></div>
+                    </div>
+                    <div class="tab-pane" id="evaluation">
+                      <div class="card card-box mr-0 p-4 mt-4">
+                        <div class="card-inner p-4">
+                          <div class="cj-btn-group">
+                            <div class="row justify-content-end mr-1 mb-4">
+                              <button class="btn btn-cj open-grid">GRID 확장</button>
+                            </div>
+                          </div>
+                          <div class="card-header">출연진 경쟁력 평가</div>
+                          <div class="row">
+                            <div class="col-sm-6 pr-0">
+                              <div class="card mr-0">
+                                <div class="card-sub-title">런칭전</div>
+                                <div class="card-body" style="height: 200px"></div>
+                              </div>
+                            </div>
+                            <div class="col-sm-6 pl-0">
+                              <div class="card mr-0">
+                                <div class="card-sub-title">런칭후</div>
+                                <div class="card-body" style="height: 200px"></div>
+                              </div>
+                            </div>
+                          </div>
+                            <!-- grid 영역 -->
+                            <div class="program-table table-hide mt-4">
+                              <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th colspan="2" rowspan="2"></th>
+                                    <th colspan="2">런칭전</th>
+                                    <th colspan="6">런칭후</th>
+                                  </tr>
+                                  <tr>
+                                    <th>긍정평가 총</th>
+                                    <th>부정평가 총</th>
+                                    <th>긍정평가 총</th>
+                                    <th>긍정평가 주</th>
+                                    <th>긍정평가 주</th>
+                                    <th>부정평가 총</th>
+                                    <th>부정평가 주</th>
+                                    <th>부정평가 주평균 언급 성장률</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th rowspan="2">"선택 채널 A" 조회 프로그램 평균</th>
+                                    <th>언급량</th>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                  </tr>
+                                  <tr>
+                                    <th>언급 비중</th>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                  </tr>
+                                  <tr>
+                                    <th rowspan="2">"선택 채널 B" 조회 프로그램 평균</th>
+                                    <th>언급량</th>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                  </tr>
+                                  <tr>
+                                    <th>언급 비중</th>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                        </div>
+                        <div class="card-inner p-4 mt-4">
+                          <div class="cj-btn-group">
+                            <div class="row justify-content-end mr-1 mb-4">
+                              <button class="btn btn-cj open-grid">GRID 확장</button>
+                            </div>
+                          </div>
+                          <div class="card-header">출연진 역량 평가 언급</div>
+                          <div class="row">
+                            <div class="col-sm-6 pr-0">
+                              <div class="card mr-0">
+                                <div class="card-sub-title">런칭전</div>
+                                <div class="card-body" style="height: 200px"></div>
+                              </div>
+                            </div>
+                            <div class="col-sm-6 pl-0">
+                              <div class="card mr-0">
+                                <div class="card-sub-title">런칭후</div>
+                                <div class="card-body" style="height: 200px"></div>
+                              </div>
+                            </div>
+                          </div>
+                            <!-- grid 영역 -->
+                            <div class="program-table table-hide mt-4">
+                              <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th colspan="2" rowspan="2"></th>
+                                    <th colspan="2">런칭전</th>
+                                    <th colspan="6">런칭후</th>
+                                  </tr>
+                                  <tr>
+                                    <th>긍정평가 총</th>
+                                    <th>부정평가 총</th>
+                                    <th>긍정평가 총</th>
+                                    <th>긍정평가 주</th>
+                                    <th>긍정평가 주</th>
+                                    <th>부정평가 총</th>
+                                    <th>부정평가 주</th>
+                                    <th>부정평가 주평균 언급 성장률</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th rowspan="2">"선택 채널 A" 조회 프로그램 평균</th>
+                                    <th>언급량</th>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                  </tr>
+                                  <tr>
+                                    <th>언급 비중</th>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                  </tr>
+                                  <tr>
+                                    <th rowspan="2">"선택 채널 B" 조회 프로그램 평균</th>
+                                    <th>언급량</th>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                    <td>2300</td>
+                                  </tr>
+                                  <tr>
+                                    <th>언급 비중</th>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                    <td>23%</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                        </div>
                       </div>
                     </div>
-                    <div class="card-inner p-4 mt-4">
-                      <div class="mb-2 grid-head">
-                        ◆ 티빙 지표
-                      </div>
-                      <div class="row">
-                        <div class="col-sm-10">
-                          <div class="lookup-table">
-                            <table class="table mb-0">
-                              <colgroup>
-                                <col style="width: 10%" />
-                                <col style="width: 20%" />
-                                <col style="width: 2%" />
-                                <col style="width: 10%" />
-                                <col style="width: 20%" />
-                                <col style="width: 2%" />
-                                <col style="width: 10%" />
-                                <col style="width: 20%" />
-                              </colgroup>
+                    <div class="tab-pane" id="danger">
+                      <div class="card card-box mr-0 p-4 mt-4">
+                        <div class="cj-btn-group">
+                          <div class="row justify-content-end mr-1 mb-4">
+                            <button class="btn btn-cj open-grid">GRID 확장</button>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-6 pr-0">
+                            <div class="card mr-0">
+                              <div class="card-header">런칭 전</div>
+                              <div class="card-body" style="height: 200px"></div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 pl-0">
+                            <div class="card mr-0">
+                              <div class="card-header">런칭 후</div>
+                              <div class="card-body" style="height: 200px"></div>
+                            </div>
+                          </div>
+                        </div>
+                          <!-- grid 영역 -->
+                          <div class="program-table table-hide mt-4">
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                 <th colspan="2">언급량(언급비중)</th>
+                                 <th>해당 프로그램</th>
+                                <th>同 시청률 프로그램 평균</th>
+                                <th>同 편성블록 프로그램 평균</th>
+                                <th>同 대표장르 프로그램 평균</th>
+                                <th>同 세부장르 프로그램 평균</th>
+                                <th>同 소재 프로그램 평균</th>
+                                </tr>
+                              </thead>
                               <tbody>
                                 <tr>
-                                  <th>시청 유형</th>
-                                  <td class="p-0 round-r">
-                                    <select class="form-control cj-selectBox select-box">
-                                      <option>Live</option>
-                                      <option>VOD</option>
-                                    </select>
-                                  </td>
-                                  <td class="tableEmpty"></td>
-                                  <th>시청지표</th>
-                                  <td class="p-0 round-r">
-                                    <select class="form-control cj-selectBox select-box">
-                                      <option>UV</option>
-                                      <option>시청시간(티빙Only)</option>
-                                      <option>가입자 기여도</option>
-                                    </select>
-                                  </td>
+                                  <th>런칭전</th>
+                                  <th>런칭전 총언급</th>
+                                  <td>2300</td>
+                                  <td>2300</td>
+                                  <td>2300</td>
+                                  <td>2300</td>
+                                  <td>2300</td>
+                                  <td>2300</td>
+                                </tr>
+                                <tr>
+                                  <th rowspan="3">런칭후</th>
+                                  <th>총언급</th>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                </tr>
+                                <tr>
+                                  <th>주평균 언급</th>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                </tr>
+                                <tr>
+                                  <th>주평균 언급 성장률</th>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                  <td>23%</td>
+                                  <td>23%</td>
                                 </tr>
                               </tbody>
                             </table>
                           </div>
-                        </div>
-                        <div class="cj-btn-group my-auto col-sm-2">
-                          <div class="row justify-content-end mr-2">
-                            <button class="btn btn-cj mr-2">조회</button>
+                      </div>
+                    </div>
+                    <div class="tab-pane" id="detailAl">
+                      <div class="card card-box mr-0 p-4 mt-4">
+                        <div class="card-inner p-4">
+                          <div class="row">
+                            <div class="lookup-table col-lg-10">
+                              <table class="table mb-0">
+                                <colgroup></colgroup>
+                                <tbody>
+                                  <tr>
+                                    <th>분석주기</th>
+                                    <td>
+                                      <div class="row ml-0">
+                                        <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
+                                          <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault7" disabled />
+                                          <label class="form-check-label" for="radioDefault7"> 회차별 </label>
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td class="tableEmpty"></td>
+                                    <th>충성도</th>
+                                    <td class="p-0 round-r">
+                                      <select class="form-control cj-selectBox select-box">
+                                        <option></option>
+                                      </select>
+                                    </td>
+                                    <td class="tableEmpty"></td>
+                                    <th>성연령 기준</th>
+                                    <td class="p-0 round-r">
+                                      <select class="form-control cj-selectBox select-box">
+                                        <option>5세 단위</option>
+                                        <option>10세 단위</option>
+                                      </select>
+                                    </td>
+                                    <td class="tableEmpty"></td>
+                                    <th>선연령 선택</th>
+                                    <td class="p-0 round-r">
+                                      <select class="form-control cj-selectBox select-box">
+                                        <option></option>
+                                      </select>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <div class="cj-btn-group my-auto col-lg-2">
+                              <div class="row justify-content-end">
+                                <button class="btn btn-cj mr-2">조회</button>
+                              </div>
+                            </div>
+                            <div class="card mr-0 mt-4 col-lg-12 p-0">
+                              <div class="card-header">"선택 채널A" vs "선택채널 B" 프로그램 회차별 "시청지속비율 기반 시청자 충성도" 증감 추이</div>
+                              <div class="card-body" style="height: 200px"></div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="card mr-0 mt-4">
-                        <div class="card-header">월별 "선택 채널" 프로그램별 "티빙 live UV"</div>
-                        <div class="card-body" style="height: 200px"></div>
+                        <div class="card-inner p-4 mt-4">
+                          <div class="row">
+                            <div class="lookup-table col-lg-10">
+                              <table class="table mb-0">
+                                <colgroup>
+                                  <col style="width: 15%" />
+                                  <col style="width: 30%" />
+                                  <col style="width: 10%" />
+                                  <col style="width: 15%" />
+                                  <col style="width: 30%" />
+                                </colgroup>
+                                <tbody>
+                                  <tr>
+                                    <th>분석주기</th>
+                                    <td class="round-r">
+                                      <div class="row ml-0">
+                                        <div class="form-check cj-input-radio pr-3 d-flex align-items-center">
+                                          <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault3" disabled />
+                                          <label class="form-check-label" for="radioDefault3"> 주차별 </label>
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td class="tableEmpty"></td>
+                                    <th>인지반응지표</th>
+                                    <td class="p-0 round-r">
+                                      <select class="form-control cj-selectBox select-box">
+                                        <option>대표이미지</option>
+                                        <option>총언급량</option>
+                                        <option>충성도</option>
+                                        <option>기대감</option>
+                                        <option>호감도</option>
+                                        <option>작품 경쟁력</option>
+                                        <option>출연진 역량</option>
+                                        <option>위험 인지</option>
+                                      </select>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <div class="cj-btn-group my-auto col-lg-2">
+                              <div class="row justify-content-end mr-2">
+                                <button class="btn btn-cj mr-2">조회</button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card mr-0 mt-4">
+                            <div class="card-header">"대표 이미지" 키워드 - 선택 프로그램 회차별 언급량 vs 비교군 평균 언급량 추이</div>
+                            <div class="card-body" style="height: 200px"></div>
+                          </div>
+                          <div class="card mr-0 mt-4">
+                            <div class="card-body" style="height: 200px"></div>
+                          </div>
+                          <div class="card mr-0 mt-4">
+                            <div class="card-body" style="height: 200px"></div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
