@@ -184,11 +184,13 @@
                         </table>
                       </div>
                       <div class="lookup-table">
-                        <table class="table">
+                        <table class="table mb-0">
                           <tbody>
                             <tr>
-                              <th>View기준</th>
+                              <th>1차View기준</th>
                               <td class="button-group btn-group" role="group">
+                                  <button type="button" class="btn btn-cj-default">컨텐츠유형</button>
+                                  <button type="button" class="btn btn-cj-default">채널그룹</button>
                                   <button type="button" class="btn btn-cj-default">채널</button>
                                   <button type="button" class="btn btn-cj-default">편성블록</button>
                                   <button type="button" class="btn btn-cj-default">대표장르</button>
@@ -200,7 +202,30 @@
                             </tr>
                           </tbody>
                         </table>
-                   </div>
+                      </div>
+                      <!-- 0916 -->
+                      <div class="lookup-table">
+                        <table class="table">
+                          <tbody>
+                            <tr>
+                              <th>시청지표조회조건</th>
+                              <th class="round-0">지역구분</th>
+                              <td class="round-r">
+                                <select class="form-control cj-selectBox select-box">
+                                  <option>전체</option>
+                                </select>
+                              </td>
+                              <td class="tableEmpty"></td>
+                              <th>대상구분</th>
+                              <td>
+                                <select class="form-control cj-selectBox select-box">
+                                  <option>전체</option>
+                                </select>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
                     <div class="search-btn col-sm-10">
                       <button class="btn btn-cj">컨텐츠 검색</button>
@@ -220,14 +245,21 @@
                 </div>
                 <!-- 1차 VIEW 기준 채널 -->
                 <div class="card card-box mr-0 mt-4 p-4">
-                  <p class="mb-0">◆ "채널"별 구성현황</p>
                   <div class="row">
                     <div class="col-lg-12">
                       <div class="lookup-table">
                         <table class="table mb-0">
                           <colgroup></colgroup>
                           <tbody>
+                            <!-- 0916 -->
                             <tr>
+                              <th>2차View조건</th>
+                              <td class="p-0 round-r">
+                                <select class="form-control cj-selectBox select-box">
+                                  <option>채널</option>
+                                </select>
+                              </td>
+                              <td class="tableEmpty"></td>
                               <th>분석주기</th>
                               <td class="p-0 round-r">
                                 <select class="form-control cj-selectBox select-box">
@@ -2730,15 +2762,12 @@
                             <div class="col-sm-10">
                               <div class="lookup-table">
                                 <table class="table mb-0">
-                                  <colgroup>
-                                  <col style="width:17%">
-                                  <col style="width:78%">
-                                  <col style="width:5%">
-                                  </colgroup>
+                              
                                   <tbody>
+                                    <!-- 0916 table 수정 -->
                                     <tr>
                                       <th>회차</th>
-                                      <td>
+                                      <td class="round-r">
                                         <div class="d-flex align-items-center">
                                           <div class="open-btn"> 
                                             <i class="fa-solid fa-plus ic-plus"></i>
@@ -2770,24 +2799,21 @@
                                           </div>
                                         </div>
                                       </td>
-                                    </tr>
-                                    <tr>
+                                      <td class="tableEmpty"></td>
                                       <th>충성도</th>
-                                      <td>
+                                      <td class="round-r">
                                         <select class="form-control cj-selectBox select-box">
                                           <option>전체</option>
                                         </select>
                                       </td>
-                                    </tr>
-                                    <tr>
+                                      <td class="tableEmpty"></td>
                                       <th>성연령 기준</th>
-                                      <td>
+                                      <td class="round-r">
                                         <select class="form-control cj-selectBox select-box">
                                           <option>전체</option>
                                         </select>
                                       </td>
-                                    </tr>
-                                    <tr>
+                                      <td class="tableEmpty"></td>
                                       <th>성연령 선택</th>
                                       <td>
                                         <select class="form-control cj-selectBox select-box">
@@ -2795,6 +2821,7 @@
                                         </select>
                                       </td>
                                     </tr>
+                                   
                                   </tbody>
                                 </table>
                               </div>
