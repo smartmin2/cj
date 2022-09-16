@@ -309,4 +309,4 @@ button:focus,button:active { box-shadow: none !important; }
 .arrow-wrap p { width:20px; height:20px; border:1px solid #ddd; margin-bottom:0; text-align: center; background-color: #fff; cursor: pointer; border-radius: 2px; } 
 
 /* 0916 추가 */
-.ic-max {position:absolute; right:10px;top:10px; border: 1px solid #ddd; border-radius: 4px; width: 35px; height: 35px; display: inline-flex; align-items: center; justify-content: center; font-size: 24px; cursor: pointer;} 
+.ic-max, .ic-min {position:absolute; right:10px;top:10px; border: 1px solid #ddd; border-radius: 4px; width: 35px; height: 35px; display: inline-flex; align-items: center; justify-content: center; font-size: 24px; cursor: pointer;} 
