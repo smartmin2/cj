@@ -25,6 +25,7 @@
   <body>
     <div class="container-fluid">
       <div id="app">
+    
         <div class="row p-4">
           <div class="col-md-12 qick-report">
             <div class="card card-box mr-0 p-4">
@@ -34,7 +35,12 @@
                     <table class="table mb-0">
                       <tbody>
                         <tr>
-                          <th>프로그램명<span class="ic-noti"><i class="fa-solid fa-circle-info pl-2"></i><div class="noti-box">설명 툴팁</div></span></th>
+                          <th>
+                            프로그램명<span class="ic-noti"
+                              ><i class="fa-solid fa-circle-info pl-2"></i>
+                              <div class="noti-box">설명 툴팁</div></span
+                            >
+                          </th>
                           <td class="round-r">유퀴즈</td>
                           <td class="tableEmpty"></td>
                           <th>채널</th>
@@ -44,25 +50,25 @@
                             </select>
                           </td>
                           <td class="tableEmpty"></td>
-                            <th>회차</th>
-                            <td class="round">
-                              <div class="d-flex align-items-center">
-                                <div class="open-btn"> 
-                                  <i class="fa-solid fa-plus ic-plus"></i>
-                                  <i class="fa-solid fa-minus ic-minus"></i>
-                                </div>
-                                전체
-                             </div>
-                              <div class="card m-0 lookup-box">
-                                <div class="col-sm-12 p-0">
-                                  <div class="btn-wrap p-2">
-                                    <button class="btn btn-cj-default">전체</button>
-                                    <button class="btn btn-cj-default">1회차</button>
-                                    <button class="btn btn-cj-default">2회차</button>
-                                  </div>
+                          <th>회차</th>
+                          <td class="round">
+                            <div class="d-flex align-items-center">
+                              <div class="open-btn">
+                                <i class="fa-solid fa-plus ic-plus"></i>
+                                <i class="fa-solid fa-minus ic-minus"></i>
+                              </div>
+                              전체
+                            </div>
+                            <div class="card m-0 lookup-box">
+                              <div class="col-sm-12 p-0">
+                                <div class="btn-wrap p-2">
+                                  <button class="btn btn-cj-default">전체</button>
+                                  <button class="btn btn-cj-default">1회차</button>
+                                  <button class="btn btn-cj-default">2회차</button>
                                 </div>
                               </div>
-                            </td>
+                            </div>
+                          </td>
                         </tr>
                       </tbody>
                     </table>
@@ -80,7 +86,7 @@
             <div class="card card-box mr-0 mt-4 p-4">
               <div class="row mo-center">
                 <div class="pl-5 pt-4 pb-4 pr-0 mo-center">
-                  <img src="../../img/layer-904.webp" alt="img">
+                  <img src="../../img/layer-904.webp" alt="img" />
                 </div>
                 <div class="status-table col-lg-10 col-md-12">
                   <table class="table">
@@ -213,7 +219,6 @@
                       </div>
                     </div>
                     <div class="card-inner p-4 mt-4">
-                   
                       <div class="card-header">디지털 플랫폼 조회 지표</div>
                       <div class="row">
                         <div class="col-sm-4 pr-0">
@@ -250,25 +255,43 @@
                     <div class="card-inner p-4">
                       <p>◆ 시청자 관심도</p>
                       <!-- naver -->
-                     
-                      <div class="card mr-0">
-                        <div class="card-header">플랫폼별 검색량 증감 추이 및 성장률(퀵리뷰 대상 프로그램 vs 同 편성블록 평균)</div>
-                        <div class="card-body" style="height: 200px">
-                          <!-- 0916 ic-max 추가 -->
-                          <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span>
+                      <div class="card-header">플랫폼별 검색량 증감 추이 및 성장률(퀵리뷰 대상 프로그램 vs 同 편성블록 평균)</div>
+                      <!-- 0926 -->
+                      <div class="row">
+                        <div class="col-lg-1 pr-0">
+                          <div class="card mr-0">
+                            <div class="card-body card-body-title" style="height: 200px">네이버</div>
+                          </div>
+                        </div>
+                        <div class="col-lg-11">
+                          <div class="card mr-0">
+                            <div class="card-body" style="height: 200px">
+                              <!-- 0916 ic-max 추가 -->
+                              <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span>
+                            </div>
+                          </div>
                         </div>
                       </div>
+
                       <!-- grid 영역 -->
-                      <div id="app2" class="mt-4 table-hide">
+                      <div id="app2" class="mt-4">
                         <div id="itrNaverGrid"></div>
                       </div>
 
                       <!-- google -->
-                     
-                      <div class="card mr-0 mt-4">
-                        <div class="card-body" style="height: 200px">
-                          <!-- 0916 ic-max 추가 -->
-                          <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span>
+                      <div class="row">
+                        <div class="col-lg-1 pr-0">
+                          <div class="card mr-0">
+                            <div class="card-body card-body-title" style="height: 200px">구글</div>
+                          </div>
+                        </div>
+                        <div class="col-lg-11">
+                          <div class="card mr-0">
+                            <div class="card-body" style="height: 200px">
+                              <!-- 0916 ic-max 추가 -->
+                              <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <!-- grid 영역 -->
@@ -277,11 +300,19 @@
                       </div>
 
                       <!-- youtube -->
-                   
-                      <div class="card mr-0 mt-4">
-                        <div class="card-body" style="height: 200px">
-                          <!-- 0916 ic-max 추가 -->
-                          <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span>
+                      <div class="row mt-4">
+                        <div class="col-lg-1 pr-0">
+                          <div class="card mr-0">
+                            <div class="card-body card-body-title" style="height: 200px">유튜브</div>
+                          </div>
+                        </div>
+                        <div class="col-lg-11">
+                          <div class="card mr-0">
+                            <div class="card-body" style="height: 200px">
+                              <!-- 0916 ic-max 추가 -->
+                              <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <!-- grid 영역 -->
@@ -305,12 +336,10 @@
                       </div>
                     </div>
                     <div class="card-inner p-4 mt-4">
-                     
                       <div class="card-header">시청자 태도/평가</div>
                       <!-- 긍정 -->
-                     
+
                       <div class="row">
-                       
                         <div class="col-sm-3 pr-0">
                           <div class="card mr-0">
                             <div class="card-sub-title">긍정 키워드</div>
@@ -340,7 +369,6 @@
 
                       <!-- 부정 -->
                       <div class="row mt-4">
-                       
                         <div class="col-sm-3 pr-0">
                           <div class="card mr-0">
                             <div class="card-sub-title">부정 키워드</div>
@@ -364,7 +392,6 @@
                       <div id="app6" class="mt-4 table-hide">
                         <div id="denialGrid"></div>
                       </div>
-
                     </div>
                   </div>
                 </div>
@@ -395,7 +422,7 @@
                         </tbody>
                       </table>
                     </div>
-                    <div class="row justify-content-end mr-1 ">
+                    <div class="row justify-content-end mr-1">
                       <button class="btn btn-cj mr-2">저장</button>
                     </div>
                   </div>
@@ -408,39 +435,36 @@
     </div>
 
     <script>
-       $(".open-btn").on("click",function(){
+      $(".open-btn").on("click", function () {
         $(this).toggleClass("active");
-        $(this).parent("td").css("position","relative");
+        $(this).parent("td").css("position", "relative");
 
-        if($(this).hasClass("active")){
+        if ($(this).hasClass("active")) {
           $(this).children(".ic-minus").show();
-          $(this).parents("td").children(".lookup-box").css("display","flex");
-        }else{
+          $(this).parents("td").children(".lookup-box").css("display", "flex");
+        } else {
           $(this).children(".ic-minus").hide();
-          $(this).parents("td").children(".lookup-box").css("display","none");
+          $(this).parents("td").children(".lookup-box").css("display", "none");
         }
-      })
-
+      });
 
       $(".btn-cj-default").on("click", function () {
         $(this).toggleClass("active");
       });
-      
-      
+
       $(".open-grid").on("click", function () {
         $(this).toggleClass("active");
 
         if ($(this).hasClass("active")) {
-          $(this).text("GRID 축소");
+          // $(this).text("GRID 축소");
           $(".table-hide").show();
           $(".cj-button-grid").show();
         } else {
-          $(this).text("GRID 확장");
+          // $(this).text("GRID 확장");
           $(".table-hide").hide();
           $(".cj-button-grid").hide();
         }
       });
-     
 
       let dgtFormGrid = "";
       let app1 = {
@@ -1395,6 +1419,275 @@
         });
         // Vue.component();
       });
-    </script>
+   
+      // 0926
+       // 긍정평가 키워드 상세보기
+       Vue.component("scenario-summary-modal", {
+        template: `
+        <div>
+          <div class="modal in" tabindex="-1" id="scenarioSummaryModal" role="dialog" data-backdrop="static" data-keyboard="false" aria-hidden="true" style="display: block;">
+              <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title">긍정평가 키워드 상세보기</h5>
+                          
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">×</span>
+                          </button>
+                      </div>
+      
+                      <div class="modal-body">
+                          <div id="scenarioSummaryGrid"></div>
+                      </div>
+
+                      <div class="modal-footer cj-btn-group justify-content-center">
+                          <button type="button" class="btn btn-cj">닫기</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    `,
+        mounted() {
+          $("#scenarioSummaryModal").on("show.bs.modal", function () {
+            AUIGrid.resize("#scenarioSummaryGrid");
+          });
+
+          this.createGrid();
+          this.search();
+        },
+        watch: {
+          gridData: function () {
+            AUIGrid.setGridData("#scenarioSummaryGrid", this.gridData);
+          },
+        },
+        data: () => ({
+          gridData: [],
+          gridLayout: [
+          {
+              dataField: "keyword",
+              headerText: "키워드",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "mention",
+              headerText: "언급량",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            
+          ],
+          gridProps: {
+            enableFilter: false,
+            enableSorting: false,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
+            editingOnKeyDown: false,
+            autoGridHeight: false,
+            autoGridWidth: true,
+            ignoreColumnMinWidth: true,
+            softRemoveRowMode: false,
+            // 행 번호 컬럼 활성화 속성입니다.
+            showRowNumColumn: false,
+            /*추가 옵션*/
+            showStateColumn: false,
+            editable: false,
+            noDataMessage: "데이터가 존재하지 않습니다.",
+          },
+        }),
+        methods: {
+          draw: function () {
+            //$THO.show()
+            $("#scenarioSummaryModal").modal("show");
+          },
+          clear: function () {
+            // 초기화 영역
+          },
+          search: function () {
+            // 검색영역
+            //this.createGrid();
+            this.gridData.push({
+              baseYear: "2023",
+              alCable: "IP",
+              tgChannel: "MBC",
+              division: "이벤트",
+              detail: "올림픽주경기1",
+              fromDate: "2023.01.1",
+              toDate: "2023.12.31",
+              days: "30",
+              areaDay: "-3",
+              areaPrime: "-3",
+              summary: "기본 관리 대상",
+              uses: "Y",
+            });
+
+            this.gridData.push({
+              createAt: "2022.10.12",
+              round: "1",
+              airDate: "2023.01.1",
+              blockName: "드라마",
+              standard: "1.99",
+              performance: "1.99",
+            });
+          },
+          createGrid: function () {
+            AUIGrid.destroy("#scenarioSummaryGrid");
+            // grid 생성
+            AUIGrid.create("#scenarioSummaryGrid", this.gridLayout, this.gridProps);
+          },
+        },
+      });
+
+      // 텍스트 원문 팝업
+      Vue.component("scenario-summary-modal", {
+        template: `
+        <div>
+          <div class="modal in" tabindex="-1" id="scenarioSummaryModal" role="dialog" data-backdrop="static" data-keyboard="false" aria-hidden="true" style="display: block;">
+              <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title"></h5>
+                          
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">×</span>
+                          </button>
+                      </div>
+      
+                      <div class="modal-body">
+                        <div class="lookup-table mb-4">
+                          <table class="table mb-0">
+                            <colgroup>
+                            <col style="width:20%;">
+                            </colgroup>
+                            <tbody>
+                              <tr>
+                                <th>
+                                  타이틀
+                                </th>
+                                <td class="round-r"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                          <div id="scenarioSummaryGrid"></div>
+                      </div>
+
+                      <div class="modal-footer cj-btn-group justify-content-center">
+                          <button type="button" class="btn btn-cj">닫기</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    `,
+        mounted() {
+          $("#scenarioSummaryModal").on("show.bs.modal", function () {
+            AUIGrid.resize("#scenarioSummaryGrid");
+          });
+
+          this.createGrid();
+          this.search();
+        },
+        watch: {
+          gridData: function () {
+            AUIGrid.setGridData("#scenarioSummaryGrid", this.gridData);
+          },
+        },
+        data: () => ({
+          gridData: [],
+          gridLayout: [
+          {
+              dataField: "division",
+              headerText: "구분",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            {
+              dataField: "contents",
+              headerText: "내용",
+              editRenderer: {
+                type: "InputEditRenderer",
+                showEditorBtnOver: true, // 마우스 오버 시 에디터버턴 보이기
+                inputMode: "text",
+              },
+            },
+            
+          ],
+          gridProps: {
+            enableFilter: false,
+            enableSorting: false,
+            headerHeight: 38,
+            headerHeights: [38, 38],
+            rowHeight: 38,
+            editingOnKeyDown: false,
+            autoGridHeight: false,
+            autoGridWidth: true,
+            ignoreColumnMinWidth: true,
+            softRemoveRowMode: false,
+            // 행 번호 컬럼 활성화 속성입니다.
+            showRowNumColumn: false,
+            /*추가 옵션*/
+            showStateColumn: false,
+            editable: false,
+            noDataMessage: "데이터가 존재하지 않습니다.",
+          },
+        }),
+        methods: {
+          draw: function () {
+            //$THO.show()
+            $("#scenarioSummaryModal").modal("show");
+          },
+          clear: function () {
+            // 초기화 영역
+          },
+          search: function () {
+            // 검색영역
+            //this.createGrid();
+            this.gridData.push({
+              baseYear: "2023",
+              alCable: "IP",
+              tgChannel: "MBC",
+              division: "이벤트",
+              detail: "올림픽주경기1",
+              fromDate: "2023.01.1",
+              toDate: "2023.12.31",
+              days: "30",
+              areaDay: "-3",
+              areaPrime: "-3",
+              summary: "기본 관리 대상",
+              uses: "Y",
+            });
+
+            this.gridData.push({
+              createAt: "2022.10.12",
+              round: "1",
+              airDate: "2023.01.1",
+              blockName: "드라마",
+              standard: "1.99",
+              performance: "1.99",
+            });
+          },
+          createGrid: function () {
+            AUIGrid.destroy("#scenarioSummaryGrid");
+            // grid 생성
+            AUIGrid.create("#scenarioSummaryGrid", this.gridLayout, this.gridProps);
+          },
+        },
+      });
+
+     
+   
+   </script>
   </body>
 </html>
