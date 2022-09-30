@@ -380,14 +380,13 @@
                 <!-- 1차 VIEW 기준 채널 -->
                 <div class="card card-box mr-0 mt-4 p-4">
                  
-                  <div class="card-inner p-4 ">
+                  <!-- <div class="card-inner p-4 ">
                     <div class="row">
                       <div class="col-lg-12">
                         <div class="lookup-table">
                           <table class="table mb-0">
                             <colgroup></colgroup>
                             <tbody>
-                              <!-- 0916 -->
                               <tr>
                                 <th>2차View조건</th>
                                 <td class="p-0 round-r">
@@ -434,7 +433,6 @@
                         <div class="card mr-0">
                           <div class="card-header">"채널"별 연간 "편수" 구성</div>
                           <div class="card-body" style="height: 200px">
-                            <!-- 0916 ic-max 추가 -->
                             <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span>
                           </div>
                         </div>
@@ -484,13 +482,13 @@
                         </tbody>
                       </table>
                     </div>
-                  </div>
+                  </div> -->
                  
                     <!-- 1차 VIEW 기준 채널 X 1차 VIEW기준 대표장르 -->
                   <div class="card-inner p-4 mt-4">
                    <!-- 0916 row 추가-->
                     <div class="row">
-                      <div class="col-lg-12">
+                      <div class="col-lg-10">
                         <div class="lookup-table">
                           <table class="table mb-0">
                             <colgroup></colgroup>
@@ -536,19 +534,31 @@
                           </table>
                         </div>
                       </div>
+                      <div class="d-flex cj-btn-group align-items-center col-lg-2">
+                        <button type="submit" class="btn btn-cj">조회</button>
+                      </div>
+                    </div>
+                    <!-- 0929 grid확장 버튼 롤백, 그리드 내에 아이콘 삭제, 차트/테이블 레이아웃 하나만 남기고 삭제 -->
+                    <div class="cj-btn-group">
+                      <div class="row justify-content-end mr-1 mb-4">
+                        <button class="btn btn-cj open-grid">GRID 확장</button>
+                      </div>
                     </div>
                     <div class="row mt-4">
                       <!-- 0916 그래프 상하로 변경 -->
                       <div class="col-sm-12">
                         <div class="card mr-0">
                           <div class="card-header">"채널 X 대표장르"별 "연간" "편수" 구성</div>
-                          <div class="card-body" style="height: 200px"> <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span></div>
+                          <div class="card-body" style="height: 200px">
+                            <!-- 0930 nodata추가 -->
+                            <div class="no-data">해당 지표 리포팅 대상 콘텐츠가 아님</div>
+                          </div>
                         </div>
                       </div>
                       <div class="col-sm-12 mt-4">
                         <div class="card mr-0">
                           <div class="card-header">"채널 X 대표장르"별 "연간" "편수" 구성 증감</div>
-                          <div class="card-body" style="height: 200px"> <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span></div>
+                          <div class="card-body" style="height: 200px"></div>
                         </div>
                       </div>
                     </div>
@@ -569,7 +579,13 @@
                             <th>21년</th>
                           </tr>
                         </thead>
+                        <!-- 0930 td nodata 추가 -->
                         <tbody>
+                          <tr>
+                            <td colspan="4" class="table-nodata">해당 지표 리포팅 대상 콘텐츠가 아님</td>
+                          </tr>
+                        </tbody>
+                        <!-- <tbody>
                           <tr>
                             <th rowspan="2">JTBC</th>
                             <th>드라마</th>
@@ -603,395 +619,11 @@
                             <td>27</td>
                             <td>-4</td>
                           </tr>
-                        </tbody>
+                        </tbody> -->
                       </table>
                     </div>
                   </div>
-                    <!-- 1차 VIEW 기준 채널 대표장르 X 2차 VIEW기준 채널 -->
-                  <div class="card-inner p-4 mt-4">
-                    <div class="row">
-                      <div class="col-lg-12">
-                        <div class="lookup-table">
-                          <table class="table mb-0">
-                            <colgroup></colgroup>
-                            <tbody>
-                              <tr>
-                                <th>2차View조건</th>
-                                <td class="p-0 round-r">
-                                  <select class="form-control cj-selectBox select-box">
-                                    <option>컨텐츠유형</option>
-                                    <option>채널그룹</option>
-                                    <option>채널</option>
-                                    <option>편성블록</option>
-                                    <option>대표장르</option>
-                                    <option>주장르</option>
-                                    <option>부장르</option>
-                                    <option>소재</option>
-                                    <option>시청률</option>
-                                  </select>
-                                </td>
-                                <td class="tableEmpty"></td>
-                                <th>분석주기</th>
-                                <td class="p-0 round-r">
-                                  <select class="form-control cj-selectBox select-box">
-                                    <option>연간편성</option>
-                                    <option>반기편성</option>
-                                    <option>분기편성</option>
-                                    <option>월간편성</option>
-                                  </select>
-                                </td>
-                                <td class="tableEmpty"></td>
-                                <th>분석지표</th>
-                                <td class="p-0 round-r">
-                                  <select class="form-control cj-selectBox select-box">
-                                    <option>편수</option>
-                                    <option>비율</option>
-                                    <option>편수(비율)</option>
-                                  </select>
-                                </td>
-                                
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row mt-4">
-                      <div class="col-sm-12">
-                        <div class="card mr-0">
-                          <div class="card-header">"대표장르 X 채널"별 "연간" "편수" 구성</div>
-                          <div class="card-body" style="height: 200px"> <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span></div>
-                        </div>
-                      </div>
-                      <div class="col-sm-12 mt-4">
-                        <div class="card mr-0">
-                          <div class="card-header">"대표장르 X 채널"별 "연간" "편수" 구성 증감</div>
-                          <div class="card-body" style="height: 200px"> <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span></div>
-                        </div>
-                      </div>
-                    </div>
-                     <!-- grid 영역 -->
-                     <div class="program-table table-hide mt-4">
-                      <table class="table">
-                        <colgroup>
-                          <col style="width: 25%" />
-                          <col style="width: 25%" />
-                          <col style="width: 25%" />
-                          <col style="width: 25%" />
-                        </colgroup>
-                        <thead>
-                          <tr>
-                            <th>채널</th>
-                            <th>장르</th>
-                            <th>20년</th>
-                            <th>21년</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th rowspan="3">드라마</th>
-                            <th>Jtbc</th>
-                            <td>13</td>
-                            <td>-2</td>
-                          </tr>
-                          <tr>
-                            <th>SBS</th>
-                            <td>3</td>
-                            <td>0</td>
-                          </tr>
-                          <tr>
-                            <th>tvN</th>
-                            <td>3</td>
-                            <td>0</td>
-                          </tr>
-                          <tr>
-                            <th rowspan="3">예능</th>
-                            <th>Jtbc</th>
-                            <td>13</td>
-                            <td>-2</td>
-                          </tr>
-                          <tr>
-                            <th>SBS</th>
-                            <td>3</td>
-                            <td>0</td>
-                          </tr>
-                          <tr>
-                            <th>tvN</th>
-                            <td>3</td>
-                            <td>0</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                     <!-- 1차 VIEW 기준 채널 소재별 -->
-                  <div class="card-inner p-4 mt-4">
-                    <div class="row">
-                      <div class="col-lg-12">
-                        <div class="lookup-table">
-                          <table class="table mb-0">
-                            <colgroup></colgroup>
-                            <tbody>
-                              <tr>
-                                <th>2차View조건</th>
-                                <td class="p-0 round-r">
-                                  <select class="form-control cj-selectBox select-box">
-                                    <option>컨텐츠유형</option>
-                                    <option>채널그룹</option>
-                                    <option>채널</option>
-                                    <option>편성블록</option>
-                                    <option>대표장르</option>
-                                    <option>주장르</option>
-                                    <option>부장르</option>
-                                    <option>소재</option>
-                                    <option>시청률</option>
-                                  </select>
-                                </td>
-                                <td class="tableEmpty"></td>
-                                <th>분석주기</th>
-                                <td class="p-0 round-r">
-                                  <select class="form-control cj-selectBox select-box">
-                                    <option>연간편성</option>
-                                    <option>반기편성</option>
-                                    <option>분기편성</option>
-                                    <option>월간편성</option>
-                                  </select>
-                                </td>
-                                <td class="tableEmpty"></td>
-                                <th>분석지표</th>
-                                <td class="p-0 round-r">
-                                  <select class="form-control cj-selectBox select-box">
-                                    <option>편수</option>
-                                    <option>비율</option>
-                                    <option>편수(비율)</option>
-                                  </select>
-                                </td>
-                                
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row mt-4">
-                      <div class="col-sm-12">
-                        <div class="card mr-0">
-                          <div class="card-header">"소재"별 "연간" "편수" 구성</div>
-                          <div class="card-body" style="height: 200px"> <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span></div>
-                        </div>
-                      </div>
-                      <div class="col-sm-12 mt-4">
-                        <div class="card mr-0">
-                          <div class="card-header">"소재"별 "연간" "편수" 구성 증감</div>
-                          <div class="card-body" style="height: 200px"> <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span></div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- grid 영역 -->
-                    <div class="program-table table-hide mt-4">
-                      <table class="table">
-                        <colgroup>
-                          <col style="width: 33.3333%" />
-                          <col style="width: 33.3333%" />
-                          <col style="width: 33.3333%" />
-                        </colgroup>
-                        <thead>
-                          <tr>
-                            <th>소재</th>
-                            <th>20년</th>
-                            <th>21년</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th>PPL</th>
-                            <td>13</td>
-                            <td>-2</td>
-                          </tr>
-                          <tr>
-                            <th>결혼/가족</th>
-                            <td>13</td>
-                            <td>-2</td>
-                          </tr>
-                          <tr>
-                            <th>꿈/열정</th>
-                            <td>13</td>
-                            <td>-2</td>
-                          </tr>
-                          <tr>
-                            <th>농촌/어촌</th>
-                            <td>13</td>
-                            <td>-2</td>
-                          </tr>
-                          <tr>
-                            <th>매장/데이트</th>
-                            <td>13</td>
-                            <td>-2</td>
-                          </tr>
-                          <tr>
-                            <th>...(중략)</th>
-                            <td>13</td>
-                            <td>-2</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-
-                    <!-- 1차 VIEW 기준 부장르별 분기별 편수 -->
-                    <div class="card-inner p-4 mt-4">
-                      <div class="row">
-                        <div class="col-lg-12">
-                          <div class="lookup-table">
-                            <table class="table mb-0">
-                              <colgroup></colgroup>
-                              <tbody>
-                                <!-- 0916 2차view조건 추가 -->
-                                <tr>
-                                  <th>2차View조건</th>
-                                  <td class="p-0 round-r">
-                                    <select class="form-control cj-selectBox select-box">
-                                      <option>컨텐츠유형</option>
-                                      <option>채널그룹</option>
-                                      <option>채널</option>
-                                      <option>편성블록</option>
-                                      <option>대표장르</option>
-                                      <option>주장르</option>
-                                      <option>부장르</option>
-                                      <option>소재</option>
-                                      <option>시청률</option>
-                                    </select>
-                                  </td>
-                                  <td class="tableEmpty"></td>
-                                  <th>분석주기</th>
-                                  <td class="p-0 round-r">
-                                    <select class="form-control cj-selectBox select-box">
-                                      <option>연간편성</option>
-                                      <option>반기편성</option>
-                                      <option>분기편성</option>
-                                      <option>월간편성</option>
-                                    </select>
-                                  </td>
-                                  <td class="tableEmpty"></td>
-                                  <th>분석지표</th>
-                                  <td class="p-0 round-r">
-                                    <select class="form-control cj-selectBox select-box">
-                                      <option>편수</option>
-                                      <option>비율</option>
-                                      <option>편수(비율)</option>
-                                    </select>
-                                  </td>
-                                  
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row mt-4">
-                        <div class="col-sm-12">
-                          <div class="card mr-0">
-                            <div class="card-header">"부장르"별 "분기별" "편수" 구성</div>
-                            <div class="card-body" style="height: 200px"> <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span></div>
-                          </div>
-                        </div>
-                        <div class="col-sm-12 mt-4">
-                          <div class="card mr-0">
-                            <div class="card-header">"부장르"별 "분기별" "편수" 구성 증감</div>
-                            <div class="card-body" style="height: 200px"> <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span></div>
-                          </div>
-                        </div>
-                      </div>
-                        <!-- grid 영역 -->
-                    <div class="program-table table-hide mt-4">
-                      <table class="table">
-                        <colgroup>
-                         
-                        </colgroup>
-                        <thead>
-                          <tr>
-                            <th>부장르</th>
-                            <th>20년 1분기</th>
-                            <th>20년 2분기</th>
-                            <th>20년 3분기</th>
-                            <th>20년 4분기</th>
-                            <th>20년 1분기</th>
-                            <th>20년 2분기</th>
-                            <th>20년 3분기</th>
-                            <th>20년 4분기</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th>드라마</th>
-                            <td>13</td>
-                            <td>15</td>
-                            <td>19</td>
-                            <td>15</td>
-                            <td>13</td>
-                            <td>15</td>
-                            <td>19</td>
-                            <td>15</td>
-                          </tr>
-                          <tr>
-                            <th>리얼리티쇼</th>
-                            <td>13</td>
-                            <td>15</td>
-                            <td>19</td>
-                            <td>15</td>
-                            <td>13</td>
-                            <td>15</td>
-                            <td>19</td>
-                            <td>15</td>
-                          </tr>
-                          <tr>
-                            <th>멜로/로맨스</th>
-                            <td>13</td>
-                            <td>15</td>
-                            <td>19</td>
-                            <td>15</td>
-                            <td>13</td>
-                            <td>15</td>
-                            <td>19</td>
-                            <td>15</td>
-                          </tr>
-                          <tr>
-                            <th>미스터리/스릴러</th>
-                            <td>13</td>
-                            <td>15</td>
-                            <td>19</td>
-                            <td>15</td>
-                            <td>13</td>
-                            <td>15</td>
-                            <td>19</td>
-                            <td>15</td>
-                          </tr>
-                          <tr>
-                            <th>버라이어티쇼</th>
-                            <td>13</td>
-                            <td>15</td>
-                            <td>19</td>
-                            <td>15</td>
-                            <td>13</td>
-                            <td>15</td>
-                            <td>19</td>
-                            <td>15</td>
-                          </tr>
-                          <tr>
-                            <th>음악쇼</th>
-                            <td>13</td>
-                            <td>15</td>
-                            <td>19</td>
-                            <td>15</td>
-                            <td>13</td>
-                            <td>15</td>
-                            <td>19</td>
-                            <td>15</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    </div>
+                 
                 </div>
    
               </div>
@@ -1791,7 +1423,11 @@
                     </div>
                   </div>
                   <div class="card-inner p-4">
-                    
+                    <div class="cj-btn-group">
+                      <div class="row justify-content-end mr-1 mb-4">
+                        <button class="btn btn-cj open-grid">GRID 확장</button>
+                      </div>
+                    </div>
                     <div class="row">
                       <div class="col-sm-6">
                         <div class="card mr-0">
@@ -1859,7 +1495,8 @@
                                   <option></option>
                                 </select>
                               </td>
-                              <td class="tableEmpty"></td>
+                            </tr>
+                            <tr>
                               <th>"SBS"조회기준 대상편수</th>
                               <td class="p-0 round-r">
                                 <select class="form-control cj-selectBox select-box">
@@ -1933,6 +1570,11 @@
                       </div>
                       <div class="card card-box mr-0 mt-4 p-4">
                       <!-- 0916 확장 버튼 변경 ic-max추가 -->
+                      <div class="cj-btn-group">
+                        <div class="row justify-content-end mr-1 mb-4">
+                          <button class="btn btn-cj open-grid">GRID 확장</button>
+                        </div>
+                      </div>
                         <div class="row">
                           <div class="col-sm-6">
                             <div class="card mr-0">
@@ -1943,7 +1585,7 @@
                           <div class="col-sm-6">
                             <div class="card mr-0">
                               <div class="card-header">전체 조회수</div>
-                              <div class="card-body" style="height: 200px"> <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span></div>
+                              <div class="card-body" style="height: 200px"></div>
                             </div>
                           </div>
                         </div>
@@ -2010,7 +1652,11 @@
                     </div>
                     <div class="tab-pane" id="dgtInflow">
                       <div class="card card-box mr-0 mt-4 p-4">
-                   
+                        <div class="cj-btn-group">
+                          <div class="row justify-content-end mr-1 mb-4">
+                            <button class="btn btn-cj open-grid">GRID 확장</button>
+                          </div>
+                        </div>
                         <div class="card-header">디지털 시청 유입 지표</div>
                             <!-- 0916 확장 버튼 변경 ic-max추가,  -->
                         <div class="row">
@@ -2029,7 +1675,7 @@
                           <div class="col-sm-4 pl-0">
                             <div class="card mr-0">
                               <div class="card-sub-title">평균 조회수</div>
-                              <div class="card-body" style="height: 200px"><span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span></div>
+                              <div class="card-body" style="height: 200px"></div>
                             </div>
                           </div>
                         </div>
@@ -2096,6 +1742,11 @@
                       </div>
                     
                       <div class="card card-box mr-0 mt-4 p-4">
+                        <div class="cj-btn-group">
+                          <div class="row justify-content-end mr-1 mb-4">
+                            <button class="btn btn-cj open-grid">GRID 확장</button>
+                          </div>
+                        </div>
                         <p class="card-header">티빙 시청 지표</p>
                          <!-- 0916 확장 버튼 변경 ic-max추가,  -->
                         <div class="row">
@@ -2108,7 +1759,7 @@
                           <div class="col-sm-6 pl-0">
                             <div class="card mr-0">
                               <div class="card-sub-title">가입자 기여도</div>
-                              <div class="card-body" style="height: 200px"><span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span></div>
+                              <div class="card-body" style="height: 200px"></div>
                             </div>
                           </div>
                         </div>
@@ -2392,7 +2043,7 @@
                           <div class="col-lg-12">
                             <div class="button-group mr-5">
                               <div class="btn-group" role="group">
-                                <div class="btn-tit p-3">View기준</div>
+                                <!-- 0929 View기준 모두 삭제 <div class="btn-tit p-3">View기준</div> -->
                                 <button type="button" class="btn btn-cj-default active">
                                   TV종합 시청
                                   유입 지표
@@ -2479,6 +2130,11 @@
                               <button class="btn btn-cj ml-2">조회</button>
                             </div>
                           </div>
+                          <div class="cj-btn-group col-lg-12">
+                            <div class="row justify-content-end mr-1">
+                              <button class="btn btn-cj open-grid">GRID 확장</button>
+                            </div>
+                          </div>
                           <div class="col-sm-12 mt-4">
                             <div class="card mr-0">
                               <div class="card-header">회차별 "선택 채널" 프로그램 평균 <span class="accent">"수도권 타겟 시청률"<span></div>
@@ -2500,7 +2156,7 @@
                           <div class="col-sm-10">
                             <div class="button-group mr-5">
                               <div class="btn-group" role="group">
-                                <div class="btn-tit p-3">View기준</div>
+                                <!-- <div class="btn-tit p-3">View기준</div> -->
                                 <button type="button" class="btn btn-cj-default">
                                   TV종합 시청
                                   유입 지표
@@ -2594,6 +2250,11 @@
                               <button class="btn btn-cj mlr-2">조회</button>
                             </div>
                           </div>
+                          <div class="cj-btn-group col-lg-12">
+                            <div class="row justify-content-end mr-1">
+                              <button class="btn btn-cj open-grid">GRID </button>
+                            </div>
+                          </div>
                           <div class="col-sm-12 mt-4">
                             <div class="card mr-0">
                               <div class="card-header">회차별 "선택 채널" 프로그램 성연령별 평균 <span class="accent">"수도권 타겟 시청률"</span></div>
@@ -2608,7 +2269,7 @@
                           <div class="col-sm-12">
                             <div class="button-group mr-5">
                               <div class="btn-group" role="group">
-                                <div class="btn-tit p-3">View기준</div>
+                                <!-- <div class="btn-tit p-3">View기준</div> -->
                                 <button type="button" class="btn btn-cj-default">
                                   TV종합 시청
                                   유입 지표
@@ -2703,6 +2364,11 @@
                             <button class="btn btn-cj mlr-2">조회</button>
                           </div>
                         </div>
+                        <div class="cj-btn-group col-lg-12">
+                          <div class="row justify-content-end mr-1">
+                            <button class="btn btn-cj open-grid">GRID 확장</button>
+                          </div>
+                        </div>
                           <div class="col-sm-12 mt-4">
                             <div class="card mr-0">
                               <!-- 0830 -->
@@ -2720,7 +2386,7 @@
                           <div class="col-sm-12">
                             <div class="button-group mr-5">
                               <div class="btn-group" role="group">
-                                <div class="btn-tit p-3">View기준</div>
+                                <!-- <div class="btn-tit p-3">View기준</div> -->
                                 <button type="button" class="btn btn-cj-default">
                                   TV종합 시청
                                   유입 지표
@@ -2814,6 +2480,11 @@
                             <button class="btn btn-cj mlr-2">조회</button>
                           </div>
                         </div>
+                        <div class="cj-btn-group col-lg-12">
+                          <div class="row justify-content-end mr-1">
+                            <button class="btn btn-cj open-grid">GRID 확장</button>
+                          </div>
+                        </div>
                           <div class="col-sm-12 mt-4">
                             <div class="card mr-0">
                               <div class="card-header">회차별 "선택 채널" 金 프로그램 평균 티빙 UV</div>
@@ -2830,7 +2501,7 @@
                           <div class="col-lg-10">
                             <div class="button-group mr-5">
                               <div class="btn-group" role="group">
-                                <div class="btn-tit p-3">View기준</div>
+                                <!-- <div class="btn-tit p-3">View기준</div> -->
                                 <button type="button" class="btn btn-cj-default active">
                                   TV종합 시청 
                                   유입 지표
@@ -2885,6 +2556,11 @@
                               <button class="btn btn-cj ml-2">조회</button>
                             </div>
                           </div>
+                          <div class="cj-btn-group col-lg-12">
+                            <div class="row justify-content-end mr-1">
+                              <button class="btn btn-cj open-grid">GRID 확장</button>
+                            </div>
+                          </div>
                           <div class="col-sm-12 mt-4">
                             <div class="card mr-0">
                               <div class="card-header">월별 "선택 채널" 프로그램 평균 <span class="accent">"수도권 타겟 시청률" 및 "월평균" 성장률<span></div>
@@ -2905,7 +2581,7 @@
                           <div class="col-sm-10">
                             <div class="button-group mr-5">
                               <div class="btn-group" role="group">
-                                <div class="btn-tit p-3">View기준</div>
+                                <!-- <div class="btn-tit p-3">View기준</div> -->
                                 <button type="button" class="btn btn-cj-default">
                                   TV종합 시청 
                                   유입 지표
@@ -2985,6 +2661,11 @@
                               <button class="btn btn-cj ml-2">조회</button>
                             </div>
                           </div>
+                          <div class="cj-btn-group col-lg-12">
+                            <div class="row justify-content-end mr-1">
+                              <button class="btn btn-cj open-grid">GRID 확장</button>
+                            </div>
+                          </div>
                              <div class="col-sm-12 mt-4">
                             <div class="card mr-0">
                               <div class="card-header">월별 "선택 채널" 성연령별 프로그램 평균 <span class="accent">"시청률"<span></div>
@@ -3000,7 +2681,7 @@
                           <div class="col-sm-10">
                             <div class="button-group mr-5">
                               <div class="btn-group" role="group">
-                                <div class="btn-tit p-3">View기준</div>
+                                <!-- <div class="btn-tit p-3">View기준</div> -->
                                 <button type="button" class="btn btn-cj-default">
                                   TV종합 시청 
                                   유입 지표
@@ -3062,6 +2743,11 @@
                               <button class="btn btn-cj ml-2">조회</button>
                             </div>
                           </div>
+                          <div class="cj-btn-group col-lg-12">
+                            <div class="row justify-content-end mr-1">
+                              <button class="btn btn-cj open-grid">GRID 확장</button>
+                            </div>
+                          </div>
                           <div class="col-sm-12 mt-4">
                             <div class="card mr-0">
                               <div class="card-header d-flex justify-content-between"><div>월별 "선택 채널" 프로그램 평균<span class="accent">"디지털 통합 평균 조회수"</span></div><div>프로그램 평균산출대상 (티빙오리지널, OTT오리지널 제외)</div></div>
@@ -3077,7 +2763,7 @@
                           <div class="col-lg-10">
                             <div class="button-group mr-5">
                               <div class="btn-group" role="group">
-                                <div class="btn-tit p-3">View기준</div>
+                                <!-- <div class="btn-tit p-3">View기준</div> -->
                                 <button type="button" class="btn btn-cj-default">
                                   TV종합 시청 
                                   유입 지표
@@ -3138,6 +2824,11 @@
                             </div>
                           </div>
                        </div>
+                       <div class="cj-btn-group col-lg-12">
+                        <div class="row justify-content-end mr-1">
+                          <button class="btn btn-cj open-grid">GRID 확장</button>
+                        </div>
+                      </div>
                           <div class="card mr-0 mt-4">
                             <div class="card-header d-flex justify-content-between"><div>월별 "선택 채널" 프로그램별 <span class="accent">"티빙 Live UV"</span></div><div>프로그램 평균은 모두 자사 프로그램 기준으로만 산출</div></div>
                             <div class="card-body" style="height: 200px"></div>
@@ -3594,6 +3285,11 @@
                   <div class="tab-content">
                     <div class="tab-pane show active" id="repImage">
                       <div class="card card-box mr-0 mt-4 p-4">
+                        <div class="cj-btn-group col-lg-12 mb-4">
+                          <div class="row justify-content-end">
+                            <button class="btn btn-cj open-grid">GRID 확장</button>
+                          </div>
+                        </div>
                         <div class="row">
                           <div class="col-sm-6">
                             <div class="card mr-0">
@@ -3606,6 +3302,11 @@
                               <div class="card-header">"선택 채널A" 조회 기준 프로그램 평균 대표 이미지 주평균 언급량</div>
                               <div class="card-body" style="height: 200px"></div>
                             </div>
+                          </div>
+                        </div>
+                        <div class="cj-btn-group col-lg-12 mt-4">
+                          <div class="row justify-content-end">
+                            <button class="btn btn-cj open-grid">GRID 확장</button>
                           </div>
                         </div>
                         <div class="row mt-4">
@@ -3632,14 +3333,17 @@
                               <div class="card-header">네이버</div>
                               <div class="card-body" style="height: 200px"></div>
                             </div>
-                      
+                            <div class="cj-btn-group col-lg-12 mt-4">
+                              <div class="row justify-content-end">
+                                <button class="btn btn-cj open-grid">GRID 확장</button>
+                              </div>
+                            </div>
                         <div class="row mt-4">
                           <div class="col-sm-12">
                             <div class="card mr-0">
                               <div class="card-header">"선택 채널" 조회 프로그램 평균 검색량 성장률</div>
                               <div class="card-body" style="height: 200px">
-                              <!-- 0916 ic-max 추가 -->
-                            <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span>
+                         
                               </div>
                             </div>
                             <div class="program-table table-hide mt-4">
@@ -3685,12 +3389,15 @@
                           <div class="card-header">구글</div>
                           <div class="card-body" style="height: 200px"></div>
                         </div>
-                    
+                        <div class="cj-btn-group col-lg-12 mt-4">
+                          <div class="row justify-content-end">
+                            <button class="btn btn-cj open-grid">GRID 확장</button>
+                          </div>
+                        </div>
                             <div class="card mr-0 mt-4">
                               <div class="card-header">"선택 채널" 조회 프로그램 평균 검색량 성장률</div>
                                 <div class="card-body" style="height: 200px">
-                                <!-- 0916 ic-max 추가 -->
-                            <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span>
+                            
                                 </div>
                             </div>
                             <div class="program-table table-hide mt-4">
@@ -3737,7 +3444,11 @@
                               <div class="card-header">유튜브</div>
                               <div class="card-body" style="height: 200px"></div>
                             </div>
-                       
+                            <div class="cj-btn-group col-lg-12 mt-4">
+                              <div class="row justify-content-end">
+                                <button class="btn btn-cj open-grid">GRID 확장</button>
+                              </div>
+                            </div>
                                 <div class="card mr-0 mt-4">
                                   <div class="card-header">"선택 채널" 조회 프로그램 평균 검색량 성장률</div>
                                     <div class="card-body" style="height: 200px"></div>
@@ -3785,7 +3496,7 @@
                             <div class="row mt-4 ml-2">
                                   <div class="button-group d-flex justify-content-start">
                                     <div class="btn-group" role="group">
-                                      <button type="button" class="btn btn-cj-default">반응 수집 채널</button>
+                                      <div class="btn-tit p-3">반응 수집 채널</div>
                                       <button type="button" class="btn btn-cj-default">전체</button>
                                       <button type="button" class="btn btn-cj-default">네이버/다음 TV</button>
                                       <button type="button" class="btn btn-cj-default">트위터</button>
@@ -3799,7 +3510,11 @@
                                     </div>
                                   </div>
                             </div>
-                          
+                            <div class="cj-btn-group col-lg-12 mt-4">
+                              <div class="row justify-content-end">
+                                <button class="btn btn-cj open-grid">GRID 확장</button>
+                              </div>
+                            </div>
                                 <div class="card mr-0 mt-4">
                                   <div class="card-header">"선택 채널" 조회 프로그램 평균 총언급량</div>
                                   <div class="row">
@@ -3813,8 +3528,7 @@
                                       <div class="card mr-0">
                                         <div class="card-sub-title">런칭후</div>
                                         <div class="card-body" style="height: 200px">
-                                        <!-- 0916 ic-max 추가 -->
-                            <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span>
+                                    
                                         </div>
                                       </div>
                                     </div>
@@ -3867,7 +3581,7 @@
                         <div class="row mb-4 ml-2">
                           <div class="button-group d-flex justify-content-start">
                             <div class="btn-group" role="group">
-                              <button type="button" class="btn btn-cj-default">반응 수집 채널</button>
+                              <div class="btn-tit p-3">반응 수집 채널</div>
                               <button type="button" class="btn btn-cj-default">전체</button>
                               <button type="button" class="btn btn-cj-default">네이버/다음 TV</button>
                               <button type="button" class="btn btn-cj-default">트위터</button>
@@ -3875,6 +3589,11 @@
                               <button type="button" class="btn btn-cj-default">커뮤니티</button>
                             </div>
                           </div>
+                      </div>
+                      <div class="cj-btn-group col-lg-12 mb-4">
+                        <div class="row justify-content-end">
+                          <button class="btn btn-cj open-grid">GRID 확장</button>
+                        </div>
                       </div>
                     <div class="card-header">긍정률/부정률 언급</div>
                         <div class="row">
@@ -3888,8 +3607,7 @@
                             <div class="card mr-0">
                               <div class="card-sub-title">런칭후</div>
                               <div class="card-body" style="height: 200px">
-                              <!-- 0916 ic-max 추가 -->
-                            <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span>
+                       
                               </div>
                             </div>
                           </div>
@@ -3975,7 +3693,7 @@
                         <div class="row mb-4 ml-2">
                           <div class="button-group d-flex justify-content-start">
                             <div class="btn-group" role="group">
-                              <button type="button" class="btn btn-cj-default">반응 수집 채널</button>
+                              <div class="btn-tit p-3">반응 수집 채널</div>
                               <button type="button" class="btn btn-cj-default">전체</button>
                               <button type="button" class="btn btn-cj-default">네이버/다음 TV</button>
                               <button type="button" class="btn btn-cj-default">트위터</button>
@@ -4023,25 +3741,27 @@
                         </div>
                      
                         <p class="mt-4">◆ 시청지속비율 기반 시청자 충성도 (아리아나)</p>
+                        <div class="cj-btn-group col-lg-12 mb-4">
+                          <div class="row justify-content-end">
+                            <button class="btn btn-cj open-grid">GRID 확장</button>
+                          </div>
+                        </div>
                           <div class="card mr-0">
                             <div class="card-header">수도권 타겟 시청률</div>
                             <div class="card-body" style="height: 200px">
-                               <!-- 0916 ic-max 추가 -->
-                               <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span>
+                             
                             </div>
                           </div>
                           <div class="card mr-0 mt-4">
                             <div class="card-header">수도권 타겟 도달률</div>
                             <div class="card-body" style="height: 200px">
-                               <!-- 0916 ic-max 추가 -->
-                               <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span>
+                        
                             </div>
                           </div>
                           <div class="card mr-0 mt-4">
                             <div class="card-header">수도권 타겟 평균 시청시간</div>
                             <div class="card-body" style="height: 200px">
-                               <!-- 0916 ic-max 추가 -->
-                               <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span>
+                        
                             </div>
                           </div>
                             <!-- grid 영역 -->
@@ -4107,7 +3827,11 @@
                         </div>
                       </div>
                       <div class="card card-box mr-0 mt-4 p-4">
-                        
+                        <div class="cj-btn-group col-lg-12 mb-4">
+                          <div class="row justify-content-end">
+                            <button class="btn btn-cj open-grid">GRID 확장</button>
+                          </div>
+                        </div>
                         <div class="row">
                           <div class="col-sm-12">
                             <div class="card mr-0">
@@ -4123,8 +3847,7 @@
                                   <div class="card mr-0">
                                     <div class="card-sub-title">런칭후</div>
                                     <div class="card-body" style="height: 200px">
-                                     <!-- 0916 ic-max 추가 -->
-                               <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span>
+                           
                                     </div>
                                   </div>
                                 </div>
@@ -4185,7 +3908,11 @@
                         </div>
                       </div>
                       <div class="card card-box mr-0 mt-4 p-4">
-                        
+                        <div class="cj-btn-group col-lg-12 mb-4">
+                          <div class="row justify-content-end">
+                            <button class="btn btn-cj open-grid">GRID 확장</button>
+                          </div>
+                        </div>
                         <div class="row">
                           <div class="col-sm-12">
                             <div class="card mr-0">
@@ -4201,8 +3928,7 @@
                                   <div class="card mr-0">
                                     <div class="card-sub-title">런칭후</div>
                                     <div class="card-body" style="height: 200px">
-                                     <!-- 0916 ic-max 추가 -->
-                               <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span>
+                   
                                     </div>
                                   </div>
                                 </div>
@@ -4270,6 +3996,7 @@
                          <div class="row mb-4 col-lg-10">
                           <div class="button-group d-flex justify-content-start">
                             <div class="btn-group" role="group">
+                              <div class="btn-tit p-3">반응 수집 채널</div>
                               <button type="button" class="btn btn-cj-default">반응 수집 채널</button>
                               <button type="button" class="btn btn-cj-default">전체</button>
                               <button type="button" class="btn btn-cj-default">네이버/다음 TV</button>
@@ -4284,7 +4011,11 @@
                             </div>
                           </div>
                         </div>
-                       
+                        <div class="cj-btn-group col-lg-12 mb-4">
+                          <div class="row justify-content-end">
+                            <button class="btn btn-cj open-grid">GRID 확장</button>
+                          </div>
+                        </div>
                         <div class="row">
                           <div class="col-sm-12">
                             <div class="card mr-0">
@@ -4300,8 +4031,7 @@
                                   <div class="card mr-0 pl-0">
                                     <div class="card-sub-title">런칭후</div>
                                     <div class="card-body" style="height: 200px">
-                                     <!-- 0916 ic-max 추가 -->
-                            <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span>
+                          
                                     </div>
                                   </div>
                                 </div>
@@ -4362,7 +4092,11 @@
                             </table>
                           </div>
                           
-                          
+                          <div class="cj-btn-group col-lg-12 mt-4">
+                            <div class="row justify-content-end">
+                              <button class="btn btn-cj open-grid">GRID 확장</button>
+                            </div>
+                          </div>
                           <div class="row mt-4">
                             <div class="col-sm-12">
                               <div class="card mr-0">
@@ -4378,8 +4112,7 @@
                                     <div class="card mr-0 pl-0">
                                       <div class="card-sub-title">런칭후</div>
                                       <div class="card-body" style="height: 200px">
-                                       <!-- 0916 ic-max 추가 -->
-                            <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span>
+                               
                                       </div>
                                     </div>
                                   </div>
@@ -4464,7 +4197,11 @@
                       </div>
                     
                       <div class="card card-box mr-0 mt-4 p-4">
-                        
+                        <div class="cj-btn-group col-lg-12 mt-4">
+                          <div class="row justify-content-end">
+                            <button class="btn btn-cj open-grid">GRID 확장</button>
+                          </div>
+                        </div>
                         <div class="row mt-4">
                           <div class="col-sm-12">
                             <div class="card mr-0">
@@ -4480,8 +4217,7 @@
                                   <div class="card mr-0">
                                     <div class="card-sub-title">런칭후</div>
                                     <div class="card-body" style="height: 200px">
-                                     <!-- 0916 ic-max 추가 -->
-                            <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span>
+                              
                                     </div>
                                   </div>
                                 </div>
@@ -4563,7 +4299,11 @@
                           </table>
                         </div>
 
-                       
+                        <div class="cj-btn-group col-lg-12 mt-4">
+                          <div class="row justify-content-end">
+                            <button class="btn btn-cj open-grid">GRID 확장</button>
+                          </div>
+                        </div>
                         <div class="row mt-4">
                           <div class="col-sm-12">
                             <div class="card mr-0">
@@ -4579,8 +4319,7 @@
                                   <div class="card mr-0">
                                     <div class="card-sub-title">런칭후</div>
                                     <div class="card-body" style="height: 200px">
-                                    <!-- 0916 ic-max 추가 -->
-                            <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span>
+                             
                                     </div>
                                   </div>
                                 </div>
@@ -4669,7 +4408,7 @@
                           <div class="row mb-4 col-lg-10">
                           <div class="button-group d-flex justify-content-start">
                             <div class="btn-group" role="group">
-                              <button type="button" class="btn btn-cj-default">반응 수집 채널</button>
+                              <div class="btn-tit p-3">반응 수집 채널</div>
                               <button type="button" class="btn btn-cj-default">전체</button>
                               <button type="button" class="btn btn-cj-default">네이버/다음 TV</button>
                               <button type="button" class="btn btn-cj-default">트위터</button>
@@ -4683,6 +4422,11 @@
                             </div>
                           </div>
                         </div>
+                        <div class="cj-btn-group col-lg-12 mb-4">
+                          <div class="row justify-content-end">
+                            <button class="btn btn-cj open-grid">GRID 확장</button>
+                          </div>
+                        </div>
                             <div class="row">
                               <div class="col-sm-6 pr-0">
                                 <div class="card ">
@@ -4694,8 +4438,7 @@
                                 <div class="card mr-0">
                                   <div class="card-header">런칭후</div>
                                   <div class="card-body" style="height: 200px">
-                                  <!-- 0916 ic-max 추가 -->
-                            <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span>
+                      
                                   </div>
                                 </div>
                               </div>
@@ -4738,7 +4481,7 @@
                     <div class="tab-pane" id="acProList">
                       <div class="card card-box mr-0 mt-4 p-4">
                         <!-- grid 영역 -->
-                        <div class="program-table table-hide mt-4">
+                        <div class="program-table mt-4">
                           <table class="table">
                             <thead>
                               <tr>
@@ -5003,6 +4746,11 @@
                               </div>
                             </div>
                          </div>
+                         <div class="cj-btn-group col-lg-12 mt-4">
+                          <div class="row justify-content-end mr-1">
+                            <button class="btn btn-cj open-grid">GRID 확장</button>
+                          </div>
+                        </div>
                           <div class="card mr-0 mt-4">
                             <div class="card-header">"선택 채널A" vs "선택 채널B" 프로그램 평균 회차별 "방영 D-1 대비 방영일 검색량" 증감 추이</div>
                             <div class="card-body" style="height: 200px"></div>
@@ -5064,6 +4812,11 @@
                               </div>
                             </div>
                          </div>
+                         <div class="cj-btn-group col-lg-12 mt-4">
+                          <div class="row justify-content-end mr-1">
+                            <button class="btn btn-cj open-grid">GRID 확장</button>
+                          </div>
+                        </div>
                           <div class="card mr-0 mt-4">
                             <div class="card-header">"선택 채널A" vs "선택 채널B" 프로그램 평균 회차별 "방영일 검색량" 증감 추이</div>
                             <div class="card-body" style="height: 200px"></div>
@@ -5144,6 +4897,11 @@
                               </div>
                             </div>
                         </div>
+                        <div class="cj-btn-group col-lg-12 mt-4">
+                          <div class="row justify-content-end mr-1">
+                            <button class="btn btn-cj open-grid">GRID 확장</button>
+                          </div>
+                        </div>
                           <div class="card mr-0 mt-4">
                             <div class="card-header">"선택 채널A" vs "선택 채널B" 프로그램 평균 회차별 "방영일 검색량" 증감 추이</div>
                             <div class="card-body" style="height: 200px"></div>
@@ -5191,9 +4949,14 @@
                         </div>
                         <div class="card-inner mt-4 p-4">
                         <div>
+                          <div class="cj-btn-group col-lg-12 mb-4">
+                            <div class="row justify-content-end mr-1">
+                              <button class="btn btn-cj open-grid">GRID 확장</button>
+                            </div>
+                          </div>
                             <div class="card mr-0 p-0 ">
                               <div class="card-header">"선택 채널A" vs "선택 채널B" 프로그램 평균 회차별 "방영 D-1 대비 방영일 검색량" 증감 추이</div>
-                               <span class="ic-max open-grid"><i class="fa-solid fa-maximize"></i></span>
+                         
                                <div class="card-body" style="height: 200px"></div>
                             </div>
                              <!-- grid 영역 -->
