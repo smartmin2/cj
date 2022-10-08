@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35">
+    <g data-name="사각형 863 복사" style="fill:transparent;stroke:#d7d8e1;stroke-linejoin:round">
+        <rect width="35" height="35" rx="4" style="stroke:none"/>
+        <rect x=".5" y=".5" width="34" height="34" rx="3.5" style="fill:none"/>
+    </g>
+    <path data-name="사각형 882 복사 3" d="M912 1122v-2h6.562l-7.6-7.58 1.435-1.432 7.6 7.582V1111h2v11zm-16 0h-1v-10h2v6.525l7.494-7.475 1.417 1.414-7.553 7.536H906v2zm14.987-17.42 7.581-7.58H911v-2h11v10h-2v-6.568l-7.58 7.581zM895 1106v-11h10v2h-6.585l7.535 7.536-1.415 1.414-7.535-7.535V1106z" transform="translate(-891 -1091)" style="fill:#505c84;opacity:.702"/>
+</svg>
