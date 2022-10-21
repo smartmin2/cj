@@ -273,9 +273,9 @@
                             <tr>
                               <th>1차View기준</th>
                               <td>
-                                <div class="d-flex justify-content-start align-items-center">
+                                <div class="d-flex justify-content-start align-items-center pl-4 flex-wrap">
 
-                                  <div class="form-check cj-input-radio ml-4 pr-4 d-flex align-items-center">
+                                  <div class="form-check cj-input-radio pr-4 d-flex align-items-center">
                                     <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1" />
                                     <label class="form-check-label" for="radioDefault1"> 컨텐츠유형 </label>
                                   </div>
@@ -534,7 +534,8 @@
                           </table>
                         </div>
                       </div>
-                      <div class="d-flex cj-btn-group align-items-center col-lg-2">
+                      <!-- 1021 조회 버튼 위치 변경 -->
+                      <div class="d-flex cj-btn-group align-items-center justify-content-center col-lg-2">
                         <button type="submit" class="btn btn-cj">조회</button>
                       </div>
                     </div>
@@ -640,7 +641,7 @@
                       <div class="lookup-table">
                         <table class="table">
                              <div class="row row-wrap col-lg-12 m-0 pl-0">
-                            <div class="d-flex col-lg-4 pl-0">
+                            <div class="d-flex  col-lg-4 pl-0">
                               <div class="table-tit">프로그램 선정기준</div>
                               <div class="table-cont">
                                 <div class="date-group">
@@ -868,10 +869,11 @@
                   </div>
                 </div>
                 <div class="card card-box mr-0 mt-4 p-4">
-                  <div class="card-inner p-4">
+                  <div class="card-inner p-4 ">
                     <p class="mb-0">◆ 대상 프로그램 리스트</p>
                       <!-- grid 영역 -->
-                      <div class="program-table borderL mt-4">
+                      <!-- 1021 program-table에 .scroll 추가하고 테이블 width 지정하면 스크롤 생깁니다! -->
+                      <div class="program-table borderL mt-4 scroll">
                         <table class="table">
                           <colgroup>
                            
@@ -1048,7 +1050,7 @@
                           <tbody>
                             <tr>
                               <th>컨텐츠유형</th>
-                              <td class="round-r col-lg-5">
+                              <td class="round-r col-lg-5 col-md-4">
                                 <div class="d-flex align-items-center">
                                   <div class="open-btn"> 
                                     <i class="fa-solid fa-plus ic-plus"></i>
@@ -1082,7 +1084,7 @@
                               </td>
                               <td class="tableEmpty"></td>
                               <th>시청률</th>
-                              <td>
+                              <td class="col-md-4">
                                 <div class="d-flex align-items-center">
                                   <div class="open-btn"> 
                                     <i class="fa-solid fa-plus ic-plus"></i>
@@ -1261,9 +1263,9 @@
                             <tr>
                               <th>1차View기준</th>
                               <td>
-                                <div class="d-flex justify-content-start align-items-center">
+                                <div class="d-flex justify-content-start align-items-center pl-4 flex-wrap">
 
-                                  <div class="form-check cj-input-radio ml-4 pr-4 d-flex align-items-center">
+                                  <div class="form-check cj-input-radio pr-4 d-flex align-items-center">
                                     <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1" />
                                     <label class="form-check-label" for="radioDefault1"> 컨텐츠유형 </label>
                                   </div>
@@ -1414,12 +1416,12 @@
                       </div>
                     </div>
                     <div class="cj-btn-group my-auto col-lg-2">
-                      <div class="row justify-content-start mr-2">
+                      <div class="row justify-content-center mr-2">
                         <button class="btn btn-cj ml-2">조회</button>
                       </div>
                     </div>
                   </div>
-                  <div class="card-inner p-4">
+                  <div class="card-inner p-4 mt-4">
                    
                     <div class="row">
                       <div class="col-sm-6">
@@ -1555,7 +1557,7 @@
                             </div>
                           </div>
                           <div class="cj-btn-group my-auto col-sm-2">
-                            <div class="row justify-content-start mr-2">
+                            <div class="row justify-content-center mr-2">
                               <button class="btn btn-cj ml-2">조회</button>
                             </div>
                           </div>
@@ -2107,7 +2109,7 @@
                             </div>
                         
                           <div class="cj-btn-group my-auto col-lg-2 col-sm-12">
-                            <div class="row justify-content-start mr-2">
+                            <div class="row justify-content-center mr-2">
                               <button class="btn btn-cj ml-2">조회</button>
                             </div>
                           </div>
@@ -2222,9 +2224,9 @@
                               </div>
                            </div>
                  
-                          <div class="cj-btn-group my-auto col-sm-2">
-                            <div class="row justify-content-start mr-2">
-                              <button class="btn btn-cj mlr-2">조회</button>
+                           <div class="cj-btn-group my-auto col-lg-2 col-sm-12">
+                            <div class="row justify-content-center mr-2">
+                              <button class="btn btn-cj ml-2">조회</button>
                             </div>
                           </div>
                           
@@ -2332,9 +2334,9 @@
                             </div>
                          </div>
                
-                        <div class="cj-btn-group my-auto col-sm-2">
-                          <div class="row justify-content-start mr-2">
-                            <button class="btn btn-cj mlr-2">조회</button>
+                         <div class="cj-btn-group my-auto col-lg-2 col-sm-12">
+                          <div class="row justify-content-center mr-2">
+                            <button class="btn btn-cj ml-2">조회</button>
                           </div>
                         </div>
                        
@@ -2445,9 +2447,9 @@
                             </div>
                          </div>
                
-                        <div class="cj-btn-group my-auto col-sm-2">
-                          <div class="row justify-content-start mr-2">
-                            <button class="btn btn-cj mlr-2">조회</button>
+                         <div class="cj-btn-group my-auto col-lg-2 col-sm-12">
+                          <div class="row justify-content-center mr-2">
+                            <button class="btn btn-cj ml-2">조회</button>
                           </div>
                         </div>
                        
@@ -2517,11 +2519,11 @@
                               </table>
                             </div>
                          </div>
-                          <div class="cj-btn-group my-auto col-sm-12 col-lg-2">
-                            <div class="row justify-content-start mr-2">
-                              <button class="btn btn-cj ml-2">조회</button>
-                            </div>
+                         <div class="cj-btn-group my-auto col-lg-2 col-sm-12">
+                          <div class="row justify-content-center mr-2">
+                            <button class="btn btn-cj ml-2">조회</button>
                           </div>
+                        </div>
                          
                           <div class="col-sm-12 mt-4">
                             <div class="card mr-0">
@@ -2618,11 +2620,11 @@
                               </table>
                             </div>
                         </div>
-                          <div class="cj-btn-group my-auto col-sm-2">
-                            <div class="row justify-content-start mr-2">
-                              <button class="btn btn-cj ml-2">조회</button>
-                            </div>
+                        <div class="cj-btn-group my-auto col-lg-1 col-sm-12">
+                          <div class="row justify-content-center mr-2">
+                            <button class="btn btn-cj ml-2">조회</button>
                           </div>
+                        </div>
                           
                              <div class="col-sm-12 mt-4">
                             <div class="card mr-0">
@@ -2697,7 +2699,7 @@
                          </div>
                       
                           <div class="cj-btn-group my-auto col-lg-1 col-sm-12">
-                            <div class="row justify-content-start mr-2">
+                            <div class="row justify-content-center mr-2">
                               <button class="btn btn-cj ml-2">조회</button>
                             </div>
                           </div>
@@ -2772,11 +2774,11 @@
                               </div>
                        </div>
                     
-                          <div class="cj-btn-group my-auto col-sm-2">
-                            <div class="row justify-content-start mr-2">
-                              <button class="btn btn-cj ml-2">조회</button>
-                            </div>
-                          </div>
+                       <div class="cj-btn-group my-auto col-lg-1 col-sm-12">
+                        <div class="row justify-content-center mr-2">
+                          <button class="btn btn-cj ml-2">조회</button>
+                        </div>
+                      </div>
                        </div>
                      
                           <div class="card mr-0 mt-4">
@@ -2826,7 +2828,7 @@
                           <tbody>
                             <tr>
                               <th>컨텐츠유형</th>
-                              <td class="round-r col-lg-5">
+                              <td class="round-r col-lg-5 col-md-4">
                                 <div class="d-flex align-items-center">
                                   <div class="open-btn"> 
                                     <i class="fa-solid fa-plus ic-plus"></i>
@@ -2860,7 +2862,7 @@
                               </td>
                               <td class="tableEmpty"></td>
                               <th>시청률</th>
-                              <td>
+                              <td class="col-md-4">
                                 <div class="d-flex align-items-center">
                                   <div class="open-btn"> 
                                     <i class="fa-solid fa-plus ic-plus"></i>
@@ -3039,9 +3041,9 @@
                             <tr>
                               <th>1차View기준</th>
                               <td>
-                                <div class="d-flex justify-content-start align-items-center">
+                                <div class="d-flex justify-content-start align-items-center pl-4 flex-wrap">
 
-                                  <div class="form-check cj-input-radio ml-4 pr-4 d-flex align-items-center">
+                                  <div class="form-check cj-input-radio pr-4 d-flex align-items-center">
                                     <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1" />
                                     <label class="form-check-label" for="radioDefault1"> 컨텐츠유형 </label>
                                   </div>
@@ -3190,7 +3192,7 @@
                       </div>
                     </div>
                     <div class="cj-btn-group my-auto col-lg-2">
-                      <div class="row justify-content-start mr-2">
+                      <div class="row justify-content-center mr-2">
                         <button class="btn btn-cj ml-2">조회</button>
                       </div>
                     </div>
@@ -3435,7 +3437,7 @@
                                     </div>
                                   </div>
                                   <div class="cj-btn-group col-lg-2 pt-1">
-                                    <div class="row justify-content-start ml-2">
+                                    <div class="row justify-content-center ml-2">
                                       <button class="btn btn-cj">조회</button>
                                     </div>
                                   </div>
@@ -3656,7 +3658,7 @@
                             </div>
                           </div>
                           <div class="cj-btn-group my-auto col-sm-2">
-                            <div class="row justify-content-start mr-2">
+                            <div class="row justify-content-center mr-2">
                               <button class="btn btn-cj ml-2">조회</button>
                             </div>
                           </div>
@@ -3906,7 +3908,6 @@
                           <div class="button-group d-flex justify-content-start">
                             <div class="btn-group" role="group">
                               <div class="btn-tit p-3">반응 수집 채널</div>
-                              <button type="button" class="btn btn-cj-default">반응 수집 채널</button>
                               <button type="button" class="btn btn-cj-default">전체</button>
                               <button type="button" class="btn btn-cj-default">네이버/다음 TV</button>
                               <button type="button" class="btn btn-cj-default">트위터</button>
@@ -3915,7 +3916,7 @@
                             </div>
                           </div>
                           <div class="cj-btn-group my-auto col-lg-2">
-                            <div class="row justify-content-start mr-2">
+                            <div class="row justify-content-center mr-2">
                               <button class="btn btn-cj ml-4">조회</button>
                             </div>
                           </div>
@@ -4310,7 +4311,7 @@
                             </div>
                           </div>
                           <div class="cj-btn-group my-auto col-lg-2">
-                            <div class="row justify-content-start mr-2">
+                            <div class="row justify-content-center mr-2">
                               <button class="btn btn-cj ml-4">조회</button>
                             </div>
                           </div>
@@ -4539,9 +4540,9 @@
                     <div class="tab-pane" id="detailAl">
                       <div class="card card-box mr-0 mt-4 p-4">
                         <div class="card-inner p-4">
-                          <!-- 0916 row 수정 -->
-                          <div class="row">
-                            <div class="col-lg-2 my-auto">
+                          <!-- 1021 row, col-100 -->
+                          <div class="row col-lg-12">
+                            <div class="col-lg-2 my-auto col-100">
                               <div class="button-group mr-5">
                                 <div class="btn-group" role="group">
                                   <div class="btn-tit p-3">View기준</div>
@@ -4572,7 +4573,7 @@
                                 </div>
                              </div>
                             <div class="cj-btn-group my-auto col-lg-2">
-                              <div class="row justify-content-start mr-2">
+                              <div class="row justify-content-center mr-2">
                                 <button class="btn btn-cj ml-2">조회</button>
                               </div>
                             </div>
@@ -4630,7 +4631,7 @@
                               </div>
                             </div>
                             <div class="cj-btn-group my-auto col-lg-2">
-                              <div class="row justify-content-start mr-2">
+                              <div class="row justify-content-center mr-2">
                                 <button class="btn btn-cj ml-2">조회</button>
                               </div>
                             </div>
@@ -4692,7 +4693,7 @@
                               </div>
                             </div>
                             <div class="cj-btn-group my-auto col-lg-2">
-                              <div class="row justify-content-start mr-2">
+                              <div class="row justify-content-center mr-2">
                                 <button class="btn btn-cj ml-2">조회</button>
                               </div>
                             </div>
@@ -4773,7 +4774,7 @@
                               </div>
                             </div>
                             <div class="cj-btn-group my-auto col-lg-2">
-                              <div class="row justify-content-start mr-2">
+                              <div class="row justify-content-center mr-2">
                                 <button class="btn btn-cj ml-2">조회</button>
                               </div>
                             </div>
@@ -4785,9 +4786,9 @@
                           </div>
                         </div>
                         <div class="card-inner mt-4 p-4">
-                        <!-- 0916 row 수정 -->
-                        <div class="row">
-                          <div class="col-lg-2 my-auto">
+                        <!-- 1021 row,col-100 -->
+                        <div class="row col-lg-12">
+                          <div class="col-lg-2 my-auto col-100">
                             <div class="button-group mr-5">
                               <div class="btn-group" role="group">
                                 <div class="btn-tit p-3">View기준</div>
@@ -4818,7 +4819,7 @@
                               </div>
                           </div>
                           <div class="cj-btn-group my-auto col-lg-2">
-                            <div class="row justify-content-start mr-2">
+                            <div class="row justify-content-center mr-2">
                               <button class="btn btn-cj ml-2">조회</button>
                             </div>
                           </div>
